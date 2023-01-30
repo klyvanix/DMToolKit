@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WASvzbF8AWrtjBbVrtT3BjYXR9UOmcewWWZb2tjnXwLDDspUqV8NwwlzsRMLMk7pchTgk1HyP1C0OgkuhVWOrA==",
+  "dgSpecHash": "In3JMLQA+eWuuSXOWoX5xZ+h8XOLBA2y5/keglPG/EI08s8g4z6jnJ4iWWyDdR++b2/hfMDXDLJnVKCHx+8+NA==",
   "success": true,
   "projectFilePath": "D:\\Github\\Maui\\DMToolKit\\DMToolKit\\DMToolKit.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Klyvanix\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
     "C:\\Users\\Klyvanix\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
     "C:\\Users\\Klyvanix\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\Klyvanix\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
