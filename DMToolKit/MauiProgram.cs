@@ -1,4 +1,7 @@
-﻿namespace DMToolKit;
+﻿using DMToolKit.Pages;
+using DMToolKit.ViewModels;
+
+namespace DMToolKit;
 
 public static class MauiProgram
 {
@@ -13,6 +16,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<MainViewModel>();
+
+        builder.Services.AddSingleton<CoinPouchGeneratorPage>();
+        builder.Services.AddSingleton<CoinPouchGeneratorViewModel>();
+
+        return builder.Build();
 	}
 }

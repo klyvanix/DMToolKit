@@ -4,5 +4,9 @@ namespace DMToolKit.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
+        public MainViewModel()
+        {
+
+        }
     }
 }

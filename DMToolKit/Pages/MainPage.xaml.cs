@@ -1,6 +1,6 @@
 ﻿using DMToolKit.ViewModels;
 
-namespace DMToolKit;
+namespace DMToolKit.Pages;
 
 public partial class MainPage : ContentPage
 {

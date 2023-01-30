@@ -3,12 +3,16 @@
     x:Class="DMToolKit.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DMToolKit"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:DMToolKit.Pages"
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Icon="appicon.png" Title="Home">
+        <ShellContent Icon="appicon.png" Title="Home" ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+    <FlyoutItem Icon="pouch.png" Title="CoinPouchGenerator">
+        <ShellContent Icon="pouch.png" Title="CoinPouchGenerator" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
+            Route="CoinPouchGenerator" />
+    </FlyoutItem>
 
 </Shell>
