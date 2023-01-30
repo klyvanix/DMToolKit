@@ -22,11 +22,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/Github/Maui/DMToolKit/DMToolKit/MainPage.xaml]
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
