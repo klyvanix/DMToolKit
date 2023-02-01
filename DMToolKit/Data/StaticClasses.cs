@@ -327,7 +327,7 @@ namespace DMToolKit.Data
             {(int) NPCValues.Balance, "Balance, by ensuring equal distribution of most societal rules and/or goods among everyone"},
             {(int) NPCValues.Beauty, "Beauty, by seeking out qualities that are personally pleasing or aesthetic"},
             {(int) NPCValues.Boldness, "Boldness, by stepping up and stepping out onto the edge in life, and pushing the limits of what is possible or even appropriate"},
-            {(int) NPCValues.Compassion, "Compassion, by giving kindness and compassion to those who deserve it"},
+            {(int) NPCValues.Compassion, "Compassion, by seeking kindness and giving compassion to those who deserve it"},
             {(int) NPCValues.Challenge, "Challenge, by striving to test abilities or knowledge to accurately judge their skills"},
             {(int) NPCValues.Citizenship, "Citizenship, by forming a bond with a group or community thus creating safety, and purpose"},
             {(int) NPCValues.Community, "Community, by finding fellowship with others"},

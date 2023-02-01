@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.NPCGeneratorPage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:NPCGeneratorViewModel"
+             Title="NPCGeneratorPage">
+    <Grid RowDefinitions="*,40,40">
+        <Grid Grid.Row="0" BackgroundColor="Transparent" ColumnDefinitions="*,*,*,*" RowDefinitions="60,30,30,40,Auto,50,50,Auto,*">
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 40 10 10 40" Margin="5" 
+                    BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
+                <Grid RowDefinitions="*,2*">
+                    <Label Text="First Name" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="{Binding Character.FirstName}"
+                           Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="23"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 10 40 40 10" Margin="5" 
+                    BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
+                <Grid RowDefinitions="*,2*">
+                    <Label Text="Last Name" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="{Binding Character.LastName}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="23"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" StrokeShape="RoundRectangle 10 10 5 5" Margin="5" 
+                    BackgroundColor="{StaticResource Values}" Stroke="Transparent">
+                <Label Text="{Binding Character.ValuePrime}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="23"/>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 5 5 10 10" Margin="20,0,20,0" 
+                    BackgroundColor="{StaticResource Values}" Stroke="Transparent">
+                <Label Text="{Binding Character.ValueMinor}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18" />
+            </Border>
+            <Border Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="{StaticResource Tertiary}" Margin="5">
+                <Label Text="{Binding Character.ValueDescription}" TextColor="{StaticResource Black}" Margin="3"/>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 10" Margin="3,0,5,0" 
+                    BackgroundColor="{StaticResource PositiveAttribute}" Stroke="Transparent">
+                <Grid RowDefinitions="*,2*">
+                    <Label Text="Primary Trait" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="{Binding Character.PositivePrime}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="21" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 0 0 15 15" Margin="15,0,15,0" 
+                    BackgroundColor="{StaticResource PositiveAttribute}" Stroke="Transparent">
+                <Grid RowDefinitions="*,2*">
+                    <Label Text="Minor Trait" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="{Binding Character.PositiveMinor}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 10" Margin="3,0,5,0" 
+                    BackgroundColor="{StaticResource NegativeAttribute}" Stroke="Transparent">
+                <Grid RowDefinitions="*,2*">
+                    <Label Text="Primary Trait" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="{Binding Character.NegativePrime}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="23" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 0 0 15 15" Margin="15,0,15,0" 
+                    BackgroundColor="{StaticResource NegativeAttribute}" Stroke="Transparent">
+                <Grid RowDefinitions="*,2*">
+                    <Label Text="Minor Trait" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="{Binding Character.NegativeMinor}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="7" Grid.ColumnSpan="4" BackgroundColor="{StaticResource Tertiary}" Margin="5">
+                <Label Text="{Binding Character.AttributeDescription}" TextColor="{StaticResource Black}"  Margin="3"/>
+            </Border>
+        </Grid>
+        <Button Grid.Row="1" Text="Save" Margin="2,0,2,2"/>
+
+        <Button Grid.Row="2" Text="Generate" Margin="2,0,2,2" Command="{Binding GenerateNPCCommand}"/>
+    </Grid>
+</ContentPage>

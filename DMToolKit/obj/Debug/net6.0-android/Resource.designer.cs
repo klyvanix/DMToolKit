@@ -7935,31 +7935,40 @@ namespace DMToolKit
 			public const int npc = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int pouch = 2131165355;
+			public const int npclist = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int ruby = 2131165356;
+			public const int pouch = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int splash = 2131165357;
+			public const int pouchheader = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int test_custom_background = 2131165358;
+			public const int ruby = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int test_level_drawable = 2131165359;
+			public const int splash = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int tooltip_frame_dark = 2131165360;
+			public const int test_custom_background = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int tooltip_frame_light = 2131165361;
+			public const int test_level_drawable = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int value = 2131165362;
+			public const int tooltip_frame_dark = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int valuebackground = 2131165363;
+			public const int tooltip_frame_light = 2131165363;
+			
+			// aapt resource value: 0x7F0700B4
+			public const int value = 2131165364;
+			
+			// aapt resource value: 0x7F0700B5
+			public const int valuebackground = 2131165365;
+			
+			// aapt resource value: 0x7F0700B6
+			public const int valueheader = 2131165366;
 			
 			static Drawable()
 			{

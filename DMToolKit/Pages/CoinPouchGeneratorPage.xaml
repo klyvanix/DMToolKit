@@ -6,12 +6,12 @@
              xmlns:data="clr-namespace:DMToolKit.Data"
              x:Class="DMToolKit.Pages.CoinPouchGeneratorPage">
     <Grid RowDefinitions="40,*,40,40">
-        <Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" BackgroundColor="{StaticResource Secondary}"
-                              ColumnDefinitions="*,*,*">
+        <Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" BackgroundColor="{StaticResource DarkPrimary}"
+                              ColumnDefinitions="*,*,*,*">
             <Grid Grid.Column="0" ColumnDefinitions="*,*">
-                <Image Source="value.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
+                <Image Source="valueheader.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" VerticalTextAlignment="Center"
-                                       Text="Value" TextColor="{StaticResource White}"/>
+                                       Text="Value" TextColor="{StaticResource White}" />
             </Grid>
             <Grid Grid.Column="1" ColumnDefinitions="*,*">
                 <Label Grid.Column="0" HorizontalTextAlignment="End" Padding="0,0" VerticalTextAlignment="Center"
@@ -23,18 +23,23 @@
                 <Label Grid.Column="0" HorizontalTextAlignment="End" Padding="0,0" VerticalTextAlignment="Center"
                                        Text="# of" TextColor="{StaticResource White}"/>
             </Grid>
+            <Grid Grid.Column="3" ColumnDefinitions="*,*" Padding="0,0,20,0">
+                <Image Source="pouchheader.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
+                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" VerticalTextAlignment="Center"
+                                       Text="Size" TextColor="{StaticResource White}"/>
+            </Grid>
         </Grid>
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
                         SelectionMode="Single" ItemsSource="{Binding CoinPouchList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="data:CoinPouch">
-                    <Border Padding="3" StrokeShape="RoundRectangle 5">
+                    <Border Padding="3" StrokeShape="RoundRectangle 5" BackgroundColor="{StaticResource Tertiary}">
                         <Border.GestureRecognizers>
-                            <TapGestureRecognizer CommandParameter="{Binding .}" 
+                            <TapGestureRecognizer CommandParameter="{Binding .}"
                                                   Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
                         </Border.GestureRecognizers>
                         <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3"
-                              ColumnDefinitions="*,*,*">
+                              ColumnDefinitions="*,*,*,*">
                             <Grid Grid.Column="0" ColumnDefinitions="*,*">
                                 <Image Source="value.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0"
@@ -50,6 +55,11 @@
                                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0"
                                        Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalNumberOfGems}"/>
                             </Grid>
+                            <Grid Grid.Column="3" ColumnDefinitions="*,*">
+                                <Image Source="valuebackground.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0"
+                                       Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalItems}"/>
+                            </Grid>
                         </Grid>
                     </Border>
                 </DataTemplate>
@@ -62,7 +72,7 @@
                     Command="{Binding AddCommand}" />
             <Grid ColumnDefinitions="*,*" Grid.Row="1" Grid.Column="1">
                 <Entry Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"
-                       Text="{Binding OutputTarget}" Placeholder="GP"/>
+                       Text="{Binding OutputTarget}" Placeholder="GP" TextColor="{StaticResource White}"/>
                 <Stepper Minimum="0" Maximum="1000000" Increment="1" Grid.Column="1" 
                          Value="{Binding OutputTarget}"/>
             </Grid>

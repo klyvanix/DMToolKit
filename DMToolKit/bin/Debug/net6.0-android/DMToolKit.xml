@@ -37,5 +37,32 @@
         <member name="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.GoToDetailsCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.GoToDetails(DMToolKit.Data.CoinPouch)"/>.</summary>
         </member>
+        <member name="F:DMToolKit.ViewModels.MainViewModel.goToCoinPouchGeneratorCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.MainViewModel.GoToCoinPouchGeneratorCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.MainViewModel.GoToCoinPouchGeneratorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.MainViewModel.GoToCoinPouchGenerator"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.MainViewModel.goToNPCGeneratorCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.MainViewModel.GoToNPCGeneratorCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.MainViewModel.GoToNPCGeneratorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.MainViewModel.GoToNPCGenerator"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.Character">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.character"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.generateNPCCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.GenerateNPCCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.GenerateNPCCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.GenerateNPC"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCListViewModel.goToNPCGeneratorCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCListViewModel.GoToNPCGeneratorCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCListViewModel.GoToNPCGeneratorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCListViewModel.GoToNPCGenerator"/>.</summary>
+        </member>
     </members>
 </doc>

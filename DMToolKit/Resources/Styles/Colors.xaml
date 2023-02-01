@@ -10,6 +10,9 @@
     <Color x:Key="DarkPrimary">#00163f</Color>
     <Color x:Key="DarkSecondary">#003aa5</Color>
     <Color x:Key="DarkTertiary">#121720</Color>
+    <Color x:Key="Values">#5083bd</Color>
+    <Color x:Key="PositiveAttribute">#43982e</Color>
+    <Color x:Key="NegativeAttribute">#951c1c</Color>
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
     <Color x:Key="Gray100">#E1E1E1</Color>
@@ -20,6 +23,7 @@
     <Color x:Key="Gray600">#404040</Color>
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color>
+    <Color x:Key="TextBackground">#00163f</Color>
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>

@@ -10,9 +10,15 @@
         <ShellContent Icon="appicon.png" Title="Home" ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
     </FlyoutItem>
-    <FlyoutItem Icon="pouch.png" Title="CoinPouchGenerator">
+    <FlyoutItem Icon="pouch.png" Title="Coin Pouch Generator">
         <ShellContent Icon="pouch.png" Title="CoinPouchGenerator" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
-            Route="CoinPouchGenerator" />
+            Route="CoinPouchGeneratorPage" />
+    </FlyoutItem>
+    <FlyoutItem Icon="npc.png" Title="NPC Generator">
+        <ShellContent Icon="npc.png" Title="NPC Generator" ContentTemplate="{DataTemplate local:NPCGeneratorPage}"
+                Route="NPCGeneratorPage" />
+        <ShellContent Icon="npclist.png" Title="NPC Collection" ContentTemplate="{DataTemplate local:NPCListPage}"
+                Route="NPCListPage" />
     </FlyoutItem>
 
 </Shell>

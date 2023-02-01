@@ -6,16 +6,19 @@
              x:DataType="viewmodel:CoinPouchDetailsViewModel"
              Title="CoinPouchDetailsPage">
     <Grid ColumnDefinitions="*,*,*" RowDefinitions="40,60,20,Auto,*,40">
-        <Border Grid.Row="1" StrokeShape="RoundRectangle 40 10 10 40" BackgroundColor="{StaticResource Secondary}" VerticalOptions="Fill">
+        <Border Grid.Row="1" StrokeShape="RoundRectangle 40 10 10 40" BackgroundColor="{StaticResource Secondary}" Stroke="{StaticResource Primary}"
+                VerticalOptions="Fill">
             <Grid HorizontalOptions="Center">
                 <Image Source="coinstack.png" HeightRequest="50" />
-                <Border HeightRequest="23" WidthRequest="120" HorizontalOptions="Fill" StrokeShape="RoundRectangle 40 10 10 40" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
+                <Border HeightRequest="22" WidthRequest="120" HorizontalOptions="Fill" VerticalOptions="Center"
+                        StrokeShape="RoundRectangle 10 2 2 10" BackgroundColor="{StaticResource DarkPrimary}" Stroke="Transparent">
                     <Label Text="{Binding CoinPouch.TotalNumberOfCoins, StringFormat='{0} Coins'}" TextColor="{StaticResource White}" FontSize="18" 
-                           HorizontalOptions="Center"  VerticalOptions="Center" />
+                           HorizontalOptions="Center" VerticalTextAlignment="Center" />
                 </Border>
             </Grid>
         </Border>
-        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" StrokeShape="RoundRectangle 60" BackgroundColor="{StaticResource Secondary}" VerticalOptions="Fill">
+        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" StrokeShape="RoundRectangle 60" Stroke="{StaticResource Primary}"
+                BackgroundColor="{StaticResource Secondary}" VerticalOptions="Fill">
             <Grid>
                 <Image Source="valuebackground.png" HeightRequest="100" />
                 <Label Text="Pouch GP Value" TextColor="{StaticResource White}" HorizontalOptions="Center" Padding="0,25"/>
@@ -23,10 +26,12 @@
                        TextColor="{StaticResource White}" FontSize="22"/>
             </Grid>
         </Border>
-        <Border Grid.Row="1" Grid.Column="2" StrokeShape="RoundRectangle 10 40 40 10" BackgroundColor="{StaticResource Secondary}" VerticalOptions="Fill">
+        <Border Grid.Row="1" Grid.Column="2" StrokeShape="RoundRectangle 10 40 40 10" Stroke="{StaticResource Primary}"
+                BackgroundColor="{StaticResource Secondary}" VerticalOptions="Fill">
             <Grid HorizontalOptions="Center">
                 <Image Source="gemstack.png" HeightRequest="50" />
-                <Border HeightRequest="23" WidthRequest="120" HorizontalOptions="Fill" StrokeShape="RoundRectangle 40 10 10 40" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
+                <Border HeightRequest="22" WidthRequest="120" HorizontalOptions="Fill" 
+                        StrokeShape="RoundRectangle 2 10 10 2" BackgroundColor="{StaticResource DarkPrimary}" Stroke="Transparent">
                     <Label Text="{Binding CoinPouch.TotalNumberOfGems, StringFormat='{0} Gems'}" TextColor="{StaticResource White}" FontSize="18" 
                            HorizontalOptions="Center"  VerticalOptions="Center" />
                 </Border>
@@ -71,27 +76,27 @@
             <StackLayout HorizontalOptions="Center">
                 <HorizontalStackLayout>
                     <Image Source="diamond.png" HeightRequest="30"/>
-                    <Label Text="{Binding CoinPouch.Diamonds, StringFormat='{0}PP'}" VerticalOptions="Center" FontSize="18"/>
+                    <Label Text="{Binding CoinPouch.Diamonds, StringFormat='{0}'}" VerticalOptions="Center" FontSize="18"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Image Source="ruby.png" HeightRequest="30"/>
-                    <Label Text="{Binding CoinPouch.Rubys, StringFormat='{0}GP'}" VerticalOptions="Center" FontSize="18"/>
+                    <Label Text="{Binding CoinPouch.Rubys, StringFormat='{0}'}" VerticalOptions="Center" FontSize="18"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Image Source="emerald.png" HeightRequest="30"/>
-                    <Label Text="{Binding CoinPouch.Emeralds, StringFormat='{0}EP'}" VerticalOptions="Center" FontSize="18"/>
+                    <Label Text="{Binding CoinPouch.Emeralds, StringFormat='{0}'}" VerticalOptions="Center" FontSize="18"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Image Source="gem.png" HeightRequest="30"/>
-                    <Label Text="{Binding CoinPouch.Gems, StringFormat='{0}SP'}" VerticalOptions="Center" FontSize="18"/>
+                    <Label Text="{Binding CoinPouch.Gems, StringFormat='{0}'}" VerticalOptions="Center" FontSize="18"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Image Source="jewel.png" HeightRequest="30"/>
-                    <Label Text="{Binding CoinPouch.Jewels, StringFormat='{0}CP'}" VerticalOptions="Center" FontSize="18"/>
+                    <Label Text="{Binding CoinPouch.Jewels, StringFormat='{0}'}" VerticalOptions="Center" FontSize="18"/>
                 </HorizontalStackLayout>
             </StackLayout>
         </Border>
-        <Border BackgroundColor="{StaticResource Tertiary}" Grid.Row="4" Grid.ColumnSpan="3">
+        <Border BackgroundColor="{StaticResource Tertiary}" Grid.Row="4" Grid.ColumnSpan="3" Padding="10">
             <Grid ColumnDefinitions="*,*">
                 <StackLayout Grid.Column="0">
                     <Grid ColumnDefinitions="*,*">

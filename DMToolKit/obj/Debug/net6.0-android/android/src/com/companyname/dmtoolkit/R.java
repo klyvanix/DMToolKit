@@ -11100,15 +11100,18 @@ public final class R {
     public static final int notification_tile_bg=0x7f0700a8;
     public static final int notify_panel_notification_icon_bg=0x7f0700a9;
     public static final int npc=0x7f0700aa;
-    public static final int pouch=0x7f0700ab;
-    public static final int ruby=0x7f0700ac;
-    public static final int splash=0x7f0700ad;
-    public static final int test_custom_background=0x7f0700ae;
-    public static final int test_level_drawable=0x7f0700af;
-    public static final int tooltip_frame_dark=0x7f0700b0;
-    public static final int tooltip_frame_light=0x7f0700b1;
-    public static final int value=0x7f0700b2;
-    public static final int valuebackground=0x7f0700b3;
+    public static final int npclist=0x7f0700ab;
+    public static final int pouch=0x7f0700ac;
+    public static final int pouchheader=0x7f0700ad;
+    public static final int ruby=0x7f0700ae;
+    public static final int splash=0x7f0700af;
+    public static final int test_custom_background=0x7f0700b0;
+    public static final int test_level_drawable=0x7f0700b1;
+    public static final int tooltip_frame_dark=0x7f0700b2;
+    public static final int tooltip_frame_light=0x7f0700b3;
+    public static final int value=0x7f0700b4;
+    public static final int valuebackground=0x7f0700b5;
+    public static final int valueheader=0x7f0700b6;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

@@ -118,7 +118,7 @@ namespace DMToolKit.Data
                     Emeralds += 1;
                 return;
             }
-            else if (TargetValueDifference > 2000)
+            else if (TargetValueDifference > 1500)
             {
                 if (index < 70)
                     Rubys += 1;
@@ -132,7 +132,7 @@ namespace DMToolKit.Data
             }
             else if (TargetValueDifference > 1000)
             {
-                if (index < 50)
+                if (index < 70)
                     Emeralds += 1;
                 else if (index < 98)
                     Gems += 1;
@@ -142,7 +142,7 @@ namespace DMToolKit.Data
             }
             else if (TargetValueDifference > 500)
             {
-                if (index < 50)
+                if (index < 60)
                     Gems += 1;
                 else if (index < 90)
                     Jewels += 1;
@@ -152,7 +152,7 @@ namespace DMToolKit.Data
             }
             else if (TargetValueDifference > 200)
             {
-                if (index < 50)
+                if (index < 60)
                     Gems += 1;
                 else if (index < 95)
                     Jewels += 1;
@@ -202,7 +202,7 @@ namespace DMToolKit.Data
             }
             else if (TargetValueDifference > 10)
             {
-                if (index < 10)
+                if (index < 40)
                     PPCoinCount += 1;
                 else if (index < 80)
                     GPCoinCount += 1;
