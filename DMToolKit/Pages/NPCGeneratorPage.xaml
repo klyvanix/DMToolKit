@@ -8,7 +8,7 @@
     <Grid RowDefinitions="*,40,40">
         <Grid Grid.Row="0" BackgroundColor="Transparent" ColumnDefinitions="*,*,*,*" RowDefinitions="60,30,30,40,Auto,50,50,Auto,*">
             <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 40 10 10 40" Margin="5" 
-                    BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
+                    BackgroundColor="{StaticResource Primary}" Stroke="Transparent">
                 <Grid RowDefinitions="*,2*">
                     <Label Text="First Name" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
                     <Label Text="{Binding Character.FirstName}"
@@ -16,7 +16,7 @@
                 </Grid>
             </Border>
             <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 10 40 40 10" Margin="5" 
-                    BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
+                    BackgroundColor="{StaticResource Primary}" Stroke="Transparent">
                 <Grid RowDefinitions="*,2*">
                     <Label Text="Last Name" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
                     <Label Text="{Binding Character.LastName}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="23"/>
@@ -30,7 +30,7 @@
                     BackgroundColor="{StaticResource Values}" Stroke="Transparent">
                 <Label Text="{Binding Character.ValueMinor}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18" />
             </Border>
-            <Border Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="{StaticResource Tertiary}" Margin="5">
+            <Border Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="{StaticResource TextBackground}" Margin="5">
                 <Label Text="{Binding Character.ValueDescription}" TextColor="{StaticResource Black}" Margin="3"/>
             </Border>
             <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 10" Margin="3,0,5,0" 
@@ -61,7 +61,7 @@
                     <Label Text="{Binding Character.NegativeMinor}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18" />
                 </Grid>
             </Border>
-            <Border Grid.Row="7" Grid.ColumnSpan="4" BackgroundColor="{StaticResource Tertiary}" Margin="5">
+            <Border Grid.Row="7" Grid.ColumnSpan="4" BackgroundColor="{StaticResource TextBackground}" Margin="5">
                 <Label Text="{Binding Character.AttributeDescription}" TextColor="{StaticResource Black}"  Margin="3"/>
             </Border>
         </Grid>

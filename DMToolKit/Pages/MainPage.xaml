@@ -7,7 +7,7 @@
     <StackLayout>
         <Grid RowDefinitions="40,Auto,Auto,Auto">
             <Label Text="Generators" Grid.Row="0" FontSize="23" TextColor="{StaticResource White}" HorizontalOptions="Fill" HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center" BackgroundColor="{StaticResource Secondary}"/>
+                   VerticalTextAlignment="Center" BackgroundColor="{StaticResource Dark}"/>
             <Grid Grid.Row="1" HorizontalOptions="Fill" ColumnDefinitions="*,*,*,*" RowDefinitions="Auto,Auto,Auto" Margin="5">
                 <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="0" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="pouch.png" Command="{Binding GoToCoinPouchGeneratorCommand}"/>
                 <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="1" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="npc.png" Command="{Binding GoToNPCGeneratorCommand}"/>

@@ -6,7 +6,7 @@
              xmlns:data="clr-namespace:DMToolKit.Data"
              x:Class="DMToolKit.Pages.CoinPouchGeneratorPage">
     <Grid RowDefinitions="40,*,40,40">
-        <Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" BackgroundColor="{StaticResource DarkPrimary}"
+        <Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" BackgroundColor="{StaticResource Dark}"
                               ColumnDefinitions="*,*,*,*">
             <Grid Grid.Column="0" ColumnDefinitions="*,*">
                 <Image Source="valueheader.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
@@ -25,7 +25,7 @@
             </Grid>
             <Grid Grid.Column="3" ColumnDefinitions="*,*" Padding="0,0,20,0">
                 <Image Source="pouchheader.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" VerticalTextAlignment="Center"
+                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" VerticalTextAlignment="Center" 
                                        Text="Size" TextColor="{StaticResource White}"/>
             </Grid>
         </Grid>
@@ -42,22 +42,22 @@
                               ColumnDefinitions="*,*,*,*">
                             <Grid Grid.Column="0" ColumnDefinitions="*,*">
                                 <Image Source="value.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0"
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
                                        Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=Value}"/>
                             </Grid>
                             <Grid Grid.Column="1" ColumnDefinitions="*,*">
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0"
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
                                        Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalNumberOfCoins}"/>
                                 <Image Source="coinstack.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                             </Grid>
                             <Grid Grid.Column="2" ColumnDefinitions="*,*">
                                 <Image Source="gemstack.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0"
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
                                        Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalNumberOfGems}"/>
                             </Grid>
                             <Grid Grid.Column="3" ColumnDefinitions="*,*">
                                 <Image Source="valuebackground.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0"
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
                                        Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalItems}"/>
                             </Grid>
                         </Grid>
