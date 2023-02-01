@@ -8,6 +8,6 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-		//Routing.RegisterRoute(nameof(CoinPouchGeneratorPage), typeof(CoinPouchGeneratorPage));
-	}
+        Routing.RegisterRoute(nameof(CoinPouchDetailsPage), typeof(CoinPouchDetailsPage));
+    }
 }

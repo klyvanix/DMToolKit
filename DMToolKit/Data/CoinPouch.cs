@@ -110,24 +110,24 @@ namespace DMToolKit.Data
             var index = random.Next(0, 100);
             if (TargetValueDifference > 5000)
             {
-                if (index < 60)
+                if (index < 70)
                     Diamonds += 1;
                 else if (index < 95)
                     Rubys += 1;
                 else
-                    Emeralds += 2;
+                    Emeralds += 1;
                 return;
             }
-            if (TargetValueDifference > 2000)
+            else if (TargetValueDifference > 2000)
             {
                 if (index < 70)
                     Rubys += 1;
                 else if (index < 90)
                     Emeralds += 1;
                 else if (index < 98)
-                    Gems += 3;
+                    Gems += 1;
                 else
-                    Jewels += 5;
+                    Jewels += 1;
                 return;
             }
             else if (TargetValueDifference > 1000)
@@ -135,9 +135,9 @@ namespace DMToolKit.Data
                 if (index < 50)
                     Emeralds += 1;
                 else if (index < 98)
-                    Gems += 2;
+                    Gems += 1;
                 else
-                    Jewels += 3;
+                    Jewels += 1;
                 return;
             }
             else if (TargetValueDifference > 500)
@@ -150,45 +150,71 @@ namespace DMToolKit.Data
                     PPCoinCount += 1;
                 return;
             }
+            else if (TargetValueDifference > 200)
+            {
+                if (index < 50)
+                    Gems += 1;
+                else if (index < 95)
+                    Jewels += 1;
+                else
+                    PPCoinCount += 1;
+                return;
+            }
             else if (TargetValueDifference > 100)
             {
-                if (index < 30)
+                if (index < 60)
                     Jewels += 1;
-                else if (index < 70)
+                else if (index < 80)
                     PPCoinCount += 1;
-                else if (index < 95)
-                    GPCoinCount += 1;
                 else
-                    EPCoinCount += 1;
+                    GPCoinCount += 1;
+                return;
+            }
+            else if (TargetValueDifference > 65)
+            {
+                if (index < 10)
+                    Jewels += 1;
+                else if (index < 90)
+                    PPCoinCount += 1;
+                else
+                    GPCoinCount += 1;
                 return;
             }
             else if (TargetValueDifference > 50)
             {
-                if (index < 30)
+                if (index < 85)
                     PPCoinCount += 1;
-                else if (index < 70)
-                    GPCoinCount += 1;
                 else if (index < 95)
-                    EPCoinCount += 1;
+                    GPCoinCount += 1;
                 else
-                    SPCoinCount += 1;
+                    EPCoinCount += 1;
+                return;
+            }
+            else if( TargetValueDifference > 20)
+            {
+                if (index < 80)
+                    PPCoinCount += 1;
+                else if (index < 97)
+                    GPCoinCount += 1;
+                else
+                    EPCoinCount += 1;
                 return;
             }
             else if (TargetValueDifference > 10)
             {
-                if (index < 50)
+                if (index < 10)
+                    PPCoinCount += 1;
+                else if (index < 80)
                     GPCoinCount += 1;
-                else if (index < 85)
-                    EPCoinCount += 1;
                 else if (index < 95)
-                    SPCoinCount += 1;
+                    EPCoinCount += 1;
                 else
-                    CPCoinCount += 1;
+                    SPCoinCount += 1;
                 return;
             }
             else if (TargetValueDifference > 5)
             {
-                if (index < 20)
+                if (index < 70)
                     GPCoinCount += 1;
                 else if (index < 80)
                     EPCoinCount += 1;

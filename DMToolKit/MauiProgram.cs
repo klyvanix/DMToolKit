@@ -22,6 +22,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<CoinPouchGeneratorPage>();
         builder.Services.AddSingleton<CoinPouchGeneratorViewModel>();
 
+        builder.Services.AddTransient<CoinPouchDetailsPage>();
+        builder.Services.AddTransient<CoinPouchDetailsViewModel>();
+
         return builder.Build();
 	}
 }

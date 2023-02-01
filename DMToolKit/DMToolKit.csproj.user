@@ -8,6 +8,9 @@
     <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="Pages\CoinPouchDetailsPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\CoinPouchGeneratorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

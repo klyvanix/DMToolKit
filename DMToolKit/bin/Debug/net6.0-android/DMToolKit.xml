@@ -4,5 +4,38 @@
         <name>DMToolKit</name>
     </assembly>
     <members>
+        <member name="P:DMToolKit.ViewModels.CoinPouchDetailsViewModel.CoinPouch">
+            <inheritdoc cref="F:DMToolKit.ViewModels.CoinPouchDetailsViewModel.coinPouch"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.CoinPouchDetailsViewModel.goBackCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.CoinPouchDetailsViewModel.GoBackCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.CoinPouchDetailsViewModel.GoBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.CoinPouchDetailsViewModel.GoBack"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.CoinPouchList">
+            <inheritdoc cref="F:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.coinPouchList"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.OutputTarget">
+            <inheritdoc cref="F:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.outputTarget"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.addCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.AddCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.AddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.Add"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.clearCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.ClearCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.ClearCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.Clear"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.goToDetailsCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.GoToDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.GoToDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.GoToDetails(DMToolKit.Data.CoinPouch)"/>.</summary>
+        </member>
     </members>
 </doc>
