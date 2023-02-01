@@ -52,11 +52,113 @@
         <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.Character">
             <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.character"/>
         </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.FirstNameLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.firstNameLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LastNameLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lastNameLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.ValuePrimeLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.valuePrimeLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.ValueMinorLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.valueMinorLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.PositivePrimeLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.positivePrimeLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.PositiveMinorLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.positiveMinorLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.NegativePrimeLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.negativePrimeLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.NegativeMinorLockImage">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.negativeMinorLockImage"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.FirstNameColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.firstNameColor"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LastNameColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lastNameColor"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.ValuePrimeColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.valuePrimeColor"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.ValueMinorColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.valueMinorColor"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.PositivePrimeColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.positivePrimeColor"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.PositiveMinorColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.positiveMinorColor"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.NegativePrimeColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.negativePrimeColor"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.NegativeMinorColor">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.negativeMinorColor"/>
+        </member>
         <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.generateNPCCommand">
             <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.GenerateNPCCommand"/>.</summary>
         </member>
         <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.GenerateNPCCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.GenerateNPC"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.unlockAllCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.UnlockAllCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.UnlockAllCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.UnlockAll"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockFirstNameCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockFirstNameCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockFirstNameCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockFirstName"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockLastNameCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockLastNameCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockLastNameCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockLastName"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockPrimeValueCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPrimeValueCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPrimeValueCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPrimeValue"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockMinorValueCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockMinorValueCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockMinorValueCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockMinorValue"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockPositivePrimeCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPositivePrimeCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPositivePrimeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPositivePrime"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockPositiveMinorCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPositiveMinorCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPositiveMinorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockPositiveMinor"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockNegativePrimeCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockNegativePrimeCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockNegativePrimeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockNegativePrime"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NPCGeneratorViewModel.lockNegativeMinorCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockNegativeMinorCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.LockNegativeMinorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NPCGeneratorViewModel.LockNegativeMinor"/>.</summary>
         </member>
         <member name="F:DMToolKit.ViewModels.NPCListViewModel.goToNPCGeneratorCommand">
             <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NPCListViewModel.GoToNPCGeneratorCommand"/>.</summary>

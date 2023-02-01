@@ -15,12 +15,14 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\generators.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\home.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\jewel.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\lasticon.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\locked.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\namegenerator.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npc.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npclist.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\pouch.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\pouchheader.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\ruby.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\unlocked.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\value.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\valuebackground.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\valueheader.png

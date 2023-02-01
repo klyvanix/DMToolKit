@@ -968,6 +968,7 @@ D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\stamp\_GeneratePacka
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\stamp\_ResolveLibraryProjectImports.stamp
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\pouchheader.png
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\valueheader.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\npclist.png
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\mscorlib.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Collections.Concurrent.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Data.dll
@@ -976,4 +977,5 @@ D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\Syste
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Private.CoreLib.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Private.Uri.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Xml.dll
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\npclist.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\locked.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\unlocked.png
