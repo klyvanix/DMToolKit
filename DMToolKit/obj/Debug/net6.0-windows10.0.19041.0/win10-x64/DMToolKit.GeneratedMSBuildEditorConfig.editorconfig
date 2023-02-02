@@ -40,6 +40,24 @@ build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MainPage.x
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
 
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameGeneratorPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NameGeneratorPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NameGeneratorPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NameGeneratorPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NamePrefixManagerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NamePrefixManagerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NamePrefixManagerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NamePrefixManagerPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameSuffixManagerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NameSuffixManagerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NameSuffixManagerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NameSuffixManagerPage.xaml
+
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/NPCGeneratorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NPCGeneratorPage.xaml

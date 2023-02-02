@@ -4,7 +4,8 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:CoinPouchGeneratorViewModel"
              xmlns:data="clr-namespace:DMToolKit.Data"
-             x:Class="DMToolKit.Pages.CoinPouchGeneratorPage">
+             x:Class="DMToolKit.Pages.CoinPouchGeneratorPage"
+             Title="Coin Pouch Generator">
     <Grid RowDefinitions="40,*,40,40">
         <Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" BackgroundColor="{StaticResource Dark}"
                               ColumnDefinitions="*,*,*,*">

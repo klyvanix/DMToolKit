@@ -31,6 +31,15 @@ public static class MauiProgram
         builder.Services.AddSingleton<NPCGeneratorPage>();
         builder.Services.AddSingleton<NPCGeneratorViewModel>();
 
+        builder.Services.AddSingleton<NameGeneratorPage>();
+        builder.Services.AddSingleton<NameGeneratorViewModel>();
+
+        builder.Services.AddSingleton<NamePrefixManagerPage>();
+        builder.Services.AddSingleton<NamePrefixManagerViewModel>();
+
+        builder.Services.AddSingleton<NameSuffixManagerPage>();
+        builder.Services.AddSingleton<NameSuffixManagerViewModel>();
+
         return builder.Build();
 	}
 }

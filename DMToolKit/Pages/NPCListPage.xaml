@@ -4,10 +4,10 @@
              x:Class="DMToolKit.Pages.NPCListPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCListViewModel"
-             Title="NPCListPage">
+             Title="NPC Collection">
     <VerticalStackLayout>
         <Label 
-            Text="NPC LIST!"
+            Text="NPC Collection!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>

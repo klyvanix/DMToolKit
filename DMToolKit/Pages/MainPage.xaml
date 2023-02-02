@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:MainViewModel"
-             x:Class="DMToolKit.Pages.MainPage">
+             x:Class="DMToolKit.Pages.MainPage"
+             Title="Home Page">
     <StackLayout>
         <Grid RowDefinitions="40,Auto,Auto,Auto">
             <Label Text="Generators" Grid.Row="0" FontSize="23" TextColor="{StaticResource White}" HorizontalOptions="Fill" HorizontalTextAlignment="Center"

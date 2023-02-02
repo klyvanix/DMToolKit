@@ -4,7 +4,7 @@
              x:Class="DMToolKit.Pages.CoinPouchDetailsPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:CoinPouchDetailsViewModel"
-             Title="CoinPouchDetailsPage">
+             Title="Coin Pouch Details">
     <Grid ColumnDefinitions="*,*,*" RowDefinitions="40,60,20,Auto,*,40">
         <Border Grid.Row="1" StrokeShape="RoundRectangle 40 10 10 40" BackgroundColor="{StaticResource Secondary}" Stroke="{StaticResource Primary}"
                 VerticalOptions="Fill">

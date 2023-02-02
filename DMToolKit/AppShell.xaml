@@ -20,5 +20,12 @@
         <ShellContent Icon="npclist.png" Title="NPC Collection" ContentTemplate="{DataTemplate local:NPCListPage}"
                 Route="NPCListPage" />
     </FlyoutItem>
-
+    <FlyoutItem Icon="namegenerator.png" Title="Name Generator">
+        <ShellContent Icon="namegenerator.png" Title="Name Generator" ContentTemplate="{DataTemplate local:NameGeneratorPage}"
+                Route="NameGeneratorPage" />
+        <ShellContent Icon="prefix.png" Title="Prefix Manager" ContentTemplate="{DataTemplate local:NamePrefixManagerPage}"
+                Route="NamePrefixManagerPage" />
+        <ShellContent Icon="suffix.png" Title="Suffix Manager" ContentTemplate="{DataTemplate local:NameSuffixManagerPage}"
+                Route="NameSuffixManagerPage" />
+    </FlyoutItem>
 </Shell>

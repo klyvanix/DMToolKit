@@ -4,7 +4,7 @@
              x:Class="DMToolKit.Pages.NPCGeneratorPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCGeneratorViewModel"
-             Title="NPCGeneratorPage">
+             Title="NPC Generator">
     <Grid RowDefinitions="40,*,40">
         <Button Grid.Row="0" Text="Save NPC" Padding="2"/>
         <Grid Grid.Row="1" BackgroundColor="Transparent" ColumnDefinitions="*,*,*,*" RowDefinitions="60,30,30,40,Auto,50,50,Auto,*">
