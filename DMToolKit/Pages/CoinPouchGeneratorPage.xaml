@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:CoinPouchGeneratorViewModel"
-             xmlns:data="clr-namespace:DMToolKit.Data"
+             xmlns:Data="clr-namespace:DMToolKit.Data"
              x:Class="DMToolKit.Pages.CoinPouchGeneratorPage"
              Title="Coin Pouch Generator">
     <Grid RowDefinitions="40,*,40,40">
@@ -33,7 +33,7 @@
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
                         SelectionMode="Single" ItemsSource="{Binding CoinPouchList}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="data:CoinPouch">
+                <DataTemplate x:DataType="Data:CoinPouch">
                     <Border Padding="3" StrokeShape="RoundRectangle 5" BackgroundColor="{StaticResource Tertiary}">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer CommandParameter="{Binding .}"
@@ -44,22 +44,22 @@
                             <Grid Grid.Column="0" ColumnDefinitions="*,*">
                                 <Image Source="value.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
-                                       Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=Value}"/>
+                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=Value}"/>
                             </Grid>
                             <Grid Grid.Column="1" ColumnDefinitions="*,*">
                                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
-                                       Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalNumberOfCoins}"/>
+                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalNumberOfCoins}"/>
                                 <Image Source="coinstack.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                             </Grid>
                             <Grid Grid.Column="2" ColumnDefinitions="*,*">
                                 <Image Source="gemstack.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
-                                       Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalNumberOfGems}"/>
+                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalNumberOfGems}"/>
                             </Grid>
                             <Grid Grid.Column="3" ColumnDefinitions="*,*">
                                 <Image Source="valuebackground.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
-                                       Text="{Binding Source={RelativeSource AncestorType={x:Type data:CoinPouch}}, Path=TotalItems}"/>
+                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalItems}"/>
                             </Grid>
                         </Grid>
                     </Border>

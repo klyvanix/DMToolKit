@@ -4,11 +4,39 @@
              x:Class="DMToolKit.Pages.NamePrefixManagerPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NamePrefixManagerViewModel"
+             xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Prefix Manager">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Prefix Manager!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="*,40">
+        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" 
+                        SelectionMode="Single" ItemsSource="{Binding PrefixList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
+                                           IconImageSource="delete.png"
+                                           BackgroundColor="{StaticResource Delete}"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NamePrefixManagerViewModel}}, Path=DeleteCommand}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Border Padding="3" BackgroundColor="{StaticResource Tertiary}">
+                            <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3"
+                                  ColumnDefinitions="*">
+                                <HorizontalStackLayout HorizontalOptions="Center">
+                                    <Label TextColor="{StaticResource Black}" Padding="5,0"
+                                       Text="{Binding .}"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Border>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid Grid.Row="1" ColumnDefinitions="*,*">
+            <Button Text="Add" Margin="0,1,0,0" Command="{Binding AddCommand}"/>
+            <Entry Placeholder="Prefix To Add" Grid.Column="1" HorizontalOptions="Fill" Text="{Binding InputField}"
+                   HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
+        </Grid>
+    </Grid>
 </ContentPage>

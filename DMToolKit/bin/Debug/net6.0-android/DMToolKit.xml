@@ -49,6 +49,66 @@
         <member name="P:DMToolKit.ViewModels.MainViewModel.GoToNPCGeneratorCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.MainViewModel.GoToNPCGenerator"/>.</summary>
         </member>
+        <member name="F:DMToolKit.ViewModels.MainViewModel.goToNameGeneratorCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.MainViewModel.GoToNameGeneratorCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.MainViewModel.GoToNameGeneratorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.MainViewModel.GoToNameGenerator"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameGeneratorViewModel.NameList">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NameGeneratorViewModel.nameList"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameGeneratorViewModel.GenerationNumber">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NameGeneratorViewModel.generationNumber"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NameGeneratorViewModel.generateNameCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NameGeneratorViewModel.GenerateNameCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameGeneratorViewModel.GenerateNameCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NameGeneratorViewModel.GenerateName"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NameGeneratorViewModel.clearCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NameGeneratorViewModel.ClearCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameGeneratorViewModel.ClearCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NameGeneratorViewModel.Clear"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NamePrefixManagerViewModel.PrefixList">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NamePrefixManagerViewModel.prefixList"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NamePrefixManagerViewModel.InputField">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NamePrefixManagerViewModel.inputField"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NamePrefixManagerViewModel.addCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NamePrefixManagerViewModel.AddCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NamePrefixManagerViewModel.AddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NamePrefixManagerViewModel.Add"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NamePrefixManagerViewModel.deleteCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NamePrefixManagerViewModel.DeleteCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NamePrefixManagerViewModel.DeleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NamePrefixManagerViewModel.Delete(System.String)"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameSuffixManagerViewModel.SuffixList">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NameSuffixManagerViewModel.suffixList"/>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameSuffixManagerViewModel.InputField">
+            <inheritdoc cref="F:DMToolKit.ViewModels.NameSuffixManagerViewModel.inputField"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NameSuffixManagerViewModel.addCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NameSuffixManagerViewModel.AddCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameSuffixManagerViewModel.AddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NameSuffixManagerViewModel.Add"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NameSuffixManagerViewModel.deleteCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NameSuffixManagerViewModel.DeleteCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameSuffixManagerViewModel.DeleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NameSuffixManagerViewModel.Delete(System.String)"/>.</summary>
+        </member>
         <member name="P:DMToolKit.ViewModels.NPCGeneratorViewModel.Character">
             <inheritdoc cref="F:DMToolKit.ViewModels.NPCGeneratorViewModel.character"/>
         </member>

@@ -22,5 +22,11 @@ namespace DMToolKit.ViewModels
         {
             await Shell.Current.GoToAsync($"//{nameof(NPCGeneratorPage)}");
         }
+
+        [RelayCommand]
+        async Task GoToNameGenerator()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(NameGeneratorPage)}");
+        }
     }
 }

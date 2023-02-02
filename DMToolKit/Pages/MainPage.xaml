@@ -12,7 +12,7 @@
             <Grid Grid.Row="1" HorizontalOptions="Fill" ColumnDefinitions="*,*,*,*" RowDefinitions="Auto,Auto,Auto" Margin="5">
                 <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="0" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="pouch.png" Command="{Binding GoToCoinPouchGeneratorCommand}"/>
                 <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="1" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="npc.png" Command="{Binding GoToNPCGeneratorCommand}"/>
-                <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="2" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="namegenerator.png"/>
+                <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="2" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="namegenerator.png" Command="{Binding GoToNameGeneratorCommand}"/>
             </Grid>
         </Grid>
     </StackLayout>
