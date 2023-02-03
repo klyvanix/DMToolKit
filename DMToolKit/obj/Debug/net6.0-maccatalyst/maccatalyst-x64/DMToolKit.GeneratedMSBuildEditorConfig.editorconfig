@@ -34,11 +34,29 @@ build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.CoinPouchG
 build_metadata.AdditionalFiles.TargetPath = Pages\CoinPouchGeneratorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\CoinPouchGeneratorPage.xaml
 
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/FeminineNamePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.FeminineNamePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FeminineNamePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FeminineNamePage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/LastNamePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.LastNamePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\LastNamePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\LastNamePage.xaml
+
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/MasculineNamePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MasculineNamePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MasculineNamePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MasculineNamePage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameGeneratorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

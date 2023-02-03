@@ -14,6 +14,15 @@
     <MauiXaml Update="Pages\CoinPouchGeneratorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\FeminineNamePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\LastNamePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\MasculineNamePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\NameGeneratorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

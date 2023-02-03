@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,25 @@ namespace DMToolKit.Data
         public static float epValue = 1f / 2f;
         public static float spValue = 1f / 10f;
         public static float cpValue = 1f / 100f;
+    }
+
+    //Extension class for additional functionalities.
+    static class Extensions
+    {
+        //Sorting function for the ObservableCollection to sort based on criteria of IComparable.
+        public static void Sort<T>(this ObservableCollection<T> collection) where T : IComparable
+        {
+            List<T> sorted = collection.OrderBy(x => x).ToList();
+            for (int i = 0; i < sorted.Count(); i++)
+                collection.Move(collection.IndexOf(sorted[i]), i);
+        }
+    }
+
+    public enum Gender
+    {
+        Male,
+        Female,
+        Default
     }
 
     public enum NPCValues

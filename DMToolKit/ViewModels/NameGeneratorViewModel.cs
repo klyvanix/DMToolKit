@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Data;
+using DMToolKit.Services;
 using System.Collections.ObjectModel;
 
 namespace DMToolKit.ViewModels
@@ -13,6 +14,8 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         int generationNumber;
 
+        Random random = new Random();
+
         public NameGeneratorViewModel() 
         {
             NameList = new ObservableCollection<Name>();
@@ -22,18 +25,29 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void GenerateName()
         {
-            if (GenerationNumber == 0)
+            if (DataController.NameConstructionData.PrefixList.Count == 0 || DataController.NameConstructionData.SuffixList.Count == 0)
                 return;
             if(GenerationNumber == 1)
-                NameList.Add(new Name("Te", "st"));
+                NameList.Add(new Name(GetPrefix(), GetSuffix()));
             else
             {
                 NameList.Clear();
                 for (int i = 0; i < GenerationNumber; i++)
                 {
-                    NameList.Add(new Name("Te", "st"));
+                    NameList.Add(new Name(GetPrefix(), GetSuffix()));
                 }
             }
+        }
+
+        private string GetPrefix()
+        {
+            var index = random.Next(0, DataController.NameConstructionData.PrefixList.Count);
+            return DataController.NameConstructionData.PrefixList[index];
+        }
+        private string GetSuffix()
+        {
+            var index = random.Next(0, DataController.NameConstructionData.SuffixList.Count);
+            return DataController.NameConstructionData.SuffixList[index];
         }
 
         [RelayCommand]

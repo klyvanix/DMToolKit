@@ -14,6 +14,11 @@ namespace DMToolKit.Data
         public string Output => $"{Prefix}{Suffix}";
         public string Breakdown => $"{Prefix} + {Suffix}";
 
+        public Name()
+        {
+            Prefix = string.Empty;
+            Suffix = string.Empty;
+        }
         public Name(string prefix, string suffix)
         {
             Prefix = prefix;

@@ -40,6 +40,15 @@ public static class MauiProgram
         builder.Services.AddSingleton<NameSuffixManagerPage>();
         builder.Services.AddSingleton<NameSuffixManagerViewModel>();
 
+        builder.Services.AddSingleton<MasculineNamePage>();
+        builder.Services.AddSingleton<MasculineNameViewModel>();
+
+        builder.Services.AddSingleton<FeminineNamePage>();
+        builder.Services.AddSingleton<FeminineNameViewModel>();
+
+        builder.Services.AddSingleton<LastNamePage>();
+        builder.Services.AddSingleton<LastNameViewModel>();
+
         return builder.Build();
 	}
 }

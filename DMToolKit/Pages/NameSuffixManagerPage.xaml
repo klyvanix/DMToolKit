@@ -16,7 +16,8 @@
                                 <SwipeItem Text="Delete"
                                            IconImageSource="delete.png"
                                            BackgroundColor="{StaticResource Delete}"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NamePrefixManagerViewModel}}, Path=DeleteCommand}"/>
+                                           CommandParameter="{Binding .}"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameSuffixManagerViewModel}}, Path=DeleteCommand}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
                         <Border Padding="3" BackgroundColor="{StaticResource Tertiary}">

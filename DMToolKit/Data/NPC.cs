@@ -5,6 +5,8 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        public Gender Gender { get; set; }
+
         public string ValuePrime { get; set; } 
         public string ValueMinor { get; set; }
         public string ValueDescription { get; set; }
@@ -31,16 +33,17 @@
 
         public NPC()
         {
-            FirstName = "First";
-            LastName = "Last";
-            ValuePrime = "Primary";
-            ValueMinor = "Minor";
-            ValueDescription = "Description";
-            PositivePrime = "Positive";
-            PositiveMinor = "Positive";
-            NegativePrime = "Negative";
-            NegativeMinor = "Negative";
-            AttributeDescription = "Attributes";
+            FirstName = string.Empty;
+            LastName = string.Empty;
+            ValuePrime = string.Empty;
+            ValueMinor = string.Empty;
+            ValueDescription = string.Empty;
+            PositivePrime = string.Empty;
+            PositiveMinor = string.Empty;
+            NegativePrime = string.Empty;
+            NegativeMinor = string.Empty;
+            AttributeDescription = string.Empty;
+            Gender = Gender.Default;
         }
     }
 }

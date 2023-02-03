@@ -71,6 +71,9 @@ namespace DMToolKit.ViewModels
         public NPCGeneratorViewModel() 
         {
             Character = new NPC();
+            Character.ValueDescription = "Click the generate button to generate an NPC based on random criteria.";
+            Character.AttributeDescription = "The Generator will Generate Values and specific character traits that can help inform who the characters are. " +
+                "Double tap the name fields, value field, and attribute field to lock the generated trait. Locked Items will have black text.";
             firstNameLock = false;
             lastNameLock = false;
             valuePrimeLock = false;
@@ -128,6 +131,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockFirstName()
         {
+            if (string.IsNullOrEmpty(Character.FirstName))
+                return;
             firstNameLock = !firstNameLock;
             if (firstNameLock)
                 FirstNameColor = locked;
@@ -137,6 +142,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockLastName()
         {
+            if (string.IsNullOrEmpty(Character.LastName))
+                return;
             lastNameLock = !lastNameLock;
             if (lastNameLock)
                 LastNameColor = locked;
@@ -146,6 +153,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockPrimeValue()
         {
+            if(string.IsNullOrEmpty(Character.ValuePrime)) 
+                return;
             valuePrimeLock = !valuePrimeLock;
             if (valuePrimeLock)
                 ValuePrimeColor = locked;
@@ -155,6 +164,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockMinorValue()
         {
+            if (string.IsNullOrEmpty(Character.ValueMinor))
+                return;
             valueMinorLock = !valueMinorLock;
             if (valueMinorLock)
                 ValueMinorColor = locked;
@@ -164,6 +175,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockPositivePrime()
         {
+            if (string.IsNullOrEmpty(Character.PositivePrime))
+                return;
             positivePrimeLock = !positivePrimeLock;
             if (positivePrimeLock)
                 PositivePrimeColor = locked;
@@ -173,6 +186,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockPositiveMinor()
         {
+            if (string.IsNullOrEmpty(Character.PositiveMinor))
+                return;
             positiveMinorLock = !positiveMinorLock;
             if (positiveMinorLock)
                 PositiveMinorColor = locked;
@@ -182,6 +197,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockNegativePrime()
         {
+            if (string.IsNullOrEmpty(Character.NegativePrime))
+                return;
             negativePrimeLock = !negativePrimeLock;
             if (negativePrimeLock)
                 NegativePrimeColor = locked;
@@ -191,6 +208,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void LockNegativeMinor()
         {
+            if (string.IsNullOrEmpty(Character.NegativeMinor))
+                return;
             negativeMinorLock = !negativeMinorLock;
             if (negativeMinorLock)
                 NegativeMinorColor = locked;

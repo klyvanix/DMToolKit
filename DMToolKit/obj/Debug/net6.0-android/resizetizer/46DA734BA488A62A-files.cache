@@ -8,6 +8,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\coinstack.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\delete.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\diamond.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\emerald.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\feminine.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\firsticon.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\gem.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\gemstack.png
@@ -16,8 +17,11 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\generators.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\home.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\jewel.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\lasticon.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\lastname.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\locked.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\masculine.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\namegenerator.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\namelist.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npc.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npclist.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\pouch.png
