@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DMToolKit.Data
 {
-    public class Name
+    [Serializable]
+    public class Name : IComparable<Name>
     {
-        string Prefix { get; set; }
-        string Suffix { get; set; }
+        public string Prefix { get; set; }
+        public string Suffix { get; set; }
 
         public string Output => $"{Prefix}{Suffix}";
         public string Breakdown => $"{Prefix} + {Suffix}";
@@ -23,6 +24,11 @@ namespace DMToolKit.Data
         {
             Prefix = prefix;
             Suffix = suffix;
+        }
+
+        public int CompareTo(Name other)
+        {
+            return Prefix.CompareTo(other.Prefix);
         }
     }
 }

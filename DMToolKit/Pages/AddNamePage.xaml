@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.AddNamePage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:AddNameViewModel"
+             Title="Add To List">
+    <Grid RowDefinitions="*,40">
+        <VerticalStackLayout Grid.Row="0">
+            <Border WidthRequest="200" HeightRequest="100" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent" StrokeShape="RoundRectangle 10 10 50 50">
+                <Label Text="{Binding InputName.Output}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
+            </Border>
+            <Label Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
+            <Button Text="Masculine Name" Margin="5" Command="{Binding AddMasculineCommand}"/>
+            <Button Text="Feminine Name" Margin="5" Command="{Binding AddFeminineCommand}"/>
+            <Button Text="Last Name" Margin="5" Command="{Binding AddLastCommand}"/>
+        </VerticalStackLayout>
+        <Button Text="Back" Grid.Row="1" Margin="5,0,5,0" Command="{Binding GoBackCommand}"/>
+    </Grid>
+</ContentPage>

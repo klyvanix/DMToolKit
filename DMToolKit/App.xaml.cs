@@ -1,4 +1,5 @@
 ﻿using DMToolKit.Services;
+using DMToolKit.Data;
 
 namespace DMToolKit;
 
@@ -9,6 +10,8 @@ public partial class App : Application
 		InitializeComponent();
 
 		MainPage = new AppShell();
+
+		DataController DataController = DataController.Instance;
 
         if (DataController.NameData is null)
             DataController.NameData = new NameData();

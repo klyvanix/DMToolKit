@@ -4,6 +4,33 @@
         <name>DMToolKit</name>
     </assembly>
     <members>
+        <member name="P:DMToolKit.ViewModels.AddNameViewModel.InputName">
+            <inheritdoc cref="F:DMToolKit.ViewModels.AddNameViewModel.inputName"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.AddNameViewModel.addMasculineCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.AddNameViewModel.AddMasculineCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.AddNameViewModel.AddMasculineCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.AddNameViewModel.AddMasculine"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.AddNameViewModel.addFeminineCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.AddNameViewModel.AddFeminineCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.AddNameViewModel.AddFeminineCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.AddNameViewModel.AddFeminine"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.AddNameViewModel.addLastCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.AddNameViewModel.AddLastCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.AddNameViewModel.AddLastCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.AddNameViewModel.AddLast"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.AddNameViewModel.goBackCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.AddNameViewModel.GoBackCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.AddNameViewModel.GoBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.AddNameViewModel.GoBack"/>.</summary>
+        </member>
         <member name="P:DMToolKit.ViewModels.CoinPouchDetailsViewModel.CoinPouch">
             <inheritdoc cref="F:DMToolKit.ViewModels.CoinPouchDetailsViewModel.coinPouch"/>
         </member>
@@ -37,6 +64,36 @@
         <member name="P:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.GoToDetailsCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.CoinPouchGeneratorViewModel.GoToDetails(DMToolKit.Data.CoinPouch)"/>.</summary>
         </member>
+        <member name="P:DMToolKit.ViewModels.FeminineNameViewModel.FeminineNames">
+            <inheritdoc cref="F:DMToolKit.ViewModels.FeminineNameViewModel.feminineNames"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.FeminineNameViewModel.updateDataCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.FeminineNameViewModel.UpdateDataCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.FeminineNameViewModel.UpdateDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.FeminineNameViewModel.UpdateData"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.FeminineNameViewModel.deleteCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.FeminineNameViewModel.DeleteCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.FeminineNameViewModel.DeleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.FeminineNameViewModel.Delete(DMToolKit.Data.Name)"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.LastNameViewModel.LastNames">
+            <inheritdoc cref="F:DMToolKit.ViewModels.LastNameViewModel.lastNames"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.LastNameViewModel.updateDataCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.LastNameViewModel.UpdateDataCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.LastNameViewModel.UpdateDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.LastNameViewModel.UpdateData"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.LastNameViewModel.deleteCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.LastNameViewModel.DeleteCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.LastNameViewModel.DeleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.LastNameViewModel.Delete(DMToolKit.Data.Name)"/>.</summary>
+        </member>
         <member name="F:DMToolKit.ViewModels.MainViewModel.goToCoinPouchGeneratorCommand">
             <summary>The backing field for <see cref="P:DMToolKit.ViewModels.MainViewModel.GoToCoinPouchGeneratorCommand"/>.</summary>
         </member>
@@ -55,6 +112,21 @@
         <member name="P:DMToolKit.ViewModels.MainViewModel.GoToNameGeneratorCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.MainViewModel.GoToNameGenerator"/>.</summary>
         </member>
+        <member name="P:DMToolKit.ViewModels.MasculineNameViewModel.MasculineNames">
+            <inheritdoc cref="F:DMToolKit.ViewModels.MasculineNameViewModel.masculineNames"/>
+        </member>
+        <member name="F:DMToolKit.ViewModels.MasculineNameViewModel.updateDataCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.MasculineNameViewModel.UpdateDataCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.MasculineNameViewModel.UpdateDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.MasculineNameViewModel.UpdateData"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.MasculineNameViewModel.deleteCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.MasculineNameViewModel.DeleteCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.MasculineNameViewModel.DeleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.MasculineNameViewModel.Delete(DMToolKit.Data.Name)"/>.</summary>
+        </member>
         <member name="P:DMToolKit.ViewModels.NameGeneratorViewModel.NameList">
             <inheritdoc cref="F:DMToolKit.ViewModels.NameGeneratorViewModel.nameList"/>
         </member>
@@ -72,6 +144,12 @@
         </member>
         <member name="P:DMToolKit.ViewModels.NameGeneratorViewModel.ClearCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NameGeneratorViewModel.Clear"/>.</summary>
+        </member>
+        <member name="F:DMToolKit.ViewModels.NameGeneratorViewModel.goToAddPageCommand">
+            <summary>The backing field for <see cref="P:DMToolKit.ViewModels.NameGeneratorViewModel.GoToAddPageCommand"/>.</summary>
+        </member>
+        <member name="P:DMToolKit.ViewModels.NameGeneratorViewModel.GoToAddPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DMToolKit.ViewModels.NameGeneratorViewModel.GoToAddPage(DMToolKit.Data.Name)"/>.</summary>
         </member>
         <member name="P:DMToolKit.ViewModels.NamePrefixManagerViewModel.PrefixList">
             <inheritdoc cref="F:DMToolKit.ViewModels.NamePrefixManagerViewModel.prefixList"/>

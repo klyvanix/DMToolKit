@@ -9,4 +9,11 @@ public partial class FeminineNamePage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		var viewmodel = (FeminineNameViewModel)BindingContext;
+		viewmodel.UpdateData();
+    }
 }

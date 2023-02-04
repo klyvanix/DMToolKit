@@ -1,5 +1,6 @@
 ﻿namespace DMToolKit.Data
 {
+    [Serializable]
     public class NPC
     {
         public string FirstName { get; set; }

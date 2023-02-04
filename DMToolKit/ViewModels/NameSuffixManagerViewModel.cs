@@ -15,8 +15,10 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string inputField;
 
+        DataController DataController;
         public NameSuffixManagerViewModel() 
         {
+            DataController = DataController.Instance;
             SuffixList = new ObservableCollection<string>();
             InputField = string.Empty;
             UpdateData();

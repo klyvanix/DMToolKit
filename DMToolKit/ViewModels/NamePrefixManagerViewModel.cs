@@ -14,8 +14,11 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string inputField;
 
+        DataController DataController;
+
         public NamePrefixManagerViewModel() 
         {
+            DataController = DataController.Instance;
             PrefixList = new ObservableCollection<string>();
             InputField = string.Empty;
             UpdateData();
