@@ -48,7 +48,7 @@ namespace DMToolKit.ViewModels
             }
         }
 
-        private void UpdateData()
+        public void UpdateData()
         {
             if (DataController.NameConstructionData.SuffixList.Count == 0)
                 DataController.NameConstructionData.SuffixList = new List<string>();

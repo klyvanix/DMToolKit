@@ -60,5 +60,18 @@ namespace DMToolKit.ViewModels
             DataController.SaveNPCData();
             UpdateNPCList();
         }
+
+        [RelayCommand]
+        async Task GoToDetails(NPC input)
+        {
+            if (input is null)
+                return;
+
+            await Shell.Current.GoToAsync($"{nameof(NPCDetailsPage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"NPC", input }
+                });
+        }
     }
 }

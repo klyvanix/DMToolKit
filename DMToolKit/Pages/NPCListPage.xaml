@@ -21,7 +21,11 @@
                         </SwipeView.RightItems>
                         <Border Padding="3" StrokeShape="RoundRectangle 5" BackgroundColor="{StaticResource Tertiary}"
                                 HorizontalOptions="Fill" VerticalOptions="Center">
-                            <Label Text="{Binding Source={RelativeSource AncestorType={x:Type Data:NPC}}, Path=FirstName}" 
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=GoToDetailsCommand}" 
+                                                      CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                            <Label Text="{Binding Source={RelativeSource AncestorType={x:Type Data:NPC}}, Path=FullName}" 
                                    HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Black}"/>
                         </Border>
                     </SwipeView>

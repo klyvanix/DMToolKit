@@ -35,6 +35,9 @@
     <MauiXaml Update="Pages\MasculineNamePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\NameGeneratorOptionsPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\NameGeneratorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -45,6 +48,12 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\NPCAddPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\NPCDetailsPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\NPCEditPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\NPCGeneratorPage.xaml">

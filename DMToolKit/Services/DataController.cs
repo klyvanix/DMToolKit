@@ -111,5 +111,31 @@ namespace DMToolKit.Services
             xmlSerializer.Serialize(writer, NameConstructionData);
             writer.Close();
         }
+
+        internal int GetMinIndex(string lockedLetter)
+        {
+            for(int i = 0; i < NameConstructionData.PrefixList.Count; i++)
+            {
+                if (NameConstructionData.PrefixList[i].StartsWith(lockedLetter))
+                    return i;
+            }
+            return -1;
+        }
+
+        internal int GetMaxIndex(int minIndex, string lockedLetter)
+        {
+            if(minIndex != -1)
+            {
+                for(int i = minIndex; i < (NameConstructionData.PrefixList.Count); i++)
+                {
+                    if(i < NameConstructionData.PrefixList.Count - 1)
+                    {
+                        if (!NameConstructionData.PrefixList[i + 1].StartsWith(lockedLetter))
+                            return i;
+                    }
+                }
+            }
+            return -1;
+        }
     }
 }

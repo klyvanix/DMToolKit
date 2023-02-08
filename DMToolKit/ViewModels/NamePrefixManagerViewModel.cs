@@ -48,7 +48,7 @@ namespace DMToolKit.ViewModels
             }
         }
 
-        private void UpdateData()
+        public void UpdateData()
         {
             if(DataController.NameConstructionData.PrefixList.Count == 0)
                 DataController.NameConstructionData.PrefixList = new List<string>();

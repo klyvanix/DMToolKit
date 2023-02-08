@@ -76,6 +76,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MasculineN
 build_metadata.AdditionalFiles.TargetPath = Pages\MasculineNamePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MasculineNamePage.xaml
 
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameGeneratorOptionsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NameGeneratorOptionsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NameGeneratorOptionsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NameGeneratorOptionsPage.xaml
+
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameGeneratorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NameGeneratorPage.xaml
@@ -99,6 +105,18 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NPCAddPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\NPCAddPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\NPCAddPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NPCDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NPCDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NPCDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NPCDetailsPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NPCEditPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NPCEditPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NPCEditPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NPCEditPage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/NPCGeneratorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

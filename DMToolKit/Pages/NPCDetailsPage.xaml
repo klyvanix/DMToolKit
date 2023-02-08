@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.NPCDetailsPage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:NPCDetailsViewModel"
+             Title="NPCDetailsPage">
+    <Grid RowDefinitions="120,*,40">
+        <Border BackgroundColor="Transparent" Grid.Row="0" Stroke="Transparent">
+            <Grid RowDefinitions="*,2*,*" ColumnDefinitions="2*,*">
+                <Border BackgroundColor="Transparent" Grid.Row="0" Stroke="Transparent"/>
+                <Border BackgroundColor="{StaticResource Primary}" Grid.Row="1" Grid.ColumnSpan="2" Stroke="Transparent" StrokeShape="RoundRectangle 20 0 20 0">
+                    <Label Text="{Binding NPC.FullName}" FontSize="28" VerticalOptions="Center" Padding="20,0,0,0"/>
+                </Border>
+                <Border BackgroundColor="Transparent" Grid.Row="2" Stroke="Transparent">
+                    <HorizontalStackLayout Padding="50,0,0,0">
+                        <Label Text="Role:" VerticalOptions="Start" Margin="5,0"  TextColor="{StaticResource Tertiary}"/>
+                        <Label Text="{Binding NPC.Role}" TextColor="{StaticResource Role}" VerticalOptions="Start"/>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" BackgroundColor="{StaticResource Tertiary}" HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 60">
+                </Border>
+            </Grid>
+        </Border>
+        <Border BackgroundColor="{StaticResource Transparent}" Grid.Row="1" Stroke="{StaticResource Transparent}">
+            <ScrollView>
+                <Grid RowDefinitions="30,Auto,30,Auto,30,Auto">
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Label Text="Primary Value:" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0"  TextColor="{StaticResource Tertiary}"/>
+                        <Label Text="{Binding NPC.ValuePrime}" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0"  TextColor="{StaticResource Values}" FontAttributes="Bold"/>
+                        <Label Text="Secondary Value:" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0"  TextColor="{StaticResource Tertiary}"/>
+                        <Label Text="{Binding NPC.ValueMinor}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="{StaticResource Values}" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    <Border BackgroundColor="#a5c9ea" StrokeShape="RoundRectangle 5" Grid.Row="1" Padding="5">
+                        <Label Text="{Binding NPC.ValueDescription}" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,0"  TextColor="{StaticResource Gray600}" FontAttributes="Bold"/>
+                    </Border>
+                    <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="2">
+                        <Label Text="Attributes:" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0"  TextColor="{StaticResource Tertiary}"/>
+                        <Label Text="{Binding NPC.PositivePrime}" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0"  TextColor="{StaticResource PositiveAttribute}" FontAttributes="Bold"/>
+                        <Label Text="{Binding NPC.PositiveMinor}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="{StaticResource PositiveAttribute}" FontAttributes="Bold"/>
+                        <Label Text="{Binding NPC.NegativePrime}" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0"  TextColor="{StaticResource NegativeAttribute}" FontAttributes="Bold"/>
+                        <Label Text="{Binding NPC.NegativeMinor}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="{StaticResource NegativeAttribute}" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    <Border BackgroundColor="#a5c9ea" StrokeShape="RoundRectangle 5" Grid.Row="3" Padding="5">
+                        <Label Text="{Binding NPC.AttributeDescription}" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,0"  TextColor="{StaticResource Gray600}" FontAttributes="Bold"/>
+                    </Border>
+                    <Label Text="Notes" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0" Grid.Row="4" TextColor="{StaticResource Tertiary}"/>
+                    <Border BackgroundColor="#a5c9ea" StrokeShape="RoundRectangle 5" Grid.Row="5" Padding="5">
+                        <Label Text="{Binding NPC.Notes}" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,0"  TextColor="{StaticResource Gray600}" FontAttributes="Bold"/>
+                    </Border>
+                </Grid>
+            </ScrollView>
+        </Border>
+        <Grid ColumnDefinitions="*,2*" Grid.Row="2">
+            <Button Text="Edit" Grid.Column="0" Margin="0,0,10,0" Command="{Binding GoToEditCommand}"/>
+            <Button Text="Back" Grid.Column="1" Command="{Binding GoBackCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

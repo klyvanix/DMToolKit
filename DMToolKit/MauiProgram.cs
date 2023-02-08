@@ -34,8 +34,17 @@ public static class MauiProgram
         builder.Services.AddTransient<NPCAddPage>();
         builder.Services.AddTransient<NPCAddViewModel>();
 
+        builder.Services.AddTransient<NPCDetailsPage>();
+        builder.Services.AddTransient<NPCDetailsViewModel>();
+
+        builder.Services.AddTransient<NPCEditPage>();
+        builder.Services.AddTransient<NPCEditViewModel>();
+
         builder.Services.AddSingleton<NameGeneratorPage>();
         builder.Services.AddSingleton<NameGeneratorViewModel>();
+
+        builder.Services.AddTransient<NameGeneratorOptionsPage>();
+        builder.Services.AddTransient<NameGeneratorOptionsViewModel>();
 
         builder.Services.AddSingleton<NamePrefixManagerPage>();
         builder.Services.AddSingleton<NamePrefixManagerViewModel>();

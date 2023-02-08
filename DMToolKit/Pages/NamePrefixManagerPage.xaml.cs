@@ -9,4 +9,11 @@ public partial class NamePrefixManagerPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		var vm = BindingContext as NamePrefixManagerViewModel;
+		vm.UpdateData();
+    }
 }

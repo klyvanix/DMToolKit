@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.NameGeneratorOptionsPage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:NameGeneratorOptionsViewModel"
+             Title="NameGeneratorOptionsPage">
+    <Grid RowDefinitions="40,*,50,50">
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <RadioButton Grid.Column="1" HorizontalOptions="Start" IsChecked="{Binding LetterLock}" Content="Letter Lock" TextColor="White"/>
+            <RadioButton Grid.Column="1" HorizontalOptions="Start" IsChecked="{Binding PrefixLock}" Content="Prefix Lock" TextColor="White"/>
+        </HorizontalStackLayout>
+        <Grid ColumnDefinitions="*,2*" RowDefinitions="40,*" Grid.Row="1" IsVisible="{Binding LetterLock}" VerticalOptions="Start">
+            <Label Text="Letter To Lock"  Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Padding="10"/>
+            <Border HorizontalOptions="Fill" VerticalOptions="Center" StrokeShape="RoundRectangle 15" BackgroundColor="{StaticResource Tertiary}" Grid.Column="1">
+                <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding LockedLetterList}" SelectedIndex="{Binding SelectedIndex}" TextColor="Black"/>
+            </Border>
+        </Grid>
+        <Grid RowDefinitions="40,*" ColumnDefinitions="*,2*" IsVisible="{Binding PrefixLock}" Grid.Row="1">
+            <Label Text="Locked Prefix"  Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Padding="10"/>
+            <Border Grid.Column="1" BackgroundColor="{StaticResource Secondary}"
+                    Stroke="{StaticResource Transparent}" StrokeShape="RoundRectangle 15">
+                <Label Text="{Binding LockedPrefix}" HorizontalOptions="Fill" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}"/>
+            </Border>
+            <CollectionView Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Single" BackgroundColor="Transparent" ItemsSource="{Binding PrefixList}"
+                            SelectedItem="{Binding LockedPrefix}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Border Padding="3" BackgroundColor="{StaticResource Tertiary}" Grid.ColumnSpan="2">
+                            <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3" ColumnDefinitions="*">
+                                <HorizontalStackLayout HorizontalOptions="Center">
+                                    <Label TextColor="{StaticResource Black}" Padding="5,0" Text="{Binding .}"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <Button Text="Save" Margin="1" Command="{Binding SaveOptionsCommand}" Grid.Row="2"/>
+        <Button Text="Back" Margin="1" Command="{Binding GoBackCommand}" Grid.Row="3"/>
+    </Grid>
+</ContentPage>

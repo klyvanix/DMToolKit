@@ -29,7 +29,10 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Text="Generate Name" Grid.Row="1" Command="{Binding GenerateNameCommand}"/>
+        <Grid ColumnDefinitions="3*,*" Grid.Row="1" >
+            <Button Text="Generate Name" Command="{Binding GenerateNameCommand}"/>
+            <Button Text="Options" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}"/>
+        </Grid>
         <Grid Grid.Row="2" ColumnDefinitions="2*,*,*">
             <Button Text="Clear" Margin="0,1,0,0" Command="{Binding ClearCommand}"/>
             <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Grid.Column="1" HorizontalOptions="Fill" HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>

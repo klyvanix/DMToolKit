@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace DMToolKit.ViewModels
 {
+    [QueryProperty("LockedLetter", "LockedLetter"), QueryProperty("LetterLock", "LetterLock"), QueryProperty("PrefixLock", "PrefixLock"), QueryProperty("LockedPrefix", "LockedPrefix")]
     public partial class NameGeneratorViewModel : ObservableObject
     {
         [ObservableProperty]
@@ -17,12 +18,31 @@ namespace DMToolKit.ViewModels
 
         Random random = new Random();
 
+        [ObservableProperty]
+        string lockedLetter;
+
+        [ObservableProperty]
+        bool letterLock;
+
+        [ObservableProperty]
+        bool prefixLock;
+
+        [ObservableProperty]
+        string lockedPrefix;
+
+        int minIndex;
+        int maxIndex;
+
         DataController DataController;
 
         public NameGeneratorViewModel() 
         {
+            minIndex = -1;
+            maxIndex = -1;
             DataController = DataController.Instance;
             NameList = new ObservableCollection<Name>();
+            LockedLetter = "A";
+            LetterLock = false;
             GenerationNumber = 1;
         }
 
@@ -45,7 +65,32 @@ namespace DMToolKit.ViewModels
 
         private string GetPrefix()
         {
-            var index = random.Next(0, DataController.NameConstructionData.PrefixList.Count);
+            int index = -1;
+            if (LetterLock)
+            {
+                minIndex = DataController.GetMinIndex(LockedLetter);
+                maxIndex = DataController.GetMaxIndex(minIndex, LockedLetter);
+
+                if (minIndex != -1)
+                {
+                    index = random.Next(minIndex, maxIndex);
+                    if (index == DataController.Instance.NameConstructionData.PrefixList.Count)
+                        index--;
+                }
+                else
+                {
+                    index = random.Next(0, DataController.NameConstructionData.PrefixList.Count);
+                }
+            }
+            else if(PrefixLock)
+            {
+                return LockedPrefix;
+            }
+            else
+            {
+                index = random.Next(0, DataController.NameConstructionData.PrefixList.Count);
+            }
+
             return DataController.NameConstructionData.PrefixList[index];
         }
         private string GetSuffix()
@@ -71,6 +116,12 @@ namespace DMToolKit.ViewModels
                 {
                     {"InputName", input }
                 });
+        }
+
+        [RelayCommand]
+        async Task GoToOptionsPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
         }
     }
 }
