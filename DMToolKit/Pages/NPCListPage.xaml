@@ -4,11 +4,29 @@
              x:Class="DMToolKit.Pages.NPCListPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCListViewModel"
+             xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="NPC Collection">
-    <VerticalStackLayout>
-        <Label 
-            Text="NPC Collection!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid>
+        <CollectionView HorizontalOptions="Center" VerticalOptions="Start"
+                        ItemsSource="{Binding NpcList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="Data:NPC">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" IconImageSource="delete.png" BackgroundColor="{StaticResource Delete}"
+                                           CommandParameter="{Binding .}"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=DeleteCommand}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Border Padding="3" StrokeShape="RoundRectangle 5" BackgroundColor="{StaticResource Tertiary}"
+                                HorizontalOptions="Fill" VerticalOptions="Center">
+                            <Label Text="{Binding Source={RelativeSource AncestorType={x:Type Data:NPC}}, Path=FirstName}" 
+                                   HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Black}"/>
+                        </Border>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

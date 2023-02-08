@@ -13,27 +13,29 @@
     <FlyoutItem Icon="namegenerator.png" Title="Name Generator">
         <ShellContent Icon="namegenerator.png" Title="Name Generator" ContentTemplate="{DataTemplate local:NameGeneratorPage}"
                 Route="NameGeneratorPage" />
-        <ShellContent Icon="prefix.png" Title="Prefix Manager" ContentTemplate="{DataTemplate local:NamePrefixManagerPage}"
-                Route="NamePrefixManagerPage" />
+        <ShellContent Icon="prefix.png" Title="Prefix Manager" ContentTemplate="{DataTemplate local:NamePrefixManagerPage}" 
+                      Route="NamePrefixManagerPage"/>
         <ShellContent Icon="suffix.png" Title="Suffix Manager" ContentTemplate="{DataTemplate local:NameSuffixManagerPage}"
-                Route="NameSuffixManagerPage" />
+                      Route="NameSuffixManagerPage"/>
     </FlyoutItem>
     <FlyoutItem Icon="namelist.png" Title="Saved Name Lists">
-        <ShellContent Icon="masculine.png" Title="Masculine Names" ContentTemplate="{DataTemplate local:MasculineNamePage}"
-            Route="MasculineNamePage" />
+        <ShellContent Icon="masculine.png" Title="Masculine Names" ContentTemplate="{DataTemplate local:MasculineNamePage}" 
+                      Route="MasculineNamePage"/>
         <ShellContent Icon="feminine.png" Title="Feminine Names" ContentTemplate="{DataTemplate local:FeminineNamePage}"
-            Route="FeminineNamePage" />
-        <ShellContent Icon="lastname.png" Title="Last Names" ContentTemplate="{DataTemplate local:LastNamePage}"
-            Route="LastNamePage" />
+                      Route="FeminineNamePage"/>
+        <ShellContent Icon="lastname.png" Title="Last Names" ContentTemplate="{DataTemplate local:LastNamePage}" 
+                      Route="LastNamePage"/>
     </FlyoutItem>
     <FlyoutItem Icon="npc.png" Title="NPC Generator">
+        <ShellContent Icon="generators.png" Title="Category Manager" ContentTemplate="{DataTemplate local:CategoryManagerPage}"
+            Route="CategoryManagerPage" />
         <ShellContent Icon="npc.png" Title="NPC Generator" ContentTemplate="{DataTemplate local:NPCGeneratorPage}"
                 Route="NPCGeneratorPage" />
         <ShellContent Icon="npclist.png" Title="NPC Collection" ContentTemplate="{DataTemplate local:NPCListPage}"
                 Route="NPCListPage" />
     </FlyoutItem>
     <FlyoutItem Icon="pouch.png" Title="Coin Pouch Generator">
-        <ShellContent Icon="pouch.png" Title="CoinPouchGenerator" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
+        <ShellContent Icon="pouch.png" Title="Coin Pouch Generator" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
             Route="CoinPouchGeneratorPage" />
     </FlyoutItem>
 </Shell>

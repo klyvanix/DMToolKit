@@ -664,7 +664,7 @@ namespace DMToolKit.Data
             {(int) NegativeAttributes.Callous,"Callous, by being insensitive and cruel in their regard for others"},
             {(int) NegativeAttributes.Cantankerous,"Cantankerous, by being bad-tempered, argumentative, and uncooperative"},
             {(int) NegativeAttributes.Careless,"Careless, by showing no interest or effort"},
-            {(int) NegativeAttributes.Clumsy,"Clumsy, by having awkward in movement or awkwardly handling things"},
+            {(int) NegativeAttributes.Clumsy,"Clumsy, by being awkward in movement or awkwardly handling things"},
             {(int) NegativeAttributes.Competitive,"Competitive, by having a strong desire to be more successful than others"},
             {(int) NegativeAttributes.Compulsive,"Compulsive, by not being able to resist sudden urges"},
             {(int) NegativeAttributes.Conceited,"Conceited, by showing excessive pride in themselves"},

@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace DMToolKit.ViewModels
 {
+    [QueryProperty("InputField", "InputField")]
     public partial class NameSuffixManagerViewModel : ObservableObject
     {
 

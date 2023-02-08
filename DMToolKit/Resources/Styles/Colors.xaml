@@ -12,7 +12,7 @@
     <Color x:Key="Values">#216ca6</Color>
     <Color x:Key="PositiveAttribute">#448344</Color>
     <Color x:Key="NegativeAttribute">#711e1e</Color>
-    <Color x:Key="Delete">#e95050</Color>
+    <Color x:Key="Delete">#d23434</Color>
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
     <Color x:Key="Gray100">#E1E1E1</Color>

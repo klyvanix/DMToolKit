@@ -1,6 +1,4 @@
-using Android.OS.Strictmode;
 using DMToolKit.ViewModels;
-using Java.Lang;
 
 namespace DMToolKit.Pages;
 

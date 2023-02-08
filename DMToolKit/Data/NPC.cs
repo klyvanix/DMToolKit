@@ -1,12 +1,12 @@
 ﻿namespace DMToolKit.Data
 {
     [Serializable]
-    public class NPC
+    public class NPC :IComparable<NPC>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public Gender Gender { get; set; }
+        //public Gender Gender { get; set; }
 
         public string ValuePrime { get; set; } 
         public string ValueMinor { get; set; }
@@ -17,6 +17,12 @@
         public string NegativePrime { get; set; }
         public string NegativeMinor { get; set; }
         public string AttributeDescription { get; set;}
+
+        public string Role { get; set; }
+
+        public string Notes { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";
 
         public NPC(string firstName, string lastName, string valuePrime, string valueMinor, string valueDescription ,string positivePrime, string positiveMinor, string negativePrime, string negativeMinor, string attributeDescription)
         {
@@ -30,6 +36,9 @@
             NegativePrime = negativePrime;
             NegativeMinor = negativeMinor;
             AttributeDescription = attributeDescription;
+            Role = string.Empty;
+            //Gender = Gender.Default;
+            Notes = string.Empty;
         }
 
         public NPC()
@@ -44,7 +53,14 @@
             NegativePrime = string.Empty;
             NegativeMinor = string.Empty;
             AttributeDescription = string.Empty;
-            Gender = Gender.Default;
+            Role = string.Empty;
+            //Gender = Gender.Default;
+            Notes = string.Empty;
+        }
+
+        public int CompareTo(NPC other)
+        {
+            return FirstName.CompareTo(other.FirstName);
         }
     }
 }

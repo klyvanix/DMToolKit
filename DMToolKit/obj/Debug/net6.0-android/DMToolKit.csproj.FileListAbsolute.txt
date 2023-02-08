@@ -978,6 +978,9 @@ D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawab
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\lastname.png
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\masculine.png
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\namelist.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\barbarian.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\bard.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\resizetizer\r\drawable\cleric.png
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\mscorlib.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Collections.Concurrent.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Data.dll

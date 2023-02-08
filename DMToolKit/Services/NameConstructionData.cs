@@ -17,5 +17,23 @@ namespace DMToolKit.Services
             PrefixList = new List<string>();
             SuffixList = new List<string>();
         }
+        public NameConstructionData(bool initialStartup)
+        {
+            PrefixList = new List<string>();
+            SuffixList = new List<string>();
+            if(initialStartup)
+            {
+                PrefixList.Add("Ado");
+                PrefixList.Add("Jas");
+                PrefixList.Add("Dala");
+                PrefixList.Add("Na");
+                PrefixList.Add("Kho");
+
+                SuffixList.Add("lin");
+                SuffixList.Add("nar");
+                SuffixList.Add("nah");
+                SuffixList.Add("vani");
+            }
+        }
     }
 }

@@ -1,4 +1,7 @@
 ﻿obj\Debug\net6.0-android\resizetizer\r\drawable\appicon.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\barbarian.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\bard.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\cleric.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coincp.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coinep.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coingp.png

@@ -31,6 +31,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<NPCGeneratorPage>();
         builder.Services.AddSingleton<NPCGeneratorViewModel>();
 
+        builder.Services.AddTransient<NPCAddPage>();
+        builder.Services.AddTransient<NPCAddViewModel>();
+
         builder.Services.AddSingleton<NameGeneratorPage>();
         builder.Services.AddSingleton<NameGeneratorViewModel>();
 
@@ -51,6 +54,12 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<LastNamePage>();
         builder.Services.AddSingleton<LastNameViewModel>();
+
+        builder.Services.AddTransient<CategoryManagerPage>();
+        builder.Services.AddTransient<CategoryManagerViewModel>();
+
+        builder.Services.AddTransient<CategoryAddPage>();
+        builder.Services.AddTransient<CategoryAddViewModel>();
 
         return builder.Build();
 	}

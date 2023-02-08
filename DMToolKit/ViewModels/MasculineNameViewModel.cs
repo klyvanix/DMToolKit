@@ -20,7 +20,6 @@ namespace DMToolKit.ViewModels
             UpdateData();
         }
 
-        [RelayCommand]
         public void UpdateData() 
         {
             if (DataController.NameData.MasculineNameList.Count == 0 ||

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.NPCAddPage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:NPCAddViewModel"
+             xmlns:Data="clr-namespace:DMToolKit.Data"
+             Title="{Binding InputNPC.FullName}">
+    <Grid RowDefinitions="Auto,*,40">
+        <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,2*,2*">
+            <Label Text="Values" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="15"/>
+            <Border StrokeShape="RoundRectangle 30" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource Values}" Stroke="Transparent">
+                <Label Text="{Binding InputNPC.ValuePrime}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="20"/>
+            </Border>
+            <Border StrokeShape="RoundRectangle 30" Grid.Row="0" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource Values}" Stroke="Transparent">
+                <Label Text="{Binding InputNPC.ValueMinor}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="18"/>
+            </Border>
+            <Label Text="Positive Traits" Grid.Row="1" Grid.Column="0" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="15"/>
+            <Border StrokeShape="RoundRectangle 30" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource PositiveAttribute}" Stroke="Transparent">
+                <Label Text="{Binding InputNPC.PositivePrime}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="20"/>
+            </Border>
+            <Border StrokeShape="RoundRectangle 30" Grid.Row="1" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource PositiveAttribute}" Stroke="Transparent">
+                <Label Text="{Binding InputNPC.PositiveMinor}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="18"/>
+            </Border>
+            <Label Text="Positive Traits" Grid.Row="2" Grid.Column="0" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="15"/>
+            <Border StrokeShape="RoundRectangle 30" Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource NegativeAttribute}" Stroke="Transparent">
+                <Label Text="{Binding InputNPC.NegativePrime}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="20"/>
+            </Border>
+            <Border StrokeShape="RoundRectangle 30" Grid.Row="2" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource NegativeAttribute}" Stroke="Transparent">
+                <Label Text="{Binding InputNPC.NegativeMinor}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="18"/>
+            </Border>
+        </Grid>
+        <VerticalStackLayout Grid.Row="1">
+            <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" HeightRequest="200" HorizontalOptions="Center" Padding="10">
+                <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" 
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" MinimumWidthRequest="350" MaximumWidthRequest="400" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+            </Border>
+        </VerticalStackLayout>
+        <Button Text="Save" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="2" Command="{Binding SaveDataCommand}"/>
+    </Grid>
+</ContentPage>

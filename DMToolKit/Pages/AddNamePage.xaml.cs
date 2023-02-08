@@ -9,4 +9,15 @@ public partial class AddNamePage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		var vm = (AddNameViewModel)BindingContext;
+		vm.CheckIfPrefixExists();
+		vm.CheckIfSuffixExists();
+        vm.CheckIfMasculineExists();
+        vm.CheckIfFeminineExists();
+        vm.CheckIfLastExists();
+    }
 }

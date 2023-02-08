@@ -5,9 +5,15 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCGeneratorViewModel"
              Title="NPC Generator">
-    <Grid RowDefinitions="40,*,40">
-        <Button Grid.Row="0" Text="Save NPC" Padding="2"/>
-        <Grid Grid.Row="1" BackgroundColor="Transparent" ColumnDefinitions="*,*,*,*" RowDefinitions="60,30,30,40,Auto,50,50,Auto,*">
+    <Grid RowDefinitions="40,Auto,*,40">
+        <Button Grid.Row="0" Text="Save NPC" Padding="2" Command="{Binding GoToAddPageCommand}" CommandParameter="{Binding Character}"/>
+        <Grid ColumnDefinitions="Auto,*" Grid.Row="1" Grid.ColumnSpan="4">
+            <Label Text="NPC Role:" VerticalTextAlignment="Center" Padding="5" BackgroundColor="Transparent"/>
+            <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" Grid.Column="1">
+                <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}" />
+            </Border>
+        </Grid>
+        <Grid Grid.Row="2" BackgroundColor="Transparent" ColumnDefinitions="*,*,*,*" RowDefinitions="60,30,30,40,Auto,50,50,Auto,*">
             <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 40 10 10 40" Margin="5" 
                     BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
                 <Border.GestureRecognizers>
@@ -96,8 +102,8 @@
                 <Label Text="{Binding Character.AttributeDescription}" TextColor="{StaticResource Black}"  Margin="3"/>
             </Border>
         </Grid>
-        <Grid ColumnDefinitions="2*,*" Grid.Row="2">
-            <Button Text="Generate" Margin="2,0,2,2" Command="{Binding GenerateNPCCommand}"/>
+        <Grid ColumnDefinitions="2*,*" Grid.Row="3">
+            <Button  Text="Generate" Margin="2,0,2,2" Command="{Binding GenerateNPCCommand}" ClassId="GenerateButton"/>
             <Button Text="Clear Locks" Grid.Column="1" Margin="2,0,2,2" Command="{Binding UnlockAllCommand}"/>
         </Grid>
     </Grid>

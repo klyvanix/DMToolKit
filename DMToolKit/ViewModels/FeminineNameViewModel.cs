@@ -1,5 +1,4 @@
-﻿using Android.Service.Autofill;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Data;
 using DMToolKit.Services;
@@ -21,7 +20,6 @@ namespace DMToolKit.ViewModels
             UpdateData();
         }
 
-        [RelayCommand]
         public void UpdateData()
         {
             if (DataController.NameData.FeminineNameList.Count == 0 ||

@@ -10,5 +10,7 @@ public partial class AppShell : Shell
 
         Routing.RegisterRoute(nameof(CoinPouchDetailsPage), typeof(CoinPouchDetailsPage));
         Routing.RegisterRoute(nameof(AddNamePage), typeof(AddNamePage));
+        Routing.RegisterRoute(nameof(NPCAddPage), typeof(NPCAddPage));
+        Routing.RegisterRoute(nameof(CategoryAddPage), typeof(CategoryAddPage));
     }
 }

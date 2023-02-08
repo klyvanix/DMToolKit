@@ -40,16 +40,16 @@ namespace DMToolKit.Services
         //NPC Loading & Saving
         public void LoadNPCData()
         {
-            if(File.Exists(npcDataName)) 
+            if (File.Exists(npcDataName)) 
             {
-                XmlSerializer xmlSerializer= new XmlSerializer(typeof(NPCData));
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(NPCData));
                 TextReader reader = new StreamReader(npcDataName);
                 NPCData = (NPCData)xmlSerializer.Deserialize(reader);
                 reader.Close();
             }
             else
             {
-                NPCData = new NPCData();
+                NPCData = new NPCData(true);
                 SaveNPCData();
             }
         }
@@ -74,7 +74,7 @@ namespace DMToolKit.Services
             }
             else
             {
-                NameData = new NameData();
+                NameData = new NameData(true);
                 SaveNameData();
             }
         }
@@ -99,7 +99,7 @@ namespace DMToolKit.Services
             }
             else
             {
-                NameConstructionData = new NameConstructionData();
+                NameConstructionData = new NameConstructionData(true);
                 SaveNameConstructionData();
             }
         }

@@ -11,9 +11,12 @@
                 <Label Text="{Binding InputName.Output}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
             </Border>
             <Label Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
-            <Button Text="Masculine Name" Margin="5" Command="{Binding AddMasculineCommand}"/>
-            <Button Text="Feminine Name" Margin="5" Command="{Binding AddFeminineCommand}"/>
-            <Button Text="Last Name" Margin="5" Command="{Binding AddLastCommand}"/>
+            <Button Text="Masculine Name" Margin="5" Command="{Binding AddMasculineCommand}" IsEnabled="{Binding MasculineEnabled}"/>
+            <Button Text="Feminine Name" Margin="5" Command="{Binding AddFeminineCommand}" IsEnabled="{Binding FeminineEnabled}"/>
+            <Button Text="Last Name" Margin="5" Command="{Binding AddLastCommand}" IsEnabled="{Binding LastEnabled}"/>
+
+            <Button Text="Add Prefix" Margin="5" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding PrefixEnabled}" />
+            <Button Text="Add Suffix" Margin="5" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding SuffixEnabled}"/>
         </VerticalStackLayout>
         <Button Text="Back" Grid.Row="1" Margin="5,0,5,0" Command="{Binding GoBackCommand}"/>
     </Grid>

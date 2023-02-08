@@ -20,5 +20,24 @@ namespace DMToolKit.Services
             FeminineNameList = new List<Name>();
             LastNameList = new List<Name>();
         }
+
+        public NameData(bool InitialStartup)
+        {
+            MasculineNameList = new List<Name>();
+            FeminineNameList = new List<Name>();
+            LastNameList = new List<Name>();
+            if (InitialStartup) 
+            {
+                MasculineNameList.Add(new Name("Ado", "lin"));
+
+                MasculineNameList.Add(new Name("Dala", "nar"));
+
+                FeminineNameList.Add(new Name("Jas", "nah"));
+
+                FeminineNameList.Add(new Name("Na" , "vani"));
+
+                LastNameList.Add(new Name("Kho" , "lin"));
+            }
+        }
     }
 }

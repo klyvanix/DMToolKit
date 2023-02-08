@@ -1,11 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DMToolKit.Pages;
+using DMToolKit.Services;
+using Xamarin.KotlinX.Coroutines;
 
 namespace DMToolKit.ViewModels
 {
@@ -15,21 +13,10 @@ namespace DMToolKit.ViewModels
         NPC character;
 
         [ObservableProperty]
-        string firstNameLockImage;
+        public List<string> classificationList;
+
         [ObservableProperty]
-        string lastNameLockImage;
-        [ObservableProperty]
-        string valuePrimeLockImage;
-        [ObservableProperty]
-        string valueMinorLockImage;
-        [ObservableProperty]
-        string positivePrimeLockImage;
-        [ObservableProperty]
-        string positiveMinorLockImage;
-        [ObservableProperty]
-        string negativePrimeLockImage;
-        [ObservableProperty]
-        string negativeMinorLockImage;
+        public int pickerIndex;
 
         bool firstNameLock;
         bool lastNameLock;
@@ -39,6 +26,11 @@ namespace DMToolKit.ViewModels
         bool positiveMinorLock;
         bool negativePrimeLock;
         bool negativeMinorLock;
+
+        bool masculineName;
+
+        int firstNameIndex = -1;
+        int lastNameIndex = -1;
 
         int primeValueIndex = -1;
         int minorValueIndex = -1;
@@ -66,10 +58,15 @@ namespace DMToolKit.ViewModels
 
         private Random random = new Random();
 
+        DataController DataController;
+
         Color locked = Color.FromArgb("000000");
 
-        public NPCGeneratorViewModel() 
+        public NPCGeneratorViewModel()
         {
+            PickerIndex = 0;
+            ClassificationList = new List<string>();
+            DataController = DataController.Instance;
             Character = new NPC();
             Character.ValueDescription = "Click the generate button to generate an NPC based on random criteria.";
             Character.AttributeDescription = "The Generator will Generate Values and specific character traits that can help inform who the characters are. " +
@@ -82,29 +79,81 @@ namespace DMToolKit.ViewModels
             positiveMinorLock = false;
             negativePrimeLock = false;
             negativeMinorLock = false;
+            UpdateData();
         }
 
         [RelayCommand]
         void GenerateNPC()
         {
-            string firstName = "Rinst";
-            string lastName = "Solvasa";
-            SelectPrimeValueIndex();
-            SelectMinorValueIndex();
-            SelectPositivePrimeIndex();
-            SelectPositiveMinorIndex();
-            SelectNegativePrimeIndex();
-            SelectNegativeMinorIndex();
-            Character = new NPC(firstName, lastName,
-                CharacterAttributes.ValuesText[primeValueIndex],
-                CharacterAttributes.ValuesText[minorValueIndex],
-                $"{firstName} values {CharacterAttributes.ValuesDefinitions[primeValueIndex]}, and {CharacterAttributes.ValuesDefinitions[minorValueIndex]}.",
-                CharacterAttributes.PositiveAttributeText[positivePrimeIndex],
-                CharacterAttributes.PositiveAttributeText[positiveMinorIndex],
-                CharacterAttributes.NegativeAttributeText[negativePrimeIndex],
-                CharacterAttributes.NegativeAttributeText[negativeMinorIndex],
-                $"{firstName} is mainly known for being {CharacterAttributes.PositiveAttributeDescription[positivePrimeIndex]} and can also be {CharacterAttributes.PositiveAttributeDescription[positiveMinorIndex]}. " +
-                $"However, they can also be {CharacterAttributes.NegativeAttributeDescription[negativePrimeIndex]}, and can be {CharacterAttributes.NegativeAttributeDescription[negativeMinorIndex]}.");
+            if (GetCanGenerate())
+            {
+                GetFirstNameIndex();
+                GetLastNameIndex();
+                SelectPrimeValueIndex();
+                SelectMinorValueIndex();
+                SelectPositivePrimeIndex();
+                SelectPositiveMinorIndex();
+                SelectNegativePrimeIndex();
+                SelectNegativeMinorIndex();
+
+                var firstName = string.Empty;
+                if (masculineName)
+                    firstName = DataController.NameData.MasculineNameList[firstNameIndex].Output;
+                else
+                    firstName = DataController.NameData.FeminineNameList[firstNameIndex].Output;
+
+                Character = new NPC(firstName, DataController.NameData.LastNameList[lastNameIndex].Output,
+                    CharacterAttributes.ValuesText[primeValueIndex],
+                    CharacterAttributes.ValuesText[minorValueIndex],
+                    $"{firstName} values {CharacterAttributes.ValuesDefinitions[primeValueIndex]}, and {CharacterAttributes.ValuesDefinitions[minorValueIndex]}.",
+                    CharacterAttributes.PositiveAttributeText[positivePrimeIndex],
+                    CharacterAttributes.PositiveAttributeText[positiveMinorIndex],
+                    CharacterAttributes.NegativeAttributeText[negativePrimeIndex],
+                    CharacterAttributes.NegativeAttributeText[negativeMinorIndex],
+                    $"{firstName} is mainly known for being {CharacterAttributes.PositiveAttributeDescription[positivePrimeIndex]} and can also be {CharacterAttributes.PositiveAttributeDescription[positiveMinorIndex]}. " +
+                    $"However, they can also be {CharacterAttributes.NegativeAttributeDescription[negativePrimeIndex]}, and can be {CharacterAttributes.NegativeAttributeDescription[negativeMinorIndex]}.");
+            }
+            else
+            {
+                //do nothing
+            }
+        }
+
+        public void UpdateData()
+        {
+            ClassificationList.Clear();
+            foreach (var item in DataController.NPCData.NPCCategories)
+                ClassificationList.Add(item);
+        }
+        public bool GetCanGenerate()
+        {
+            if (DataController.NameData.FeminineNameList.Count == 0 ||
+                DataController.NameData.MasculineNameList.Count == 0 ||
+                DataController.NameData.LastNameList.Count == 0)
+                return false;
+            return true;
+        }
+
+        [RelayCommand]
+        async Task GoToAddPage(NPC input)
+        {
+            if (input is null)
+                return;
+
+            input.Role = ClassificationList[PickerIndex];
+
+            await Shell.Current.GoToAsync($"{nameof(NPCAddPage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"InputNPC", input }
+                });
+        }
+
+        [RelayCommand]
+        public void Add(NPC npc)
+        {
+            DataController.NPCData.NPCList.Add(npc);
+            DataController.SaveNPCData();
         }
 
         [RelayCommand]
@@ -283,6 +332,34 @@ namespace DMToolKit.ViewModels
             while (negativeMinorIndex == negativePrimeIndex)
             {
                 negativeMinorIndex = random.Next(0, CharacterAttributes.NegativeAttributeCount);
+            }
+        }
+
+        private void GetLastNameIndex()
+        {
+            if (lastNameLock)
+                return;
+
+            lastNameIndex = random.Next(0,DataController.NameData.LastNameList.Count);
+        }
+
+        private void GetFirstNameIndex()
+        {
+            if (firstNameLock)
+                return;
+
+            switch(random.Next(0,2))
+            {
+                case 0:
+                    firstNameIndex = random.Next(0, DataController.NameData.MasculineNameList.Count);
+                    masculineName = true;
+                    break;
+                case 1:
+                    masculineName = false;
+                    firstNameIndex = random.Next(0, DataController.NameData.FeminineNameList.Count);
+                    break;
+                default:
+                    break;
             }
         }
     }
