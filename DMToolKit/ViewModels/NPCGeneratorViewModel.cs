@@ -62,6 +62,28 @@ namespace DMToolKit.ViewModels
 
         Color locked = Color.FromArgb("000000");
 
+        public bool RolesAreZero 
+        { 
+            get
+            {
+                if (DataController.Instance.NPCData.NPCCategories.Count == 0)
+                    return true;
+
+                return false;
+            }
+        }
+
+        public bool RolesAreMoreThanZero
+        {
+            get
+            {
+                if (DataController.Instance.NPCData.NPCCategories.Count > 0)
+                    return true;
+                
+                return false;
+            }
+        }
+
         public NPCGeneratorViewModel()
         {
             PickerIndex = 0;

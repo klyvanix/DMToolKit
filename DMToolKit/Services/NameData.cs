@@ -28,15 +28,17 @@ namespace DMToolKit.Services
             LastNameList = new List<Name>();
             if (InitialStartup) 
             {
-                MasculineNameList.Add(new Name("Ado", "lin"));
+                MasculineNameList.Add(new Name("Mer", "lin"));
 
-                MasculineNameList.Add(new Name("Dala", "nar"));
+                MasculineNameList.Add(new Name("Dal", "mar"));
 
-                FeminineNameList.Add(new Name("Jas", "nah"));
+                FeminineNameList.Add(new Name("Kee", "nah"));
 
-                FeminineNameList.Add(new Name("Na" , "vani"));
+                FeminineNameList.Add(new Name("Na" , "ra"));
 
-                LastNameList.Add(new Name("Kho" , "lin"));
+                LastNameList.Add(new Name("Van" , "der"));
+
+                LastNameList.Add(new Name("Gel", "spar"));
             }
         }
     }

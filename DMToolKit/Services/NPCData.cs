@@ -24,10 +24,10 @@ namespace DMToolKit.Services
             NPCCategories = new List<string>();
             if (initialStartup)
             {
-                NPCCategories.Add("Barbarian");
-                NPCCategories.Add("Bard");
-                NPCCategories.Add("Cleric");
                 NPCCategories.Add("Peasant");
+                NPCCategories.Add("Innkeeper");
+                NPCCategories.Add("Blacksmith");
+                NPCCategories.Add("Merchant");
             }
         }
     }

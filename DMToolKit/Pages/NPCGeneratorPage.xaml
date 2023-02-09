@@ -5,15 +5,16 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCGeneratorViewModel"
              Title="NPC Generator">
-    <Grid RowDefinitions="40,Auto,*,40">
+    <Grid RowDefinitions="40,Auto,*,50">
         <Button Grid.Row="0" Text="Save NPC" Padding="2" Command="{Binding GoToAddPageCommand}" CommandParameter="{Binding Character}"/>
         <Grid ColumnDefinitions="Auto,*" Grid.Row="1" Grid.ColumnSpan="4">
             <Label Text="NPC Role:" VerticalTextAlignment="Center" Padding="5" BackgroundColor="Transparent"/>
-            <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" Grid.Column="1">
+            <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" Grid.Column="1" IsVisible="{Binding RolesAreMoreThanZero}">
                 <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}" />
             </Border>
+            <Button Text="Add Role" Grid.Column="1" IsVisible="{Binding RolesAreZero}"/>
         </Grid>
-        <Grid Grid.Row="2" BackgroundColor="Transparent" ColumnDefinitions="*,*,*,*" RowDefinitions="60,30,30,40,Auto,50,50,Auto,*">
+        <Grid Grid.Row="2" BackgroundColor="Transparent" ColumnDefinitions="*,*,*,*" RowDefinitions="70,40,40,50,Auto,60,60,Auto,*">
             <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 40 10 10 40" Margin="5" 
                     BackgroundColor="{StaticResource Secondary}" Stroke="Transparent">
                 <Border.GestureRecognizers>
@@ -22,7 +23,7 @@
                 <Grid RowDefinitions="*,2*">
                     <Label Text="First Name" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{Binding FirstNameColor}"/>
                     <Label Text="{Binding Character.FirstName}" Grid.Column="1"
-                           Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="23" TextColor="{Binding FirstNameColor}"/>
+                           Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="23" TextColor="{Binding FirstNameColor}"/>
                 </Grid>
             </Border>
             <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 10 40 40 10" Margin="5" 
@@ -32,10 +33,10 @@
                 </Border.GestureRecognizers>
                 <Grid RowDefinitions="*,2*">
                     <Label Text="Last Name" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{Binding LastNameColor}"/>
-                    <Label Text="{Binding Character.LastName}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="23" TextColor="{Binding LastNameColor}"/>
+                    <Label Text="{Binding Character.LastName}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="23" TextColor="{Binding LastNameColor}"/>
                 </Grid>
             </Border>
-            <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" StrokeShape="RoundRectangle 10 10 5 5" Margin="5" 
+            <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2" StrokeShape="RoundRectangle 10 10 5 5" Margin="80,0" 
                     BackgroundColor="{StaticResource Values}" Stroke="Transparent">
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding LockPrimeValueCommand}"/>
@@ -45,7 +46,7 @@
                            VerticalTextAlignment="Center" FontSize="23" BackgroundColor="Transparent"/>
                 </Grid>
             </Border>
-            <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 5 5 10 10" Margin="20,0,20,0" 
+            <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" StrokeShape="RoundRectangle 5 5 10 10" Margin="100,0" 
                     BackgroundColor="{StaticResource Values}" Stroke="Transparent">
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding LockMinorValueCommand}"/>

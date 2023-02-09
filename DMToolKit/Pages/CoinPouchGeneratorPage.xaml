@@ -6,7 +6,7 @@
              xmlns:Data="clr-namespace:DMToolKit.Data"
              x:Class="DMToolKit.Pages.CoinPouchGeneratorPage"
              Title="Coin Pouch Generator">
-    <Grid RowDefinitions="40,*,40,40">
+    <Grid RowDefinitions="40,*,50,50">
         <Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" BackgroundColor="{StaticResource Dark}"
                               ColumnDefinitions="*,*,*,*">
             <Grid Grid.Column="0" ColumnDefinitions="*,*">

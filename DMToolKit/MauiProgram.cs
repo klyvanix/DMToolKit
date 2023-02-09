@@ -46,23 +46,23 @@ public static class MauiProgram
         builder.Services.AddTransient<NameGeneratorOptionsPage>();
         builder.Services.AddTransient<NameGeneratorOptionsViewModel>();
 
-        builder.Services.AddSingleton<NamePrefixManagerPage>();
-        builder.Services.AddSingleton<NamePrefixManagerViewModel>();
+        builder.Services.AddTransient<NamePrefixManagerPage>();
+        builder.Services.AddTransient<NamePrefixManagerViewModel>();
 
-        builder.Services.AddSingleton<NameSuffixManagerPage>();
-        builder.Services.AddSingleton<NameSuffixManagerViewModel>();
+        builder.Services.AddTransient<NameSuffixManagerPage>();
+        builder.Services.AddTransient<NameSuffixManagerViewModel>();
 
         builder.Services.AddTransient<AddNamePage>();
         builder.Services.AddTransient<AddNameViewModel>();
 
-        builder.Services.AddSingleton<MasculineNamePage>();
-        builder.Services.AddSingleton<MasculineNameViewModel>();
+        builder.Services.AddTransient<MasculineNamePage>();
+        builder.Services.AddTransient<MasculineNameViewModel>();
 
-        builder.Services.AddSingleton<FeminineNamePage>();
-        builder.Services.AddSingleton<FeminineNameViewModel>();
+        builder.Services.AddTransient<FeminineNamePage>();
+        builder.Services.AddTransient<FeminineNameViewModel>();
 
-        builder.Services.AddSingleton<LastNamePage>();
-        builder.Services.AddSingleton<LastNameViewModel>();
+        builder.Services.AddTransient<LastNamePage>();
+        builder.Services.AddTransient<LastNameViewModel>();
 
         builder.Services.AddTransient<CategoryManagerPage>();
         builder.Services.AddTransient<CategoryManagerViewModel>();
