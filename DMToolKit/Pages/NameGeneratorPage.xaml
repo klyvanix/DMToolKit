@@ -6,22 +6,23 @@
              x:DataType="viewmodel:NameGeneratorViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Name Generator">
-    <Grid RowDefinitions="*,40,40">
+    <Grid RowDefinitions="*,50,50">
         <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" 
                         SelectionMode="Single" ItemsSource="{Binding NameList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="Data:Name">
-                    <Border Padding="3" StrokeShape="RoundRectangle 5" BackgroundColor="{StaticResource Tertiary}">
+                    <Border Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer CommandParameter="{Binding .}"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameGeneratorViewModel}},Path=GoToAddPageCommand}"/>
                         </Border.GestureRecognizers>
-                        <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3"
+                        <Grid Padding="1,0" HorizontalOptions="Fill" Margin="4"
                               ColumnDefinitions="*">
                             <HorizontalStackLayout HorizontalOptions="Center">
-                                <Label TextColor="{StaticResource Black}" Padding="5,0"
+                                <Label Padding="5,0" TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
                                    Text="{Binding Source={RelativeSource AncestorType={x:Type Data:Name}}, Path=Output}"/>
-                                <Label TextColor="{StaticResource Black}" Padding="5,0"
+                                <Label TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" Padding="5,0"
                                    Text="{Binding Source={RelativeSource AncestorType={x:Type Data:Name}}, Path=Breakdown}"/>
                             </HorizontalStackLayout>
                         </Grid>
@@ -29,12 +30,12 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Grid ColumnDefinitions="3*,*" Grid.Row="1" >
-            <Button Text="Generate Name" Command="{Binding GenerateNameCommand}"/>
-            <Button Text="Options" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}"/>
+        <Grid ColumnDefinitions="3*,*" Grid.Row="1" Margin="0,1,0,1" >
+            <Button Text="Generate Name" Command="{Binding GenerateNameCommand}" Margin="1,0,1,0"/>
+            <Button Text="Options" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}" Margin="1,0,1,0"/>
         </Grid>
-        <Grid Grid.Row="2" ColumnDefinitions="2*,*,*">
-            <Button Text="Clear" Margin="0,1,0,0" Command="{Binding ClearCommand}"/>
+        <Grid Grid.Row="2" ColumnDefinitions="2*,*,*" Margin="0,1,0,0">
+            <Button Text="Clear" Margin="1,0,1,0" Command="{Binding ClearCommand}"/>
             <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Grid.Column="1" HorizontalOptions="Fill" HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
             <Stepper Increment="1" Minimum="1" Maximum="100" Grid.Column="2" Value="{Binding GenerationNumber}"/>
         </Grid>

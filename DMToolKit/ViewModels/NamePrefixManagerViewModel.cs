@@ -39,6 +39,12 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
+        async Task GoBack()
+        {
+            await Shell.Current.GoToAsync("..");
+        }
+
+        [RelayCommand]
         public void Delete(string s)
         {
             if (PrefixList.Contains(s))
@@ -54,8 +60,8 @@ namespace DMToolKit.ViewModels
                 DataController.NameConstructionData.PrefixList = new List<string>();
 
             PrefixList.Clear();
-            foreach (var item in DataController.NameConstructionData.PrefixList)
-                PrefixList.Add(item);
+            for (int i = 0; i < DataController.NameConstructionData.PrefixList.Count; i++)
+                PrefixList.Add(DataController.NameConstructionData.PrefixList[i]);
         }
 
         private void SaveData()

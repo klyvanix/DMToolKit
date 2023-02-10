@@ -14,27 +14,28 @@
                 <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" VerticalTextAlignment="Center"
                                        Text="Value" TextColor="{StaticResource White}" />
             </Grid>
-            <Grid Grid.Column="1" ColumnDefinitions="*,*">
+            <Grid Grid.Column="1" ColumnDefinitions="*,*" Padding="0,0,20,0">
+                <Image Source="pouchheader.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
+                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" VerticalTextAlignment="Center" 
+                                       Text="Size" TextColor="{StaticResource White}"/>
+            </Grid>
+            <Grid Grid.Column="2" ColumnDefinitions="*,*">
                 <Label Grid.Column="0" HorizontalTextAlignment="End" Padding="0,0" VerticalTextAlignment="Center"
                                        Text="# of " TextColor="{StaticResource White}"/>
                 <Image Source="coinstack.png" HeightRequest="20" Grid.Column="1" HorizontalOptions="Start"/>
             </Grid>
-            <Grid Grid.Column="2" ColumnDefinitions="*,*">
+            <Grid Grid.Column="3" ColumnDefinitions="*,*">
                 <Image Source="gemstack.png" HeightRequest="20" Grid.Column="1" HorizontalOptions="Start"/>
                 <Label Grid.Column="0" HorizontalTextAlignment="End" Padding="0,0" VerticalTextAlignment="Center"
                                        Text="# of" TextColor="{StaticResource White}"/>
-            </Grid>
-            <Grid Grid.Column="3" ColumnDefinitions="*,*" Padding="0,0,20,0">
-                <Image Source="pouchheader.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" VerticalTextAlignment="Center" 
-                                       Text="Size" TextColor="{StaticResource White}"/>
             </Grid>
         </Grid>
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
                         SelectionMode="Single" ItemsSource="{Binding CoinPouchList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="Data:CoinPouch">
-                    <Border Padding="3" StrokeShape="RoundRectangle 5" BackgroundColor="{StaticResource Tertiary}">
+                    <Border Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer CommandParameter="{Binding .}"
                                                   Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
@@ -42,24 +43,24 @@
                         <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3"
                               ColumnDefinitions="*,*,*,*">
                             <Grid Grid.Column="0" ColumnDefinitions="*,*">
-                                <Image Source="value.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
+                                <Image Source="{AppThemeBinding Light='value.png',Dark='valueheader.png'}" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
                                        Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=Value}"/>
                             </Grid>
                             <Grid Grid.Column="1" ColumnDefinitions="*,*">
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
+                                <Image Source="{AppThemeBinding Light='valuebackground.png',Dark='pouchheader.png'}" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalItems}"/>
+                            </Grid>
+                            <Grid Grid.Column="2" ColumnDefinitions="*,*">
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
                                        Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalNumberOfCoins}"/>
                                 <Image Source="coinstack.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
                             </Grid>
-                            <Grid Grid.Column="2" ColumnDefinitions="*,*">
-                                <Image Source="gemstack.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
-                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalNumberOfGems}"/>
-                            </Grid>
                             <Grid Grid.Column="3" ColumnDefinitions="*,*">
-                                <Image Source="valuebackground.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
-                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{StaticResource Black}"
-                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalItems}"/>
+                                <Image Source="gemstack.png" HeightRequest="20" Grid.Column="0" HorizontalOptions="End"/>
+                                <Label Grid.Column="1" HorizontalTextAlignment="Start" Padding="0,0" TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:CoinPouch}}, Path=TotalNumberOfGems}"/>
                             </Grid>
                         </Grid>
                     </Border>
@@ -69,7 +70,7 @@
         <Button Grid.Row="2" Margin="0,1,0,1" Text="Clear"
                 Command="{Binding ClearCommand}"/>
         <Grid Grid.Row="3" Grid.ColumnSpan="2" ColumnDefinitions="*,*" Margin="0,1,0,0">
-            <Button Text="Add" VerticalOptions="Fill"
+            <Button Text="Generate Coin Pouch" VerticalOptions="Fill"
                     Command="{Binding AddCommand}" />
             <Grid ColumnDefinitions="*,*" Grid.Row="1" Grid.Column="1">
                 <Entry Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"

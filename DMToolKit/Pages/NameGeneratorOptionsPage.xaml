@@ -8,8 +8,9 @@
     <Grid RowDefinitions="40,*,50,50">
 
         <HorizontalStackLayout HorizontalOptions="Center">
-            <RadioButton Grid.Column="1" HorizontalOptions="Start" IsChecked="{Binding LetterLock}" Content="Letter Lock" TextColor="White"/>
-            <RadioButton Grid.Column="1" HorizontalOptions="Start" IsChecked="{Binding PrefixLock}" Content="Prefix Lock" TextColor="White"/>
+            <RadioButton Grid.Column="1" HorizontalOptions="Start" IsChecked="{Binding LetterLock}" Content="Lock Letter" TextColor="White"/>
+            <RadioButton Grid.Column="1" HorizontalOptions="Start" IsChecked="{Binding PrefixLock}" Content="Lock Prefix" TextColor="White"/>
+            <RadioButton Grid.Column="1" HorizontalOptions="Start" IsChecked="{Binding NamePartLock}" Content="Name Part Options" TextColor="White"/>
         </HorizontalStackLayout>
         <Grid ColumnDefinitions="*,2*" RowDefinitions="40,*" Grid.Row="1" IsVisible="{Binding LetterLock}" VerticalOptions="Start">
             <Label Text="Letter To Lock"  Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Padding="10"/>
@@ -38,7 +39,41 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
-        <Button Text="Save" Margin="1" Command="{Binding SaveOptionsCommand}" Grid.Row="2"/>
+        <StackLayout Grid.Row="1" IsVisible="{Binding NamePartLock}">
+            <Grid ColumnDefinitions="Auto,*">
+                <Border WidthRequest="40" HeightRequest="40" Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                    <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddPrefixCommand}"/>
+                </Border>
+                <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                    <Entry Placeholder="Prefix" PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
+                           Text="{Binding PrefixToAdd}"
+                           HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Border>
+            </Grid>
+            <Button Text="Add Prefix" Command="{Binding AddToPrefixListCommand}"/>
+            <Grid ColumnDefinitions="Auto,*">
+                <Border WidthRequest="40" HeightRequest="40" Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                    <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddSuffixCommand}"/>
+                </Border>
+                <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                    <Entry Placeholder="Suffix" PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
+                       TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
+                       Text="{Binding SuffixToAdd}"
+                       HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Border>
+            </Grid>
+            <Button Text="Add Suffix" Command="{Binding AddToSuffixListCommand}"/>
+            
+        </StackLayout>
+        <Grid Grid.Row="2" ColumnDefinitions="2*,*">
+            <Button Text="Save" Margin="1" Command="{Binding SaveOptionsCommand}" />
+            <Button Text="Clear Locks" Margin="1" Command="{Binding ClearLocksCommand}" Grid.Column="1"/>
+        </Grid>
         <Button Text="Back" Margin="1" Command="{Binding GoBackCommand}" Grid.Row="3"/>
     </Grid>
 </ContentPage>

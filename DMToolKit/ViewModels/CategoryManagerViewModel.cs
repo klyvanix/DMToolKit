@@ -29,8 +29,8 @@ namespace DMToolKit.ViewModels
         public void UpdateData()
         {
             Categories.Clear();
-            foreach (var item in DataController.NPCData.NPCCategories)
-                Categories.Add(item);
+            for(int i = 0; i < DataController.NPCData.NPCCategories.Count; i++)
+                Categories.Add(DataController.NPCData.NPCCategories[i]);
         }
 
         [RelayCommand]

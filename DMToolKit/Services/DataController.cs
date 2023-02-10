@@ -126,12 +126,15 @@ namespace DMToolKit.Services
         {
             if(minIndex != -1)
             {
-                for(int i = minIndex; i < (NameConstructionData.PrefixList.Count); i++)
+                if(lockedLetter == "Z")
+                    return NameConstructionData.PrefixList.Count + 1;
+
+                for (int i = minIndex; i < (NameConstructionData.PrefixList.Count); i++)
                 {
                     if(i < NameConstructionData.PrefixList.Count - 1)
                     {
                         if (!NameConstructionData.PrefixList[i + 1].StartsWith(lockedLetter))
-                            return i;
+                            return i + 1;
                     }
                 }
             }

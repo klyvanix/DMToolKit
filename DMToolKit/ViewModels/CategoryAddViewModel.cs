@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Services;
-using Xamarin.Google.Crypto.Tink.Signature;
 
 namespace DMToolKit.ViewModels
 {
@@ -27,22 +26,21 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         public async Task AddCategory()
         {
-            if(!string.IsNullOrEmpty(CategoryName) && !GetCategoryDoesNotExist()) 
-            {
-                DataController.NPCData.NPCCategories.Add(CategoryName);
-                DataController.NPCData.NPCCategories.Sort();
-                DataController.SaveNPCData();
-                await Shell.Current.GoToAsync("..");
-            }
+            if (string.IsNullOrEmpty(CategoryName) && !GetCategoryDoesNotExist())
+                return;
+
+            var item = char.ToUpper(CategoryName[0]) + CategoryName.Substring(1);
+            DataController.NPCData.NPCCategories.Add(item);
+            DataController.NPCData.NPCCategories.Sort();
+            DataController.SaveNPCData();
+            await Shell.Current.GoToAsync("..");
         }
         private bool GetCategoryDoesNotExist()
         {
-            foreach (var item in DataController.NPCData.NPCCategories)
+            for(int i = 0; i < DataController.NPCData.NPCCategories.Count; i++)
             {
-                if (item.Equals(CategoryName))
-                {
+                if (DataController.NPCData.NPCCategories[i].Equals(CategoryName))
                     return true;
-                }
             }
             return false;
         }

@@ -22,7 +22,7 @@
             <Border StrokeShape="RoundRectangle 30" Grid.Row="1" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource PositiveAttribute}" Stroke="Transparent">
                 <Label Text="{Binding InputNPC.PositiveMinor}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="18"/>
             </Border>
-            <Label Text="Positive Traits" Grid.Row="2" Grid.Column="0" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="15"/>
+            <Label Text="Negative Traits" Grid.Row="2" Grid.Column="0" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="15"/>
             <Border StrokeShape="RoundRectangle 30" Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource NegativeAttribute}" Stroke="Transparent">
                 <Label Text="{Binding InputNPC.NegativePrime}" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="20"/>
             </Border>
@@ -31,8 +31,14 @@
             </Border>
         </Grid>
         <VerticalStackLayout Grid.Row="1">
-            <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" HeightRequest="200" HorizontalOptions="Center" Padding="10">
+            <Border BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" StrokeShape="RoundRectangle 5" Grid.Column="1">
+                <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}" />
+            </Border>
+            <Border BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" 
+                    Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                    StrokeShape="RoundRectangle 5" HeightRequest="200" HorizontalOptions="Center" Padding="10">
                 <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" 
+                        TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" MinimumWidthRequest="350" MaximumWidthRequest="400" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
             </Border>
         </VerticalStackLayout>

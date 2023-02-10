@@ -22,9 +22,10 @@
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CategoryManagerViewModel}}, Path=DeleteCommand}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Border Padding="5" StrokeShape="RoundRectangle 5" BackgroundColor="{StaticResource Tertiary}">
+                        <Border Padding="5" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
                             <Label Text="{Binding .}" HorizontalOptions="Center" 
-                                   VerticalOptions="Center" TextColor="{StaticResource Black}" />
+                                   VerticalOptions="Center" TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
                         </Border>
                     </SwipeView>
                 </DataTemplate>

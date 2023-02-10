@@ -32,6 +32,9 @@
     <MauiXaml Update="Pages\LastNamePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\ListManagerPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\MasculineNamePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

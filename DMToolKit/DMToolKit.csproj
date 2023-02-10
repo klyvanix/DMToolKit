@@ -74,6 +74,9 @@
 	  <MauiXaml Update="Pages\LastNamePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\ListManagerPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\MasculineNamePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -104,6 +107,12 @@
 	  <MauiXaml Update="Pages\NPCListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Images\DarkTheme\" />
+	  <Folder Include="Resources\Images\LightTheme\" />
+	  <Folder Include="Resources\Images\CoinPouch\" />
 	</ItemGroup>
 
 </Project>

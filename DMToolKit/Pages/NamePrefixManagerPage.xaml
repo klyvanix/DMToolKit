@@ -6,9 +6,10 @@
              x:DataType="viewmodel:NamePrefixManagerViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Prefix Manager">
-    <Grid RowDefinitions="*,40">
-        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" 
-                        SelectionMode="Single" ItemsSource="{Binding PrefixList}">
+    <Grid RowDefinitions="30,*,50,50">
+        <Label Text="{Binding PrefixList.Count, StringFormat='List Count: {0}'}" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+        <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" 
+                        SelectionMode="None" ItemsSource="{Binding PrefixList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String}">
                     <SwipeView>
@@ -21,11 +22,12 @@
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NamePrefixManagerViewModel}}, Path=DeleteCommand}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Border Padding="3" BackgroundColor="{StaticResource Tertiary}">
+                        <Border Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
                             <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3"
                                   ColumnDefinitions="*">
                                 <HorizontalStackLayout HorizontalOptions="Center">
-                                    <Label TextColor="{StaticResource Black}" Padding="5,0"
+                                    <Label TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" Padding="5,0"
                                        Text="{Binding .}"/>
                                 </HorizontalStackLayout>
                             </Grid>
@@ -34,10 +36,11 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Grid Grid.Row="1" ColumnDefinitions="*,*">
+        <Grid Grid.Row="2" ColumnDefinitions="*,*">
             <Button Text="Add" Margin="0,1,0,0" Command="{Binding AddCommand}"/>
-            <Entry Placeholder="Prefix To Add" Grid.Column="1" HorizontalOptions="Fill" Text="{Binding InputField}"
+            <Entry Placeholder="Prefix To Add" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Text="{Binding InputField}"
                    HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
         </Grid>
+        <Button Grid.Row="3" Text="Back" Margin="0,2" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>

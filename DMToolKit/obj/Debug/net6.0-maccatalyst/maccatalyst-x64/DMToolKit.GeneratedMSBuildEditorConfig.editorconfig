@@ -64,6 +64,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.LastNamePa
 build_metadata.AdditionalFiles.TargetPath = Pages\LastNamePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LastNamePage.xaml
 
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/ListManagerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.ListManagerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ListManagerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ListManagerPage.xaml
+
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MainPage.xaml

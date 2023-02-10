@@ -31,8 +31,8 @@ namespace DMToolKit.ViewModels
                 return;
 
             NpcList.Clear();
-            foreach(var item in DataController.NPCData.NPCList)
-                NpcList.Add(item);
+            for(int i = 0; i < DataController.NPCData.NPCList.Count; i++)
+                NpcList.Add(DataController.NPCData.NPCList[i]);
         }
 
         [RelayCommand]
@@ -72,6 +72,12 @@ namespace DMToolKit.ViewModels
                 {
                     {"NPC", input }
                 });
+        }
+
+        [RelayCommand]
+        async Task GoBack()
+        {
+            await Shell.Current.GoToAsync($"..");
         }
     }
 }

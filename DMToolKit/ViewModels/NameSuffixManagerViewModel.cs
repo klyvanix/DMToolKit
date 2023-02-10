@@ -39,6 +39,12 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
+        async Task GoBack()
+        {
+            await Shell.Current.GoToAsync("..");
+        }
+
+        [RelayCommand]
         public void Delete(string s)
         {
             if (SuffixList.Contains(s))
@@ -54,8 +60,8 @@ namespace DMToolKit.ViewModels
                 DataController.NameConstructionData.SuffixList = new List<string>();
 
             SuffixList.Clear();
-            foreach (var item in DataController.NameConstructionData.SuffixList)
-                SuffixList.Add(item);
+            for(int i = 0; i < DataController.NameConstructionData.SuffixList.Count; i++)
+                SuffixList.Add(DataController.NameConstructionData.SuffixList[i]);
         }
 
         private void SaveData()

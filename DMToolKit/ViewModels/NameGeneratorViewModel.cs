@@ -56,10 +56,14 @@ namespace DMToolKit.ViewModels
             else
             {
                 NameList.Clear();
+                List<Name> list = new List<Name>();
                 for (int i = 0; i < GenerationNumber; i++)
-                {
-                    NameList.Add(new Name(GetPrefix(), GetSuffix()));
-                }
+                    list.Add(new Name(GetPrefix(), GetSuffix()));
+
+                list.Sort();
+
+                for (int i = 0; i < list.Count; i++)
+                    NameList.Add(list[i]);
             }
         }
 

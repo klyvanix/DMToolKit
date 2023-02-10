@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace DMToolKit.Data
 {
@@ -22,7 +17,7 @@ namespace DMToolKit.Data
     }
 
     //Extension class for additional functionalities.
-    static class Extensions
+    public static class Extensions
     {
         //Sorting function for the ObservableCollection to sort based on criteria of IComparable.
         public static void Sort<T>(this ObservableCollection<T> collection) where T : IComparable

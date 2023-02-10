@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Data;
 using DMToolKit.Pages;
 using DMToolKit.Services;
-using Xamarin.KotlinX.Coroutines;
 
 namespace DMToolKit.ViewModels
 {
@@ -11,12 +10,6 @@ namespace DMToolKit.ViewModels
     {
         [ObservableProperty]
         NPC character;
-
-        [ObservableProperty]
-        public List<string> classificationList;
-
-        [ObservableProperty]
-        public int pickerIndex;
 
         bool firstNameLock;
         bool lastNameLock;
@@ -56,39 +49,26 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         Color negativeMinorColor = Colors.White;
 
+        [ObservableProperty]
+        string genderImage;
+
+        [ObservableProperty]
+        bool notGenerated;
+        [ObservableProperty]
+        bool generated;
+
         private Random random = new Random();
 
         DataController DataController;
 
         Color locked = Color.FromArgb("000000");
 
-        public bool RolesAreZero 
-        { 
-            get
-            {
-                if (DataController.Instance.NPCData.NPCCategories.Count == 0)
-                    return true;
-
-                return false;
-            }
-        }
-
-        public bool RolesAreMoreThanZero
-        {
-            get
-            {
-                if (DataController.Instance.NPCData.NPCCategories.Count > 0)
-                    return true;
-                
-                return false;
-            }
-        }
-
         public NPCGeneratorViewModel()
         {
-            PickerIndex = 0;
-            ClassificationList = new List<string>();
             DataController = DataController.Instance;
+            NotGenerated = true;
+            Generated = false;
+            GenderImage = "npc.png";
             Character = new NPC();
             Character.ValueDescription = "Click the generate button to generate an NPC based on random criteria.";
             Character.AttributeDescription = "The Generator will Generate Values and specific character traits that can help inform who the characters are. " +
@@ -101,7 +81,6 @@ namespace DMToolKit.ViewModels
             positiveMinorLock = false;
             negativePrimeLock = false;
             negativeMinorLock = false;
-            UpdateData();
         }
 
         [RelayCommand]
@@ -120,9 +99,21 @@ namespace DMToolKit.ViewModels
 
                 var firstName = string.Empty;
                 if (masculineName)
+                {
                     firstName = DataController.NameData.MasculineNameList[firstNameIndex].Output;
+                    if(Application.Current.RequestedTheme == AppTheme.Light)
+                        GenderImage = "masculine.png";
+                    if (Application.Current.RequestedTheme == AppTheme.Dark)
+                        GenderImage = "masculinedark.png";
+                }
                 else
+                {
                     firstName = DataController.NameData.FeminineNameList[firstNameIndex].Output;
+                    if (Application.Current.RequestedTheme == AppTheme.Light)
+                        GenderImage = "feminine.png";
+                    if (Application.Current.RequestedTheme == AppTheme.Dark)
+                        GenderImage = "femininedark.png";
+                }
 
                 Character = new NPC(firstName, DataController.NameData.LastNameList[lastNameIndex].Output,
                     CharacterAttributes.ValuesText[primeValueIndex],
@@ -134,18 +125,14 @@ namespace DMToolKit.ViewModels
                     CharacterAttributes.NegativeAttributeText[negativeMinorIndex],
                     $"{firstName} is mainly known for being {CharacterAttributes.PositiveAttributeDescription[positivePrimeIndex]} and can also be {CharacterAttributes.PositiveAttributeDescription[positiveMinorIndex]}. " +
                     $"However, they can also be {CharacterAttributes.NegativeAttributeDescription[negativePrimeIndex]}, and can be {CharacterAttributes.NegativeAttributeDescription[negativeMinorIndex]}.");
+                NotGenerated = false;
+                Generated = true;
             }
             else
             {
-                //do nothing
+                NotGenerated = true;
+                Generated = false;
             }
-        }
-
-        public void UpdateData()
-        {
-            ClassificationList.Clear();
-            foreach (var item in DataController.NPCData.NPCCategories)
-                ClassificationList.Add(item);
         }
         public bool GetCanGenerate()
         {
@@ -162,13 +149,17 @@ namespace DMToolKit.ViewModels
             if (input is null)
                 return;
 
-            input.Role = ClassificationList[PickerIndex];
-
             await Shell.Current.GoToAsync($"{nameof(NPCAddPage)}", true,
                 new Dictionary<string, object>
                 {
                     {"InputNPC", input }
                 });
+        }
+
+        [RelayCommand]
+        async Task GoToListPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(NPCListPage)}");
         }
 
         [RelayCommand]
@@ -197,6 +188,8 @@ namespace DMToolKit.ViewModels
             PositiveMinorColor = Colors.White;
             NegativePrimeColor = Colors.White;
             NegativeMinorColor = Colors.White;
+            NotGenerated = true;
+            Generated = false;
         }
 
         [RelayCommand]

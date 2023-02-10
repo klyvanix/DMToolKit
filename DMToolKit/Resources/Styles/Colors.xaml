@@ -8,7 +8,7 @@
     <Color x:Key="Secondary">#304f6e</Color>
     <Color x:Key="Tertiary">#bcd0e3</Color>
     <Color x:Key="Four">#b4c1cd</Color>
-    <Color x:Key="Dark">#090b14</Color>
+    <Color x:Key="Dark">#121720</Color>
     <Color x:Key="Background">#121720</Color>
     <Color x:Key="Values">#216ca6</Color>
     <Color x:Key="PositiveAttribute">#448344</Color>
@@ -27,6 +27,7 @@
     <Color x:Key="Gray950">#141414</Color> 
     <Color x:Key="Transparent">Transparent</Color>
     <Color x:Key="TextBackground">#bcd0e3</Color>
+    <Color x:Key="TextBackgroundDark">#081c30</Color>
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
