@@ -4,11 +4,16 @@
              x:Class="DMToolKit.Pages.ListManagerPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:ListManagerViewModel"
-             Title="ListManagerPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="List Manager">
+    <Grid RowDefinitions="*,50">
+        <VerticalStackLayout Grid.Row="0">
+            <Button Text="Masculine Names" Margin="5" Command="{Binding GoToMasculineListCommand}"/>
+            <Button Text="Feminine Names" Margin="5" Command="{Binding GoToFeminineListCommand}"/>
+            <Button Text="Last Names" Margin="5" Command="{Binding GoToLastNameListCommand}"/>
+            <Button Text="Add Prefix" Margin="5" Command="{Binding GoToPrefixListCommand}"/>
+            <Button Text="Add Suffix" Margin="5" Command="{Binding GoToSuffixListCommand}"/>
+            <Button Text="Character List" Margin="5" Command="{Binding GoToNPCListCommand}"/>
+        </VerticalStackLayout>
+        <Button Grid.Row="1" Text="Back" Margin="0,1,0,2" Command="{Binding GoBackCommand}"/>
+    </Grid>
 </ContentPage>

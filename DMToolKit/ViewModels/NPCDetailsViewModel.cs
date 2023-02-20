@@ -5,13 +5,16 @@ using DMToolKit.Pages;
 
 namespace DMToolKit.ViewModels
 {
-    [QueryProperty("NPC", "NPC")]
+    [QueryProperty("Character", "Character")]
     public partial class NPCDetailsViewModel : ObservableObject
     {
         [ObservableProperty]
-        public NPC nPC;
+        public NPC character;
 
-        public NPCDetailsViewModel() { }
+        public NPCDetailsViewModel() 
+        { 
+
+        }
 
         [RelayCommand]
         async Task GoBack()
@@ -25,7 +28,7 @@ namespace DMToolKit.ViewModels
             await Shell.Current.GoToAsync($"{nameof(NPCEditPage)}", true,
                 new Dictionary<string, object>
                 {
-                    {"NPC", NPC }
+                    {"Character", Character }
                 });
         }
     }

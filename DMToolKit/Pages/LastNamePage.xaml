@@ -6,8 +6,9 @@
              x:DataType="viewmodel:LastNameViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Saved Last Names">
-    <Grid >
-        <CollectionView HorizontalOptions="Center" VerticalOptions="Start" 
+    <Grid RowDefinitions="50,*,50">
+        <Label Text="{Binding NameCount, StringFormat='Number Of Names: {0}'}" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" />
+        <CollectionView HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1"
                             ItemsSource="{Binding LastNames}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="Data:Name">
@@ -31,5 +32,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button Text="Back" Grid.Row="2" Margin="0,2" Command="{Binding GoBackCommand}" />
     </Grid>
 </ContentPage>

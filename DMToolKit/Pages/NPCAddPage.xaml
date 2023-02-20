@@ -6,7 +6,7 @@
              x:DataType="viewmodel:NPCAddViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="{Binding InputNPC.FullName}">
-    <Grid RowDefinitions="Auto,*,40">
+    <Grid RowDefinitions="Auto,*,50,50">
         <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,2*,2*">
             <Label Text="Values" TextColor="White" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" FontSize="15"/>
             <Border StrokeShape="RoundRectangle 30" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{StaticResource Values}" Stroke="Transparent">
@@ -38,10 +38,11 @@
                     Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
                     StrokeShape="RoundRectangle 5" HeightRequest="200" HorizontalOptions="Center" Padding="10">
                 <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" 
-                        TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+                        TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" Keyboard="Text"
                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" MinimumWidthRequest="350" MaximumWidthRequest="400" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
             </Border>
         </VerticalStackLayout>
-        <Button Text="Save" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="2" Command="{Binding SaveDataCommand}"/>
+        <Button Text="Save" HorizontalOptions="Fill" VerticalOptions="Fill"  Margin="0,1,0,1" Grid.Row="2" Command="{Binding SaveDataCommand}"/>
+        <Button Text="Back" HorizontalOptions="Fill" VerticalOptions="Fill"  Margin="0,1,0,2" Grid.Row="3" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>

@@ -11,8 +11,12 @@
     <Color x:Key="Dark">#121720</Color>
     <Color x:Key="Background">#121720</Color>
     <Color x:Key="Values">#216ca6</Color>
+    <Color x:Key="ValuesDark">#4c9ede</Color>
     <Color x:Key="PositiveAttribute">#448344</Color>
-    <Color x:Key="NegativeAttribute">#711e1e</Color>
+    <Color x:Key="PositiveAttributeDark">#65d265</Color>
+    <Color x:Key="NegativeAttribute">#a11d1d</Color>
+    <Color x:Key="NegativeAttributeDark">#e22929</Color>
+    <Color x:Key="Name">#a05abd</Color>
     <Color x:Key="Role">#daa37d</Color>
     <Color x:Key="Delete">#d23434</Color>
     <Color x:Key="White">White</Color>

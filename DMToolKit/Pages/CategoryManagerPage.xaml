@@ -5,7 +5,7 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:CategoryManagerViewModel"
              Title="Role Manager">
-    <Grid RowDefinitions="50,*">
+    <Grid RowDefinitions="50,*,50">
         <Button Text="Add Category" HorizontalOptions="Fill" VerticalOptions="Center"
                 Command="{Binding GoToAddPageCommand}" />
         <CollectionView HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1"
@@ -22,7 +22,7 @@
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CategoryManagerViewModel}}, Path=DeleteCommand}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Border Padding="5" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                        <Border Padding="7" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
                                 BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
                             <Label Text="{Binding .}" HorizontalOptions="Center" 
                                    VerticalOptions="Center" TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
@@ -31,5 +31,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button Grid.Row="2" Text="Back" Margin="0,1,0,2" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>

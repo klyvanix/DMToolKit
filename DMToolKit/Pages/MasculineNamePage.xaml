@@ -6,9 +6,10 @@
              x:DataType="viewmodel:MasculineNameViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="MasculineNamePage">
-    <Grid >
+    <Grid RowDefinitions="50,*,50">
+        <Label Text="{Binding NameCount, StringFormat='Number Of Names: {0}'}" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" />
         <CollectionView HorizontalOptions="Center" VerticalOptions="Start" 
-                            ItemsSource="{Binding MasculineNames}">
+                            ItemsSource="{Binding MasculineNames}" Grid.Row="1">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="Data:Name">
                     <SwipeView>
@@ -31,5 +32,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button Text="Back" Grid.Row="2" Margin="0,2" Command="{Binding GoBackCommand}" />
     </Grid>
 </ContentPage>

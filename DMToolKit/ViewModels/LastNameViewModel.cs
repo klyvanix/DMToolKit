@@ -11,12 +11,16 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         public ObservableCollection<Name> lastNames;
 
+        [ObservableProperty]
+        public int nameCount;
+
         DataController DataController;
 
         public LastNameViewModel() 
         {
             DataController = DataController.Instance;
             LastNames = new ObservableCollection<Name>();
+            NameCount = DataController.NameData.LastNameList.Count;
             UpdateData();
         }
 
@@ -39,6 +43,12 @@ namespace DMToolKit.ViewModels
                 LastNames.Remove(s);
                 SaveData();
             }
+        }
+
+        [RelayCommand]
+        async Task GoBack()
+        {
+            await Shell.Current.GoToAsync("..");
         }
 
         private void SaveData()

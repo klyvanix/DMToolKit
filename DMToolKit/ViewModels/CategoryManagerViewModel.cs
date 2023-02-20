@@ -26,6 +26,12 @@ namespace DMToolKit.ViewModels
             await Shell.Current.GoToAsync($"{nameof(CategoryAddPage)}");
         }
 
+        [RelayCommand]
+        async Task GoBack()
+        {
+            await Shell.Current.GoToAsync($"..");
+        }
+
         public void UpdateData()
         {
             Categories.Clear();

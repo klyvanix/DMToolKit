@@ -30,6 +30,26 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string lockedPrefix;
 
+        [ObservableProperty]
+        bool showHelp;
+        [ObservableProperty]
+        bool showList;
+
+        [ObservableProperty]
+        string nameDescriptionOne;
+        [ObservableProperty]
+        string nameDescriptionTwo;
+        [ObservableProperty]
+        string nameDescriptionThree;
+        [ObservableProperty]
+        string nameDescriptionFour;
+        [ObservableProperty]
+        string nameDescriptionFive;
+        [ObservableProperty]
+        string nameDescriptionSix;
+        [ObservableProperty]
+        string nameDescriptionSeven;
+
         int minIndex;
         int maxIndex;
 
@@ -39,6 +59,15 @@ namespace DMToolKit.ViewModels
         {
             minIndex = -1;
             maxIndex = -1;
+            ShowHelp = false;
+            ShowList = true;
+            NameDescriptionOne = StaticStrings.NameDescription[0];
+            NameDescriptionTwo = StaticStrings.NameDescription[1];
+            NameDescriptionThree = StaticStrings.NameDescription[2];
+            NameDescriptionFour = StaticStrings.NameDescription[3];
+            NameDescriptionFive = StaticStrings.NameDescription[4];
+            NameDescriptionSix = StaticStrings.NameDescription[5];
+            NameDescriptionSeven = StaticStrings.NameDescription[6];
             DataController = DataController.Instance;
             NameList = new ObservableCollection<Name>();
             LockedLetter = "A";
@@ -47,15 +76,24 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
+        async Task Generation()
+        {
+        }
+
+        [RelayCommand]
         void GenerateName()
         {
             if (DataController.NameConstructionData.PrefixList.Count == 0 || DataController.NameConstructionData.SuffixList.Count == 0)
                 return;
-            if(GenerationNumber == 1)
+            ShowHelp = false;
+            ShowList = true;
+
+            if (GenerationNumber == 1)
                 NameList.Add(new Name(GetPrefix(), GetSuffix()));
             else
-            {
-                NameList.Clear();
+            { 
+                if(GenerationNumber > 5 )
+                    NameList.Clear();
                 List<Name> list = new List<Name>();
                 for (int i = 0; i < GenerationNumber; i++)
                     list.Add(new Name(GetPrefix(), GetSuffix()));
@@ -126,6 +164,12 @@ namespace DMToolKit.ViewModels
         async Task GoToOptionsPage()
         {
             await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
+        }
+        [RelayCommand]
+        void ToggleHelp()
+        {
+            ShowHelp = !ShowHelp;
+            ShowList = !ShowList;
         }
     }
 }

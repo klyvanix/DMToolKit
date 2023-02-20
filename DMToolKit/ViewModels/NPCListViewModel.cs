@@ -70,7 +70,7 @@ namespace DMToolKit.ViewModels
             await Shell.Current.GoToAsync($"{nameof(NPCDetailsPage)}", true,
                 new Dictionary<string, object>
                 {
-                    {"NPC", input }
+                    {"Character", input }
                 });
         }
 

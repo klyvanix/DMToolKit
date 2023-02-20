@@ -8,6 +8,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\coinep.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coingp.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coinpouch.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coinpouchdark.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\coinpouchtitle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coinpp.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coinsp.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coinstack.png
@@ -22,6 +23,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\gemstack.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\generateicon.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\generators.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\generatorsdark.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\help.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\home.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\jewel.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\lasticon.png
@@ -33,10 +35,12 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\masculine.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\masculinedark.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\namegenerator.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\namegeneratordark.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\namegentitle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\namelist.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npc.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npcgen.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npcgendark.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\npcgentitle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npclist.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\npclistdark.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\pouch.png
@@ -46,6 +50,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\pouchheader.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\prefix.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\ruby.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\suffix.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\unlock.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\unlocked.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\value.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\valuebackground.png

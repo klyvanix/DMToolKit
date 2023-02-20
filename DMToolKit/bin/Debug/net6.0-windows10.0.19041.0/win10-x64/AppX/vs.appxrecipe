@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Github\Maui\DMToolKit\DMToolKit\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-02-04T03:46:45.835</Modified>
+      <Modified>2023-02-14T02:25:11.683</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-02-04T03:46:45.365</Modified>
+      <Modified>2023-02-14T02:25:11.248</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\DMToolKit.runtimeconfig.json">
       <PackagePath>DMToolKit.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\DMToolKit.dll">
       <PackagePath>DMToolKit.dll</PackagePath>
-      <Modified>2023-02-04T03:46:44.019</Modified>
+      <Modified>2023-02-14T02:25:09.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DMToolKit.exe</PackagePath>
-      <Modified>2023-02-04T03:46:44.036</Modified>
+      <Modified>2023-02-14T02:25:09.519</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Klyvanix\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.12\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1067,7 +1067,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\DMToolKit.deps.json">
       <PackagePath>DMToolKit.deps.json</PackagePath>
-      <Modified>2023-02-04T03:46:45.657</Modified>
+      <Modified>2023-02-14T02:25:11.541</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Klyvanix\.nuget\packages\microsoft.maui.controls.ref.win\6.0.548\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1115,191 +1115,195 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-02-03T20:27:32.372</Modified>
+      <Modified>2023-02-14T02:17:22.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.scale-100.png">
       <PackagePath>appicon.scale-100.png</PackagePath>
       <Modified>2023-01-30T21:18:54.424</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicondark.scale-100.png">
+      <PackagePath>appicondark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:37:23.741</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-02-03T20:27:45.600</Modified>
+      <Modified>2023-02-14T02:17:35.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-02-03T20:27:45.929</Modified>
+      <Modified>2023-02-14T02:17:35.891</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-02-03T20:27:46.262</Modified>
+      <Modified>2023-02-14T02:17:36.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-02-03T20:27:46.630</Modified>
+      <Modified>2023-02-14T02:17:36.591</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-02-03T20:27:47.275</Modified>
+      <Modified>2023-02-14T02:17:37.251</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-02-03T20:27:37.650</Modified>
+      <Modified>2023-02-14T02:17:27.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-02-03T20:27:37.962</Modified>
+      <Modified>2023-02-14T02:17:27.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-02-03T20:27:38.897</Modified>
+      <Modified>2023-02-14T02:17:28.770</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-02-03T20:27:38.275</Modified>
+      <Modified>2023-02-14T02:17:28.146</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-02-03T20:27:38.588</Modified>
+      <Modified>2023-02-14T02:17:28.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-02-03T20:27:35.811</Modified>
+      <Modified>2023-02-14T02:17:25.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-02-03T20:27:36.143</Modified>
+      <Modified>2023-02-14T02:17:26.287</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-02-03T20:27:37.337</Modified>
+      <Modified>2023-02-14T02:17:27.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-02-03T20:27:36.525</Modified>
+      <Modified>2023-02-14T02:17:26.592</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-02-03T20:27:37.004</Modified>
+      <Modified>2023-02-14T02:17:26.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-02-03T20:27:32.763</Modified>
+      <Modified>2023-02-14T02:17:22.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-02-03T20:27:33.102</Modified>
+      <Modified>2023-02-14T02:17:23.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-02-03T20:27:33.404</Modified>
+      <Modified>2023-02-14T02:17:23.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-02-03T20:27:33.706</Modified>
+      <Modified>2023-02-14T02:17:23.788</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-02-03T20:27:34.009</Modified>
+      <Modified>2023-02-14T02:17:24.105</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-02-03T20:27:34.302</Modified>
+      <Modified>2023-02-14T02:17:24.420</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-02-03T20:27:34.605</Modified>
+      <Modified>2023-02-14T02:17:24.725</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-02-03T20:27:35.503</Modified>
+      <Modified>2023-02-14T02:17:25.652</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-02-03T20:27:34.900</Modified>
+      <Modified>2023-02-14T02:17:25.026</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-02-03T20:27:35.198</Modified>
+      <Modified>2023-02-14T02:17:25.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-02-03T20:27:42.342</Modified>
+      <Modified>2023-02-14T02:17:32.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-02-03T20:27:42.646</Modified>
+      <Modified>2023-02-14T02:17:32.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-02-03T20:27:42.973</Modified>
+      <Modified>2023-02-14T02:17:32.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-02-03T20:27:43.309</Modified>
+      <Modified>2023-02-14T02:17:33.184</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-02-03T20:27:43.669</Modified>
+      <Modified>2023-02-14T02:17:33.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-02-03T20:27:40.775</Modified>
+      <Modified>2023-02-14T02:17:30.664</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-02-03T20:27:41.088</Modified>
+      <Modified>2023-02-14T02:17:30.967</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-02-03T20:27:41.389</Modified>
+      <Modified>2023-02-14T02:17:31.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-02-03T20:27:41.700</Modified>
+      <Modified>2023-02-14T02:17:31.582</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-02-03T20:27:42.039</Modified>
+      <Modified>2023-02-14T02:17:31.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-02-03T20:27:39.200</Modified>
+      <Modified>2023-02-14T02:17:29.096</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-02-03T20:27:39.511</Modified>
+      <Modified>2023-02-14T02:17:29.420</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-02-03T20:27:39.811</Modified>
+      <Modified>2023-02-14T02:17:29.727</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-02-03T20:27:40.147</Modified>
+      <Modified>2023-02-14T02:17:30.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-02-03T20:27:40.456</Modified>
+      <Modified>2023-02-14T02:17:30.341</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-02-03T20:27:43.973</Modified>
+      <Modified>2023-02-14T02:17:33.856</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-02-03T20:27:44.279</Modified>
+      <Modified>2023-02-14T02:17:34.175</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-02-03T20:27:44.598</Modified>
+      <Modified>2023-02-14T02:17:34.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-02-03T20:27:44.918</Modified>
+      <Modified>2023-02-14T02:17:34.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-02-03T20:27:45.290</Modified>
+      <Modified>2023-02-14T02:17:35.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coincp.scale-100.png">
       <PackagePath>coincp.scale-100.png</PackagePath>
@@ -1312,6 +1316,14 @@
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coingp.scale-100.png">
       <PackagePath>coingp.scale-100.png</PackagePath>
       <Modified>2023-01-30T21:18:54.438</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coinpouch.scale-100.png">
+      <PackagePath>coinpouch.scale-100.png</PackagePath>
+      <Modified>2023-01-30T21:18:54.569</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coinpouchdark.scale-100.png">
+      <PackagePath>coinpouchdark.scale-100.png</PackagePath>
+      <Modified>2023-01-31T16:28:11.430</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coinpp.scale-100.png">
       <PackagePath>coinpp.scale-100.png</PackagePath>
@@ -1339,7 +1351,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\feminine.scale-100.png">
       <PackagePath>feminine.scale-100.png</PackagePath>
-      <Modified>2023-02-03T07:07:16.748</Modified>
+      <Modified>2023-02-10T07:29:42.220</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\femininedark.scale-100.png">
+      <PackagePath>femininedark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T07:30:39.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\firsticon.scale-100.png">
       <PackagePath>firsticon.scale-100.png</PackagePath>
@@ -1359,7 +1375,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\generators.scale-100.png">
       <PackagePath>generators.scale-100.png</PackagePath>
-      <Modified>2023-01-30T21:18:54.507</Modified>
+      <Modified>2023-02-10T06:41:12.585</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\generatorsdark.scale-100.png">
+      <PackagePath>generatorsdark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:42:21.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
       <PackagePath>home.scale-100.png</PackagePath>
@@ -1377,17 +1397,33 @@
       <PackagePath>lastname.scale-100.png</PackagePath>
       <Modified>2023-02-03T07:06:20.002</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\list.scale-100.png">
+      <PackagePath>list.scale-100.png</PackagePath>
+      <Modified>2023-02-09T22:40:42.609</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\listdark.scale-100.png">
+      <PackagePath>listdark.scale-100.png</PackagePath>
+      <Modified>2023-02-09T22:40:24.685</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\locked.scale-100.png">
       <PackagePath>locked.scale-100.png</PackagePath>
       <Modified>2023-02-01T20:17:57.358</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\masculine.scale-100.png">
       <PackagePath>masculine.scale-100.png</PackagePath>
-      <Modified>2023-02-03T07:06:48.256</Modified>
+      <Modified>2023-02-10T07:31:48.741</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\masculinedark.scale-100.png">
+      <PackagePath>masculinedark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T07:32:40.816</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\namegenerator.scale-100.png">
       <PackagePath>namegenerator.scale-100.png</PackagePath>
-      <Modified>2023-01-31T23:03:11.528</Modified>
+      <Modified>2023-02-10T06:21:22.496</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\namegeneratordark.scale-100.png">
+      <PackagePath>namegeneratordark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:20:51.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\namelist.scale-100.png">
       <PackagePath>namelist.scale-100.png</PackagePath>
@@ -1397,13 +1433,33 @@
       <PackagePath>npc.scale-100.png</PackagePath>
       <Modified>2023-01-30T22:07:49.983</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npcgen.scale-100.png">
+      <PackagePath>npcgen.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:23:03.111</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npcgendark.scale-100.png">
+      <PackagePath>npcgendark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:22:41.727</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npclist.scale-100.png">
       <PackagePath>npclist.scale-100.png</PackagePath>
       <Modified>2023-02-01T06:24:59.892</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npclistdark.scale-100.png">
+      <PackagePath>npclistdark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:29:09.021</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\pouch.scale-100.png">
       <PackagePath>pouch.scale-100.png</PackagePath>
       <Modified>2023-01-31T23:10:11.672</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\pouchgen.scale-100.png">
+      <PackagePath>pouchgen.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:25:46.234</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\pouchgendark.scale-100.png">
+      <PackagePath>pouchgendark.scale-100.png</PackagePath>
+      <Modified>2023-02-10T06:25:07.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\pouchheader.scale-100.png">
       <PackagePath>pouchheader.scale-100.png</PackagePath>
@@ -1432,6 +1488,10 @@
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\valuebackground.scale-100.png">
       <PackagePath>valuebackground.scale-100.png</PackagePath>
       <Modified>2023-01-30T21:18:54.569</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\valuedark.scale-100.png">
+      <PackagePath>valuedark.scale-100.png</PackagePath>
+      <Modified>2023-01-31T16:33:13.526</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\valueheader.scale-100.png">
       <PackagePath>valueheader.scale-100.png</PackagePath>

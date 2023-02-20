@@ -22,7 +22,7 @@ namespace DMToolKit.ViewModels
         bool prefixLock;
 
         [ObservableProperty]
-        bool namePartLock;
+        bool nameSeedsShown;
 
         [ObservableProperty]
         public string lockedPrefix;
@@ -36,6 +36,12 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         public string suffixToAdd;
 
+        [ObservableProperty]
+        public string prefixCount;
+
+        [ObservableProperty]
+        public string suffixCount;
+
         DataController DataController;
 
         public NameGeneratorOptionsViewModel() 
@@ -44,11 +50,13 @@ namespace DMToolKit.ViewModels
             SelectedIndex = 0;
             LetterLock = false;
             PrefixLock = false;
-            NamePartLock = true;
+            NameSeedsShown = true;
             PrefixList = new ObservableCollection<string>();
             PrefixToAdd = string.Empty;
             SuffixToAdd = string.Empty;
             LockedPrefix = string.Empty;
+            PrefixCount = $"{DataController.NameConstructionData.PrefixList.Count}";
+            SuffixCount = $"{DataController.NameConstructionData.SuffixList.Count}";
             LockedLetterList = new List<string>()
             {
                 "A", "B", "C", "D", "E",
@@ -69,6 +77,18 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task SaveOptions()
         {
+            if (!string.IsNullOrEmpty(LockedPrefix) && PrefixLock)
+            {
+                var item = char.ToUpper(LockedPrefix[0]) + LockedPrefix.Substring(1);
+                if (!DataController.NameConstructionData.PrefixList.Contains(item))
+                {
+                    DataController.NameConstructionData.PrefixList.Add(item);
+                    DataController.NameConstructionData.PrefixList.Sort();
+                    DataController.SaveNameConstructionData();
+                    PrefixToAdd = string.Empty;
+                }
+            }
+            
             if (SelectedIndex >= 0 || string.IsNullOrEmpty(LockedPrefix))
             {
                 await Shell.Current.GoToAsync($"..", true,

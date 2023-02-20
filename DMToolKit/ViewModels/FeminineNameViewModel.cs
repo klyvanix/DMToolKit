@@ -11,12 +11,16 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         public ObservableCollection<Name> feminineNames;
 
+        [ObservableProperty]
+        public int nameCount;
+
         DataController DataController;
 
         public FeminineNameViewModel() 
         {
             DataController = DataController.Instance;
             FeminineNames= new ObservableCollection<Name>();
+            NameCount = DataController.NameData.FeminineNameList.Count;
             UpdateData();
         }
 
@@ -39,6 +43,12 @@ namespace DMToolKit.ViewModels
                 FeminineNames.Remove(s);
                 SaveData();
             }
+        }
+
+        [RelayCommand]
+        async Task GoBack()
+        {
+            await Shell.Current.GoToAsync("..");
         }
 
         private void SaveData()

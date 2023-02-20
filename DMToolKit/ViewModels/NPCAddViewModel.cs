@@ -44,5 +44,11 @@ namespace DMToolKit.ViewModels
         {
             ClassificationList = DataController.NPCData.NPCCategories;
         }
+
+        [RelayCommand]
+        async Task GoBack()
+        {
+            await Shell.Current.GoToAsync($"..");
+        }
     }
 }

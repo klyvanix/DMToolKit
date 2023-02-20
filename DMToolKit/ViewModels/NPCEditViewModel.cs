@@ -7,11 +7,11 @@ using DMToolKit.Services;
 namespace DMToolKit.ViewModels
 {
 
-    [QueryProperty("NPC", "NPC")]
+    [QueryProperty("Character", "Character")]
     public partial class NPCEditViewModel : ObservableObject
     {
         [ObservableProperty]
-        public NPC nPC;
+        public NPC character;
 
         [ObservableProperty]
         public string notes;
@@ -38,26 +38,21 @@ namespace DMToolKit.ViewModels
 
         public void UpdateData()
         {
-            Notes = NPC.Notes;
+            Notes = Character.Notes;
         }
 
         [RelayCommand]
         async Task SaveChanges()
         {
-            if (DataController.NPCData.NPCList.Contains(NPC))
+            if (DataController.NPCData.NPCList.Contains(Character))
             {
-                var index = DataController.NPCData.NPCList.IndexOf(NPC);
-                NPC.Notes = Notes;
-                NPC.Role = ClassificationList[PickerIndex];
-                DataController.NPCData.NPCList[index] = NPC;
+                var index = DataController.NPCData.NPCList.IndexOf(Character);
+                Character.Notes = Notes;
+                Character.Role = ClassificationList[PickerIndex];
+                DataController.NPCData.NPCList[index] = Character;
                 DataController.SaveNPCData();
             }
-            await Shell.Current.GoToAsync($"//{nameof(NPCListPage)}");
-            //await Shell.Current.GoToAsync($"//{nameof(NPCListPage)}/{nameof(NPCDetailsPage)}", true,
-            //    new Dictionary<string, object>
-            //    {
-            //        {"NPC", NPC }
-            //    });
+            await Shell.Current.GoToAsync($"../..");
         }
 
         [RelayCommand]

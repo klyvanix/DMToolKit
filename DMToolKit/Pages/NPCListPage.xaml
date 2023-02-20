@@ -5,7 +5,7 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCListViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
-             Title="NPC Collection">
+             Title="Character Collection">
     <Grid RowDefinitions="*,50">
         <CollectionView HorizontalOptions="Center" VerticalOptions="Start"
                         ItemsSource="{Binding NpcList}">
@@ -34,6 +34,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Grid.Row="1" Text="Back" Command="{Binding GoBackCommand}" />
+        <Button Grid.Row="1" Text="Back" Command="{Binding GoBackCommand}" Margin="0,1,0,2"/>
     </Grid>
 </ContentPage>

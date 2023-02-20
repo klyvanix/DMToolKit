@@ -7,7 +7,7 @@
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Name Generator">
     <Grid RowDefinitions="*,50,50">
-        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" 
+        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}"
                         SelectionMode="Single" ItemsSource="{Binding NameList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="Data:Name">
@@ -30,15 +30,125 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Grid ColumnDefinitions="3*,*" Grid.Row="1" Margin="0,1,0,1" >
+        <ScrollView Grid.Row="0" IsVisible="{Binding ShowHelp}">
+            <VerticalStackLayout>
+                <Border HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 75" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Secondary}}" 
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}" >
+                    <Image Source="namegentitle.png" Margin="10"/>
+                </Border>
+                <!--Label 1-->
+                <Border HorizontalOptions="Center" Margin="2" Padding="5,0" StrokeShape="RoundRectangle 15 15 5 5" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
+                    <Label Text="Getting Started" FontSize="22" Padding="30,10" FontAttributes="Bold" TextColor="{StaticResource White}"/>
+                </Border>
+                <!--Text 1-->
+                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
+                    <Label Text="{Binding NameDescriptionOne}" Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                </Border>
+                <!--Label 2-->
+                <Border HorizontalOptions="Start" Margin="1" StrokeShape="RoundRectangle 5 40" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
+                    <Label Text="Options Page" FontSize="16" Padding="30,10" FontAttributes="Bold" TextColor="{StaticResource White}"/>
+                </Border>
+                <!--Text 2-->
+                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
+                    <Label Text="{Binding NameDescriptionTwo}" Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                </Border>
+                <!--Label 3-->
+                <Border HorizontalOptions="End" Margin="5" StrokeShape="RoundRectangle 40 5" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
+                    <Label Text="Name Seed Options" FontSize="16" Padding="30,10" FontAttributes="Bold"
+                           TextColor="{StaticResource White}"/>
+                </Border>
+                <!--Text 3-->
+                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
+                    <Label Text="{Binding NameDescriptionThree}" Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                </Border>
+                <!--Label 4-->
+                <Border HorizontalOptions="Start" Margin="1" StrokeShape="RoundRectangle 5 40" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
+                    <Label Text="Lock Prefix" FontSize="16" Padding="30,10" FontAttributes="Bold"
+                           TextColor="{StaticResource White}"/>
+                </Border>
+                <!--Text 4-->
+                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
+                    <Label Text="{Binding NameDescriptionFour}" Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                </Border>
+                <!--Label 5-->
+                <Border HorizontalOptions="End" Margin="5" StrokeShape="RoundRectangle 40 5" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
+                    <Label Text="Lock Letter" FontSize="16" Padding="30,10" FontAttributes="Bold"
+                           TextColor="{StaticResource White}"/>
+                </Border>
+                <!--Text 5-->
+                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
+                    <Label Text="{Binding NameDescriptionFive}" Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                </Border>
+                <!--Label 6-->
+                <Border HorizontalOptions="Start" Margin="1" StrokeShape="RoundRectangle 5 40" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
+                    <Label Text="Generating Names" FontSize="16" Padding="30,10" FontAttributes="Bold"
+                           TextColor="{StaticResource White}"/>
+                </Border>
+                <!--Text 6-->
+                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
+                    <Label Text="{Binding NameDescriptionSix}" Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                </Border>
+                <!--Label 7-->
+                <Border HorizontalOptions="End" Margin="5" StrokeShape="RoundRectangle 40 5" StrokeThickness="2"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
+                    <Label Text="Saving Names" FontSize="16" Padding="30,10" FontAttributes="Bold"
+                           TextColor="{StaticResource White}"/>
+                </Border>
+                <!--Text 7-->
+                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
+                    <Label Text="{Binding NameDescriptionSeven}" Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Grid ColumnDefinitions="3*,100,50" Grid.Row="1" Margin="0,1,0,1" >
             <Button Text="Generate Name" Command="{Binding GenerateNameCommand}" Margin="1,0,1,0"/>
-            <Button Text="Options" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}" Margin="1,0,1,0"/>
+            <Button Text="Tools" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}" Margin="1,0,1,0"/>
+            <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 
+                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                <ImageButton HeightRequest="40" WidthRequest="40" Source="help.png" Command="{Binding ToggleHelpCommand}"/>
+            </Border>
         </Grid>
-        <Grid Grid.Row="2" ColumnDefinitions="2*,*,*" Margin="0,1,0,0">
+        <Grid Grid.Row="2" ColumnDefinitions="2*,*,*" Margin="0,1,0,2">
             <Button Text="Clear" Margin="1,0,1,0" Command="{Binding ClearCommand}"/>
-            <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Grid.Column="1" HorizontalOptions="Fill" HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
+            <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Grid.Column="1" HorizontalOptions="Fill" Keyboard="Numeric"
+                   HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
             <Stepper Increment="1" Minimum="1" Maximum="100" Grid.Column="2" Value="{Binding GenerationNumber}"/>
         </Grid>
     </Grid>
-
 </ContentPage>

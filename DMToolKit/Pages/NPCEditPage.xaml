@@ -17,7 +17,7 @@
             </Border>
         </Grid>
         <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" HeightRequest="200" HorizontalOptions="Center" Padding="10">
-            <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" 
+            <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" Keyboard="Text"
                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="350" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
         </Border>
         <Button Text="Save Changes" Command="{Binding SaveChangesCommand}" />

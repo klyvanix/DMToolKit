@@ -28,7 +28,7 @@ namespace DMToolKit.Data
 
         public int CompareTo(Name other)
         {
-            return Prefix.CompareTo(other.Prefix);
+            return Output.CompareTo(other.Output);
         }
     }
 }

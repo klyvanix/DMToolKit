@@ -5,7 +5,7 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:CoinPouchDetailsViewModel"
              Title="Coin Pouch Details">
-    <Grid ColumnDefinitions="*,*,*" RowDefinitions="40,60,20,Auto,*,40">
+    <Grid ColumnDefinitions="*,*,*" RowDefinitions="50,60,20,Auto,*,50">
         <Border Grid.Row="1" StrokeShape="RoundRectangle 40 10 10 40" BackgroundColor="{StaticResource Secondary}" Stroke="{StaticResource Primary}"
                 VerticalOptions="Fill">
             <Grid HorizontalOptions="Center" ColumnDefinitions="*,*">
@@ -56,7 +56,7 @@
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Image Source="coincp.png" HeightRequest="30"/>
-                    <Label Text="{Binding CoinPouch.CPCoinCount, StringFormat='{0}CP'}" 
+                    <Label Text="{Binding CoinPouch.CPCoinCount, StringFormat='{0}'}" 
                            TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" VerticalOptions="Center" FontSize="18"/>
                 </HorizontalStackLayout>
             </StackLayout>
@@ -163,7 +163,7 @@
                 </StackLayout>
             </Grid>
         </Border>
-        <Button Text="Back" HorizontalOptions="Fill" Grid.Row="5" Grid.ColumnSpan="3" Margin="40,0"
+        <Button Text="Back" HorizontalOptions="Fill" Grid.Row="5" Grid.ColumnSpan="3" Margin="50,1,50, 2"
                 Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>

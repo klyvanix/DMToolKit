@@ -67,13 +67,13 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Grid.Row="2" Margin="0,1,0,1" Text="Clear"
-                Command="{Binding ClearCommand}"/>
-        <Grid Grid.Row="3" Grid.ColumnSpan="2" ColumnDefinitions="*,*" Margin="0,1,0,0">
-            <Button Text="Generate Coin Pouch" VerticalOptions="Fill"
-                    Command="{Binding AddCommand}" />
+        <Button Grid.Row="2" Margin="0,1,0,1" Text="Generate Coin Pouch"
+                Command="{Binding AddCommand}" />
+        <Grid Grid.Row="3" Grid.ColumnSpan="2" ColumnDefinitions="*,*" Margin="0,1,0,2">
+            <Button Text="Clear" VerticalOptions="Fill"
+                    Command="{Binding ClearCommand}" />
             <Grid ColumnDefinitions="*,*" Grid.Row="1" Grid.Column="1">
-                <Entry Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"
+                <Entry Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Keyboard="Numeric"
                        Text="{Binding OutputTarget}" Placeholder="GP" TextColor="{StaticResource White}"/>
                 <Stepper Minimum="0" Maximum="1000000" Increment="1" Grid.Column="1" 
                          Value="{Binding OutputTarget}"/>

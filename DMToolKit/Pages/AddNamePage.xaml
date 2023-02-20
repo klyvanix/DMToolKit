@@ -7,7 +7,7 @@
              Title="Add To List">
     <Grid RowDefinitions="*,50">
         <VerticalStackLayout Grid.Row="0">
-            <Border WidthRequest="200" HeightRequest="100" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent" StrokeShape="RoundRectangle 10 10 50 50">
+            <Border WidthRequest="300" HeightRequest="100" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent" StrokeShape="RoundRectangle 10 10 50 50">
                 <Label Text="{Binding InputName.Output}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
             </Border>
             <Label Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
@@ -18,6 +18,6 @@
             <Button Text="Add Prefix" Margin="5" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding PrefixEnabled}" />
             <Button Text="Add Suffix" Margin="5" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding SuffixEnabled}"/>
         </VerticalStackLayout>
-        <Button Text="Back" Grid.Row="1" Margin="1,0,1,0" Command="{Binding GoBackCommand}"/>
+        <Button Text="Back" Grid.Row="1" Margin="0,0,0,2" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>

@@ -24,6 +24,7 @@ namespace DMToolKit.ViewModels
 
         int firstNameIndex = -1;
         int lastNameIndex = -1;
+        int gender = -1;
 
         int primeValueIndex = -1;
         int minorValueIndex = -1;
@@ -50,12 +51,27 @@ namespace DMToolKit.ViewModels
         Color negativeMinorColor = Colors.White;
 
         [ObservableProperty]
+        string descriptionOne;
+        [ObservableProperty]
+        string descriptionTwo;
+        [ObservableProperty]
+        string descriptionThree;
+        [ObservableProperty]
+        string descriptionFour;
+        [ObservableProperty]
+        string descriptionFive;
+        [ObservableProperty]
+        string descriptionSix;
+
+        [ObservableProperty]
         string genderImage;
 
         [ObservableProperty]
         bool notGenerated;
         [ObservableProperty]
         bool generated;
+
+        bool startup;
 
         private Random random = new Random();
 
@@ -66,13 +82,11 @@ namespace DMToolKit.ViewModels
         public NPCGeneratorViewModel()
         {
             DataController = DataController.Instance;
+            startup = true;
             NotGenerated = true;
             Generated = false;
             GenderImage = "npc.png";
             Character = new NPC();
-            Character.ValueDescription = "Click the generate button to generate an NPC based on random criteria.";
-            Character.AttributeDescription = "The Generator will Generate Values and specific character traits that can help inform who the characters are. " +
-                "Double tap the name fields, value field, and attribute field to lock the generated trait. Locked Items will have black text.";
             firstNameLock = false;
             lastNameLock = false;
             valuePrimeLock = false;
@@ -81,6 +95,11 @@ namespace DMToolKit.ViewModels
             positiveMinorLock = false;
             negativePrimeLock = false;
             negativeMinorLock = false;
+            DescriptionOne = StaticStrings.NPCDescription[0];
+            DescriptionTwo = StaticStrings.NPCDescription[1];
+            DescriptionThree = StaticStrings.NPCDescription[2];
+            DescriptionFour = StaticStrings.NPCDescription[3];
+            DescriptionFive = StaticStrings.NPCDescription[4];
         }
 
         [RelayCommand]
@@ -101,7 +120,8 @@ namespace DMToolKit.ViewModels
                 if (masculineName)
                 {
                     firstName = DataController.NameData.MasculineNameList[firstNameIndex].Output;
-                    if(Application.Current.RequestedTheme == AppTheme.Light)
+                    gender = 1;
+                    if (Application.Current.RequestedTheme == AppTheme.Light)
                         GenderImage = "masculine.png";
                     if (Application.Current.RequestedTheme == AppTheme.Dark)
                         GenderImage = "masculinedark.png";
@@ -109,29 +129,31 @@ namespace DMToolKit.ViewModels
                 else
                 {
                     firstName = DataController.NameData.FeminineNameList[firstNameIndex].Output;
+                    gender = 2;
                     if (Application.Current.RequestedTheme == AppTheme.Light)
                         GenderImage = "feminine.png";
                     if (Application.Current.RequestedTheme == AppTheme.Dark)
                         GenderImage = "femininedark.png";
                 }
+                Character = new NPC(firstName,
+                    DataController.NameData.LastNameList[lastNameIndex].Output,
+                    gender,
+                    primeValueIndex, 
+                    minorValueIndex, 
+                    positivePrimeIndex, 
+                    positiveMinorIndex, 
+                    negativePrimeIndex, 
+                    negativeMinorIndex);
 
-                Character = new NPC(firstName, DataController.NameData.LastNameList[lastNameIndex].Output,
-                    CharacterAttributes.ValuesText[primeValueIndex],
-                    CharacterAttributes.ValuesText[minorValueIndex],
-                    $"{firstName} values {CharacterAttributes.ValuesDefinitions[primeValueIndex]}, and {CharacterAttributes.ValuesDefinitions[minorValueIndex]}.",
-                    CharacterAttributes.PositiveAttributeText[positivePrimeIndex],
-                    CharacterAttributes.PositiveAttributeText[positiveMinorIndex],
-                    CharacterAttributes.NegativeAttributeText[negativePrimeIndex],
-                    CharacterAttributes.NegativeAttributeText[negativeMinorIndex],
-                    $"{firstName} is mainly known for being {CharacterAttributes.PositiveAttributeDescription[positivePrimeIndex]} and can also be {CharacterAttributes.PositiveAttributeDescription[positiveMinorIndex]}. " +
-                    $"However, they can also be {CharacterAttributes.NegativeAttributeDescription[negativePrimeIndex]}, and can be {CharacterAttributes.NegativeAttributeDescription[negativeMinorIndex]}.");
                 NotGenerated = false;
                 Generated = true;
+                startup = false;
             }
             else
             {
                 NotGenerated = true;
                 Generated = false;
+                startup = true;
             }
         }
         public bool GetCanGenerate()
@@ -159,7 +181,19 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToListPage()
         {
-            await Shell.Current.GoToAsync($"{nameof(NPCListPage)}");
+            await Shell.Current.GoToAsync($"{nameof(ListManagerPage)}");
+        }
+
+        [RelayCommand]
+        async Task GoToCategoryAddPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(CategoryManagerPage)}");
+        }
+
+        [RelayCommand]
+        async Task GoToNameGenPage()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(NameGeneratorPage)}");
         }
 
         [RelayCommand]
@@ -167,6 +201,24 @@ namespace DMToolKit.ViewModels
         {
             DataController.NPCData.NPCList.Add(npc);
             DataController.SaveNPCData();
+        }
+
+        [RelayCommand]
+        void DisplayHelp()
+        {
+            if(startup == true)
+                return;
+            NotGenerated = !NotGenerated;
+            Generated = !Generated;
+        }
+
+        [RelayCommand]
+        void CloseHelp()
+        {
+            if (startup == true)
+                return;
+            NotGenerated = false;
+            Generated = true;
         }
 
         [RelayCommand]
@@ -188,8 +240,6 @@ namespace DMToolKit.ViewModels
             PositiveMinorColor = Colors.White;
             NegativePrimeColor = Colors.White;
             NegativeMinorColor = Colors.White;
-            NotGenerated = true;
-            Generated = false;
         }
 
         [RelayCommand]
