@@ -21,12 +21,14 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(NPCEditPage), typeof(NPCEditPage));
         Routing.RegisterRoute(nameof(NPCDetailsPage), typeof(NPCDetailsPage));
 
+
+        Routing.RegisterRoute(nameof(NameCollectionPage), typeof(NameCollectionPage));
+
         Routing.RegisterRoute(nameof(NamePrefixManagerPage), typeof(NamePrefixManagerPage));
         Routing.RegisterRoute(nameof(NameSuffixManagerPage), typeof(NameSuffixManagerPage));
 
         Routing.RegisterRoute(nameof(MasculineNamePage), typeof(MasculineNamePage));
         Routing.RegisterRoute(nameof(FeminineNamePage), typeof(FeminineNamePage));
-        Routing.RegisterRoute(nameof(LastNamePage), typeof(LastNamePage));
 
     }
 }

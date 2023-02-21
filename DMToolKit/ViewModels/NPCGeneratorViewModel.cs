@@ -119,7 +119,7 @@ namespace DMToolKit.ViewModels
                 var firstName = string.Empty;
                 if (masculineName)
                 {
-                    firstName = DataController.NameData.MasculineNameList[firstNameIndex].Output;
+                    firstName = DataController.NameData.MasculineNameList.Collection[firstNameIndex];
                     gender = 1;
                     if (Application.Current.RequestedTheme == AppTheme.Light)
                         GenderImage = "masculine.png";
@@ -128,7 +128,7 @@ namespace DMToolKit.ViewModels
                 }
                 else
                 {
-                    firstName = DataController.NameData.FeminineNameList[firstNameIndex].Output;
+                    firstName = DataController.NameData.FeminineNameList.Collection[firstNameIndex];
                     gender = 2;
                     if (Application.Current.RequestedTheme == AppTheme.Light)
                         GenderImage = "feminine.png";
@@ -136,7 +136,7 @@ namespace DMToolKit.ViewModels
                         GenderImage = "femininedark.png";
                 }
                 Character = new NPC(firstName,
-                    DataController.NameData.LastNameList[lastNameIndex].Output,
+                    DataController.NameData.SurnameNameList.Collection[lastNameIndex],
                     gender,
                     primeValueIndex, 
                     minorValueIndex, 
@@ -158,9 +158,9 @@ namespace DMToolKit.ViewModels
         }
         public bool GetCanGenerate()
         {
-            if (DataController.NameData.FeminineNameList.Count == 0 ||
-                DataController.NameData.MasculineNameList.Count == 0 ||
-                DataController.NameData.LastNameList.Count == 0)
+            if (DataController.NameData.FeminineNameList.Collection.Count == 0 ||
+                DataController.NameData.MasculineNameList.Collection.Count == 0 ||
+                DataController.NameData.SurnameNameList.Collection.Count == 0)
                 return false;
             return true;
         }
@@ -405,7 +405,7 @@ namespace DMToolKit.ViewModels
             if (lastNameLock)
                 return;
 
-            lastNameIndex = random.Next(0,DataController.NameData.LastNameList.Count);
+            lastNameIndex = random.Next(0,DataController.NameData.SurnameNameList.Collection.Count);
         }
 
         private void GetFirstNameIndex()
@@ -416,12 +416,12 @@ namespace DMToolKit.ViewModels
             switch(random.Next(0,2))
             {
                 case 0:
-                    firstNameIndex = random.Next(0, DataController.NameData.MasculineNameList.Count);
+                    firstNameIndex = random.Next(0, DataController.NameData.MasculineNameList.Collection.Count);
                     masculineName = true;
                     break;
                 case 1:
                     masculineName = false;
-                    firstNameIndex = random.Next(0, DataController.NameData.FeminineNameList.Count);
+                    firstNameIndex = random.Next(0, DataController.NameData.FeminineNameList.Collection.Count);
                     break;
                 default:
                     break;

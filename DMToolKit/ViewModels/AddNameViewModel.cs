@@ -67,9 +67,9 @@ namespace DMToolKit.ViewModels
 
         public void CheckIfMasculineExists()
         {
-            for (int i = 0; i < DataController.NameData.MasculineNameList.Count; i++)
+            for (int i = 0; i < DataController.NameData.MasculineNameList.Collection.Count; i++)
             {
-                if (DataController.NameData.MasculineNameList[i] == InputName)
+                if (DataController.NameData.MasculineNameList.Collection[i] == InputName.Output)
                 {
                     MasculineEnabled = false;
                     return;
@@ -79,9 +79,9 @@ namespace DMToolKit.ViewModels
 
         public void CheckIfFeminineExists()
         {
-            for (int i = 0; i < DataController.NameData.FeminineNameList.Count; i++)
+            for (int i = 0; i < DataController.NameData.FeminineNameList.Collection.Count; i++)
             {
-                if (DataController.NameData.FeminineNameList[i] == InputName)
+                if (DataController.NameData.FeminineNameList.Collection[i] == InputName.Output)
                 {
                     FeminineEnabled = false;
                     return;
@@ -91,9 +91,9 @@ namespace DMToolKit.ViewModels
 
         public void CheckIfLastExists()
         {
-            for (int i = 0; i < DataController.NameData.LastNameList.Count; i++)
+            for (int i = 0; i < DataController.NameData.SurnameNameList.Collection.Count; i++)
             {
-                if (DataController.NameData.LastNameList[i] == InputName)
+                if (DataController.NameData.SurnameNameList.Collection[i] == InputName.Output)
                 {
                     LastEnabled = false;
                     return;
@@ -104,11 +104,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         public void AddMasculine()
         {
-            if (DataController.NameData.MasculineNameList == null)
-                DataController.NameData.MasculineNameList = new List<Name>();
-
-            DataController.NameData.MasculineNameList.Add(InputName);
-            DataController.NameData.MasculineNameList.Sort();
+            DataController.NameData.MasculineNameList.Collection.Add(InputName.Output);
+            DataController.NameData.MasculineNameList.Collection.Sort();
             DataController.SaveNameData();
 
             MasculineEnabled = false;
@@ -117,11 +114,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         public void AddFeminine()
         {
-            if (DataController.NameData.FeminineNameList == null)
-                DataController.NameData.FeminineNameList = new List<Name>();
-
-            DataController.NameData.FeminineNameList.Add(InputName);
-            DataController.NameData.FeminineNameList.Sort();
+            DataController.NameData.FeminineNameList.Collection.Add(InputName.Output);
+            DataController.NameData.FeminineNameList.Collection.Sort();
             DataController.SaveNameData();
 
             FeminineEnabled = false;
@@ -130,11 +124,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         public void AddLast()
         {
-            if (DataController.NameData.LastNameList == null)
-                DataController.NameData.LastNameList = new List<Name>();
-
-            DataController.NameData.LastNameList.Add(InputName);
-            DataController.NameData.LastNameList.Sort();
+            DataController.NameData.SurnameNameList.Collection.Add(InputName.Output);
+            DataController.NameData.SurnameNameList.Collection.Sort();
             DataController.SaveNameData();
 
             LastEnabled = false;

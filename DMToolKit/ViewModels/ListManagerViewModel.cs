@@ -1,8 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using DMToolKit.Data;
 using DMToolKit.Pages;
+using DMToolKit.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,42 +14,40 @@ namespace DMToolKit.ViewModels
 {
     public partial class ListManagerViewModel : ObservableObject
     {
-        public ListManagerViewModel() { }
+        [ObservableProperty]
+        public ObservableCollection<string> listGroups;
 
-        [RelayCommand]
-        async Task GoToMasculineList()
+        DataController DataController;
+
+        public ListManagerViewModel() 
         {
-            await Shell.Current.GoToAsync($"{nameof(MasculineNamePage)}");
+            ListGroups = new ObservableCollection<string>();
+            DataController = DataController.Instance;
+            foreach(var item in DataController.NameData.ThemedNameCollections)
+                listGroups.Add(item.Name);
         }
-
         [RelayCommand]
-        async Task GoToFeminineList()
+        async Task GoToCollection(string listName)
         {
-            await Shell.Current.GoToAsync($"{nameof(FeminineNamePage)}");
-        }
+            int index = -1;
+            ObservableCollection<string> collection = new ObservableCollection<string>();
 
-        [RelayCommand]
-        async Task GoToLastNameList()
-        {
-            await Shell.Current.GoToAsync($"{nameof(LastNamePage)}");
-        }
-
-        [RelayCommand]
-        async Task GoToPrefixList()
-        {
-            await Shell.Current.GoToAsync($"{nameof(NamePrefixManagerPage)}");
-        }
-
-        [RelayCommand]
-        async Task GoToSuffixList()
-        {
-            await Shell.Current.GoToAsync($"{nameof(NameSuffixManagerPage)}");
-        }
-
-        [RelayCommand]
-        async Task GoToNPCList()
-        {
-            await Shell.Current.GoToAsync($"{nameof(NPCListPage)}");
+            for (int i = 0; i < DataController.NameData.ThemedNameCollections.Count; i++)
+            {
+                if(listName == DataController.NameData.ThemedNameCollections[i].Name)
+                {
+                    collection = new ObservableCollection<string>(DataController.NameData.ThemedNameCollections[i].Collection);
+                    index = i;
+                    break;
+                }
+            }
+            await Shell.Current.GoToAsync($"{nameof(NameCollectionPage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"Collection", collection },
+                    {"ListIndex", index },
+                    {"ListName", listName}
+                });
         }
 
         [RelayCommand]

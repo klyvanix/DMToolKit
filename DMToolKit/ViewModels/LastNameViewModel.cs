@@ -9,7 +9,7 @@ namespace DMToolKit.ViewModels
     public partial class LastNameViewModel : ObservableObject
     {
         [ObservableProperty]
-        public ObservableCollection<Name> lastNames;
+        public ObservableCollection<string> lastNames;
 
         [ObservableProperty]
         public int nameCount;
@@ -19,24 +19,24 @@ namespace DMToolKit.ViewModels
         public LastNameViewModel() 
         {
             DataController = DataController.Instance;
-            LastNames = new ObservableCollection<Name>();
-            NameCount = DataController.NameData.LastNameList.Count;
+            LastNames = new ObservableCollection<string>();
+            NameCount = DataController.NameData.SurnameNameList.Collection.Count;
             UpdateData();
         }
 
         public void UpdateData()
         {
-            if (DataController.NameData.LastNameList.Count == 0 || 
-                DataController.NameData.LastNameList == null)
+            if (DataController.NameData.SurnameNameList.Collection.Count == 0 || 
+                DataController.NameData.SurnameNameList == null)
                 return;
 
             LastNames.Clear();
-            foreach (var item in DataController.NameData.LastNameList)
+            foreach (var item in DataController.NameData.SurnameNameList.Collection)
                 LastNames.Add(item);
         }
 
         [RelayCommand]
-        public void Delete(Name s)
+        public void Delete(string s)
         {
             if (LastNames.Contains(s))
             {
@@ -53,7 +53,7 @@ namespace DMToolKit.ViewModels
 
         private void SaveData()
         {
-            DataController.NameData.LastNameList = LastNames.ToList();
+            DataController.NameData.SurnameNameList.Collection = LastNames.ToList();
             DataController.SaveNameData();
             UpdateData();
         }

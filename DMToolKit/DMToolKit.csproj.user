@@ -26,16 +26,13 @@
     <MauiXaml Update="Pages\CoinPouchGeneratorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\FeminineNamePage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="Pages\LastNamePage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="Pages\ListManagerPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\MasculineNamePage.xaml">
+    <MauiXaml Update="Pages\ListOfNamesPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\NameCollectionPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\NameGeneratorOptionsPage.xaml">
@@ -44,10 +41,7 @@
     <MauiXaml Update="Pages\NameGeneratorPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\NamePrefixManagerPage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="Pages\NameSuffixManagerPage.xaml">
+    <MauiXaml Update="Pages\NameSeedManagerPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\NPCAddPage.xaml">

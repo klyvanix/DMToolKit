@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace DMToolKit.Data
 {
+    [Serializable]
     public class ThemedNameCollection
     {
-        string Name { get; set; }
-        List<string> Collection;
+        public string Name { get; set; }
+        public List<string> Collection { get; set; }
+
+        public ThemedNameCollection()
+        {
+            Name= string.Empty;
+            Collection = new List<string>();
+        }
 
         public ThemedNameCollection(string name)
         {

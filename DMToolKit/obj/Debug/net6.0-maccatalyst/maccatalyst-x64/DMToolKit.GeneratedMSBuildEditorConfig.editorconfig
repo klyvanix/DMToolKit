@@ -58,17 +58,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.FeminineNa
 build_metadata.AdditionalFiles.TargetPath = Pages\FeminineNamePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\FeminineNamePage.xaml
 
-[D:/Github/Maui/DMToolKit/DMToolKit/Pages/LastNamePage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.LastNamePage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\LastNamePage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\LastNamePage.xaml
-
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/ListManagerPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.ListManagerPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\ListManagerPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\ListManagerPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/ListOfNamesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.ListOfNamesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ListOfNamesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ListOfNamesPage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -81,6 +81,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MasculineNamePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MasculineNamePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MasculineNamePage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameCollectionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NameCollectionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NameCollectionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NameCollectionPage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameGeneratorOptionsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -99,6 +105,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NamePrefixManagerPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\NamePrefixManagerPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\NamePrefixManagerPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameSeedManagerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NameSeedManagerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NameSeedManagerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NameSeedManagerPage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameSuffixManagerPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

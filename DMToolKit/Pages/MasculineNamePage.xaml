@@ -11,7 +11,7 @@
         <CollectionView HorizontalOptions="Center" VerticalOptions="Start" 
                             ItemsSource="{Binding MasculineNames}" Grid.Row="1">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="Data:Name">
+                <DataTemplate x:DataType="x:String">
                     <SwipeView>
                         <SwipeView.RightItems>
                             <SwipeItems>
@@ -23,7 +23,7 @@
                         <Border Padding="6" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
                                 BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
                             <Grid>
-                                <Label Text="{Binding Source={RelativeSource AncestorType={x:Type Data:Name}}, Path=Output}" 
+                                <Label Text="{Binding .}" 
                                        TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
                                        HorizontalOptions="Center" VerticalOptions="Center"/>
                             </Grid>

@@ -28,5 +28,11 @@ namespace DMToolKit.ViewModels
         {
             await Shell.Current.GoToAsync($"//{nameof(NameGeneratorPage)}");
         }
+
+        [RelayCommand]
+        async Task GoToListPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(ListManagerPage)}");
+        }
     }
 }

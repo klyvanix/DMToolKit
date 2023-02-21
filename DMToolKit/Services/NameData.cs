@@ -10,35 +10,39 @@ namespace DMToolKit.Services
     public class NameData
     {
         //Name Lists
-        public List<Name> MasculineNameList;
-        public List<Name> FeminineNameList;
-        public List<Name> LastNameList;
+        public ThemedNameCollection MasculineNameList;
+        public ThemedNameCollection FeminineNameList;
+        public ThemedNameCollection SurnameNameList;
+
+        public List<ThemedNameCollection> ThemedNameCollections;
 
         public NameData() 
         {
-            MasculineNameList = new List<Name>();
-            FeminineNameList = new List<Name>();
-            LastNameList = new List<Name>();
+            MasculineNameList = new ThemedNameCollection("Masculine");
+            FeminineNameList = new ThemedNameCollection("Feminine");
+            SurnameNameList = new ThemedNameCollection("Surname");
+            ThemedNameCollections = new List<ThemedNameCollection>();
         }
 
         public NameData(bool InitialStartup)
         {
-            MasculineNameList = new List<Name>();
-            FeminineNameList = new List<Name>();
-            LastNameList = new List<Name>();
+            MasculineNameList = new ThemedNameCollection("Masculine");
+            FeminineNameList = new ThemedNameCollection("Feminine");
+            SurnameNameList = new ThemedNameCollection("Surname");
+            ThemedNameCollections = new List<ThemedNameCollection>();
             if (InitialStartup) 
             {
-                MasculineNameList.Add(new Name("Mer", "lin"));
+                MasculineNameList.Collection.Add("Albert");
+                MasculineNameList.Collection.Add("Merlin");
 
-                MasculineNameList.Add(new Name("Dal", "mar"));
+                FeminineNameList.Collection.Add("Keenah");
+                FeminineNameList.Collection.Add("Nara");
 
-                FeminineNameList.Add(new Name("Kee", "nah"));
-
-                FeminineNameList.Add(new Name("Na" , "ra"));
-
-                LastNameList.Add(new Name("Van" , "der"));
-
-                LastNameList.Add(new Name("Gel", "spar"));
+                SurnameNameList.Collection.Add("Vander");
+                SurnameNameList.Collection.Add("Gelspar");
+                ThemedNameCollections.Add(MasculineNameList);
+                ThemedNameCollections.Add(FeminineNameList);
+                ThemedNameCollections.Add(SurnameNameList);
             }
         }
     }

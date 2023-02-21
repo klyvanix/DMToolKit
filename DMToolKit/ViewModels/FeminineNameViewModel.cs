@@ -9,7 +9,7 @@ namespace DMToolKit.ViewModels
     public partial class FeminineNameViewModel : ObservableObject
     {
         [ObservableProperty]
-        public ObservableCollection<Name> feminineNames;
+        public ObservableCollection<string> feminineNames;
 
         [ObservableProperty]
         public int nameCount;
@@ -19,24 +19,24 @@ namespace DMToolKit.ViewModels
         public FeminineNameViewModel() 
         {
             DataController = DataController.Instance;
-            FeminineNames= new ObservableCollection<Name>();
-            NameCount = DataController.NameData.FeminineNameList.Count;
+            FeminineNames= new ObservableCollection<string>();
+            NameCount = DataController.NameData.FeminineNameList.Collection.Count;
             UpdateData();
         }
 
         public void UpdateData()
         {
-            if (DataController.NameData.FeminineNameList.Count == 0 ||
+            if (DataController.NameData.FeminineNameList.Collection.Count == 0 ||
                 DataController.NameData.FeminineNameList == null)
                 return;
 
             FeminineNames.Clear();
-            foreach (var item in DataController.NameData.FeminineNameList)
+            foreach (var item in DataController.NameData.FeminineNameList.Collection)
                 FeminineNames.Add(item);
         }
 
         [RelayCommand]
-        public void Delete(Name s)
+        public void Delete(string s)
         {
             if(FeminineNames.Contains(s))
             {
@@ -53,7 +53,7 @@ namespace DMToolKit.ViewModels
 
         private void SaveData()
         {
-            DataController.NameData.FeminineNameList = FeminineNames.ToList();
+            DataController.NameData.FeminineNameList.Collection = FeminineNames.ToList();
             DataController.SaveNameData();
             UpdateData();
         }

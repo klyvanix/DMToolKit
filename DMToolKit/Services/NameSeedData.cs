@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMToolKit.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,22 +7,26 @@ using System.Threading.Tasks;
 
 namespace DMToolKit.Services
 {
-    public class NameConstructionData
+    public class NameSeedData
     {
         //Suffix Lists
         public List<string> PrefixList;
         public List<string> SuffixList;
 
-        public NameConstructionData() 
+        public List<NameSeedCollection> SeedCollections;
+
+        public NameSeedData() 
         {
             PrefixList = new List<string>();
             SuffixList = new List<string>();
+            SeedCollections = new List<NameSeedCollection>();
         }
-        public NameConstructionData(bool initialStartup)
+        public NameSeedData(bool initialStartup)
         {
             PrefixList = new List<string>();
             SuffixList = new List<string>();
-            if(initialStartup)
+            SeedCollections = new List<NameSeedCollection>();
+            if (initialStartup)
             {
                 PrefixList.Add("A");
                 PrefixList.Add("B");

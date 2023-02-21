@@ -1013,10 +1013,10 @@ D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\Syste
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Private.CoreLib.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Private.Uri.dll
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\assets\System.Xml.dll
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\typemaps.arm64-v8a.s
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\environment.arm64-v8a.s
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\compressed_assemblies.arm64-v8a.s
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\typemaps.arm64-v8a.o
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\environment.arm64-v8a.o
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\compressed_assemblies.arm64-v8a.o
-D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\typemaps.x86.s
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\environment.x86.s
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\compressed_assemblies.x86.s
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\typemaps.x86.o
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\environment.x86.o
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\android\compressed_assemblies.x86.o
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-android\app_shared_libraries\x86\libxamarin-app.so

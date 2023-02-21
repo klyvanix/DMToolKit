@@ -25,12 +25,12 @@ namespace DMToolKit.Services
         private DataController() 
         {
             NPCData = new NPCData();
-            NameConstructionData = new NameConstructionData();
+            NameConstructionData = new NameSeedData();
             NameData= new NameData();
         }
 
         public NPCData NPCData { get; set; }
-        public NameConstructionData NameConstructionData { get; set; }
+        public NameSeedData NameConstructionData { get; set; }
         public NameData NameData { get; set; }
 
         private static string npcDataName = $"{FileSystem.AppDataDirectory}/NPCData.xml";
@@ -92,21 +92,21 @@ namespace DMToolKit.Services
         {
             if (File.Exists(nameConstructionDataName))
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(NameConstructionData));
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(NameSeedData));
                 TextReader reader = new StreamReader(nameConstructionDataName);
-                NameConstructionData = (NameConstructionData)xmlSerializer.Deserialize(reader);
+                NameConstructionData = (NameSeedData)xmlSerializer.Deserialize(reader);
                 reader.Close();
             }
             else
             {
-                NameConstructionData = new NameConstructionData(true);
+                NameConstructionData = new NameSeedData(true);
                 SaveNameConstructionData();
             }
         }
 
         public void SaveNameConstructionData()
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(NameConstructionData));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(NameSeedData));
             TextWriter writer = new StreamWriter(nameConstructionDataName);
             xmlSerializer.Serialize(writer, NameConstructionData);
             writer.Close();

@@ -50,29 +50,34 @@ public static class MauiProgram
         builder.Services.AddTransient<NameGeneratorOptionsPage>();
         builder.Services.AddTransient<NameGeneratorOptionsViewModel>();
 
-        builder.Services.AddTransient<NamePrefixManagerPage>();
-        builder.Services.AddTransient<NamePrefixManagerViewModel>();
-
-        builder.Services.AddTransient<NameSuffixManagerPage>();
-        builder.Services.AddTransient<NameSuffixManagerViewModel>();
-
         builder.Services.AddTransient<AddNamePage>();
         builder.Services.AddTransient<AddNameViewModel>();
-
-        builder.Services.AddTransient<MasculineNamePage>();
-        builder.Services.AddTransient<MasculineNameViewModel>();
-
-        builder.Services.AddTransient<FeminineNamePage>();
-        builder.Services.AddTransient<FeminineNameViewModel>();
-
-        builder.Services.AddTransient<LastNamePage>();
-        builder.Services.AddTransient<LastNameViewModel>();
 
         builder.Services.AddTransient<CategoryManagerPage>();
         builder.Services.AddTransient<CategoryManagerViewModel>();
 
         builder.Services.AddTransient<CategoryAddPage>();
         builder.Services.AddTransient<CategoryAddViewModel>();
+
+        builder.Services.AddTransient<NameCollectionPage>();
+        builder.Services.AddTransient<NameCollectionViewModel>();
+
+
+
+
+        builder.Services.AddTransient<NamePrefixManagerPage>();
+        builder.Services.AddTransient<NamePrefixManagerViewModel>();
+
+        builder.Services.AddTransient<NameSuffixManagerPage>();
+        builder.Services.AddTransient<NameSuffixManagerViewModel>();
+
+
+
+        builder.Services.AddTransient<MasculineNamePage>();
+        builder.Services.AddTransient<MasculineNameViewModel>();
+
+        builder.Services.AddTransient<FeminineNamePage>();
+        builder.Services.AddTransient<FeminineNameViewModel>();
 
         return builder.Build();
 	}

@@ -7,14 +7,14 @@
     Shell.FlyoutBehavior="Flyout"
     FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Background}}">
 
-    <FlyoutItem FlyoutIcon="{AppThemeBinding Light='LightTheme/generators.png', Dark='generatorsdark.png'}" Title=" Generators">
+    <!--<FlyoutItem FlyoutIcon="{AppThemeBinding Light='LightTheme/generators.png', Dark='generatorsdark.png'}" Title=" Generators">
         <ShellContent Icon="namegenerator.png" Title="Name" ContentTemplate="{DataTemplate local:NameGeneratorPage}"
                 Route="NameGeneratorPage" />
         <ShellContent Icon="npc.png" Title="Character" ContentTemplate="{DataTemplate local:NPCGeneratorPage}"
                 Route="NPCGeneratorPage" />
         <ShellContent Icon="pouch.png" Title="Coin Pouch" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
             Route="CoinPouchGeneratorPage" />
-    </FlyoutItem>
+    </FlyoutItem>-->
     <FlyoutItem FlyoutIcon="{AppThemeBinding Light='appicon.png', Dark='appicondark.png'}" Title="Home">
         <ShellContent Icon="appicon.png" Title="Home" ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />

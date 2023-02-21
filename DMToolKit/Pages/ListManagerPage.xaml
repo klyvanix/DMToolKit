@@ -4,15 +4,40 @@
              x:Class="DMToolKit.Pages.ListManagerPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:ListManagerViewModel"
+             xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="List Manager">
     <Grid RowDefinitions="*,50">
-        <VerticalStackLayout Grid.Row="0">
+        <!--<VerticalStackLayout Grid.Row="0">
             <Button Text="Masculine Names" Margin="5" Command="{Binding GoToMasculineListCommand}"/>
             <Button Text="Feminine Names" Margin="5" Command="{Binding GoToFeminineListCommand}"/>
             <Button Text="Last Names" Margin="5" Command="{Binding GoToLastNameListCommand}"/>
             <Button Text="Add Prefix" Margin="5" Command="{Binding GoToPrefixListCommand}"/>
             <Button Text="Add Suffix" Margin="5" Command="{Binding GoToSuffixListCommand}"/>
             <Button Text="Character List" Margin="5" Command="{Binding GoToNPCListCommand}"/>
+        </VerticalStackLayout>-->
+        <VerticalStackLayout Grid.Row="0">
+            <Label Text="Name Lists" VerticalTextAlignment="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center" 
+                   FontSize="20" HeightRequest="50" FontAttributes="Bold"
+                   BackgroundColor="{StaticResource Secondary}"/>
+            <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding ListGroups}" Grid.Row="0" Margin="30,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Border StrokeShape="RoundRectangle 15" Margin="0,1,0,2" HeightRequest="50"
+                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                      Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}},Path=GoToCollectionCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid>
+                                <Label Text="{Binding ., StringFormat='{0} Names'}" FontSize="16"
+                                        TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
+                                        HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
         <Button Grid.Row="1" Text="Back" Margin="0,1,0,2" Command="{Binding GoBackCommand}"/>
     </Grid>

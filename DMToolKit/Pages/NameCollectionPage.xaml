@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.NameCollectionPage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:NameCollectionViewModel"
+             Title="{Binding ListName}">
+    <Grid RowDefinitions="*,45,50,50">
+        <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding Collection}" Grid.Row="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="x:String">
+                    <Border Padding="6" StrokeShape="RoundRectangle 5" 
+                            Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                        <!--<Border.GestureRecognizers>
+                            <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                  Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}},Path=GoToCollectionCommand}"/>
+                        </Border.GestureRecognizers>-->
+                        <Grid>
+                            <Label Text="{Binding .}" 
+                                    TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+                                    HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Border Grid.Row="1" BackgroundColor="{StaticResource Secondary}" Stroke="{StaticResource Tertiary}" StrokeShape="RoundRectangle 10" Margin="30,1,30,2">
+            <Entry Placeholder="Name To Add" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Center"
+                   TextColor="White" Keyboard="Text" Text="{Binding NameToAdd}" ReturnCommand="{Binding AddCommand}" ReturnCommandParameter="{Binding NameToAdd}"/>
+        </Border>
+        <Button Grid.Row="2" Text="Add" Margin="0,1,0,2" Command="{Binding AddCommand}" CommandParameter="{Binding NameToAdd}"/>
+        <Button Grid.Row="3" Text="Back" Margin="0,1,0,2" Command="{Binding GoBackCommand}"/>
+    </Grid>
+</ContentPage>

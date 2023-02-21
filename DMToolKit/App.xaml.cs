@@ -18,7 +18,7 @@ public partial class App : Application
 		if (DataController.NPCData is null)
 			DataController.NPCData = new NPCData(true);
 		if(DataController.NameConstructionData is null)
-			DataController.NameConstructionData= new NameConstructionData(true);
+			DataController.NameConstructionData= new NameSeedData(true);
 
 		DataController.LoadNPCData();
 		DataController.LoadNameData();

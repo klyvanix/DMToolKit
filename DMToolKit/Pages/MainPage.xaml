@@ -6,15 +6,11 @@
              x:Class="DMToolKit.Pages.MainPage"
              Title="Home Page">
     <StackLayout>
-        <Grid RowDefinitions="40,Auto,Auto,Auto">
-            <Label Text="Generators" Grid.Row="0" FontSize="23" TextColor="{StaticResource White}" HorizontalOptions="Fill" HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center" BackgroundColor="{StaticResource Dark}"/>
-            <Grid Grid.Row="1" HorizontalOptions="Fill" ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto" Margin="5">
-                <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="0" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="pouch.png" Command="{Binding GoToCoinPouchGeneratorCommand}"/>
-                <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="1" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="npc.png" Command="{Binding GoToNPCGeneratorCommand}"/>
-                <ImageButton HeightRequest="70" Grid.Row="1" Grid.Column="2" Margin="2" CornerRadius="5" BackgroundColor="{StaticResource Tertiary}" Source="namegenerator.png" Command="{Binding GoToNameGeneratorCommand}"/>
-            </Grid>
-        </Grid>
+        <Border HorizontalOptions="Center" StrokeShape="RoundRectangle 200" Padding="15"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}"
+                Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}">
+            <Image Source="{AppThemeBinding Light='appicon.png',Dark='appicondark.png'}" HeightRequest="200" WidthRequest="200"/>
+        </Border>
+        <Button Text="Name Lists" Command="{Binding GoToListPageCommand}"/>
     </StackLayout>
-
 </ContentPage>
