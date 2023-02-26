@@ -52,12 +52,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.CoinPouchG
 build_metadata.AdditionalFiles.TargetPath = Pages\CoinPouchGeneratorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\CoinPouchGeneratorPage.xaml
 
-[D:/Github/Maui/DMToolKit/DMToolKit/Pages/FeminineNamePage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.FeminineNamePage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\FeminineNamePage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\FeminineNamePage.xaml
-
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/ListManagerPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.ListManagerPage.xaml
@@ -75,12 +69,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
-
-[D:/Github/Maui/DMToolKit/DMToolKit/Pages/MasculineNamePage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.MasculineNamePage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\MasculineNamePage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\MasculineNamePage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Pages/NameCollectionPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -147,6 +135,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NPCListPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\NPCListPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\NPCListPage.xaml
+
+[D:/Github/Maui/DMToolKit/DMToolKit/Pages/NPCOptionsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DMToolKit.Pages.NPCOptionsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NPCOptionsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NPCOptionsPage.xaml
 
 [D:/Github/Maui/DMToolKit/DMToolKit/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

@@ -8,6 +8,9 @@
         public string Role { get; set; }
         public string Notes { get; set; }
 
+        public int firstNameIndex;
+        public int lastNameIndex;
+
         public int genderCode;
         public int primeValue;
         public int minorValue;
@@ -38,7 +41,7 @@
         public string NegativeMinor => negativeMinorValue == -1 ? string.Empty : CharacterAttributes.NegativeAttributeText[negativeMinorValue];
         public string NegativeMinorDescription => negativeMinorValue == -1 ? string.Empty : CharacterAttributes.NegativeAttributeDescription[negativeMinorValue];
 
-        public NPC(string firstName, string lastName, int gender, int pValue, int mValue, int posPrime, int posMinor, int negPrime, int negMinor)
+        public NPC(string firstName, string lastName, int gender, int pValue, int mValue, int posPrime, int posMinor, int negPrime, int negMinor, int firstNameIndex, int lastNameIndex)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -51,6 +54,8 @@
             negativeMinorValue = negMinor;
             Role = string.Empty;
             Notes = string.Empty;
+            this.firstNameIndex = firstNameIndex;
+            this.lastNameIndex = lastNameIndex;
         }
 
         public NPC()

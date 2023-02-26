@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DMToolKit.Pages"
-    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBehavior="Disabled"
     FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Background}}">
 
     <!--<FlyoutItem FlyoutIcon="{AppThemeBinding Light='LightTheme/generators.png', Dark='generatorsdark.png'}" Title=" Generators">

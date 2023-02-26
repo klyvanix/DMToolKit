@@ -1,5 +1,10 @@
+ANTQUAB.TTF
+ANTQUABI.TTF
+ANTQUAI.TTF
+BKANT.TTF
 OpenSans-Regular.ttf
 OpenSans-Semibold.ttf
+add.scale-100.png
 appicon.ico
 appicon.scale-100.png
 appicondark.scale-100.png
@@ -53,6 +58,7 @@ coinep.scale-100.png
 coingp.scale-100.png
 coinpouch.scale-100.png
 coinpouchdark.scale-100.png
+coinpouchtitle.scale-100.png
 coinpp.scale-100.png
 coinsp.scale-100.png
 coinstack.scale-100.png
@@ -67,6 +73,7 @@ gemstack.scale-100.png
 generateicon.scale-100.png
 generators.scale-100.png
 generatorsdark.scale-100.png
+help.scale-100.png
 home.scale-100.png
 jewel.scale-100.png
 lasticon.scale-100.png
@@ -78,10 +85,12 @@ masculine.scale-100.png
 masculinedark.scale-100.png
 namegenerator.scale-100.png
 namegeneratordark.scale-100.png
+namegentitle.scale-100.png
 namelist.scale-100.png
 npc.scale-100.png
 npcgen.scale-100.png
 npcgendark.scale-100.png
+npcgentitle.scale-100.png
 npclist.scale-100.png
 npclistdark.scale-100.png
 pouch.scale-100.png
@@ -91,6 +100,7 @@ pouchheader.scale-100.png
 prefix.scale-100.png
 ruby.scale-100.png
 suffix.scale-100.png
+unlock.scale-100.png
 unlocked.scale-100.png
 value.scale-100.png
 valuebackground.scale-100.png

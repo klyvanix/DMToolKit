@@ -14,19 +14,19 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToCoinPouchGenerator()
         {
-            await Shell.Current.GoToAsync($"//{nameof(CoinPouchGeneratorPage)}");
+            await Shell.Current.GoToAsync($"{nameof(CoinPouchGeneratorPage)}");
         }
 
         [RelayCommand]
         async Task GoToNPCGenerator()
         {
-            await Shell.Current.GoToAsync($"//{nameof(NPCGeneratorPage)}");
+            await Shell.Current.GoToAsync($"{nameof(NPCGeneratorPage)}");
         }
 
         [RelayCommand]
         async Task GoToNameGenerator()
         {
-            await Shell.Current.GoToAsync($"//{nameof(NameGeneratorPage)}");
+            await Shell.Current.GoToAsync($"{nameof(NameGeneratorPage)}");
         }
 
         [RelayCommand]

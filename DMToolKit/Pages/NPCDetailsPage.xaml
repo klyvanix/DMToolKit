@@ -22,10 +22,11 @@
                         BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}"
                         Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}">
                 </Border>
-                <Border Grid.Row="1" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="45" WidthRequest="45" StrokeShape="RoundRectangle 25"
+                <Border Grid.Row="1" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"
+                        HeightRequest="45" WidthRequest="45" StrokeShape="RoundRectangle 25"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" 
                         Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}">
-                    <Image Source="{Binding Character.GenderImage}" HeightRequest="35" WidthRequest="35"/>
+                    <Image Source="{Binding Character.GenderImage}" HeightRequest="25" WidthRequest="25" />
                 </Border>
             </Grid>
         </Border>

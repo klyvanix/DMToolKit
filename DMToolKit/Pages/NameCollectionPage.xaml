@@ -6,22 +6,29 @@
              x:DataType="viewmodel:NameCollectionViewModel"
              Title="{Binding ListName}">
     <Grid RowDefinitions="*,45,50,50">
-        <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding Collection}" Grid.Row="0">
+        <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding ListOfNames}" Grid.Row="0" Margin="40,0">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="x:String">
-                    <Border Padding="6" StrokeShape="RoundRectangle 5" 
-                            Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
-                        <!--<Border.GestureRecognizers>
-                            <TapGestureRecognizer CommandParameter="{Binding .}"
-                                                  Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}},Path=GoToCollectionCommand}"/>
-                        </Border.GestureRecognizers>-->
-                        <Grid>
-                            <Label Text="{Binding .}" 
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
+                                           IconImageSource="delete.png"
+                                           BackgroundColor="{StaticResource Delete}"
+                                           CommandParameter="{Binding .}"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameCollectionViewModel}}, Path=RemoveCommand}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Border Padding="6" StrokeShape="RoundRectangle 5" 
+                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
+                            <Grid>
+                                <Label Text="{Binding .}" 
                                     TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
                                     HorizontalOptions="Center" VerticalOptions="Center"/>
-                        </Grid>
-                    </Border>
+                            </Grid>
+                        </Border>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

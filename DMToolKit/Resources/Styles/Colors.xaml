@@ -8,7 +8,7 @@
     <Color x:Key="Secondary">#304f6e</Color>
     <Color x:Key="Tertiary">#bcd0e3</Color>
     <Color x:Key="Four">#b4c1cd</Color>
-    <Color x:Key="Dark">#121720</Color>
+    <Color x:Key="Dark">#090d15</Color>
     <Color x:Key="Background">#121720</Color>
     <Color x:Key="Values">#216ca6</Color>
     <Color x:Key="ValuesDark">#4c9ede</Color>

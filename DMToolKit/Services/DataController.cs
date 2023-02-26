@@ -25,17 +25,17 @@ namespace DMToolKit.Services
         private DataController() 
         {
             NPCData = new NPCData();
-            NameConstructionData = new NameSeedData();
+            NameSeedData = new NameSeedData();
             NameData= new NameData();
         }
 
         public NPCData NPCData { get; set; }
-        public NameSeedData NameConstructionData { get; set; }
+        public NameSeedData NameSeedData { get; set; }
         public NameData NameData { get; set; }
 
         private static string npcDataName = $"{FileSystem.AppDataDirectory}/NPCData.xml";
         private static string nameDataName = $"{FileSystem.AppDataDirectory}/NameData.xml";
-        private static string nameConstructionDataName = $"{FileSystem.AppDataDirectory}/NameConstructionData.xml";
+        private static string nameSeedDataName = $"{FileSystem.AppDataDirectory}/NameConstructionData.xml";
 
         //NPC Loading & Saving
         public void LoadNPCData()
@@ -88,35 +88,35 @@ namespace DMToolKit.Services
         }
 
         //Name Constructino Data Loading & Saving
-        public void LoadNameConstructionData()
+        public void LoadNameSeedData()
         {
-            if (File.Exists(nameConstructionDataName))
+            if (File.Exists(nameSeedDataName))
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(NameSeedData));
-                TextReader reader = new StreamReader(nameConstructionDataName);
-                NameConstructionData = (NameSeedData)xmlSerializer.Deserialize(reader);
+                TextReader reader = new StreamReader(nameSeedDataName);
+                NameSeedData = (NameSeedData)xmlSerializer.Deserialize(reader);
                 reader.Close();
             }
             else
             {
-                NameConstructionData = new NameSeedData(true);
-                SaveNameConstructionData();
+                NameSeedData = new NameSeedData(true);
+                SaveNameSeedData();
             }
         }
 
-        public void SaveNameConstructionData()
+        public void SaveNameSeedData()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(NameSeedData));
-            TextWriter writer = new StreamWriter(nameConstructionDataName);
-            xmlSerializer.Serialize(writer, NameConstructionData);
+            TextWriter writer = new StreamWriter(nameSeedDataName);
+            xmlSerializer.Serialize(writer, NameSeedData);
             writer.Close();
         }
 
         internal int GetMinIndex(string lockedLetter)
         {
-            for(int i = 0; i < NameConstructionData.PrefixList.Count; i++)
+            for(int i = 0; i < NameSeedData.PrefixList.Count; i++)
             {
-                if (NameConstructionData.PrefixList[i].StartsWith(lockedLetter))
+                if (NameSeedData.PrefixList[i].StartsWith(lockedLetter))
                     return i;
             }
             return -1;
@@ -127,13 +127,13 @@ namespace DMToolKit.Services
             if(minIndex != -1)
             {
                 if(lockedLetter == "Z")
-                    return NameConstructionData.PrefixList.Count + 1;
+                    return NameSeedData.PrefixList.Count + 1;
 
-                for (int i = minIndex; i < (NameConstructionData.PrefixList.Count); i++)
+                for (int i = minIndex; i < (NameSeedData.PrefixList.Count); i++)
                 {
-                    if(i < NameConstructionData.PrefixList.Count - 1)
+                    if(i < NameSeedData.PrefixList.Count - 1)
                     {
-                        if (!NameConstructionData.PrefixList[i + 1].StartsWith(lockedLetter))
+                        if (!NameSeedData.PrefixList[i + 1].StartsWith(lockedLetter))
                             return i + 1;
                     }
                 }

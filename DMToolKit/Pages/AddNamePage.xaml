@@ -5,19 +5,25 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:AddNameViewModel"
              Title="Add To List">
-    <Grid RowDefinitions="*,50">
-        <VerticalStackLayout Grid.Row="0">
-            <Border WidthRequest="300" HeightRequest="100" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent" StrokeShape="RoundRectangle 10 10 50 50">
-                <Label Text="{Binding InputName.Output}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
-            </Border>
-            <Label Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
-            <Button Text="Masculine Name" Margin="5" Command="{Binding AddMasculineCommand}" IsEnabled="{Binding MasculineEnabled}"/>
-            <Button Text="Feminine Name" Margin="5" Command="{Binding AddFeminineCommand}" IsEnabled="{Binding FeminineEnabled}"/>
-            <Button Text="Last Name" Margin="5" Command="{Binding AddLastCommand}" IsEnabled="{Binding LastEnabled}"/>
-
-            <Button Text="Add Prefix" Margin="5" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding PrefixEnabled}" />
-            <Button Text="Add Suffix" Margin="5" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding SuffixEnabled}"/>
-        </VerticalStackLayout>
-        <Button Text="Back" Grid.Row="1" Margin="0,0,0,2" Command="{Binding GoBackCommand}"/>
+    <Grid RowDefinitions="100,Auto,50,50,*,50">
+        <Border WidthRequest="300" HeightRequest="100" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent" StrokeShape="RoundRectangle 10 10 50 50">
+            <Label Text="{Binding InputName.Output}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
+        </Border>
+        <Label Grid.Row="1" Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
+        <Button Grid.Row="2" Text="Add Prefix" HeightRequest="45" Margin="5" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding PrefixEnabled}" />
+        <Button Grid.Row="3" Text="Add Suffix" HeightRequest="45" Margin="5" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding SuffixEnabled}"/>
+        <ScrollView Grid.Row="4">
+            <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NameLists}" Grid.Row="0" SelectedItem="{Binding}" Margin="0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Button Text="{Binding ., StringFormat='Add {0}'}" HeightRequest="45" Margin="30,3"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddNameViewModel}},Path=AddToNameListCommand}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Button Text="Back" Grid.Row="5" Margin="0,0,0,2" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>

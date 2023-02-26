@@ -56,18 +56,18 @@ namespace DMToolKit.ViewModels
 
         public void UpdateData()
         {
-            if (DataController.NameConstructionData.SuffixList.Count == 0)
-                DataController.NameConstructionData.SuffixList = new List<string>();
+            if (DataController.NameSeedData.SuffixList.Count == 0)
+                DataController.NameSeedData.SuffixList = new List<string>();
 
             SuffixList.Clear();
-            for(int i = 0; i < DataController.NameConstructionData.SuffixList.Count; i++)
-                SuffixList.Add(DataController.NameConstructionData.SuffixList[i]);
+            for(int i = 0; i < DataController.NameSeedData.SuffixList.Count; i++)
+                SuffixList.Add(DataController.NameSeedData.SuffixList[i]);
         }
 
         private void SaveData()
         {
-            DataController.NameConstructionData.SuffixList = SuffixList.ToList();
-            DataController.SaveNameConstructionData();
+            DataController.NameSeedData.SuffixList = SuffixList.ToList();
+            DataController.SaveNameSeedData();
             UpdateData();
         }
     }

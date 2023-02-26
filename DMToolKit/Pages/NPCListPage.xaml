@@ -5,9 +5,9 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCListViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
-             Title="Character Collection">
+             Title="NPCListPage">
     <Grid RowDefinitions="*,50">
-        <CollectionView HorizontalOptions="Center" VerticalOptions="Start"
+        <CollectionView HorizontalOptions="Center" VerticalOptions="Start" Margin="40,0"
                         ItemsSource="{Binding NpcList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="Data:NPC">
@@ -19,8 +19,8 @@
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=DeleteCommand}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Border Padding="6" StrokeShape="RoundRectangle 5" BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                        <Border Padding="6" StrokeShape="RoundRectangle 5" BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
                                 HorizontalOptions="Fill" VerticalOptions="Center">
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=GoToDetailsCommand}" 

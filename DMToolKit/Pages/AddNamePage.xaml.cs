@@ -16,8 +16,6 @@ public partial class AddNamePage : ContentPage
 		var vm = (AddNameViewModel)BindingContext;
 		vm.CheckIfPrefixExists();
 		vm.CheckIfSuffixExists();
-        vm.CheckIfMasculineExists();
-        vm.CheckIfFeminineExists();
-        vm.CheckIfLastExists();
+		vm.UpdateLists();
     }
 }

@@ -4,6 +4,11 @@
 <dict>
   <key>UIAppFonts</key>
   <array>
+	<string>ANTQUAB.TTF</string>
+	<string>ANTQUABI.TTF</string>
+	<string>ANTQUAI.TTF</string>
+	<string>BKANT.TTF</string>
+	<string>MauiInfo.plist</string>
 	<string>OpenSans-Regular.ttf</string>
 	<string>OpenSans-Semibold.ttf</string>
   </array>

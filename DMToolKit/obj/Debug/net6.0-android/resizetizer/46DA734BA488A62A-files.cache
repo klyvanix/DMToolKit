@@ -1,4 +1,5 @@
-﻿obj\Debug\net6.0-android\resizetizer\r\drawable\appicon.png
+﻿obj\Debug\net6.0-android\resizetizer\r\drawable\add.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\appicon.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\appicondark.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\barbarian.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\bard.png
@@ -14,6 +15,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\coinsp.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\coinstack.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\delete.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\diamond.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\druid.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\emerald.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\feminine.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\femininedark.png
@@ -24,6 +26,10 @@ obj\Debug\net6.0-android\resizetizer\r\drawable\generateicon.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\generators.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\generatorsdark.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\help.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\historybackward.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\historybegin.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\historyend.png
+obj\Debug\net6.0-android\resizetizer\r\drawable\historyforward.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\home.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\jewel.png
 obj\Debug\net6.0-android\resizetizer\r\drawable\lasticon.png

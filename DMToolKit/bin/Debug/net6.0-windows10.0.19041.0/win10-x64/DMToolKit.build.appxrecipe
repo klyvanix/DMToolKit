@@ -829,11 +829,26 @@
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\ANTQUAB.TTF">
+      <PackagePath>ANTQUAB.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\ANTQUABI.TTF">
+      <PackagePath>ANTQUABI.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\ANTQUAI.TTF">
+      <PackagePath>ANTQUAI.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\BKANT.TTF">
+      <PackagePath>BKANT.TTF</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png">
+      <PackagePath>add.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
@@ -994,6 +1009,9 @@
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coinpouchdark.scale-100.png">
       <PackagePath>coinpouchdark.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coinpouchtitle.scale-100.png">
+      <PackagePath>coinpouchtitle.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coinpp.scale-100.png">
       <PackagePath>coinpp.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1036,6 +1054,9 @@
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\generatorsdark.scale-100.png">
       <PackagePath>generatorsdark.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\help.scale-100.png">
+      <PackagePath>help.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
       <PackagePath>home.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1069,6 +1090,9 @@
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\namegeneratordark.scale-100.png">
       <PackagePath>namegeneratordark.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\namegentitle.scale-100.png">
+      <PackagePath>namegentitle.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\namelist.scale-100.png">
       <PackagePath>namelist.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1080,6 +1104,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npcgendark.scale-100.png">
       <PackagePath>npcgendark.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npcgentitle.scale-100.png">
+      <PackagePath>npcgentitle.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npclist.scale-100.png">
       <PackagePath>npclist.scale-100.png</PackagePath>
@@ -1107,6 +1134,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\suffix.scale-100.png">
       <PackagePath>suffix.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\unlock.scale-100.png">
+      <PackagePath>unlock.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\unlocked.scale-100.png">
       <PackagePath>unlocked.scale-100.png</PackagePath>

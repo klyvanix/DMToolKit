@@ -8,10 +8,15 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
+        Routing.RegisterRoute(nameof(CoinPouchGeneratorPage), typeof(CoinPouchGeneratorPage));
         Routing.RegisterRoute(nameof(CoinPouchDetailsPage), typeof(CoinPouchDetailsPage));
+
+        Routing.RegisterRoute(nameof(NameGeneratorPage), typeof(NameGeneratorPage));
+        Routing.RegisterRoute(nameof(NameGeneratorOptionsPage), typeof(NameGeneratorOptionsPage));
+        Routing.RegisterRoute(nameof(NameCollectionPage), typeof(NameCollectionPage));
+
         Routing.RegisterRoute(nameof(CategoryAddPage), typeof(CategoryAddPage));
         Routing.RegisterRoute(nameof(CategoryManagerPage), typeof(CategoryManagerPage));
-        Routing.RegisterRoute(nameof(NameGeneratorOptionsPage), typeof(NameGeneratorOptionsPage));
         Routing.RegisterRoute(nameof(AddNamePage), typeof(AddNamePage));
 
         Routing.RegisterRoute(nameof(ListManagerPage), typeof(ListManagerPage));
@@ -20,15 +25,11 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(NPCListPage), typeof(NPCListPage));
         Routing.RegisterRoute(nameof(NPCEditPage), typeof(NPCEditPage));
         Routing.RegisterRoute(nameof(NPCDetailsPage), typeof(NPCDetailsPage));
-
-
-        Routing.RegisterRoute(nameof(NameCollectionPage), typeof(NameCollectionPage));
+        Routing.RegisterRoute(nameof(NPCGeneratorPage), typeof(NPCGeneratorPage));
+        Routing.RegisterRoute(nameof(NPCOptionsPage), typeof(NPCOptionsPage));
 
         Routing.RegisterRoute(nameof(NamePrefixManagerPage), typeof(NamePrefixManagerPage));
         Routing.RegisterRoute(nameof(NameSuffixManagerPage), typeof(NameSuffixManagerPage));
-
-        Routing.RegisterRoute(nameof(MasculineNamePage), typeof(MasculineNamePage));
-        Routing.RegisterRoute(nameof(FeminineNamePage), typeof(FeminineNamePage));
 
     }
 }

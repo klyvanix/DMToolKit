@@ -30,5 +30,15 @@ namespace DMToolKit.Services
                 NPCCategories.Add("Merchant");
             }
         }
+
+        public bool NameInList(string name) 
+        {
+            for(int i = 0; i < NPCCategories.Count; i++) 
+            {
+                if (NPCCategories[i] == name)
+                    return true;
+            }
+            return false;
+        }
     }
 }

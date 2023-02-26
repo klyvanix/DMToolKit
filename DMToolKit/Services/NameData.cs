@@ -1,48 +1,54 @@
 ﻿using DMToolKit.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DMToolKit.Services
 {
     public class NameData
     {
         //Name Lists
-        public ThemedNameCollection MasculineNameList;
-        public ThemedNameCollection FeminineNameList;
-        public ThemedNameCollection SurnameNameList;
-
         public List<ThemedNameCollection> ThemedNameCollections;
 
         public NameData() 
         {
-            MasculineNameList = new ThemedNameCollection("Masculine");
-            FeminineNameList = new ThemedNameCollection("Feminine");
-            SurnameNameList = new ThemedNameCollection("Surname");
             ThemedNameCollections = new List<ThemedNameCollection>();
         }
 
         public NameData(bool InitialStartup)
         {
-            MasculineNameList = new ThemedNameCollection("Masculine");
-            FeminineNameList = new ThemedNameCollection("Feminine");
-            SurnameNameList = new ThemedNameCollection("Surname");
             ThemedNameCollections = new List<ThemedNameCollection>();
             if (InitialStartup) 
             {
-                MasculineNameList.Collection.Add("Albert");
-                MasculineNameList.Collection.Add("Merlin");
+                ThemedNameCollections.Add(new ThemedNameCollection("Masculine"));
+                ThemedNameCollections[0].Collection.Add("Albert");
+                ThemedNameCollections[0].Collection.Add("Merlin");
 
-                FeminineNameList.Collection.Add("Keenah");
-                FeminineNameList.Collection.Add("Nara");
+                ThemedNameCollections.Add(new ThemedNameCollection("Feminine"));
+                ThemedNameCollections[1].Collection.Add("Keenah");
+                ThemedNameCollections[1].Collection.Add("Nara");
 
-                SurnameNameList.Collection.Add("Vander");
-                SurnameNameList.Collection.Add("Gelspar");
-                ThemedNameCollections.Add(MasculineNameList);
-                ThemedNameCollections.Add(FeminineNameList);
-                ThemedNameCollections.Add(SurnameNameList);
+                ThemedNameCollections.Add(new ThemedNameCollection("Surname"));
+                ThemedNameCollections[2].Collection.Add("Vander");
+                ThemedNameCollections[2].Collection.Add("Gelspar");
+            }
+        }
+
+        public bool ListNameExists(string name)
+        {
+            for(int i = 0; i < ThemedNameCollections.Count; i++)
+                if (ThemedNameCollections[i].Name == name) return true;
+            return false;
+        }
+
+        public void AddNameToList(string name)
+        {
+            ThemedNameCollections.Add(new ThemedNameCollection(name));
+        }
+
+        public void DeleteNameFromList(string name) 
+        {
+            for(int i = 0; i < ThemedNameCollections.Count; i++) 
+            {
+                if (ThemedNameCollections[i].Name == name)
+                    ThemedNameCollections.RemoveAt(i);
             }
         }
     }

@@ -35,6 +35,9 @@ public static class MauiProgram
         builder.Services.AddTransient<NPCListPage>();
         builder.Services.AddTransient<NPCListViewModel>();
 
+        builder.Services.AddTransient<NPCOptionsPage>();
+        builder.Services.AddTransient<NPCOptionsViewModel>();
+
         builder.Services.AddTransient<NPCAddPage>();
         builder.Services.AddTransient<NPCAddViewModel>();
 
@@ -62,22 +65,11 @@ public static class MauiProgram
         builder.Services.AddTransient<NameCollectionPage>();
         builder.Services.AddTransient<NameCollectionViewModel>();
 
-
-
-
         builder.Services.AddTransient<NamePrefixManagerPage>();
         builder.Services.AddTransient<NamePrefixManagerViewModel>();
 
         builder.Services.AddTransient<NameSuffixManagerPage>();
         builder.Services.AddTransient<NameSuffixManagerViewModel>();
-
-
-
-        builder.Services.AddTransient<MasculineNamePage>();
-        builder.Services.AddTransient<MasculineNameViewModel>();
-
-        builder.Services.AddTransient<FeminineNamePage>();
-        builder.Services.AddTransient<FeminineNameViewModel>();
 
         return builder.Build();
 	}

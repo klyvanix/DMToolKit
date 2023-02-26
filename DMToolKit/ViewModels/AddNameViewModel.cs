@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Data;
 using DMToolKit.Services;
+using System.Collections.ObjectModel;
 
 namespace DMToolKit.ViewModels
 {
@@ -12,13 +13,10 @@ namespace DMToolKit.ViewModels
         public Name inputName;
 
         [ObservableProperty]
-        public bool masculineEnabled;
+        public ObservableCollection<string> nameLists;
 
         [ObservableProperty]
-        public bool feminineEnabled;
-
-        [ObservableProperty]
-        public bool lastEnabled;
+        public int selectedListIndex;
 
         [ObservableProperty]
         public bool prefixEnabled;
@@ -31,20 +29,28 @@ namespace DMToolKit.ViewModels
         public AddNameViewModel() 
         {
             DataController = DataController.Instance;
+            NameLists = new ObservableCollection<string>();
             PrefixEnabled = true;
             SuffixEnabled = true;
-            MasculineEnabled = true;
-            FeminineEnabled = true;
-            LastEnabled = true;
+        }
+
+        public void UpdateLists()
+        {
+            NameLists.Clear();
+            foreach (var item in DataController.NameData.ThemedNameCollections)
+            {
+                if(!item.ContainsName(InputName.Output))
+                    NameLists.Add(item.Name);
+            }
         }
 
         public void CheckIfSuffixExists()
         {
 
             var check = char.ToLower(InputName.Output[0]) + InputName.Output.Substring(1);
-            for (int i = 0; i < DataController.NameConstructionData.SuffixList.Count; i++)
+            for (int i = 0; i < DataController.NameSeedData.SuffixList.Count; i++)
             {
-                if (DataController.NameConstructionData.SuffixList[i] == check)
+                if (DataController.NameSeedData.SuffixList[i] == check)
                 {
                     SuffixEnabled = false;
                     return;
@@ -55,80 +61,28 @@ namespace DMToolKit.ViewModels
         public void CheckIfPrefixExists()
         {
             var check = char.ToUpper(InputName.Output[0]) + InputName.Output.Substring(1);
-            for (int i = 0; i < DataController.NameConstructionData.PrefixList.Count; i++)
+            for (int i = 0; i < DataController.NameSeedData.PrefixList.Count; i++)
             {
-                if (DataController.NameConstructionData.PrefixList[i] == check)
+                if (DataController.NameSeedData.PrefixList[i] == check)
                 {
                     PrefixEnabled = false;
                     return;
                 }
             }
         }
-
-        public void CheckIfMasculineExists()
+        [RelayCommand]
+        public void AddToNameList(string listName)
         {
-            for (int i = 0; i < DataController.NameData.MasculineNameList.Collection.Count; i++)
+            NameLists.Remove(listName);
+            for (int i = 0; i < DataController.NameData.ThemedNameCollections.Count; i++)
             {
-                if (DataController.NameData.MasculineNameList.Collection[i] == InputName.Output)
+                if(listName == DataController.NameData.ThemedNameCollections[i].Name)
                 {
-                    MasculineEnabled = false;
+                    DataController.NameData.ThemedNameCollections[i].AddNameToCollection(InputName.Output);
+                    DataController.SaveNameData();
                     return;
                 }
             }
-        }
-
-        public void CheckIfFeminineExists()
-        {
-            for (int i = 0; i < DataController.NameData.FeminineNameList.Collection.Count; i++)
-            {
-                if (DataController.NameData.FeminineNameList.Collection[i] == InputName.Output)
-                {
-                    FeminineEnabled = false;
-                    return;
-                }
-            }
-        }
-
-        public void CheckIfLastExists()
-        {
-            for (int i = 0; i < DataController.NameData.SurnameNameList.Collection.Count; i++)
-            {
-                if (DataController.NameData.SurnameNameList.Collection[i] == InputName.Output)
-                {
-                    LastEnabled = false;
-                    return;
-                }
-            }
-        }
-
-        [RelayCommand]
-        public void AddMasculine()
-        {
-            DataController.NameData.MasculineNameList.Collection.Add(InputName.Output);
-            DataController.NameData.MasculineNameList.Collection.Sort();
-            DataController.SaveNameData();
-
-            MasculineEnabled = false;
-        }
-
-        [RelayCommand]
-        public void AddFeminine()
-        {
-            DataController.NameData.FeminineNameList.Collection.Add(InputName.Output);
-            DataController.NameData.FeminineNameList.Collection.Sort();
-            DataController.SaveNameData();
-
-            FeminineEnabled = false;
-        }
-
-        [RelayCommand]
-        public void AddLast()
-        {
-            DataController.NameData.SurnameNameList.Collection.Add(InputName.Output);
-            DataController.NameData.SurnameNameList.Collection.Sort();
-            DataController.SaveNameData();
-
-            LastEnabled = false;
         }
 
         [RelayCommand]
@@ -138,9 +92,9 @@ namespace DMToolKit.ViewModels
                 return;
 
             var item = char.ToUpper(input[0]) + input.Substring(1);
-            DataController.NameConstructionData.PrefixList.Add(item);
-            DataController.NameConstructionData.PrefixList.Sort();
-            DataController.SaveNameConstructionData();
+            DataController.NameSeedData.PrefixList.Add(item);
+            DataController.NameSeedData.PrefixList.Sort();
+            DataController.SaveNameSeedData();
 
             PrefixEnabled = false;
         }
@@ -152,9 +106,9 @@ namespace DMToolKit.ViewModels
                 return;
 
             var item = char.ToLower(input[0]) + input.Substring(1);
-            DataController.NameConstructionData.SuffixList.Add(item);
-            DataController.NameConstructionData.SuffixList.Sort();
-            DataController.SaveNameConstructionData();
+            DataController.NameSeedData.SuffixList.Add(item);
+            DataController.NameSeedData.SuffixList.Sort();
+            DataController.SaveNameSeedData();
 
             SuffixEnabled = false;
         }

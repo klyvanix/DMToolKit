@@ -81,6 +81,7 @@ namespace DMToolKit.Services
                 SuffixList.Add("x");
                 SuffixList.Add("y");
                 SuffixList.Add("z");
+                SeedCollections.Add(new NameSeedCollection("Default"));
             }
         }
     }

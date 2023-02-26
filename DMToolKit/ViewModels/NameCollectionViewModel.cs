@@ -1,21 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DMToolKit.ViewModels
 {
 
-    [QueryProperty("Collection", "Collection"), QueryProperty("ListIndex", "ListIndex"), QueryProperty("ListName", "ListName")]
+    [QueryProperty("ListOfNames", "ListOfNames"), QueryProperty("ListIndex", "ListIndex"), QueryProperty("ListName", "ListName")]
     public partial class NameCollectionViewModel : ObservableObject
     {
         [ObservableProperty]
-        ObservableCollection<string> collection;
+        ObservableCollection<string> listOfNames;
 
         [ObservableProperty]
         string listName;
@@ -23,7 +18,8 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string nameToAdd;
 
-        int ListIndex { get; set; }
+        [ObservableProperty]
+        int listIndex;
 
         DataController DataController;
 
@@ -32,16 +28,34 @@ namespace DMToolKit.ViewModels
             DataController = DataController.Instance;
         }
 
+        private void UpdateCollection()
+        {
+            ListOfNames.Clear();
+            foreach (var item in DataController.NameData.ThemedNameCollections[ListIndex].Collection)
+                ListOfNames.Add(item);
+        }
+
         [RelayCommand]
         public void Add(string input)
         {
             if (string.IsNullOrEmpty(input))
                 return;
 
-            Collection.Add(input);
-            DataController.NameData.ThemedNameCollections[ListIndex].Collection = Collection.ToList();
+            ListOfNames.Add(input);
+            DataController.NameData.ThemedNameCollections[ListIndex].Collection = ListOfNames.ToList();
             DataController.SaveNameData();
             NameToAdd = string.Empty;
+        }
+
+        [RelayCommand]
+        public void Remove(string input) 
+        {
+            if (string.IsNullOrEmpty(input))
+                return;
+
+            DataController.NameData.ThemedNameCollections[ListIndex].RemoveNameFromCollection(input);
+            DataController.SaveNameData();
+            UpdateCollection();
         }
 
         [RelayCommand]

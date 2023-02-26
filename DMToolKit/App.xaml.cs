@@ -17,11 +17,11 @@ public partial class App : Application
             DataController.NameData = new NameData(true);
 		if (DataController.NPCData is null)
 			DataController.NPCData = new NPCData(true);
-		if(DataController.NameConstructionData is null)
-			DataController.NameConstructionData= new NameSeedData(true);
+		if(DataController.NameSeedData is null)
+			DataController.NameSeedData= new NameSeedData(true);
 
 		DataController.LoadNPCData();
 		DataController.LoadNameData();
-		DataController.LoadNameConstructionData();
+		DataController.LoadNameSeedData();
     }
 }

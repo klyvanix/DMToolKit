@@ -55,8 +55,8 @@ namespace DMToolKit.ViewModels
             PrefixToAdd = string.Empty;
             SuffixToAdd = string.Empty;
             LockedPrefix = string.Empty;
-            PrefixCount = $"{DataController.NameConstructionData.PrefixList.Count}";
-            SuffixCount = $"{DataController.NameConstructionData.SuffixList.Count}";
+            PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
+            SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
             LockedLetterList = new List<string>()
             {
                 "A", "B", "C", "D", "E",
@@ -66,11 +66,11 @@ namespace DMToolKit.ViewModels
                 "U", "V", "W", "X", "Y", "Z"
             };
 
-            if (DataController.NameConstructionData.PrefixList.Count == 0)
+            if (DataController.NameSeedData.PrefixList.Count == 0)
                 return;
 
             PrefixList.Clear();
-            foreach (var item in DataController.NameConstructionData.PrefixList)
+            foreach (var item in DataController.NameSeedData.PrefixList)
                 PrefixList.Add(item);
         }
 
@@ -80,11 +80,11 @@ namespace DMToolKit.ViewModels
             if (!string.IsNullOrEmpty(LockedPrefix) && PrefixLock)
             {
                 var item = char.ToUpper(LockedPrefix[0]) + LockedPrefix.Substring(1);
-                if (!DataController.NameConstructionData.PrefixList.Contains(item))
+                if (!DataController.NameSeedData.PrefixList.Contains(item))
                 {
-                    DataController.NameConstructionData.PrefixList.Add(item);
-                    DataController.NameConstructionData.PrefixList.Sort();
-                    DataController.SaveNameConstructionData();
+                    DataController.NameSeedData.PrefixList.Add(item);
+                    DataController.NameSeedData.PrefixList.Sort();
+                    DataController.SaveNameSeedData();
                     PrefixToAdd = string.Empty;
                 }
             }
@@ -127,12 +127,12 @@ namespace DMToolKit.ViewModels
                 return;
 
             var item = char.ToUpper(PrefixToAdd[0]) + PrefixToAdd.Substring(1);
-            if (DataController.NameConstructionData.PrefixList.Contains(item))
+            if (DataController.NameSeedData.PrefixList.Contains(item))
                 return;
 
-            DataController.NameConstructionData.PrefixList.Add(item);
-            DataController.NameConstructionData.PrefixList.Sort();
-            DataController.SaveNameConstructionData();
+            DataController.NameSeedData.PrefixList.Add(item);
+            DataController.NameSeedData.PrefixList.Sort();
+            DataController.SaveNameSeedData();
             PrefixToAdd = string.Empty;
         }
 
@@ -142,12 +142,12 @@ namespace DMToolKit.ViewModels
             if (string.IsNullOrEmpty(SuffixToAdd))
                 return;
 
-            if (DataController.NameConstructionData.SuffixList.Contains(SuffixToAdd))
+            if (DataController.NameSeedData.SuffixList.Contains(SuffixToAdd))
                 return;
 
-            DataController.NameConstructionData.SuffixList.Add(SuffixToAdd);
-            DataController.NameConstructionData.SuffixList.Sort();
-            DataController.SaveNameConstructionData();
+            DataController.NameSeedData.SuffixList.Add(SuffixToAdd);
+            DataController.NameSeedData.SuffixList.Sort();
+            DataController.SaveNameSeedData();
             SuffixToAdd = string.Empty;
         }
 

@@ -23,5 +23,26 @@ namespace DMToolKit.Data
             Name = name;
             Collection = new List<string>();
         }
+
+        public void AddNameToCollection(string Name)
+        {
+            Collection.Add(Name);
+            Collection.Sort();
+        }
+
+        public void RemoveNameFromCollection(string Name) 
+        {
+            Collection.Remove(Name);
+        }
+
+        public bool ContainsName(string Name)
+        {
+            for(int i = 0; i < Collection.Count; i++) 
+            {
+                if (Collection[i] == Name)
+                    return true;
+            }
+            return false;
+        }
     }
 }

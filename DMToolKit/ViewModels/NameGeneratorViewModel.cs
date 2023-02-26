@@ -14,6 +14,9 @@ namespace DMToolKit.ViewModels
         ObservableCollection<Name> nameList;
 
         [ObservableProperty]
+        ObservableCollection<string> seedList;
+
+        [ObservableProperty]
         int generationNumber;
 
         Random random = new Random();
@@ -31,9 +34,13 @@ namespace DMToolKit.ViewModels
         string lockedPrefix;
 
         [ObservableProperty]
-        bool showHelp;
+        [NotifyPropertyChangedFor(nameof(ShowList))]
+        public bool showHelp;
+
+        public bool ShowList => !ShowHelp;
+
         [ObservableProperty]
-        bool showList;
+        public int pickerIndex;
 
         [ObservableProperty]
         string nameDescriptionOne;
@@ -55,12 +62,14 @@ namespace DMToolKit.ViewModels
 
         DataController DataController;
 
-        public NameGeneratorViewModel() 
+        public NameGeneratorViewModel()
         {
+            DataController = DataController.Instance;
+
             minIndex = -1;
             maxIndex = -1;
             ShowHelp = false;
-            ShowList = true;
+
             NameDescriptionOne = StaticStrings.NameDescription[0];
             NameDescriptionTwo = StaticStrings.NameDescription[1];
             NameDescriptionThree = StaticStrings.NameDescription[2];
@@ -68,41 +77,45 @@ namespace DMToolKit.ViewModels
             NameDescriptionFive = StaticStrings.NameDescription[4];
             NameDescriptionSix = StaticStrings.NameDescription[5];
             NameDescriptionSeven = StaticStrings.NameDescription[6];
-            DataController = DataController.Instance;
             NameList = new ObservableCollection<Name>();
+            SeedList = new ObservableCollection<string>();
             LockedLetter = "A";
             LetterLock = false;
             GenerationNumber = 1;
+            UpdateSeedList();
+        }
+
+        public void UpdateSeedList()
+        {
+            foreach(var item in DataController.NameSeedData.SeedCollections)
+                SeedList.Add(item.ListName);
         }
 
         [RelayCommand]
-        async Task Generation()
+        async Task GenerateName()
         {
-        }
-
-        [RelayCommand]
-        void GenerateName()
-        {
-            if (DataController.NameConstructionData.PrefixList.Count == 0 || DataController.NameConstructionData.SuffixList.Count == 0)
+            if (DataController.NameSeedData.PrefixList.Count == 0 || DataController.NameSeedData.SuffixList.Count == 0)
                 return;
+
             ShowHelp = false;
-            ShowList = true;
+            Task t = Task.Factory.StartNew(() => {
+                if (GenerationNumber == 1)
+                    NameList.Add(new Name(GetPrefix(), GetSuffix()));
+                else
+                {
+                    if (GenerationNumber > 5)
+                        NameList.Clear();
+                    List<Name> list = new List<Name>();
+                    for (int i = 0; i < GenerationNumber; i++)
+                        list.Add(new Name(GetPrefix(), GetSuffix()));
 
-            if (GenerationNumber == 1)
-                NameList.Add(new Name(GetPrefix(), GetSuffix()));
-            else
-            { 
-                if(GenerationNumber > 5 )
-                    NameList.Clear();
-                List<Name> list = new List<Name>();
-                for (int i = 0; i < GenerationNumber; i++)
-                    list.Add(new Name(GetPrefix(), GetSuffix()));
+                    list.Sort();
 
-                list.Sort();
-
-                for (int i = 0; i < list.Count; i++)
-                    NameList.Add(list[i]);
-            }
+                    for (int i = 0; i < list.Count; i++)
+                        NameList.Add(list[i]);
+                }
+            });
+            await t;
         }
 
         private string GetPrefix()
@@ -116,12 +129,12 @@ namespace DMToolKit.ViewModels
                 if (minIndex != -1)
                 {
                     index = random.Next(minIndex, maxIndex);
-                    if (index == DataController.Instance.NameConstructionData.PrefixList.Count)
+                    if (index == DataController.Instance.NameSeedData.PrefixList.Count)
                         index--;
                 }
                 else
                 {
-                    index = random.Next(0, DataController.NameConstructionData.PrefixList.Count);
+                    index = random.Next(0, DataController.NameSeedData.PrefixList.Count);
                 }
             }
             else if(PrefixLock)
@@ -130,15 +143,15 @@ namespace DMToolKit.ViewModels
             }
             else
             {
-                index = random.Next(0, DataController.NameConstructionData.PrefixList.Count);
+                index = random.Next(0, DataController.NameSeedData.PrefixList.Count);
             }
 
-            return DataController.NameConstructionData.PrefixList[index];
+            return DataController.NameSeedData.PrefixList[index];
         }
         private string GetSuffix()
         {
-            var index = random.Next(0, DataController.NameConstructionData.SuffixList.Count);
-            return DataController.NameConstructionData.SuffixList[index];
+            var index = random.Next(0, DataController.NameSeedData.SuffixList.Count);
+            return DataController.NameSeedData.SuffixList[index];
         }
 
         [RelayCommand]
@@ -165,11 +178,17 @@ namespace DMToolKit.ViewModels
         {
             await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
         }
+
+        [RelayCommand]
+        async Task GoToListPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(ListManagerPage)}");
+        }
+
         [RelayCommand]
         void ToggleHelp()
         {
             ShowHelp = !ShowHelp;
-            ShowList = !ShowList;
         }
     }
 }

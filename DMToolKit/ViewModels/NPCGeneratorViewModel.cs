@@ -6,10 +6,22 @@ using DMToolKit.Services;
 
 namespace DMToolKit.ViewModels
 {
+    [QueryProperty("MasculineListIndex", "MasculineListIndex"),
+        QueryProperty("FeminineListIndex", "FeminineListIndex"),
+        QueryProperty("SurnameListIndex", "SurnameListIndex")]
     public partial class NPCGeneratorViewModel : ObservableObject
     {
         [ObservableProperty]
         NPC character;
+
+        [ObservableProperty]
+        int masculineListIndex;
+        [ObservableProperty]
+        int feminineListIndex;
+        [ObservableProperty]
+        int surnameListIndex;
+
+        List<NPC> HistoryList;
 
         bool firstNameLock;
         bool lastNameLock;
@@ -32,6 +44,8 @@ namespace DMToolKit.ViewModels
         int positiveMinorIndex = -1;
         int negativePrimeIndex = -1;
         int negativeMinorIndex = -1;
+
+        int historyIndex = 1;
 
         [ObservableProperty]
         Color firstNameColor = Colors.White;
@@ -71,17 +85,23 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         bool generated;
 
+        [ObservableProperty]
+        bool historyBackwardShown;
+        [ObservableProperty]
+        bool historyForwardShown;
+
         bool startup;
 
         private Random random = new Random();
 
         DataController DataController;
 
-        Color locked = Color.FromArgb("000000");
+        Color locked = Color.FromArgb("747a7f");
 
         public NPCGeneratorViewModel()
         {
             DataController = DataController.Instance;
+            HistoryList = new List<NPC>();
             startup = true;
             NotGenerated = true;
             Generated = false;
@@ -100,6 +120,11 @@ namespace DMToolKit.ViewModels
             DescriptionThree = StaticStrings.NPCDescription[2];
             DescriptionFour = StaticStrings.NPCDescription[3];
             DescriptionFive = StaticStrings.NPCDescription[4];
+            MasculineListIndex = 0;
+            FeminineListIndex = 1;
+            SurnameListIndex = 2;
+            HistoryForwardShown = false;
+            HistoryBackwardShown = false;
         }
 
         [RelayCommand]
@@ -107,8 +132,8 @@ namespace DMToolKit.ViewModels
         {
             if (GetCanGenerate())
             {
-                GetFirstNameIndex();
-                GetLastNameIndex();
+                firstNameIndex = GetFirstNameIndex();
+                lastNameIndex = GetLastNameIndex();
                 SelectPrimeValueIndex();
                 SelectMinorValueIndex();
                 SelectPositivePrimeIndex();
@@ -119,7 +144,8 @@ namespace DMToolKit.ViewModels
                 var firstName = string.Empty;
                 if (masculineName)
                 {
-                    firstName = DataController.NameData.MasculineNameList.Collection[firstNameIndex];
+                    //firstName = DataController.NameData.MasculineNameList.Collection[firstNameIndex];
+                    firstName = DataController.NameData.ThemedNameCollections[MasculineListIndex].Collection[firstNameIndex];
                     gender = 1;
                     if (Application.Current.RequestedTheme == AppTheme.Light)
                         GenderImage = "masculine.png";
@@ -128,7 +154,8 @@ namespace DMToolKit.ViewModels
                 }
                 else
                 {
-                    firstName = DataController.NameData.FeminineNameList.Collection[firstNameIndex];
+                    //firstName = DataController.NameData.FeminineNameList.Collection[firstNameIndex];
+                    firstName = DataController.NameData.ThemedNameCollections[FeminineListIndex].Collection[firstNameIndex];
                     gender = 2;
                     if (Application.Current.RequestedTheme == AppTheme.Light)
                         GenderImage = "feminine.png";
@@ -136,18 +163,28 @@ namespace DMToolKit.ViewModels
                         GenderImage = "femininedark.png";
                 }
                 Character = new NPC(firstName,
-                    DataController.NameData.SurnameNameList.Collection[lastNameIndex],
+                    DataController.NameData.ThemedNameCollections[SurnameListIndex].Collection[lastNameIndex],
                     gender,
                     primeValueIndex, 
                     minorValueIndex, 
                     positivePrimeIndex, 
                     positiveMinorIndex, 
                     negativePrimeIndex, 
-                    negativeMinorIndex);
+                    negativeMinorIndex,
+                    firstNameIndex,
+                    lastNameIndex);
+                if(!startup)
+                    HistoryBackwardShown = true;
 
                 NotGenerated = false;
                 Generated = true;
                 startup = false;
+                historyIndex = 1;
+                HistoryForwardShown = false;
+
+                HistoryList.Add(Character);
+                if (HistoryList.Count > 10)
+                    HistoryList.RemoveAt(0);
             }
             else
             {
@@ -158,9 +195,9 @@ namespace DMToolKit.ViewModels
         }
         public bool GetCanGenerate()
         {
-            if (DataController.NameData.FeminineNameList.Collection.Count == 0 ||
-                DataController.NameData.MasculineNameList.Collection.Count == 0 ||
-                DataController.NameData.SurnameNameList.Collection.Count == 0)
+            if (DataController.NameData.ThemedNameCollections[MasculineListIndex].Collection.Count == 0 ||
+                DataController.NameData.ThemedNameCollections[FeminineListIndex].Collection.Count == 0 ||
+                DataController.NameData.ThemedNameCollections[SurnameListIndex].Collection.Count == 0)
                 return false;
             return true;
         }
@@ -191,9 +228,97 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
+        void HistoryBackward()
+        {
+            if (HistoryList.Count - 1 - historyIndex >= 0)
+            {
+                UnlockAll();
+                HistoryForwardShown = true;
+                if (HistoryList.Count - 1 - historyIndex == 0)
+                    HistoryBackwardShown = false;
+                historyIndex++;
+                CopyCharacterHistoryData(HistoryList.Count - historyIndex);
+            }
+        }
+
+        [RelayCommand]
+        void HistoryEnd()
+        {
+                UnlockAll();
+                HistoryForwardShown = true;
+                HistoryBackwardShown = false;
+                historyIndex = HistoryList.Count - 1;
+                CopyCharacterHistoryData(0);
+        }
+
+        [RelayCommand]
+        void HistoryForward()
+        {
+            if (historyIndex > 0)
+            {
+                HistoryBackwardShown = true;
+                historyIndex--;
+                if (historyIndex == 1)
+                    HistoryForwardShown = false;
+                CopyCharacterHistoryData(HistoryList.Count - historyIndex);
+            }
+        }
+
+        [RelayCommand]
+        void HistoryBegin()
+        {
+                HistoryBackwardShown = true;
+                HistoryForwardShown = false;
+                CopyCharacterHistoryData(HistoryList.Count - 1);
+                historyIndex = 1;
+        }
+
+        private void CopyCharacterHistoryData(int index)
+        {
+            Character = HistoryList[index];
+            firstNameIndex = Character.firstNameIndex;
+            lastNameIndex = Character.lastNameIndex;
+            primeValueIndex = Character.primeValue;
+            minorValueIndex = Character.minorValue;
+            positivePrimeIndex = Character.positivePrimeValue;
+            positiveMinorIndex = Character.positiveMinorValue;
+            negativePrimeIndex = Character.negativePrimeValue;
+            negativeMinorIndex = Character.negativeMinorValue;
+
+            if (Character.genderCode == 1)
+            {
+                masculineName = true;
+                if (Application.Current.RequestedTheme == AppTheme.Light)
+                    GenderImage = "masculine.png";
+                if (Application.Current.RequestedTheme == AppTheme.Dark)
+                    GenderImage = "masculinedark.png";
+            }
+            else
+            {
+                masculineName = false;
+                if (Application.Current.RequestedTheme == AppTheme.Light)
+                    GenderImage = "feminine.png";
+                if (Application.Current.RequestedTheme == AppTheme.Dark)
+                    GenderImage = "femininedark.png";
+            }
+        }
+
+        [RelayCommand]
+        async Task GoToOptions()
+        {
+            await Shell.Current.GoToAsync($"{nameof(NPCOptionsPage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"MasculineListIndex", MasculineListIndex },
+                    {"FeminineListIndex", FeminineListIndex },
+                    {"SurnameListIndex", SurnameListIndex }
+                });
+        }
+
+        [RelayCommand]
         async Task GoToNameGenPage()
         {
-            await Shell.Current.GoToAsync($"//{nameof(NameGeneratorPage)}");
+            await Shell.Current.GoToAsync($"{nameof(NameGeneratorPage)}");
         }
 
         [RelayCommand]
@@ -400,32 +525,34 @@ namespace DMToolKit.ViewModels
             }
         }
 
-        private void GetLastNameIndex()
+        private int GetLastNameIndex()
         {
             if (lastNameLock)
-                return;
+                return lastNameIndex;
 
-            lastNameIndex = random.Next(0,DataController.NameData.SurnameNameList.Collection.Count);
+            return random.Next(0,DataController.NameData.ThemedNameCollections[SurnameListIndex].Collection.Count);
         }
 
-        private void GetFirstNameIndex()
+        private int GetFirstNameIndex()
         {
             if (firstNameLock)
-                return;
+                return firstNameIndex;
 
+            int returnIndex = -1;
             switch(random.Next(0,2))
             {
                 case 0:
-                    firstNameIndex = random.Next(0, DataController.NameData.MasculineNameList.Collection.Count);
+                    returnIndex = random.Next(0, DataController.NameData.ThemedNameCollections[MasculineListIndex].Collection.Count);
                     masculineName = true;
                     break;
                 case 1:
                     masculineName = false;
-                    firstNameIndex = random.Next(0, DataController.NameData.FeminineNameList.Collection.Count);
+                    returnIndex = random.Next(0, DataController.NameData.ThemedNameCollections[FeminineListIndex].Collection.Count);
                     break;
                 default:
                     break;
             }
+            return returnIndex;
         }
     }
 }

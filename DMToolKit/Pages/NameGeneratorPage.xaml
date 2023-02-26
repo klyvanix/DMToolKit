@@ -6,8 +6,14 @@
              x:DataType="viewmodel:NameGeneratorViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Name Generator">
-    <Grid RowDefinitions="*,50,50">
-        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}"
+    <Grid RowDefinitions="Auto,*,50,50">
+        <!--<Border Grid.Row="0" StrokeShape="RoundRectangle 15"
+                Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+            <Picker ItemsSource="{Binding SeedList}" SelectedIndex="{Binding PickerIndex}" TextColor="White" HorizontalOptions="Fill" HorizontalTextAlignment="Center" 
+                    VerticalOptions="Center" VerticalTextAlignment="Center"/>
+        </Border>-->
+        <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}"
                         SelectionMode="Single" ItemsSource="{Binding NameList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="Data:Name">
@@ -30,7 +36,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <ScrollView Grid.Row="0" IsVisible="{Binding ShowHelp}">
+        <ScrollView Grid.Row="1" IsVisible="{Binding ShowHelp}">
             <VerticalStackLayout>
                 <Border HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 75" StrokeThickness="2"
                         Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Secondary}}" 
@@ -135,7 +141,7 @@
                 </Border>
             </VerticalStackLayout>
         </ScrollView>
-        <Grid ColumnDefinitions="3*,100,50" Grid.Row="1" Margin="0,1,0,1" >
+        <Grid ColumnDefinitions="3*,100,50" Grid.Row="2" Margin="0,1,0,1" >
             <Button Text="Generate Name" Command="{Binding GenerateNameCommand}" Margin="1,0,1,0"/>
             <Button Text="Tools" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}" Margin="1,0,1,0"/>
             <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
@@ -144,11 +150,17 @@
                 <ImageButton HeightRequest="40" WidthRequest="40" Source="help.png" Command="{Binding ToggleHelpCommand}"/>
             </Border>
         </Grid>
-        <Grid Grid.Row="2" ColumnDefinitions="2*,*,*" Margin="0,1,0,2">
+        <Grid Grid.Row="3" ColumnDefinitions="2*,*,*,50" Margin="0,1,0,2">
             <Button Text="Clear" Margin="1,0,1,0" Command="{Binding ClearCommand}"/>
             <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Grid.Column="1" HorizontalOptions="Fill" Keyboard="Numeric"
                    HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
             <Stepper Increment="1" Minimum="1" Maximum="100" Grid.Column="2" Value="{Binding GenerationNumber}"/>
+            <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="3"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 
+                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                <ImageButton HeightRequest="40" WidthRequest="40" Source="listdark.png"
+                             Command="{Binding GoToListPageCommand}"/>
+            </Border>
         </Grid>
     </Grid>
 </ContentPage>

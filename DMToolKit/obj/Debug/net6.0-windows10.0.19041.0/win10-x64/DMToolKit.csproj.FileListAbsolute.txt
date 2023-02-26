@@ -404,3 +404,13 @@ D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x6
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\pouchgen.scale-100.png
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\pouchgendark.scale-100.png
 D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\valuedark.scale-100.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\ANTQUAB.TTF
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\ANTQUABI.TTF
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\ANTQUAI.TTF
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\BKANT.TTF
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\coinpouchtitle.scale-100.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\help.scale-100.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\namegentitle.scale-100.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\npcgentitle.scale-100.png
+D:\Github\Maui\DMToolKit\DMToolKit\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\unlock.scale-100.png
