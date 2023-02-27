@@ -169,7 +169,7 @@ namespace DMToolKit.ViewModels
             await Shell.Current.GoToAsync($"{nameof(AddNamePage)}", true,
                 new Dictionary<string, object>
                 {
-                    {"InputName", input }
+                    {"InputName", input.Output }
                 });
         }
 

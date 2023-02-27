@@ -10,7 +10,7 @@ namespace DMToolKit.ViewModels
     public partial class AddNameViewModel : ObservableObject
     {
         [ObservableProperty]
-        public Name inputName;
+        public string inputName;
 
         [ObservableProperty]
         public ObservableCollection<string> nameLists;
@@ -39,7 +39,7 @@ namespace DMToolKit.ViewModels
             NameLists.Clear();
             foreach (var item in DataController.NameData.ThemedNameCollections)
             {
-                if(!item.ContainsName(InputName.Output))
+                if(!item.ContainsName(InputName))
                     NameLists.Add(item.Name);
             }
         }
@@ -47,7 +47,7 @@ namespace DMToolKit.ViewModels
         public void CheckIfSuffixExists()
         {
 
-            var check = char.ToLower(InputName.Output[0]) + InputName.Output.Substring(1);
+            var check = char.ToLower(InputName[0]) + InputName.Substring(1);
             for (int i = 0; i < DataController.NameSeedData.SuffixList.Count; i++)
             {
                 if (DataController.NameSeedData.SuffixList[i] == check)
@@ -60,7 +60,7 @@ namespace DMToolKit.ViewModels
 
         public void CheckIfPrefixExists()
         {
-            var check = char.ToUpper(InputName.Output[0]) + InputName.Output.Substring(1);
+            var check = char.ToUpper(InputName[0]) + InputName.Substring(1);
             for (int i = 0; i < DataController.NameSeedData.PrefixList.Count; i++)
             {
                 if (DataController.NameSeedData.PrefixList[i] == check)
@@ -78,7 +78,7 @@ namespace DMToolKit.ViewModels
             {
                 if(listName == DataController.NameData.ThemedNameCollections[i].Name)
                 {
-                    DataController.NameData.ThemedNameCollections[i].AddNameToCollection(InputName.Output);
+                    DataController.NameData.ThemedNameCollections[i].AddNameToCollection(InputName);
                     DataController.SaveNameData();
                     return;
                 }

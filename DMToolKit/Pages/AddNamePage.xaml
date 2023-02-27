@@ -7,11 +7,11 @@
              Title="Add To List">
     <Grid RowDefinitions="100,Auto,50,50,*,50">
         <Border WidthRequest="300" HeightRequest="100" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent" StrokeShape="RoundRectangle 10 10 50 50">
-            <Label Text="{Binding InputName.Output}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
+            <Label Text="{Binding InputName}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
         </Border>
         <Label Grid.Row="1" Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
-        <Button Grid.Row="2" Text="Add Prefix" HeightRequest="45" Margin="5" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding PrefixEnabled}" />
-        <Button Grid.Row="3" Text="Add Suffix" HeightRequest="45" Margin="5" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName.Output}" IsEnabled="{Binding SuffixEnabled}"/>
+        <Button Grid.Row="2" Text="Add Prefix" HeightRequest="45" Margin="5" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding PrefixEnabled}" />
+        <Button Grid.Row="3" Text="Add Suffix" HeightRequest="45" Margin="5" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding SuffixEnabled}"/>
         <ScrollView Grid.Row="4">
             <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NameLists}" Grid.Row="0" SelectedItem="{Binding}" Margin="0,10">
                 <CollectionView.ItemTemplate>

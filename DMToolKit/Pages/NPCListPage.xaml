@@ -19,9 +19,9 @@
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=DeleteCommand}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Border Padding="6" StrokeShape="RoundRectangle 5" BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
-                                HorizontalOptions="Fill" VerticalOptions="Center">
+                        <Border Padding="6" StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" VerticalOptions="Center" 
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}"
+                                Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=GoToDetailsCommand}" 
                                                       CommandParameter="{Binding .}" />

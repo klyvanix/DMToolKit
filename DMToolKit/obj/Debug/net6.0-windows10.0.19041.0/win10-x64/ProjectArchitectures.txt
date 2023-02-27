@@ -1,1 +1,0 @@
-D:\Github\Maui\DMToolKit\DMToolKit\DMToolKit.csproj;x64

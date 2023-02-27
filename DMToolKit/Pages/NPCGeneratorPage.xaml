@@ -249,23 +249,23 @@
             <Border StrokeShape="RoundRectangle 10"  Grid.Column="0"
                      Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
                      BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryBackwardShown}">
-                <ImageButton Source="historybegin.png" Margin="1,0,1,0" Command="{Binding HistoryEndCommand}" HorizontalOptions="Fill"/>
+                <ImageButton Source="historybegin.png" Margin="5" Command="{Binding HistoryEndCommand}" HorizontalOptions="Fill"/>
             </Border>
             <Border StrokeShape="RoundRectangle 10"  Grid.Column="1"
                      Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
                      BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryBackwardShown}">
-                <ImageButton Source="historybackward.png" Margin="1,0,1,0" Command="{Binding HistoryBackwardCommand}" HorizontalOptions="Fill"/>
+                <ImageButton Source="historybackward.png" Margin="5" Command="{Binding HistoryBackwardCommand}" HorizontalOptions="Fill"/>
             </Border>
             <Label Text="History" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"/>
             <Border StrokeShape="RoundRectangle 10"  Grid.Column="3"
                      Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
                      BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryForwardShown}">
-                <ImageButton Source="historyforward.png" Margin="1,0,1,0" Command="{Binding HistoryForwardCommand}" HorizontalOptions="Fill"/>
+                <ImageButton Source="historyforward.png" Margin="5" Command="{Binding HistoryForwardCommand}" HorizontalOptions="Fill"/>
             </Border>
             <Border StrokeShape="RoundRectangle 10"  Grid.Column="4"
                      Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
                      BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryForwardShown}">
-                <ImageButton Source="historyend.png" Margin="1,0,1,0" Command="{Binding HistoryBeginCommand}" HorizontalOptions="Fill"/>
+                <ImageButton Source="historyend.png" Margin="5" Command="{Binding HistoryBeginCommand}" HorizontalOptions="Fill"/>
             </Border>
         </Grid>
         <Grid ColumnDefinitions="*,100,50" Grid.Row="2" Margin="0,1,0,1" >

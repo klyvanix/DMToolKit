@@ -5,7 +5,7 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCOptionsViewModel"
              Title="NPC Options Page">
-    <Grid RowDefinitions="50,*,Auto,50,50">
+    <Grid RowDefinitions="50,Auto,1.55*,*,50,50">
         
         <Grid BackgroundColor="{StaticResource Secondary}" Grid.Row="0">
             <Border BackgroundColor="Transparent" Stroke="Transparent" HorizontalOptions="Start" StrokeShape="RoundRectangle 15" HeightRequest="50" WidthRequest="50">
@@ -14,66 +14,73 @@
             <Label Text="Classifications" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Padding="10,0"
                         FontSize="20" HeightRequest="50" FontAttributes="Bold"/>
         </Grid>
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout>
-                <Grid ColumnDefinitions="100,*" Padding="30,5" Grid.Row="1" IsVisible="{Binding AddVisible}">
-                    <Button Text="Add" CommandParameter="{Binding ListGroupToAdd}" Command="{Binding AddGroupCommand}"/>
-                    <Entry Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Text="{Binding ListGroupToAdd}"
+        <Grid ColumnDefinitions="100,*" Padding="30,5" Grid.Row="1" IsVisible="{Binding AddVisible}">
+            <Button Text="Add" CommandParameter="{Binding ListGroupToAdd}" Command="{Binding AddGroupCommand}"/>
+            <Entry Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Text="{Binding ListGroupToAdd}"
                            HorizontalTextAlignment="Center" Placeholder="Classification Name" TextColor="White" 
-                           ReturnCommand="{Binding AddGroupCommand}" ReturnCommandParameter="{Binding ListGroupToAdd}"/>
-                </Grid>
-                <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NpcGroups}" Margin="60,0">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="x:String">
-                            <SwipeView>
-                                <SwipeView.RightItems>
-                                    <SwipeItems>
-                                        <SwipeItem Text="Delete"
-                                                   IconImageSource="delete.png"
-                                                   BackgroundColor="{StaticResource Delete}"
-                                                   CommandParameter="{Binding .}"
-                                                   Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCOptionsViewModel}}, Path=DeleteListCommand}"/>
-                                    </SwipeItems>
-                                </SwipeView.RightItems>
-                                <Border StrokeShape="RoundRectangle 15" Margin="0,1,0,2" HeightRequest="35"
-                                        Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
-                                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                                    <Grid>
-                                        <Label Text="{Binding .}" FontSize="16"
-                                                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
-                                                HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    </Grid>
-                                </Border>
-                            </SwipeView>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                           ReturnCommand="{Binding AddGroupCommand}" ReturnCommandParameter="{Binding ListGroupToAdd}"
+                           Keyboard="Text"/>
+        </Grid>
+        <Border Margin="60,0" StrokeThickness="2" Grid.Row="2"
+                    Stroke="{AppThemeBinding Light={StaticResource Dark}, Dark={StaticResource TextBackgroundDark}}"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource TextBackgroundDark}}">
+            <ScrollView>
+                <VerticalStackLayout>
+                    <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NpcGroups}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="Delete"
+                                                       IconImageSource="delete.png"
+                                                       BackgroundColor="{StaticResource Delete}"
+                                                       CommandParameter="{Binding .}"
+                                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCOptionsViewModel}}, Path=DeleteListCommand}"/>
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <Border StrokeShape="RoundRectangle 15" Margin="0,1,0,2" HeightRequest="35"
+                                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
+                                        <Grid>
+                                            <Label Text="{Binding .}" FontSize="16"
+                                                    TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
+                                                    HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Border>
+        <ScrollView Grid.Row="3" Margin="10" VerticalOptions="End">
+            <VerticalStackLayout>
+                <Label Text="Masculine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
+                        Stroke="{StaticResource Primary}"
+                        BackgroundColor="{StaticResource Secondary}" >
+                    <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding MasculineListIndex}" 
+                                TextColor="White" HorizontalTextAlignment="Center"/>
+                </Border>
+                <Label Text="Feminine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
+                        Stroke="{StaticResource Primary}"
+                        BackgroundColor="{StaticResource Secondary}" >
+                    <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding FeminineListIndex}" 
+                                TextColor="White" HorizontalTextAlignment="Center"/>
+                </Border>
+                <Label Text="Surname Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
+                        Stroke="{StaticResource Primary}"
+                        BackgroundColor="{StaticResource Secondary}" >
+                    <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding SurnameListIndex}" 
+                                TextColor="White" HorizontalTextAlignment="Center"/>
+                </Border>
             </VerticalStackLayout>
         </ScrollView>
-        <VerticalStackLayout Grid.Row="2" Margin="10">
-            <Label Text="Masculine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                    Stroke="{StaticResource Primary}"
-                    BackgroundColor="{StaticResource Secondary}" >
-                <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding MasculineListIndex}" 
-                            TextColor="White" HorizontalTextAlignment="Center"/>
-            </Border>
-            <Label Text="Feminine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                    Stroke="{StaticResource Primary}"
-                    BackgroundColor="{StaticResource Secondary}" >
-                <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding FeminineListIndex}" 
-                            TextColor="White" HorizontalTextAlignment="Center"/>
-            </Border>
-            <Label Text="Surname Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                    Stroke="{StaticResource Primary}"
-                    BackgroundColor="{StaticResource Secondary}" >
-                <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding SurnameListIndex}" 
-                            TextColor="White" HorizontalTextAlignment="Center"/>
-            </Border>
-        </VerticalStackLayout>
-        <Button Grid.Row="3" Text="Save" Command="{Binding SaveOptionsCommand}" Margin="0,1,0,2"  />
-        <Button Grid.Row="4" Text="Back" Command="{Binding GoBackCommand}" Margin="0,1,0,2"  />
+        <Button Grid.Row="4" Text="Save" Command="{Binding SaveOptionsCommand}" Margin="0,1,0,2"  />
+        <Button Grid.Row="5" Text="Back" Command="{Binding GoBackCommand}" Margin="0,1,0,2"  />
     </Grid>
 </ContentPage>

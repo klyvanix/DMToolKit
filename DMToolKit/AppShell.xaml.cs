@@ -8,10 +8,10 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-        Routing.RegisterRoute(nameof(CoinPouchGeneratorPage), typeof(CoinPouchGeneratorPage));
+        //Routing.RegisterRoute(nameof(CoinPouchGeneratorPage), typeof(CoinPouchGeneratorPage));
         Routing.RegisterRoute(nameof(CoinPouchDetailsPage), typeof(CoinPouchDetailsPage));
 
-        Routing.RegisterRoute(nameof(NameGeneratorPage), typeof(NameGeneratorPage));
+        //Routing.RegisterRoute(nameof(NameGeneratorPage), typeof(NameGeneratorPage));
         Routing.RegisterRoute(nameof(NameGeneratorOptionsPage), typeof(NameGeneratorOptionsPage));
         Routing.RegisterRoute(nameof(NameCollectionPage), typeof(NameCollectionPage));
 
@@ -25,7 +25,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(NPCListPage), typeof(NPCListPage));
         Routing.RegisterRoute(nameof(NPCEditPage), typeof(NPCEditPage));
         Routing.RegisterRoute(nameof(NPCDetailsPage), typeof(NPCDetailsPage));
-        Routing.RegisterRoute(nameof(NPCGeneratorPage), typeof(NPCGeneratorPage));
+        //Routing.RegisterRoute(nameof(NPCGeneratorPage), typeof(NPCGeneratorPage));
         Routing.RegisterRoute(nameof(NPCOptionsPage), typeof(NPCOptionsPage));
 
         Routing.RegisterRoute(nameof(NamePrefixManagerPage), typeof(NamePrefixManagerPage));

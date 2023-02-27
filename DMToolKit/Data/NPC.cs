@@ -22,9 +22,26 @@
         public string FullName => $"{FirstName} {LastName}";
 
         public string Gender => genderCode == 1 ? "Male" : "Female";
-        public string GenderImage => genderCode == 1 ? 
-            Application.Current.UserAppTheme == AppTheme.Dark ? "masculine.png" : "masculinedark.png" :
-            Application.Current.UserAppTheme == AppTheme.Dark ? "feminine.png" : "femininedark.png";
+        public string GenderImage
+        {
+            get
+            {
+                if(genderCode == 1)
+                {
+                    if (Application.Current.RequestedTheme == AppTheme.Light)
+                        return "masculine.png";
+                    else
+                        return "masculinedark.png";
+                }
+                else
+                {
+                    if (Application.Current.RequestedTheme == AppTheme.Light)
+                        return "feminine.png";
+                    else
+                        return "femininedark.png";
+                }
+            }
+        }
 
         public string ValuePrime => primeValue == -1 ? string.Empty : CharacterAttributes.ValuesText[primeValue];
         public string ValuePrimeDescription => primeValue == -1 ? string.Empty : CharacterAttributes.ValuesDefinitions[primeValue];

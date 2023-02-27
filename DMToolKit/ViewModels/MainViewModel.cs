@@ -26,7 +26,7 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToNameGenerator()
         {
-            await Shell.Current.GoToAsync($"{nameof(NameGeneratorPage)}");
+            await Shell.Current.GoToAsync($"//{nameof(NameGeneratorPage)}");
         }
 
         [RelayCommand]

@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using DMToolKit.Data;
+using DMToolKit.Pages;
 using DMToolKit.Services;
 using System.Collections.ObjectModel;
 
@@ -62,6 +64,19 @@ namespace DMToolKit.ViewModels
         async Task GoBack()
         {
             await Shell.Current.GoToAsync("..");
+        }
+
+        [RelayCommand]
+        async Task GoToAddPage(string input)
+        {
+            if (input is null)
+                return;
+
+            await Shell.Current.GoToAsync($"{nameof(AddNamePage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"InputName", input }
+                });
         }
     }
 }

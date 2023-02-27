@@ -49,6 +49,30 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Resources\Images\CoinPouch\**" />
+	  <AndroidResource Remove="Resources\Images\DarkTheme\**" />
+	  <AndroidResource Remove="Resources\Images\LightTheme\**" />
+	  <Compile Remove="Resources\Images\CoinPouch\**" />
+	  <Compile Remove="Resources\Images\DarkTheme\**" />
+	  <Compile Remove="Resources\Images\LightTheme\**" />
+	  <EmbeddedResource Remove="Resources\Images\CoinPouch\**" />
+	  <EmbeddedResource Remove="Resources\Images\DarkTheme\**" />
+	  <EmbeddedResource Remove="Resources\Images\LightTheme\**" />
+	  <MauiCss Remove="Resources\Images\CoinPouch\**" />
+	  <MauiCss Remove="Resources\Images\DarkTheme\**" />
+	  <MauiCss Remove="Resources\Images\LightTheme\**" />
+	  <MauiImage Remove="Resources\Images\CoinPouch\**" />
+	  <MauiImage Remove="Resources\Images\DarkTheme\**" />
+	  <MauiImage Remove="Resources\Images\LightTheme\**" />
+	  <MauiXaml Remove="Resources\Images\CoinPouch\**" />
+	  <MauiXaml Remove="Resources\Images\DarkTheme\**" />
+	  <MauiXaml Remove="Resources\Images\LightTheme\**" />
+	  <None Remove="Resources\Images\CoinPouch\**" />
+	  <None Remove="Resources\Images\DarkTheme\**" />
+	  <None Remove="Resources\Images\LightTheme\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Fonts\ANTQUAB.TTF" />
 	  <None Remove="Resources\Fonts\ANTQUABI.TTF" />
 	  <None Remove="Resources\Fonts\ANTQUAI.TTF" />
@@ -111,12 +135,6 @@
 	  <MauiXaml Update="Pages\NPCOptionsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Resources\Images\DarkTheme\" />
-	  <Folder Include="Resources\Images\LightTheme\" />
-	  <Folder Include="Resources\Images\CoinPouch\" />
 	</ItemGroup>
 
 </Project>

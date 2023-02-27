@@ -247,7 +247,7 @@ namespace DMToolKit.ViewModels
                 UnlockAll();
                 HistoryForwardShown = true;
                 HistoryBackwardShown = false;
-                historyIndex = HistoryList.Count - 1;
+                historyIndex = HistoryList.Count;
                 CopyCharacterHistoryData(0);
         }
 
@@ -318,7 +318,7 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToNameGenPage()
         {
-            await Shell.Current.GoToAsync($"{nameof(NameGeneratorPage)}");
+            await Shell.Current.GoToAsync($"//{nameof(NameGeneratorPage)}");
         }
 
         [RelayCommand]
