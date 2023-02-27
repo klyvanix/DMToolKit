@@ -279,11 +279,11 @@
             </Border>
         </Grid>
         <Grid ColumnDefinitions="*,100,50" Grid.Row="3" Margin="0,1,0,2">
-            <Button Grid.Column="0" Text="Save Character" Margin="1,0,1,0" Command="{Binding GoToAddPageCommand}" CommandParameter="{Binding Character}"/>
-            <Border StrokeShape="RoundRectangle 10"  Grid.Column="1"
+            <Button Grid.Column="0" Text="Save Character" Command="{Binding GoToAddPageCommand}" CommandParameter="{Binding Character}"/>
+            <Border StrokeShape="RoundRectangle 15"  Grid.Column="1" HeightRequest="50"
                      Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
                      BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" >
-                <ImageButton Source="unlock.png" Margin="1,0,1,0" Command="{Binding UnlockAllCommand}" HorizontalOptions="Fill"/>
+                <ImageButton Source="unlock.png" Command="{Binding UnlockAllCommand}" HorizontalOptions="Fill"/>
             </Border>
             <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 

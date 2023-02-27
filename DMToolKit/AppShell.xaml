@@ -12,7 +12,7 @@
                 Route="NameGeneratorPage" />
         <ShellContent Icon="npc.png" Title="Character" ContentTemplate="{DataTemplate local:NPCGeneratorPage}"
                 Route="NPCGeneratorPage" />
-        <ShellContent Icon="pouch.png" Title="Coin Pouch" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
+        <ShellContent Icon="pouchgen.png" Title="Coin Pouch" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
             Route="CoinPouchGeneratorPage" />
     </FlyoutItem>
     <!--<FlyoutItem FlyoutIcon="{AppThemeBinding Light='appicon.png', Dark='appicondark.png'}" Title="Home">
