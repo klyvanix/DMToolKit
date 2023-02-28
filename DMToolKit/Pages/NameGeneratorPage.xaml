@@ -140,7 +140,7 @@
             </VerticalStackLayout>
         </ScrollView>
         <Grid ColumnDefinitions="3*,100,50" Grid.Row="2" Margin="0,1,0,1" >
-            <Button Text="Generate Name" Command="{Binding GenerateNameCommand}" Margin="1,0,1,0"/>
+            <Button Text="Generate" Command="{Binding GenerateNameCommand}" Margin="1,0,1,0"/>
             <Button Text="Tools" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}" Margin="1,0,1,0"/>
             <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 

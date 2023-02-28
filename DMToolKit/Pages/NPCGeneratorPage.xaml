@@ -269,7 +269,7 @@
             </Border>
         </Grid>
         <Grid ColumnDefinitions="*,100,50" Grid.Row="2" Margin="0,1,0,1" >
-            <Button Text="Generate Character" Grid.Column="0" Margin="1,0,1,0" Command="{Binding GenerateNPCCommand}"/>
+            <Button Text="Generate" Grid.Column="0" Margin="1,0,1,0" Command="{Binding GenerateNPCCommand}"/>
             <Button Text="Options" Grid.Column="1" Margin="1,0,1,0" Command="{Binding GoToOptionsCommand}"/>
             <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 

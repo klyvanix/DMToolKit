@@ -67,7 +67,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Grid.Row="2" Margin="0,1,0,1" Text="Generate Coin Pouch"
+        <Button Grid.Row="2" Margin="0,1,0,1" Text="Generate"
                 Command="{Binding AddCommand}" />
         <Grid Grid.Row="3" Grid.ColumnSpan="2" ColumnDefinitions="*,*" Margin="0,1,0,2">
             <Button Text="Clear" VerticalOptions="Fill"
