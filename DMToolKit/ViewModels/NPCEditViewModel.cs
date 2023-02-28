@@ -21,11 +21,14 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         public int pickerIndex;
 
+        private int characterIndex;
+
         DataController DataController;
 
         public NPCEditViewModel()
         {
             DataController = DataController.Instance;
+            characterIndex = -1;
             PickerIndex = 0;
             Notes = string.Empty;
             ClassificationList = new List<string>();
@@ -43,12 +46,11 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task SaveChanges()
         {
-            if (DataController.NPCData.NPCList.Contains(Character))
+            if (characterIndex != -1)
             {
-                var index = DataController.NPCData.NPCList.IndexOf(Character);
                 Character.Notes = Notes;
                 Character.Role = ClassificationList[PickerIndex];
-                DataController.NPCData.NPCList[index] = Character;
+                DataController.NPCData.NPCList[characterIndex] = Character;
                 DataController.SaveNPCData();
             }
             await Shell.Current.GoToAsync($"../..");
@@ -63,61 +65,80 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void RerollFirstName()
         {
-            var newCharacter = Character;
-            if (Character.genderCode == 1)
+            if (characterIndex == -1)
+                characterIndex = DataController.NPCData.GetNPCIndex(Character);
+
+            if (Character.GenderCode == 1)
             {
-                newCharacter.firstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection.Count);
-                newCharacter.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection[Character.firstNameIndex];
+                Character.FirstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection.Count);
+                Character.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection[Character.FirstNameIndex];
             }
             else
             {
-                newCharacter.firstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection.Count);
-                newCharacter.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection[Character.firstNameIndex];
+                Character.FirstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection.Count);
+                Character.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection[Character.FirstNameIndex];
             }
-            Character = newCharacter;
         }
 
         [RelayCommand]
         void RerollLastName()
         {
-                Character.lastNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection.Count);
-                Character.LastName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection[Character.lastNameIndex];
+            if (characterIndex == -1)
+                characterIndex = DataController.NPCData.GetNPCIndex(Character);
+
+            Character.LastNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection.Count);
+                Character.LastName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection[Character.LastNameIndex];
         }
 
         [RelayCommand]
         void RerollPrimeValue()
         {
-            Character.primeValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
+            if (characterIndex == -1)
+                characterIndex = DataController.NPCData.GetNPCIndex(Character);
+
+            Character.PrimeValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
         }
 
         [RelayCommand]
         void RerollMinorValue()
         {
-            Character.minorValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
+            if (characterIndex == -1)
+                characterIndex = DataController.NPCData.GetNPCIndex(Character);
+
+            Character.MinorValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
         }
 
         [RelayCommand]
         void RerollPositivePrime()
         {
-            Character.positivePrimeValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
+            if (characterIndex == -1)
+                characterIndex = DataController.NPCData.GetNPCIndex(Character);
+
+            Character.PositivePrimeValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
         }
 
         [RelayCommand]
         void RerollPositiveMinor()
         {
-            Character.positiveMinorValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
+            if (characterIndex == -1)
+                characterIndex = DataController.NPCData.GetNPCIndex(Character);
+
+            Character.PositiveMinorValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
         }
 
         [RelayCommand]
         void RerollNegativePrime()
         {
-            Character.negativePrimeValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
+            Character.NegativePrimeValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
         }
 
         [RelayCommand]
         void RerollNegativeMinor()
         {
-            Character.negativeMinorValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
+            if (characterIndex == -1)
+                characterIndex = DataController.NPCData.GetNPCIndex(Character);
+
+            Character.NegativeMinorValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
         }
     }
 }

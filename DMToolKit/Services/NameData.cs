@@ -4,9 +4,9 @@ namespace DMToolKit.Services
 {
     public class NameData
     {
-        public int selectedMasculineListIndex;
-        public int selectedFeminineListIndex;
-        public int selectedSurnameListIndex;
+        public int selectedMasculineListIndex = 0;
+        public int selectedFeminineListIndex = 1;
+        public int selectedSurnameListIndex = 2;
 
         //Name Lists
         public List<ThemedNameCollection> ThemedNameCollections;

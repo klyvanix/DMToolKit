@@ -40,5 +40,15 @@ namespace DMToolKit.Services
             }
             return false;
         }
+
+        public int GetNPCIndex(NPC character)
+        {
+            for(int i = 0; i < NPCList.Count; i++) 
+            {
+                if (NPCList[i] == character) 
+                    return i;
+            }
+            return -1;
+        }
     }
 }
