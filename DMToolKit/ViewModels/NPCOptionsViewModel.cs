@@ -49,6 +49,9 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task SaveOptions()
         {
+            DataController.NameData.selectedMasculineListIndex = MasculineListIndex;
+            DataController.NameData.selectedFeminineListIndex = FeminineListIndex;
+            DataController.NameData.selectedSurnameListIndex = SurnameListIndex;
             await Shell.Current.GoToAsync($"../../{nameof(NPCGeneratorPage)}", true,
                 new Dictionary<string, object>
                 {

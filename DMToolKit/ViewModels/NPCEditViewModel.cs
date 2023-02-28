@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Data;
-using DMToolKit.Pages;
 using DMToolKit.Services;
 
 namespace DMToolKit.ViewModels
@@ -59,6 +58,66 @@ namespace DMToolKit.ViewModels
         async Task GoBack()
         {
             await Shell.Current.GoToAsync($"..");
+        }
+
+        [RelayCommand]
+        void RerollFirstName()
+        {
+            var newCharacter = Character;
+            if (Character.genderCode == 1)
+            {
+                newCharacter.firstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection.Count);
+                newCharacter.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection[Character.firstNameIndex];
+            }
+            else
+            {
+                newCharacter.firstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection.Count);
+                newCharacter.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection[Character.firstNameIndex];
+            }
+            Character = newCharacter;
+        }
+
+        [RelayCommand]
+        void RerollLastName()
+        {
+                Character.lastNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection.Count);
+                Character.LastName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection[Character.lastNameIndex];
+        }
+
+        [RelayCommand]
+        void RerollPrimeValue()
+        {
+            Character.primeValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
+        }
+
+        [RelayCommand]
+        void RerollMinorValue()
+        {
+            Character.minorValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
+        }
+
+        [RelayCommand]
+        void RerollPositivePrime()
+        {
+            Character.positivePrimeValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
+        }
+
+        [RelayCommand]
+        void RerollPositiveMinor()
+        {
+            Character.positiveMinorValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
+        }
+
+        [RelayCommand]
+        void RerollNegativePrime()
+        {
+            Character.negativePrimeValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
+        }
+
+        [RelayCommand]
+        void RerollNegativeMinor()
+        {
+            Character.negativeMinorValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
         }
     }
 }

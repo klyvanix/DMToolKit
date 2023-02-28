@@ -4,6 +4,10 @@ namespace DMToolKit.Services
 {
     public class NameData
     {
+        public int selectedMasculineListIndex;
+        public int selectedFeminineListIndex;
+        public int selectedSurnameListIndex;
+
         //Name Lists
         public List<ThemedNameCollection> ThemedNameCollections;
 
@@ -15,19 +19,22 @@ namespace DMToolKit.Services
         public NameData(bool InitialStartup)
         {
             ThemedNameCollections = new List<ThemedNameCollection>();
+            selectedMasculineListIndex = 0;
+            selectedFeminineListIndex = 1;
+            selectedSurnameListIndex = 2;
             if (InitialStartup) 
             {
                 ThemedNameCollections.Add(new ThemedNameCollection("Masculine"));
-                ThemedNameCollections[0].Collection.Add("Albert");
-                ThemedNameCollections[0].Collection.Add("Merlin");
+                ThemedNameCollections[selectedMasculineListIndex].Collection.Add("Albert");
+                ThemedNameCollections[selectedMasculineListIndex].Collection.Add("Merlin");
 
                 ThemedNameCollections.Add(new ThemedNameCollection("Feminine"));
-                ThemedNameCollections[1].Collection.Add("Keenah");
-                ThemedNameCollections[1].Collection.Add("Nara");
+                ThemedNameCollections[selectedFeminineListIndex].Collection.Add("Keenah");
+                ThemedNameCollections[selectedFeminineListIndex].Collection.Add("Nara");
 
                 ThemedNameCollections.Add(new ThemedNameCollection("Surname"));
-                ThemedNameCollections[2].Collection.Add("Vander");
-                ThemedNameCollections[2].Collection.Add("Gelspar");
+                ThemedNameCollections[selectedSurnameListIndex].Collection.Add("Vander");
+                ThemedNameCollections[selectedSurnameListIndex].Collection.Add("Gelspar");
             }
         }
 
