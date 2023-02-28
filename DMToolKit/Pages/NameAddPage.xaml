@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.NameAddPage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:NameAddViewModel"
+             Title="NameAddPage">
+    <Grid RowDefinitions="100,Auto,50,50,*,50">
+        <Border WidthRequest="300" HeightRequest="100" BackgroundColor="{StaticResource Secondary}" Stroke="Transparent" StrokeShape="RoundRectangle 10 10 50 50">
+            <Label Text="{Binding InputName}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Padding="5"/>
+        </Border>
+        <Label Grid.Row="1" Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
+        <Button Grid.Row="2" Text="Add Prefix" HeightRequest="45" Margin="5" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding PrefixEnabled}" />
+        <Button Grid.Row="3" Text="Add Suffix" HeightRequest="45" Margin="5" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding SuffixEnabled}"/>
+        <ScrollView Grid.Row="4">
+            <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NameLists}" Grid.Row="0" SelectedItem="{Binding}" Margin="0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Button Text="{Binding ., StringFormat='Add {0}'}" HeightRequest="45" Margin="30,3"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameAddViewModel}},Path=AddToNameListCommand}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Button Text="Back" Grid.Row="5" Margin="0,0,0,2" Command="{Binding GoBackCommand}"/>
+    </Grid>
+</ContentPage>

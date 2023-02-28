@@ -5,22 +5,52 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCEditViewModel"
              Title="NPCEditPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Grid ColumnDefinitions="Auto,*" Grid.Row="1" Grid.ColumnSpan="4">
-            <Label Text="NPC Role:" VerticalTextAlignment="Center" Padding="5" BackgroundColor="Transparent"/>
-            <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" Grid.Column="1">
-                <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}" />
+    <Grid RowDefinitions="*,50,50">
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,*" Margin="20,0">
+                <Border Grid.Column="0" StrokeShape="RoundRectangle 30 5 30 5" 
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}" 
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}" >
+                    <Grid HorizontalOptions="Fill" Padding="5">
+                        <Label Text="{Binding Character.FirstName}" TextColor="{StaticResource Name}"
+                               HorizontalOptions="End" VerticalOptions="Center" FontSize="23" Padding="10"/>
+                        <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="3" HorizontalOptions="Start"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 
+                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                            <ImageButton HeightRequest="40" WidthRequest="40" Source="listdark.png"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="1" StrokeShape="RoundRectangle 5 30 5 30" 
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}" 
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}" >
+                    <Grid HorizontalOptions="Fill" Padding="5">
+                        <Label Text="{Binding Character.LastName}" TextColor="{StaticResource Name}"
+                               HorizontalOptions="Start" VerticalOptions="Center" FontSize="23" Padding="10"/>
+                        <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="3" HorizontalOptions="End"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 
+                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                            <ImageButton HeightRequest="40" WidthRequest="40" Source="listdark.png"/>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid ColumnDefinitions="Auto,*" Grid.Row="1" Grid.ColumnSpan="4" Margin="20,0">
+                <Label Text="NPC Role:" VerticalTextAlignment="Center" Padding="5" BackgroundColor="Transparent"/>
+                <Border StrokeShape="RoundRectangle 15" Grid.Column="1" 
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}" 
+                        Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}" >
+                    <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}" />
+                </Border>
+            </Grid>
+            <Border StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" Padding="20,5" Margin="20,0" HeightRequest="200"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}" 
+                    Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}" >
+                <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" Keyboard="Text"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
             </Border>
-        </Grid>
-        <Border BackgroundColor="{StaticResource Tertiary}" StrokeShape="RoundRectangle 5" HeightRequest="200" HorizontalOptions="Center" Padding="10">
-            <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" Keyboard="Text"
-                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="350" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
-        </Border>
-        <Button Text="Save Changes" Command="{Binding SaveChangesCommand}" />
-        <Button Text="Back" Command="{Binding GoBackCommand}" />
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+        <Button Text="Save Changes" Command="{Binding SaveChangesCommand}" Grid.Row="1" Margin="0,1,0,1"/>
+        <Button Text="Back" Command="{Binding GoBackCommand}"  Grid.Row="2" Margin="0,1,0,2"/>
+    </Grid>
 </ContentPage>
