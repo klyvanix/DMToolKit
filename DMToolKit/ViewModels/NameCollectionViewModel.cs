@@ -23,11 +23,19 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         int listIndex;
 
+        [ObservableProperty]
+        string randomName;
+
+        [ObservableProperty]
+        bool optionsOpen;
+
         DataController DataController;
 
         public NameCollectionViewModel() 
         {
             DataController = DataController.Instance;
+            RandomName = string.Empty;
+            OptionsOpen = false;
         }
 
         private void UpdateCollection()
@@ -77,6 +85,18 @@ namespace DMToolKit.ViewModels
                 {
                     {"InputName", input }
                 });
+        }
+
+        [RelayCommand]
+        void SelectRandomName()
+        {
+            RandomName = ListOfNames[new Random().Next(0, ListOfNames.Count)];
+        }
+
+        [RelayCommand]
+        void ToggleOptions()
+        {
+            OptionsOpen = !OptionsOpen;
         }
     }
 }
