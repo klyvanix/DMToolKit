@@ -32,8 +32,7 @@
                                 <SwipeView>
                                     <SwipeView.RightItems>
                                         <SwipeItems>
-                                            <SwipeItem Text="Delete"
-                                                       IconImageSource="delete.png"
+                                            <SwipeItem IconImageSource="delete.png"
                                                        BackgroundColor="{StaticResource Delete}"
                                                        CommandParameter="{Binding .}"
                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCOptionsViewModel}}, Path=DeleteListCommand}"/>
