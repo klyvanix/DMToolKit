@@ -53,14 +53,8 @@ public static class MauiProgram
         builder.Services.AddTransient<NameGeneratorOptionsPage>();
         builder.Services.AddTransient<NameGeneratorOptionsViewModel>();
 
-        builder.Services.AddTransient<AddNamePage>();
-        builder.Services.AddTransient<AddNameViewModel>();
-
-        builder.Services.AddTransient<CategoryManagerPage>();
-        builder.Services.AddTransient<CategoryManagerViewModel>();
-
-        builder.Services.AddTransient<CategoryAddPage>();
-        builder.Services.AddTransient<CategoryAddViewModel>();
+        builder.Services.AddTransient<NameAddPage>();
+        builder.Services.AddTransient<NameAddViewModel>();
 
         builder.Services.AddTransient<NameCollectionPage>();
         builder.Services.AddTransient<NameCollectionViewModel>();

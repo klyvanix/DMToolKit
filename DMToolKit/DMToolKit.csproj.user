@@ -11,13 +11,7 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="Pages\AddNamePage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="Pages\CategoryAddPage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="Pages\CategoryManagerPage.xaml">
+    <MauiXaml Update="Pages\NameAddPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\CoinPouchDetailsPage.xaml">
@@ -29,9 +23,6 @@
     <MauiXaml Update="Pages\ListManagerPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\ListOfNamesPage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="Pages\NameCollectionPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -39,9 +30,6 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\NameGeneratorPage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="Pages\NameSeedManagerPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\NPCAddPage.xaml">

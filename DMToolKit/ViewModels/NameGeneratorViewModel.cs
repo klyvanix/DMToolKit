@@ -166,7 +166,7 @@ namespace DMToolKit.ViewModels
             if (input is null)
                 return;
 
-            await Shell.Current.GoToAsync($"{nameof(AddNamePage)}", true,
+            await Shell.Current.GoToAsync($"{nameof(NameAddPage)}", true,
                 new Dictionary<string, object>
                 {
                     {"InputName", input.Output }

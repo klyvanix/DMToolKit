@@ -1,13 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using DMToolKit.Data;
 using DMToolKit.Services;
 using System.Collections.ObjectModel;
 
 namespace DMToolKit.ViewModels
 {
-    [QueryProperty("InputName","InputName")]
-    public partial class AddNameViewModel : ObservableObject
+    [QueryProperty("InputName", "InputName")]
+    public partial class NameAddViewModel : ObservableObject
     {
         [ObservableProperty]
         public string inputName;
@@ -26,7 +25,7 @@ namespace DMToolKit.ViewModels
 
         DataController DataController;
 
-        public AddNameViewModel() 
+        public NameAddViewModel()
         {
             DataController = DataController.Instance;
             NameLists = new ObservableCollection<string>();
@@ -39,7 +38,7 @@ namespace DMToolKit.ViewModels
             NameLists.Clear();
             foreach (var item in DataController.NameData.ThemedNameCollections)
             {
-                if(!item.ContainsName(InputName))
+                if (!item.ContainsName(InputName))
                     NameLists.Add(item.Name);
             }
         }
@@ -76,7 +75,7 @@ namespace DMToolKit.ViewModels
             NameLists.Remove(listName);
             for (int i = 0; i < DataController.NameData.ThemedNameCollections.Count; i++)
             {
-                if(listName == DataController.NameData.ThemedNameCollections[i].Name)
+                if (listName == DataController.NameData.ThemedNameCollections[i].Name)
                 {
                     DataController.NameData.ThemedNameCollections[i].AddNameToCollection(InputName);
                     DataController.SaveNameData();

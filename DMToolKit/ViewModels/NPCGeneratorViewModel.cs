@@ -222,12 +222,6 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
-        async Task GoToCategoryAddPage()
-        {
-            await Shell.Current.GoToAsync($"{nameof(CategoryManagerPage)}");
-        }
-
-        [RelayCommand]
         void HistoryBackward()
         {
             if (HistoryList.Count - 1 - historyIndex >= 0)
