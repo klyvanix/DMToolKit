@@ -52,8 +52,8 @@ namespace DMToolKit.ViewModels
                 Character.Role = ClassificationList[PickerIndex];
                 DataController.NPCData.NPCList[characterIndex] = Character;
                 DataController.SaveNPCData();
+                await Shell.Current.GoToAsync($"../..");
             }
-            await Shell.Current.GoToAsync($"../..");
         }
 
         [RelayCommand]
