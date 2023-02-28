@@ -18,7 +18,7 @@
             <Grid ColumnDefinitions="100,*" Padding="30,5" IsVisible="{Binding AddVisible}" Grid.Row="1">
                 <Button Text="Add" CommandParameter="{Binding ListNameToAdd}" Command="{Binding AddListCommand}"/>
                 <Entry Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Text="{Binding ListNameToAdd}"
-                       HorizontalTextAlignment="Center" Placeholder="List Name" TextColor="White"/>
+                       HorizontalTextAlignment="Center" Placeholder="List Name" TextColor="White" Keyboard="Text"/>
             </Grid>
             <ScrollView Grid.Row="2">
                 <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding ListGroups}" Grid.Row="0" Margin="30,0">
