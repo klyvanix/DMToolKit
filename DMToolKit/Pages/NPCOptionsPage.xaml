@@ -6,8 +6,8 @@
              x:DataType="viewmodel:NPCOptionsViewModel"
              Title="NPC Options Page">
     <Grid RowDefinitions="50,Auto,1.55*,*,50,50">
-        
-        <Grid BackgroundColor="{StaticResource Secondary}" Grid.Row="0">
+
+        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" Grid.Row="0">
             <Border BackgroundColor="Transparent" Stroke="Transparent" HorizontalOptions="Start" StrokeShape="RoundRectangle 15" HeightRequest="50" WidthRequest="50">
                 <ImageButton Source="add.png" Padding="5" Command="{Binding ToggleAddMenuCommand}"/>
             </Border>
@@ -21,9 +21,9 @@
                            ReturnCommand="{Binding AddGroupCommand}" ReturnCommandParameter="{Binding ListGroupToAdd}"
                            Keyboard="Text"/>
         </Grid>
-        <Border Margin="60,0" StrokeThickness="2" Grid.Row="2"
+        <Border Margin="60,0" StrokeThickness="2" Grid.Row="2" StrokeShape="RoundRectangle 5"
                     Stroke="{AppThemeBinding Light={StaticResource Dark}, Dark={StaticResource TextBackgroundDark}}"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource TextBackgroundDark}}">
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}">
             <ScrollView>
                 <VerticalStackLayout>
                     <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NpcGroups}">
@@ -39,7 +39,7 @@
                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCOptionsViewModel}}, Path=DeleteListCommand}"/>
                                         </SwipeItems>
                                     </SwipeView.RightItems>
-                                    <Border StrokeShape="RoundRectangle 15" Margin="0,1,0,2" HeightRequest="35"
+                                    <Border StrokeShape="RoundRectangle 15" Margin="0,1,0,2" HeightRequest="40"
                                             Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
                                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
                                         <Grid>
@@ -59,22 +59,22 @@
             <VerticalStackLayout>
                 <Label Text="Masculine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                        Stroke="{StaticResource Primary}"
-                        BackgroundColor="{StaticResource Secondary}" >
+                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" >
                     <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding MasculineListIndex}" 
                                 TextColor="White" HorizontalTextAlignment="Center"/>
                 </Border>
                 <Label Text="Feminine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                        Stroke="{StaticResource Primary}"
-                        BackgroundColor="{StaticResource Secondary}" >
+                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" >
                     <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding FeminineListIndex}" 
                                 TextColor="White" HorizontalTextAlignment="Center"/>
                 </Border>
                 <Label Text="Surname Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                        Stroke="{StaticResource Primary}"
-                        BackgroundColor="{StaticResource Secondary}" >
+                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" >
                     <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding SurnameListIndex}" 
                                 TextColor="White" HorizontalTextAlignment="Center"/>
                 </Border>
