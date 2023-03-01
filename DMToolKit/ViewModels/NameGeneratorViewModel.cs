@@ -43,19 +43,7 @@ namespace DMToolKit.ViewModels
         public int pickerIndex;
 
         [ObservableProperty]
-        string nameDescriptionOne;
-        [ObservableProperty]
-        string nameDescriptionTwo;
-        [ObservableProperty]
-        string nameDescriptionThree;
-        [ObservableProperty]
-        string nameDescriptionFour;
-        [ObservableProperty]
-        string nameDescriptionFive;
-        [ObservableProperty]
-        string nameDescriptionSix;
-        [ObservableProperty]
-        string nameDescriptionSeven;
+        ObservableCollection<HelpPageItem> helpScreenCollection;
 
         int minIndex;
         int maxIndex;
@@ -69,20 +57,17 @@ namespace DMToolKit.ViewModels
             minIndex = -1;
             maxIndex = -1;
             ShowHelp = false;
-
-            NameDescriptionOne = StaticStrings.NameDescription[0];
-            NameDescriptionTwo = StaticStrings.NameDescription[1];
-            NameDescriptionThree = StaticStrings.NameDescription[2];
-            NameDescriptionFour = StaticStrings.NameDescription[3];
-            NameDescriptionFive = StaticStrings.NameDescription[4];
-            NameDescriptionSix = StaticStrings.NameDescription[5];
-            NameDescriptionSeven = StaticStrings.NameDescription[6];
+            HelpScreenCollection = new ObservableCollection<HelpPageItem>();
             NameList = new ObservableCollection<Name>();
             SeedList = new ObservableCollection<string>();
             LockedLetter = "A";
             LetterLock = false;
             GenerationNumber = 1;
             UpdateSeedList();
+            for(int i = 0; i < StaticStrings.NameDescription.Length; i++) 
+            {
+                HelpScreenCollection.Add(new HelpPageItem(StaticStrings.NameTitle[i], StaticStrings.NameDescription[i]));
+            }
         }
 
         public void UpdateSeedList()
