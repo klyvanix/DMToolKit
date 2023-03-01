@@ -9,8 +9,8 @@
         <Grid ColumnDefinitions="*,2*" Grid.Row="0" IsVisible="{Binding LetterLock}" >
             <Label Text="Letter To Lock"  Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Padding="10"/>
             <Border HorizontalOptions="Fill" VerticalOptions="Center" StrokeShape="RoundRectangle 15"
-                    Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}" Grid.Column="1">
+                    Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}" Grid.Column="1">
                 <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" HeightRequest="48" ItemsSource="{Binding LockedLetterList}" SelectedIndex="{Binding SelectedIndex}" 
                         TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
             </Border>
@@ -18,8 +18,8 @@
         <Grid ColumnDefinitions="*,2*" Grid.Row="0" VerticalOptions="Center" IsVisible="{Binding PrefixLock}">
             <Label Text="Locked Prefix"  Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Padding="10"/>
             <Border Grid.Column="1" HeightRequest="50" StrokeShape="RoundRectangle 15"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}"
-                    Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}" >
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}"
+                    Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}" >
                 <Entry Text="{Binding LockedPrefix}" Placeholder="Prefix" HorizontalOptions="Fill" VerticalOptions="Center" HorizontalTextAlignment="Center" 
                        PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray500}}" Keyboard="Text"
                        TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
@@ -29,8 +29,8 @@
             <Label Text="{Binding PrefixCount, StringFormat='Prefix List Count: {0}'}"  HorizontalOptions="Center"/>
             <Grid ColumnDefinitions="Auto,*">
                 <Border WidthRequest="50" HeightRequest="50" Padding="3" StrokeShape="RoundRectangle 15" 
-                        Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                        Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
                     <ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>
                 </Border>
                 <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50"
@@ -46,8 +46,9 @@
 
             <Label Text="{Binding SuffixCount, StringFormat='Suffix List Count: {0}'}"  HorizontalOptions="Center"/>
             <Grid ColumnDefinitions="Auto,*">
-                <Border WidthRequest="50" HeightRequest="50" Padding="3" StrokeShape="RoundRectangle 15" Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                <Border WidthRequest="50" HeightRequest="50" Padding="3" StrokeShape="RoundRectangle 15" 
+                        Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
                     <ImageButton Source="listdark.png" Command="{Binding AddSuffixCommand}"/>
                 </Border>
                 <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50"

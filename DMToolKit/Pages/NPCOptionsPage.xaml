@@ -7,7 +7,7 @@
              Title="NPC Options Page">
     <Grid RowDefinitions="50,Auto,1.55*,*,50,50">
 
-        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" Grid.Row="0">
+        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" Grid.Row="0">
             <Border BackgroundColor="Transparent" Stroke="Transparent" HorizontalOptions="Start" StrokeShape="RoundRectangle 15" HeightRequest="50" WidthRequest="50">
                 <ImageButton Source="add.png" Padding="5" Command="{Binding ToggleAddMenuCommand}"/>
             </Border>
@@ -58,22 +58,22 @@
             <VerticalStackLayout>
                 <Label Text="Masculine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" >
+                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource TextBackgroundDark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" >
                     <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding MasculineListIndex}" 
                                 TextColor="White" HorizontalTextAlignment="Center"/>
                 </Border>
                 <Label Text="Feminine Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" >
+                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource TextBackgroundDark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" >
                     <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding FeminineListIndex}" 
                                 TextColor="White" HorizontalTextAlignment="Center"/>
                 </Border>
                 <Label Text="Surname Name List" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Border StrokeShape="RoundRectangle 10" Grid.Column="1" Margin="30,0"
-                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" >
+                        Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource TextBackgroundDark}}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" >
                     <Picker ItemsSource="{Binding NamesList}" SelectedIndex="{Binding SurnameListIndex}" 
                                 TextColor="White" HorizontalTextAlignment="Center"/>
                 </Border>

@@ -272,8 +272,8 @@
             <Button Text="Generate" Grid.Column="0" Margin="1,0,1,0" Command="{Binding GenerateNPCCommand}"/>
             <Button Text="Options" Grid.Column="1" Margin="1,0,1,0" Command="{Binding GoToOptionsCommand}"/>
             <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
+                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
                 <ImageButton HeightRequest="40" WidthRequest="40" Source="help.png"
                              Command="{Binding DisplayHelpCommand}"/>
             </Border>
@@ -281,13 +281,13 @@
         <Grid ColumnDefinitions="*,100,50" Grid.Row="3" Margin="0,1,0,2">
             <Button Grid.Column="0" Text="Save Character" Command="{Binding GoToAddPageCommand}" CommandParameter="{Binding Character}"/>
             <Border StrokeShape="RoundRectangle 15"  Grid.Column="1" HeightRequest="50"
-                     Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
-                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" >
+                     Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource TextBackgroundDark}}" 
+                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource TextBackgroundDark}}" >
                 <ImageButton Source="unlock.png" Command="{Binding UnlockAllCommand}" HorizontalOptions="Fill"/>
             </Border>
             <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
+                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
                 <ImageButton HeightRequest="40" WidthRequest="40" Source="listdark.png"
                              Command="{Binding GoToListPageCommand}"/>
             </Border>

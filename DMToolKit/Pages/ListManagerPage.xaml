@@ -8,7 +8,7 @@
              Title="List Manager">
     <Grid RowDefinitions="*,Auto,50">
         <Grid RowDefinitions="50,Auto,*" Grid.Row="0">
-            <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" Grid.Row="0">
+            <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource TextBackgroundDark}}" Grid.Row="0">
                 <Border BackgroundColor="Transparent" Stroke="Transparent" HorizontalOptions="Start" StrokeShape="RoundRectangle 15" HeightRequest="50" WidthRequest="50">
                     <ImageButton Source="add.png" Padding="5" Command="{Binding ToggleAddMenuCommand}"/>
                 </Border>
