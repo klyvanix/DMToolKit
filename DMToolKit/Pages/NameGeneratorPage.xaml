@@ -7,9 +7,11 @@
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Name Generator">
     <Grid RowDefinitions="Auto,*,40,50,50">
+        <!--Name List Display Window-->
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2"
                         SelectionMode="Single" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}">
         </CollectionView>
+        <!--Help Screen Display Window-->
         <CarouselView Loop="False" IndicatorView="helpIndicator" Grid.Row="1" IsVisible="{Binding ShowHelp}"
                       ItemsSource="{Binding HelpScreenCollection}" ItemTemplate="{StaticResource Key=NamePageSelector}">
         </CarouselView>
@@ -18,6 +20,7 @@
                            IndicatorColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" 
                            SelectedIndicatorColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Tertiary}}" />
         </HorizontalStackLayout>
+        <!--Top Button Controls-->
         <Grid ColumnDefinitions="3*,100,50" Grid.Row="3" Margin="0,1,0,1" >
             <Button Text="Generate" Command="{Binding GenerateNameCommand}" Margin="1,0,1,0"/>
             <Button Text="Tools" Grid.Column="1" Command="{Binding GoToOptionsPageCommand}" Margin="1,0,1,0"/>
@@ -27,11 +30,7 @@
                 <ImageButton HeightRequest="40" WidthRequest="40" Source="help.png" Command="{Binding ToggleHelpCommand}"/>
             </Border>
         </Grid>
-        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <IndicatorView IndicatorSize="7"
-                           IndicatorColor="LightGray"
-                           SelectedIndicatorColor="{StaticResource Secondary}"/>
-        </HorizontalStackLayout>
+        <!--Bottom Button Controls-->
         <Grid Grid.Row="4" ColumnDefinitions="2*,*,*,50" Margin="0,1,0,2">
             <Button Text="Clear" Margin="1,0,1,0" Command="{Binding ClearCommand}"/>
             <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Grid.Column="1" HorizontalOptions="Fill" Keyboard="Numeric"

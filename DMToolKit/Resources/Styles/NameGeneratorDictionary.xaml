@@ -369,6 +369,7 @@
             </Grid>
         </Grid>
     </DataTemplate>
+    
     <selector:NameHelpPageSelector x:Key="NamePageSelector" 
                                    Page1="{StaticResource Page1}" 
                                    Page2="{StaticResource Page2}" 
