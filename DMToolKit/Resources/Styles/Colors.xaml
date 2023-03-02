@@ -46,14 +46,14 @@
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
 
-    <Color x:Key="Yellow100Accent">#F7B548</Color>
-    <Color x:Key="Yellow200Accent">#FFD590</Color>
-    <Color x:Key="Yellow300Accent">#FFE5B9</Color>
-    <Color x:Key="Cyan100Accent">#28C2D1</Color>
-    <Color x:Key="Cyan200Accent">#7BDDEF</Color>
+    <Color x:Key="LetterLockA">#F7B548</Color>
+    <Color x:Key="Clear">#df715c</Color>
+    <Color x:Key="LetterLockK">#28C2D1</Color>
+    <Color x:Key="NameGenerator">#72ACF1</Color>
+    <Color x:Key="Options">#d1c47f</Color>
+    <Color x:Key="Save">#b27ee2</Color>
+    <Color x:Key="NameSeed">#5acac6</Color>
     <Color x:Key="Cyan300Accent">#C3F2F4</Color>
     <Color x:Key="Blue100Accent">#3E8EED</Color>
-    <Color x:Key="Blue200Accent">#72ACF1</Color>
-    <Color x:Key="Blue300Accent">#A7CBF6</Color>
 
 </ResourceDictionary>

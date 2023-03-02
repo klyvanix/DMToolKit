@@ -8,7 +8,7 @@
              Title="Name Generator">
     <Grid RowDefinitions="Auto,*,40,50,50">
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2"
-                        SelectionMode="Single" ItemsSource="{Binding NameList}" >
+                        SelectionMode="Single" ItemsSource="{Binding NameList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="x:String">
                     <Border Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
@@ -30,21 +30,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         <CarouselView Loop="False" IndicatorView="helpIndicator" Grid.Row="1" IsVisible="{Binding ShowHelp}"
-                      ItemsSource="{Binding HelpScreenCollection}">
-            <CarouselView.ItemTemplate>
-                <DataTemplate x:DataType="Data:HelpPageItem">
-                    <Grid RowDefinitions="50,*">
-                        <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"/>
-                        <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                            <Label Text="{Binding Description}" FontSize="14" Padding="20"/>
-                        </Border>
-                    </Grid>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
+                      ItemsSource="{Binding HelpScreenCollection}" ItemTemplate="{StaticResource Key=NamePageSelector}">
         </CarouselView>
         <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="2" IsVisible="{Binding ShowHelp}"> 
             <IndicatorView x:Name="helpIndicator" 

@@ -64,9 +64,9 @@ namespace DMToolKit.ViewModels
             LetterLock = false;
             GenerationNumber = 1;
             UpdateSeedList();
-            for(int i = 0; i < StaticStrings.NameDescription.Length; i++) 
+            for(int i = 0; i < StaticStrings.NameTitle.Length; i++) 
             {
-                HelpScreenCollection.Add(new HelpPageItem(StaticStrings.NameTitle[i], StaticStrings.NameDescription[i]));
+                HelpScreenCollection.Add(new HelpPageItem(StaticStrings.NameTitle[i], i+1));
             }
         }
 

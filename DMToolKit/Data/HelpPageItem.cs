@@ -9,17 +9,12 @@ namespace DMToolKit.Data
     public class HelpPageItem
     {
         public string Title { get; set; }
-        public string Description { get; set; }
+        public int PageNumber { get; set; }
 
-        public HelpPageItem() 
-        {
-            Title= string.Empty;
-            Description= string.Empty;
-        }
-        public HelpPageItem(string title, string description)
+        public HelpPageItem(string title, int pageNumber)
         {
             Title = title;
-            Description = description;
+            PageNumber = pageNumber;
         }
     }
 }
