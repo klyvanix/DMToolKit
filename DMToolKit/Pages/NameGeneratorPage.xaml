@@ -8,26 +8,7 @@
              Title="Name Generator">
     <Grid RowDefinitions="Auto,*,40,50,50">
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2"
-                        SelectionMode="Single" ItemsSource="{Binding NameList}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="x:String">
-                    <Border Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer CommandParameter="{Binding .}"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameGeneratorViewModel}},Path=GoToAddPageCommand}"/>
-                        </Border.GestureRecognizers>
-                        <Grid Padding="1,0" HorizontalOptions="Fill" Margin="4"
-                              ColumnDefinitions="*">
-                            <HorizontalStackLayout HorizontalOptions="Center">
-                                <Label Padding="5,0" FontSize="16"
-                                       TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
-                                       Text="{Binding Source={RelativeSource AncestorType={x:Type Data:Name}}, Path=Output}"/>
-                            </HorizontalStackLayout>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
+                        SelectionMode="Single" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}">
         </CollectionView>
         <CarouselView Loop="False" IndicatorView="helpIndicator" Grid.Row="1" IsVisible="{Binding ShowHelp}"
                       ItemsSource="{Binding HelpScreenCollection}" ItemTemplate="{StaticResource Key=NamePageSelector}">

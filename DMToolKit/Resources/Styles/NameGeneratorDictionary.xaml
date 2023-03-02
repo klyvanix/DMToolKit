@@ -377,4 +377,22 @@
                                    Page5="{StaticResource Page5}" 
                                    Page6="{StaticResource Page6}" 
                                    Page7="{StaticResource Page7}"/>
+
+    <DataTemplate x:Key="NameDisplay" x:DataType="Data:Name">
+        <Border Padding="3" StrokeShape="RoundRectangle 5" 
+                Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer CommandParameter="{Binding .}"
+                                      Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameGeneratorViewModel}},Path=GoToAddPageCommand}"/>
+            </Border.GestureRecognizers>
+            <Grid Padding="1,0" HorizontalOptions="Fill" Margin="4" ColumnDefinitions="*">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Padding="5,0" FontSize="16"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+                           Text="{Binding Output}"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+    </DataTemplate>
 </ResourceDictionary>
