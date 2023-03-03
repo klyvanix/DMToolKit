@@ -4,12 +4,11 @@
              x:Class="DMToolKit.Pages.NameGeneratorPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NameGeneratorViewModel"
-             xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="Name Generator">
     <Grid RowDefinitions="Auto,*,40,50,50">
         <!--Name List Display Window-->
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2"
-                        SelectionMode="Single" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}">
+                        SelectionMode="Single" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource Key=NameDisplay}">
         </CollectionView>
         <!--Help Screen Display Window-->
         <CarouselView Loop="False" IndicatorView="helpIndicator" Grid.Row="1" IsVisible="{Binding ShowHelp}"

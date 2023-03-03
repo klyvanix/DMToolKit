@@ -3,11 +3,11 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="DMToolKit.Resources.Styles.NameGeneratorDictionary"
-                    xmlns:Data="clr-namespace:DMToolKit.Data"
+                    xmlns:data="clr-namespace:DMToolKit.Data"
                     xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
                     xmlns:selector="clr-namespace:DMToolKit.Services"
                     x:DataType="selector:NameHelpPageSelector">
-    <DataTemplate x:Key="Page1" x:DataType="Data:HelpPageItem">
+    <DataTemplate x:Key="Page1" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
@@ -54,7 +54,7 @@
             </Grid>
         </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="Page2" x:DataType="Data:HelpPageItem">
+    <DataTemplate x:Key="Page2" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
@@ -128,7 +128,7 @@
             </Grid>
         </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="Page3" x:DataType="Data:HelpPageItem">
+    <DataTemplate x:Key="Page3" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
@@ -169,7 +169,7 @@
             </Grid>
         </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="Page4" x:DataType="Data:HelpPageItem">
+    <DataTemplate x:Key="Page4" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
@@ -233,7 +233,7 @@
             </Grid>
         </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="Page5" x:DataType="Data:HelpPageItem">
+    <DataTemplate x:Key="Page5" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
@@ -266,7 +266,7 @@
             </Grid>
         </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="Page6" x:DataType="Data:HelpPageItem">
+    <DataTemplate x:Key="Page6" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
@@ -314,7 +314,7 @@
             </Grid>
         </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="Page7" x:DataType="Data:HelpPageItem">
+    <DataTemplate x:Key="Page7" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
@@ -379,7 +379,7 @@
                                    Page6="{StaticResource Page6}" 
                                    Page7="{StaticResource Page7}"/>
 
-    <DataTemplate x:Key="NameDisplay" x:DataType="Data:Name">
+    <DataTemplate x:Key="NameDisplay" x:DataType="data:Name">
         <Border Padding="3" StrokeShape="RoundRectangle 5" 
                 Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
                 BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
