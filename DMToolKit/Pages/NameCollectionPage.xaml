@@ -11,7 +11,7 @@
                             HorizontalOptions="Start" VerticalOptions="Center" 
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}" 
                             Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}">
-                <ImageButton HeightRequest="30" WidthRequest="30" Source="generatorsdark.png" Command="{Binding ToggleOptionsCommand}"/>
+                <ImageButton HeightRequest="30" WidthRequest="30" Source="gear.png" Command="{Binding ToggleOptionsCommand}"/>
             </Border>
             <Label Text="{Binding ListOfNames.Count, StringFormat='{0} Names'}" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>

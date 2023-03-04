@@ -11,54 +11,49 @@ namespace DMToolKit.ViewModels
     public partial class NPCListViewModel : ObservableObject
     {
         [ObservableProperty]
-        ObservableCollection<NPC> npcList;
-
-        //[ObservableProperty]
-        //ObservableCollection<NPC> npcCategoryList;
+        ObservableCollection<NPCClassificationList> characterClassificationList;
 
         DataController DataController;
 
+        int classListIndex;
+        int characterListIndex;
+
         public NPCListViewModel()
         {
-            NpcList = new ObservableCollection<NPC>();
+            CharacterClassificationList = new ObservableCollection<NPCClassificationList>();
             DataController = DataController.Instance;
             UpdateNPCList();
+            classListIndex = -1;
+            characterListIndex = -1;
         }
 
-        public void UpdateNPCList()
+        public void UpdateNPCList(bool resetView = true)
         {
-            if (DataController.NPCData.NPCList.Count == 0 || DataController.NPCData.NPCList == null)
+            if (DataController.NPCData.NPCClassificationList.Count == 0)
                 return;
-
-            NpcList.Clear();
-            for(int i = 0; i < DataController.NPCData.NPCList.Count; i++)
-                NpcList.Add(DataController.NPCData.NPCList[i]);
+            CharacterClassificationList.Clear();
+            for (int i = 0; i < DataController.NPCData.NPCClassificationList.Count; i++)
+            {
+                if(resetView)
+                    DataController.NPCData.NPCClassificationList[i].ListVisible = false;
+                CharacterClassificationList.Add(DataController.NPCData.NPCClassificationList[i]);
+            }
         }
 
         [RelayCommand]
         public void Delete(NPC npc)
         {
-            if (NpcList.Contains(npc))
-            {
-                NpcList.Remove(npc);
-                Savedata();
-            }
+            classListIndex = DataController.NPCData.GetNPCClassListIndex(npc.Classification);
+            characterListIndex = DataController.NPCData.GetNPCIndex(npc, classListIndex);
 
-            //foreach (var list in NpcCategoryList)
-            //{
-            //if (list.Contains(npc))
-            //    {
-            //        list.Remove(npc);
-            //        Savedata();
-            //    }
-            //}
-        }
+            if (classListIndex == -1 || characterListIndex == -1)
+                return;
 
-        private void Savedata()
-        {
-            DataController.NPCData.NPCList = NpcList.ToList();
+            DataController.NPCData.NPCClassificationList[classListIndex].Collection.RemoveAt(characterListIndex);
+
             DataController.SaveNPCData();
-            UpdateNPCList();
+
+            UpdateNPCList(false);
         }
 
         [RelayCommand]
@@ -78,6 +73,13 @@ namespace DMToolKit.ViewModels
         async Task GoBack()
         {
             await Shell.Current.GoToAsync($"..");
+        }
+
+        [RelayCommand]
+        void ToggleListVisibility(NPCClassificationList list)
+        {
+            if (list == null) return;
+            list.ListVisible = !list.ListVisible;
         }
     }
 }

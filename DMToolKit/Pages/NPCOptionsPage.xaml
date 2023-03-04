@@ -26,7 +26,7 @@
                     BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}">
             <ScrollView>
                 <VerticalStackLayout>
-                    <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NpcGroups}">
+                    <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding CharacterClassifications}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <SwipeView>

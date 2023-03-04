@@ -23,37 +23,51 @@ namespace DMToolKit.ViewModels
 
         private int characterIndex;
 
+        private int currentClassIndex;
+
         DataController DataController;
 
         public NPCEditViewModel()
         {
             DataController = DataController.Instance;
+            currentClassIndex = -1;
             characterIndex = -1;
-            PickerIndex = 0;
+            PickerIndex = -1;
             Notes = string.Empty;
             ClassificationList = new List<string>();
             ClassificationList.Clear();
-            foreach (var item in DataController.NPCData.NPCCategories)
-                ClassificationList.Add(item);
+            for (int i = 0; i < DataController.NPCData.NPCClassificationList.Count; i++)
+                ClassificationList.Add(DataController.NPCData.NPCClassificationList[i].ListName);
         }
 
 
         public void UpdateData()
         {
             Notes = Character.Notes;
+            currentClassIndex = DataController.NPCData.GetNPCClassListIndex(Character.Classification);
+            characterIndex = DataController.NPCData.GetNPCIndex(Character,currentClassIndex);
+            PickerIndex = currentClassIndex;
         }
 
         [RelayCommand]
         async Task SaveChanges()
         {
-            if (characterIndex != -1)
+            //check to see if currentclass index is different from picker index.
+            //if they are different we will need to remove the NPC from the current class and add it to the picker class.
+            Character.Notes = Notes;
+            if (currentClassIndex != PickerIndex)
             {
-                Character.Notes = Notes;
-                Character.Role = ClassificationList[PickerIndex];
-                DataController.NPCData.NPCList[characterIndex] = Character;
-                DataController.SaveNPCData();
-                await Shell.Current.GoToAsync($"../..");
+                DataController.NPCData.DeleteNPCFromClassList(currentClassIndex, characterIndex);
+                Character.Classification = DataController.NPCData.NPCClassificationList[PickerIndex].ListName;
+                DataController.NPCData.AddNPCTtoClassList(Character, PickerIndex);
             }
+            //if they are the same then we are replacing the NPC in the current class with the NPC
+            else
+            {
+                DataController.NPCData.OverwriteNPCInClassList(Character,currentClassIndex,characterIndex);
+            }
+            DataController.SaveNPCData();
+            await Shell.Current.GoToAsync($"../..");
         }
 
         [RelayCommand]
@@ -65,9 +79,6 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void RerollFirstName()
         {
-            if (characterIndex == -1)
-                characterIndex = DataController.NPCData.GetNPCIndex(Character);
-
             if (Character.GenderCode == 1)
             {
                 Character.FirstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection.Count);
@@ -83,9 +94,6 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void RerollLastName()
         {
-            if (characterIndex == -1)
-                characterIndex = DataController.NPCData.GetNPCIndex(Character);
-
             Character.LastNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection.Count);
                 Character.LastName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection[Character.LastNameIndex];
         }
@@ -93,36 +101,24 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void RerollPrimeValue()
         {
-            if (characterIndex == -1)
-                characterIndex = DataController.NPCData.GetNPCIndex(Character);
-
             Character.PrimeValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
         }
 
         [RelayCommand]
         void RerollMinorValue()
         {
-            if (characterIndex == -1)
-                characterIndex = DataController.NPCData.GetNPCIndex(Character);
-
             Character.MinorValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
         }
 
         [RelayCommand]
         void RerollPositivePrime()
         {
-            if (characterIndex == -1)
-                characterIndex = DataController.NPCData.GetNPCIndex(Character);
-
             Character.PositivePrimeValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
         }
 
         [RelayCommand]
         void RerollPositiveMinor()
         {
-            if (characterIndex == -1)
-                characterIndex = DataController.NPCData.GetNPCIndex(Character);
-
             Character.PositiveMinorValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
         }
 
@@ -135,9 +131,6 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void RerollNegativeMinor()
         {
-            if (characterIndex == -1)
-                characterIndex = DataController.NPCData.GetNPCIndex(Character);
-
             Character.NegativeMinorValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
         }
     }

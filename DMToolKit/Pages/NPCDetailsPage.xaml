@@ -15,7 +15,7 @@
                 <Border BackgroundColor="Transparent" Grid.Row="2" Stroke="Transparent">
                     <HorizontalStackLayout Padding="50,0,0,0">
                         <Label Text="Role:" VerticalOptions="Start" Margin="5,0"  TextColor="{StaticResource Tertiary}"/>
-                        <Label Text="{Binding Character.Role}" TextColor="{StaticResource Role}" VerticalOptions="Start"/>
+                        <Label Text="{Binding Character.Classification}" TextColor="{StaticResource Role}" VerticalOptions="Start"/>
                     </HorizontalStackLayout>
                 </Border>
                 <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="3"  HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 60"

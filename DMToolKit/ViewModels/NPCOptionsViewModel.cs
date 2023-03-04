@@ -28,7 +28,7 @@ namespace DMToolKit.ViewModels
         public string listGroupToAdd;
 
         [ObservableProperty]
-        public ObservableCollection<string> npcGroups;
+        public ObservableCollection<string> characterClassifications;
 
         DataController DataController;
 
@@ -43,7 +43,14 @@ namespace DMToolKit.ViewModels
             SurnameListIndex = -1;
             ListGroupToAdd = string.Empty;
             AddVisible = false;
-            NpcGroups = new ObservableCollection<string>(DataController.NPCData.NPCCategories);
+            CharacterClassifications = new ObservableCollection<string>();
+            UpdateClassifications();
+        }
+
+        private void UpdateClassifications()
+        {
+            for (int i = 0; i < DataController.NPCData.NPCClassificationList.Count; i++)
+                CharacterClassifications.Add(DataController.NPCData.NPCClassificationList[i].ListName);
         }
 
         [RelayCommand]
@@ -67,8 +74,9 @@ namespace DMToolKit.ViewModels
             if (string.IsNullOrEmpty(groupName) || DataController.NPCData.NameInList(groupName))
                 return;
 
-            DataController.NPCData.NPCCategories.Add(groupName);
-            NpcGroups.Add(groupName);
+            DataController.NPCData.CreateNewClassification(groupName);
+            CharacterClassifications.Add(groupName);
+            DataController.SaveNPCData();
             ListGroupToAdd = string.Empty;
             AddVisible = false;
         }
@@ -78,9 +86,9 @@ namespace DMToolKit.ViewModels
         {
             if (string.IsNullOrEmpty(groupName))
                 return;
-            DataController.NPCData.NPCCategories.Remove(groupName);
-            NpcGroups.Remove(groupName);
-            DataController.SaveNameData();
+            DataController.NPCData.DeleteClassification(groupName);
+            CharacterClassifications.Remove(groupName);
+            DataController.SaveNPCData();
         }
 
         [RelayCommand]

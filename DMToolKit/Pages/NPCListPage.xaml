@@ -4,33 +4,76 @@
              x:Class="DMToolKit.Pages.NPCListPage"
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NPCListViewModel"
-             xmlns:Data="clr-namespace:DMToolKit.Data"
+             xmlns:data="clr-namespace:DMToolKit.Data"
              Title="NPCListPage">
     <Grid RowDefinitions="*,50">
         <CollectionView HorizontalOptions="Center" VerticalOptions="Start" Margin="40,0"
-                        ItemsSource="{Binding NpcList}">
+                        ItemsSource="{Binding CharacterClassificationList}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="Data:NPC">
-                    <SwipeView>
-                        <SwipeView.RightItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Delete" IconImageSource="delete.png" BackgroundColor="{StaticResource Delete}"
-                                           CommandParameter="{Binding .}"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=DeleteCommand}"/>
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-                        <Border Padding="6" StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" VerticalOptions="Center" 
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=GoToDetailsCommand}" 
-                                                      CommandParameter="{Binding .}" />
-                            </Border.GestureRecognizers>
-                            <Label Text="{Binding Source={RelativeSource AncestorType={x:Type Data:NPC}}, Path=FullName}" 
-                                   HorizontalOptions="Center" VerticalOptions="Center" 
-                                   TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"/>
-                        </Border>
-                    </SwipeView>
+                <DataTemplate x:DataType="data:NPCClassificationList">
+                    <Border Padding="6" StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" VerticalOptions="Center" 
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}"
+                            Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=ToggleListVisibilityCommand}" 
+                                                  CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
+                        <Grid RowDefinitions="*,Auto">
+                            <Grid ColumnDefinitions="30,Auto,*,Auto">
+                                <Label Text="{Binding ListName}" Grid.Column="1" FontAttributes="Bold"
+                                       HorizontalOptions="Center" VerticalOptions="Center" 
+                                       TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"/>
+                                <Label FontSize="14" Padding="20,0" Grid.Column="3"
+                                       HorizontalOptions="Center" VerticalOptions="Center" 
+                                       TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span TextColor="{AppThemeBinding Light={StaticResource Blue100Accent}, Dark={StaticResource White}}" Text="{Binding Collection.Count}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
+                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" Characters" FontFamily="{StaticResource StrFontFamily}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                            <CollectionView Grid.Row="1" ItemsSource="{Binding Collection}" IsVisible="{Binding ListVisible}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="data:NPC">
+                                        <SwipeView>
+                                            <SwipeView.RightItems>
+                                                <SwipeItems>
+                                                    <SwipeItem IconImageSource="delete.png"
+                                                               BackgroundColor="{StaticResource Delete}" CommandParameter="{Binding .}"
+                                                               Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=DeleteCommand}"/>
+                                                </SwipeItems>
+                                            </SwipeView.RightItems>
+                                            <Border Padding="6" StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" VerticalOptions="Center"
+                                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
+                                                Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=GoToDetailsCommand}" 
+                                                                        CommandParameter="{Binding .}" />
+                                            </Border.GestureRecognizers>
+                                            <Grid>
+                                                <!--<Label Text="{Binding FullName}" HorizontalOptions="Center"/>-->
+                                                <Label FontSize="14" Padding="20,0" Grid.Column="3"
+                                                       HorizontalOptions="Center" VerticalOptions="Center"
+                                                       TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span TextColor="{AppThemeBinding Light={StaticResource ValuesDark}, Dark={StaticResource ValuesDark}}" 
+                                                                  Text="{Binding FullName}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
+                                                            <Span TextColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" 
+                                                                  Text="{Binding Classification, StringFormat=' ({0}) '}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>
+                                        </Border>
+                                        </SwipeView>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

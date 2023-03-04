@@ -11,7 +11,7 @@ namespace DMToolKit.Data
         [ObservableProperty]
         public string lastName;
 
-        public string Role { get; set; }
+        public string Classification { get; set; }
         public string Notes { get; set; }
 
         [ObservableProperty]
@@ -93,7 +93,7 @@ namespace DMToolKit.Data
             positiveMinorValue = posMinor;
             negativePrimeValue = negPrime;
             negativeMinorValue = negMinor;
-            Role = string.Empty;
+            Classification = string.Empty;
             Notes = string.Empty;
             this.firstNameIndex = firstNameIndex;
             this.lastNameIndex = lastNameIndex;
@@ -110,13 +110,13 @@ namespace DMToolKit.Data
             positiveMinorValue = -1;
             negativePrimeValue = -1;
             negativeMinorValue = -1;
-            Role = string.Empty;
+            Classification = string.Empty;
             Notes = string.Empty;
         }
 
         public int CompareTo(NPC other)
         {
-            return FirstName.CompareTo(other.FullName);
+            return FullName.CompareTo(other.FullName);
         }
     }
 }

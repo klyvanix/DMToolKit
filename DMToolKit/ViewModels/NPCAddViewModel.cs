@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using DMToolKit.Data;
 using DMToolKit.Services;
+using System.Collections.ObjectModel;
 
 namespace DMToolKit.ViewModels
 {
@@ -15,7 +16,7 @@ namespace DMToolKit.ViewModels
         public string notes;
 
         [ObservableProperty]
-        public List<string> classificationList;
+        public ObservableCollection<string> classificationList;
 
         [ObservableProperty]
         public int pickerIndex;
@@ -26,7 +27,7 @@ namespace DMToolKit.ViewModels
         {
             DataController = DataController.Instance;
             PickerIndex = 0;
-            ClassificationList = new List<string>();
+            ClassificationList = new ObservableCollection<string>();
             UpdateData();
         }
 
@@ -34,15 +35,18 @@ namespace DMToolKit.ViewModels
         public async Task SaveData()
         {
             InputNPC.Notes = Notes;
-            InputNPC.Role = ClassificationList[PickerIndex];
-            DataController.NPCData.NPCList.Add(InputNPC);
+            InputNPC.Classification = ClassificationList[PickerIndex];
+            DataController.NPCData.AddNPCTtoClassList(InputNPC, PickerIndex);
             DataController.SaveNPCData();
             await Shell.Current.GoToAsync("..");
         }
 
         public void UpdateData()
         {
-            ClassificationList = DataController.NPCData.NPCCategories;
+            for(int i = 0; i < DataController.NPCData.NPCClassificationList.Count; i++) 
+            {
+                ClassificationList.Add(DataController.NPCData.NPCClassificationList[i].ListName);
+            }
         }
 
         [RelayCommand]
