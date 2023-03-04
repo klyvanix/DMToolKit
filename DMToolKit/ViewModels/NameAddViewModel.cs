@@ -9,19 +9,19 @@ namespace DMToolKit.ViewModels
     public partial class NameAddViewModel : ObservableObject
     {
         [ObservableProperty]
-        public string inputName;
+        string inputName;
 
         [ObservableProperty]
-        public ObservableCollection<string> nameLists;
+        ObservableCollection<string> nameLists;
 
         [ObservableProperty]
-        public int selectedListIndex;
+        int selectedListIndex;
 
         [ObservableProperty]
-        public bool prefixEnabled;
+        bool prefixEnabled;
 
         [ObservableProperty]
-        public bool suffixEnabled;
+        bool suffixEnabled;
 
         DataController DataController;
 

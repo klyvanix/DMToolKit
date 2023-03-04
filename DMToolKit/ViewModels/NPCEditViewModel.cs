@@ -10,16 +10,18 @@ namespace DMToolKit.ViewModels
     public partial class NPCEditViewModel : ObservableObject
     {
         [ObservableProperty]
-        public NPC character;
+        NPC character;
 
         [ObservableProperty]
-        public string notes;
+        string notes;
 
         [ObservableProperty]
-        public List<string> classificationList;
+        List<string> classificationList;
 
         [ObservableProperty]
-        public int pickerIndex;
+        int pickerIndex;
+
+        NPC newCharacter;
 
         private int characterIndex;
 
@@ -38,6 +40,7 @@ namespace DMToolKit.ViewModels
             ClassificationList.Clear();
             for (int i = 0; i < DataController.NPCData.NPCClassificationList.Count; i++)
                 ClassificationList.Add(DataController.NPCData.NPCClassificationList[i].ListName);
+            newCharacter = new NPC();
         }
 
 
@@ -47,6 +50,7 @@ namespace DMToolKit.ViewModels
             currentClassIndex = DataController.NPCData.GetNPCClassListIndex(Character.Classification);
             characterIndex = DataController.NPCData.GetNPCIndex(Character,currentClassIndex);
             PickerIndex = currentClassIndex;
+            newCharacter = Character;
         }
 
         [RelayCommand]
@@ -54,17 +58,17 @@ namespace DMToolKit.ViewModels
         {
             //check to see if currentclass index is different from picker index.
             //if they are different we will need to remove the NPC from the current class and add it to the picker class.
-            Character.Notes = Notes;
+            newCharacter.Notes = Notes;
             if (currentClassIndex != PickerIndex)
             {
                 DataController.NPCData.DeleteNPCFromClassList(currentClassIndex, characterIndex);
-                Character.Classification = DataController.NPCData.NPCClassificationList[PickerIndex].ListName;
-                DataController.NPCData.AddNPCTtoClassList(Character, PickerIndex);
+                newCharacter.Classification = DataController.NPCData.NPCClassificationList[PickerIndex].ListName;
+                DataController.NPCData.AddNPCTtoClassList(newCharacter, PickerIndex);
             }
             //if they are the same then we are replacing the NPC in the current class with the NPC
             else
             {
-                DataController.NPCData.OverwriteNPCInClassList(Character,currentClassIndex,characterIndex);
+                DataController.NPCData.OverwriteNPCInClassList(newCharacter, currentClassIndex,characterIndex);
             }
             DataController.SaveNPCData();
             await Shell.Current.GoToAsync($"../..");
@@ -81,57 +85,57 @@ namespace DMToolKit.ViewModels
         {
             if (Character.GenderCode == 1)
             {
-                Character.FirstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection.Count);
-                Character.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection[Character.FirstNameIndex];
+                newCharacter.FirstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection.Count);
+                newCharacter.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedMasculineListIndex].Collection[Character.FirstNameIndex];
             }
             else
             {
-                Character.FirstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection.Count);
-                Character.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection[Character.FirstNameIndex];
+                newCharacter.FirstNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection.Count);
+                newCharacter.FirstName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedFeminineListIndex].Collection[Character.FirstNameIndex];
             }
         }
 
         [RelayCommand]
         void RerollLastName()
         {
-            Character.LastNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection.Count);
-                Character.LastName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection[Character.LastNameIndex];
+            newCharacter.LastNameIndex = new Random().Next(0, DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection.Count);
+            newCharacter.LastName = DataController.NameData.ThemedNameCollections[DataController.NameData.selectedSurnameListIndex].Collection[Character.LastNameIndex];
         }
 
         [RelayCommand]
         void RerollPrimeValue()
         {
-            Character.PrimeValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
+            newCharacter.PrimeValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
         }
 
         [RelayCommand]
         void RerollMinorValue()
         {
-            Character.MinorValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
+            newCharacter.MinorValue = new Random().Next(0, CharacterAttributes.NPCValueCount);
         }
 
         [RelayCommand]
         void RerollPositivePrime()
         {
-            Character.PositivePrimeValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
+            newCharacter.PositivePrimeValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
         }
 
         [RelayCommand]
         void RerollPositiveMinor()
         {
-            Character.PositiveMinorValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
+            newCharacter.PositiveMinorValue = new Random().Next(0, CharacterAttributes.PositiveAttributeCount);
         }
 
         [RelayCommand]
         void RerollNegativePrime()
         {
-            Character.NegativePrimeValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
+            newCharacter.NegativePrimeValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
         }
 
         [RelayCommand]
         void RerollNegativeMinor()
         {
-            Character.NegativeMinorValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
+            newCharacter.NegativeMinorValue = new Random().Next(0, CharacterAttributes.NegativeAttributeCount);
         }
     }
 }

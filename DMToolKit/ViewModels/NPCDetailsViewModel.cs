@@ -9,7 +9,7 @@ namespace DMToolKit.ViewModels
     public partial class NPCDetailsViewModel : ObservableObject
     {
         [ObservableProperty]
-        public NPC character;
+        NPC character;
 
         public NPCDetailsViewModel() 
         { 

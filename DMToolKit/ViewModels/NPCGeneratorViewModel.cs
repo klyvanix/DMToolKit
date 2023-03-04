@@ -270,16 +270,16 @@ namespace DMToolKit.ViewModels
         private void CopyCharacterHistoryData(int index)
         {
             Character = HistoryList[index];
-            firstNameIndex = Character.firstNameIndex;
-            lastNameIndex = Character.lastNameIndex;
-            primeValueIndex = Character.primeValue;
-            minorValueIndex = Character.minorValue;
-            positivePrimeIndex = Character.positivePrimeValue;
-            positiveMinorIndex = Character.positiveMinorValue;
-            negativePrimeIndex = Character.negativePrimeValue;
-            negativeMinorIndex = Character.negativeMinorValue;
+            firstNameIndex = Character.FirstNameIndex;
+            lastNameIndex = Character.LastNameIndex;
+            primeValueIndex = Character.PrimeValue;
+            minorValueIndex = Character.MinorValue;
+            positivePrimeIndex = Character.PositivePrimeValue;
+            positiveMinorIndex = Character.PositiveMinorValue;
+            negativePrimeIndex = Character.NegativePrimeValue;
+            negativeMinorIndex = Character.NegativeMinorValue;
 
-            if (Character.genderCode == 1)
+            if (Character.GenderCode == 1)
             {
                 masculineName = true;
                 if (Application.Current.RequestedTheme == AppTheme.Light)

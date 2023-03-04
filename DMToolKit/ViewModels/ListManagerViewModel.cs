@@ -15,13 +15,13 @@ namespace DMToolKit.ViewModels
     public partial class ListManagerViewModel : ObservableObject
     {
         [ObservableProperty]
-        public ObservableCollection<string> listGroups;
+        ObservableCollection<string> listGroups;
 
         [ObservableProperty]
-        public bool addVisible;
+        bool addVisible;
 
         [ObservableProperty]
-        public string listNameToAdd;
+        string listNameToAdd;
 
         DataController DataController;
 

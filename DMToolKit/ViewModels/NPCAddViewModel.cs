@@ -10,16 +10,16 @@ namespace DMToolKit.ViewModels
     public partial class NPCAddViewModel : ObservableObject
     {
         [ObservableProperty]
-        public NPC inputNPC;
+        NPC inputNPC;
 
         [ObservableProperty]
-        public string notes;
+        string notes;
 
         [ObservableProperty]
-        public ObservableCollection<string> classificationList;
+        ObservableCollection<string> classificationList;
 
         [ObservableProperty]
-        public int pickerIndex;
+        int pickerIndex;
 
         DataController DataController;
 

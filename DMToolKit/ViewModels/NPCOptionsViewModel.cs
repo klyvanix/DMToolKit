@@ -12,23 +12,23 @@ namespace DMToolKit.ViewModels
     public partial class NPCOptionsViewModel: ObservableObject
     {
         [ObservableProperty]
-        public int masculineListIndex;
+        int masculineListIndex;
         [ObservableProperty]
-        public int feminineListIndex;
+        int feminineListIndex;
         [ObservableProperty]
-        public int surnameListIndex;
+        int surnameListIndex;
 
         [ObservableProperty]
-        public List<string> namesList;
+        List<string> namesList;
 
         [ObservableProperty]
-        public bool addVisible;
+        bool addVisible;
 
         [ObservableProperty]
-        public string listGroupToAdd;
+        string listGroupToAdd;
 
         [ObservableProperty]
-        public ObservableCollection<string> characterClassifications;
+        ObservableCollection<string> characterClassifications;
 
         DataController DataController;
 

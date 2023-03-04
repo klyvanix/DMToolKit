@@ -25,22 +25,22 @@ namespace DMToolKit.ViewModels
         bool nameSeedsShown;
 
         [ObservableProperty]
-        public string lockedPrefix;
+        string lockedPrefix;
 
         [ObservableProperty]
-        public ObservableCollection<string> prefixList;
+        ObservableCollection<string> prefixList;
 
         [ObservableProperty]
-        public string prefixToAdd;
+        string prefixToAdd;
 
         [ObservableProperty]
-        public string suffixToAdd;
+        string suffixToAdd;
 
         [ObservableProperty]
-        public string prefixCount;
+        string prefixCount;
 
         [ObservableProperty]
-        public string suffixCount;
+        string suffixCount;
 
         DataController DataController;
 

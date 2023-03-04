@@ -35,12 +35,12 @@ namespace DMToolKit.ViewModels
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ShowList))]
-        public bool showHelp;
+        bool showHelp;
 
         public bool ShowList => !ShowHelp;
 
         [ObservableProperty]
-        public int pickerIndex;
+        int pickerIndex;
 
         [ObservableProperty]
         ObservableCollection<HelpPageItem> helpScreenCollection;
