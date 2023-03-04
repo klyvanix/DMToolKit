@@ -7,41 +7,41 @@ namespace DMToolKit.Data
     public partial class NPC : ObservableObject, IComparable<NPC>
     {
         [ObservableProperty]
-        public string firstName;
+        private string firstName;
         [ObservableProperty]
-        public string lastName;
+        private string lastName;
 
         public string Classification { get; set; }
         public string Notes { get; set; }
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(FirstName))]
-        public int firstNameIndex;
+        private int firstNameIndex;
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(LastName))]
-        public int lastNameIndex;
+        private int lastNameIndex;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(Gender))]
-        public int genderCode;
+        private int genderCode;
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ValuePrime))]
-        public int primeValue;
+        private int primeValue;
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ValueMinor))]
-        public int minorValue;
+        private int minorValue;
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(PositivePrime))]
-        public int positivePrimeValue;
+        private int positivePrimeValue;
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(PositiveMinor))]
-        public int positiveMinorValue;
+        private int positiveMinorValue;
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(NegativePrime))]
-        public int negativePrimeValue;
+        private int negativePrimeValue;
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(NegativeMinor))]
-        public int negativeMinorValue;
+        private int negativeMinorValue;
 
         public string FullName => $"{FirstName} {LastName}";
 

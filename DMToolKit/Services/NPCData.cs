@@ -22,16 +22,11 @@ namespace DMToolKit.Services
         public NPCData(bool initialStartup)
         {
             NPCList = new List<NPC>();
-            NPCCategories = new List<string>();
+            NPCClassificationList = new List<NPCClassificationList>();
             if (initialStartup)
             {
-                NPCCategories.Add("Peasant");
-                NPCCategories.Add("Innkeeper");
-                NPCCategories.Add("Blacksmith");
-                NPCCategories.Add("Merchant");
+                NPCClassificationList.Add(new NPCClassificationList("Commoner"));
             }
-            NPCClassificationList = new List<NPCClassificationList>();
-            NPCClassificationList.Add(new NPCClassificationList("Commoner"));
         }
 
         public void CreateNewClassification(string name)

@@ -14,14 +14,10 @@ namespace DMToolKit.Data
         public string Image { get; set; }
 
         [ObservableProperty]
-        public int collectionCount;
-
-        [ObservableProperty]
         public bool listVisible;
 
         [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(CollectionCount))]
-        public List<NPC> collection;
+        List<NPC> collection;
 
         public NPCClassificationList() 
         {
@@ -29,14 +25,12 @@ namespace DMToolKit.Data
             Image= string.Empty;
             Collection = new List<NPC>();
             ListVisible = false;
-            collectionCount = Collection.Count;
         }
         public NPCClassificationList(string name)
         {
             ListName = name;
             Image = string.Empty;
             Collection = new List<NPC>();
-            collectionCount = Collection.Count;
         }
 
         public int CompareTo(NPCClassificationList other)
