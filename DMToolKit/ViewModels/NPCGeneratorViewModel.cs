@@ -218,7 +218,7 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToListPage()
         {
-            await Shell.Current.GoToAsync($"{nameof(ListManagerPage)}");
+            await Shell.Current.GoToAsync($"{nameof(NPCListPage)}");
         }
 
         [RelayCommand]

@@ -43,7 +43,13 @@ namespace DMToolKit.ViewModels
         int pickerIndex;
 
         [ObservableProperty]
+        bool optionsExpanded;
+
+        [ObservableProperty]
         ObservableCollection<HelpPageItem> helpScreenCollection;
+
+        [ObservableProperty]
+        string expandImage;
 
         int minIndex;
         int maxIndex;
@@ -60,19 +66,24 @@ namespace DMToolKit.ViewModels
             HelpScreenCollection = new ObservableCollection<HelpPageItem>();
             NameList = new ObservableCollection<Name>();
             SeedList = new ObservableCollection<string>();
+            if (Application.Current.RequestedTheme == AppTheme.Light)
+                ExpandImage = "expand";
+            else
+                ExpandImage = "expanddark";
             LockedLetter = "A";
             LetterLock = false;
             GenerationNumber = 1;
             UpdateSeedList();
-            for(int i = 0; i < StaticStrings.NameTitle.Length; i++) 
+            OptionsExpanded = false;
+            for (int i = 0; i < StaticStrings.NameTitle.Length; i++)
             {
-                HelpScreenCollection.Add(new HelpPageItem(StaticStrings.NameTitle[i], i+1));
+                HelpScreenCollection.Add(new HelpPageItem(StaticStrings.NameTitle[i], i + 1));
             }
         }
 
         public void UpdateSeedList()
         {
-            foreach(var item in DataController.NameSeedData.SeedCollections)
+            foreach (var item in DataController.NameSeedData.SeedCollections)
                 SeedList.Add(item.ListName);
         }
 
@@ -122,7 +133,7 @@ namespace DMToolKit.ViewModels
                     index = random.Next(0, DataController.NameSeedData.PrefixList.Count);
                 }
             }
-            else if(PrefixLock)
+            else if (PrefixLock)
             {
                 return LockedPrefix;
             }
@@ -174,6 +185,38 @@ namespace DMToolKit.ViewModels
         void ToggleHelp()
         {
             ShowHelp = !ShowHelp;
+        }
+
+        [RelayCommand]
+        void ToggleOptions()
+        {
+            OptionsExpanded = !OptionsExpanded;
+            if (OptionsExpanded)
+            {
+                if (Application.Current.RequestedTheme == AppTheme.Light)
+                    ExpandImage = "retract";
+                else
+                    ExpandImage = "retractdark";
+            }
+            else
+            {
+                if (Application.Current.RequestedTheme == AppTheme.Light)
+                    ExpandImage = "expand";
+                else
+                    ExpandImage = "expanddark";
+            }
+        }
+
+        [RelayCommand]
+        void IncreaseCounter()
+        {
+            GenerationNumber++;
+        }
+        [RelayCommand]
+        void DecreaseCounter()
+        {
+            if(GenerationNumber > 1)
+                GenerationNumber--;
         }
     }
 }

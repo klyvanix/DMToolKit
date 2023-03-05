@@ -23,6 +23,9 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string listNameToAdd;
 
+        [ObservableProperty]
+        string expandImage;
+
         DataController DataController;
 
         public ListManagerViewModel() 
@@ -31,7 +34,11 @@ namespace DMToolKit.ViewModels
             ListNameToAdd = string.Empty;
             AddVisible = false;
             DataController = DataController.Instance;
-            UpdateLists();
+            UpdateLists(); 
+            if (Application.Current.RequestedTheme == AppTheme.Light)
+                ExpandImage = "expand";
+            else
+                ExpandImage = "expanddark";
         }
 
         public void UpdateLists()
@@ -45,6 +52,20 @@ namespace DMToolKit.ViewModels
         public void ToggleAddMenu()
         {
             AddVisible = !AddVisible;
+            if (AddVisible)
+            {
+                if (Application.Current.RequestedTheme == AppTheme.Light)
+                    ExpandImage = "retract";
+                else
+                    ExpandImage = "retractdark";
+            }
+            else
+            {
+                if (Application.Current.RequestedTheme == AppTheme.Light)
+                    ExpandImage = "expand";
+                else
+                    ExpandImage = "expanddark";
+            }
         }
 
         [RelayCommand]
@@ -81,7 +102,6 @@ namespace DMToolKit.ViewModels
             DataController.SaveNameData();
             UpdateLists();
             ListNameToAdd = string.Empty;
-            AddVisible = false;
         }
 
         [RelayCommand]
@@ -100,12 +120,6 @@ namespace DMToolKit.ViewModels
         async Task GoBack()
         {
             await Shell.Current.GoToAsync($"..");
-        }
-
-        [RelayCommand]
-        async Task GoToNPCList()
-        {
-            await Shell.Current.GoToAsync($"{nameof(NPCListPage)}");
         }
     }
 }

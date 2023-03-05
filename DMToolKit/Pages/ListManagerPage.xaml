@@ -6,59 +6,55 @@
              x:DataType="viewmodel:ListManagerViewModel"
              xmlns:Data="clr-namespace:DMToolKit.Data"
              Title="List Manager">
-    <Grid RowDefinitions="*,Auto,50">
-        <Grid RowDefinitions="50,Auto,*" Grid.Row="0">
-            <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource TextBackgroundDark}}" Grid.Row="0">
-                <Border BackgroundColor="Transparent" Stroke="Transparent" HorizontalOptions="Start" StrokeShape="RoundRectangle 15" HeightRequest="50" WidthRequest="50">
-                    <ImageButton Source="add.png" Padding="5" Command="{Binding ToggleAddMenuCommand}"/>
-                </Border>
-                <Label Text="Name Lists" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Padding="10,0"
-                        FontSize="20" HeightRequest="50" FontAttributes="Bold"/>
-            </Grid>
-            <Grid ColumnDefinitions="100,*" Padding="30,5" IsVisible="{Binding AddVisible}" Grid.Row="1">
-                <Button Text="Add" CommandParameter="{Binding ListNameToAdd}" Command="{Binding AddListCommand}"/>
-                <Entry Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Text="{Binding ListNameToAdd}"
-                       HorizontalTextAlignment="Center" Placeholder="List Name" TextColor="White" Keyboard="Text"/>
-            </Grid>
-            <ScrollView Grid.Row="2">
-                <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding ListGroups}" Grid.Row="0" Margin="30,0">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="x:String">
-                            <SwipeView>
-                                <SwipeView.RightItems>
-                                    <SwipeItems>
-                                        <SwipeItem Text="Delete"
+    <Grid RowDefinitions="*,20,Auto,50">
+        <ScrollView Grid.Row="0">
+            <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding ListGroups}" Grid.Row="0" Margin="30,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Delete"
                                                IconImageSource="delete.png"
                                                BackgroundColor="{StaticResource Delete}"
                                                CommandParameter="{Binding .}"
                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}}, Path=DeleteListCommand}"/>
-                                    </SwipeItems>
-                                </SwipeView.RightItems>
-                                <Border StrokeShape="RoundRectangle 15" Margin="0,1,0,2" HeightRequest="50"
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Border StrokeShape="RoundRectangle 15" Margin="0" HeightRequest="50"
                                     Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                                    <Border.GestureRecognizers>
-                                        <TapGestureRecognizer CommandParameter="{Binding .}"
+                                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding .}"
                                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}},Path=GoToCollectionCommand}"/>
-                                    </Border.GestureRecognizers>
-                                    <Grid>
-                                        <Label Text="{Binding ., StringFormat='{0} Names'}" FontSize="16"
+                                </Border.GestureRecognizers>
+                                <Grid>
+                                    <Label Text="{Binding ., StringFormat='{0} Names'}" FontSize="16"
                                             TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
                                             HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    </Grid>
-                                </Border>
-                            </SwipeView>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </ScrollView>
+                                </Grid>
+                            </Border>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" Grid.Row="1" VerticalOptions="End"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                Stroke="Transparent">
+            <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleAddMenuCommand}"/>
+        </Border>
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" IsVisible="{Binding AddVisible}" Margin="20,0">
+            <Border Style="{StaticResource BorderButton}">
+                <ImageButton Source="add.png" Padding="0" Command="{Binding AddListCommand}" CommandParameter="{Binding ListNameToAdd}"/>
+            </Border>
+            <Border StrokeShape="RoundRectangle 5" Grid.Column="1"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}" 
+                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
+                <Entry Text="{Binding ListNameToAdd}" Placeholder="List to Add" VerticalOptions="Center" Margin="0,1,0,0"
+                       HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+            </Border>
         </Grid>
-        <VerticalStackLayout Grid.Row="1">
-            <Button Text="Character List"  FontSize="16" Command="{Binding GoToNPCListCommand}"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
-                    TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
-                    HorizontalOptions="Fill" VerticalOptions="Center" Margin="30,1,30,2"/>
-        </VerticalStackLayout>
-        <Button Grid.Row="2" Text="Back" Margin="0,1,0,2" Command="{Binding GoBackCommand}"/>
+        <Button Grid.Row="3" Text="Back" Margin="60,1,60,2" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>
