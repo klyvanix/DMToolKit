@@ -21,7 +21,7 @@
                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}}, Path=DeleteListCommand}"/>
                                 </SwipeItems>
                             </SwipeView.RightItems>
-                            <Border StrokeShape="RoundRectangle 15" Margin="0" HeightRequest="50"
+                            <Border StrokeShape="RoundRectangle 5" Margin="0" HeightRequest="50"
                                     Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}"
                                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
                                 <Border.GestureRecognizers>
@@ -39,22 +39,17 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-        <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" Grid.Row="1" VerticalOptions="End"
-                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
-                Stroke="Transparent">
-            <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleAddMenuCommand}"/>
-        </Border>
-        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" IsVisible="{Binding AddVisible}" Margin="20,0">
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" Margin="50,0">
             <Border Style="{StaticResource BorderButton}">
-                <ImageButton Source="add.png" Padding="0" Command="{Binding AddListCommand}" CommandParameter="{Binding ListNameToAdd}"/>
+                <ImageButton Source="add.png" Padding="0" Command="{Binding AddListCommand}" HeightRequest="20"/>
             </Border>
             <Border StrokeShape="RoundRectangle 5" Grid.Column="1"
                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}" 
                     Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
-                <Entry Text="{Binding ListNameToAdd}" Placeholder="List to Add" VerticalOptions="Center" Margin="0,1,0,0"
+                <Entry Text="{Binding ListNameToAdd}" Placeholder="Collection Name" VerticalOptions="Center" Margin="0,1,0,0"
                        HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
             </Border>
         </Grid>
-        <Button Grid.Row="3" Text="Back" Margin="60,1,60,2" Command="{Binding GoBackCommand}"/>
+        <Button Grid.Row="3" Text="Back" Margin="50,1,50,3" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>

@@ -18,13 +18,7 @@ namespace DMToolKit.ViewModels
         ObservableCollection<string> listGroups;
 
         [ObservableProperty]
-        bool addVisible;
-
-        [ObservableProperty]
         string listNameToAdd;
-
-        [ObservableProperty]
-        string expandImage;
 
         DataController DataController;
 
@@ -32,13 +26,8 @@ namespace DMToolKit.ViewModels
         {
             ListGroups = new ObservableCollection<string>();
             ListNameToAdd = string.Empty;
-            AddVisible = false;
             DataController = DataController.Instance;
             UpdateLists(); 
-            if (Application.Current.RequestedTheme == AppTheme.Light)
-                ExpandImage = "expand";
-            else
-                ExpandImage = "expanddark";
         }
 
         public void UpdateLists()
@@ -46,26 +35,6 @@ namespace DMToolKit.ViewModels
             ListGroups.Clear();
             foreach (var item in DataController.NameData.ThemedNameCollections)
                 ListGroups.Add(item.Name);
-        }
-
-        [RelayCommand]
-        public void ToggleAddMenu()
-        {
-            AddVisible = !AddVisible;
-            if (AddVisible)
-            {
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    ExpandImage = "retract";
-                else
-                    ExpandImage = "retractdark";
-            }
-            else
-            {
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    ExpandImage = "expand";
-                else
-                    ExpandImage = "expanddark";
-            }
         }
 
         [RelayCommand]
@@ -93,12 +62,12 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
-        public void AddList(string listName) 
+        public void AddList() 
         {
-            if (string.IsNullOrEmpty(listName) || DataController.NameData.ListNameExists(listName))
+            if (string.IsNullOrEmpty(ListNameToAdd) || DataController.NameData.ListNameExists(ListNameToAdd))
                 return;
 
-            DataController.NameData.AddNameToList(listName);
+            DataController.NameData.AddNameToList(ListNameToAdd);
             DataController.SaveNameData();
             UpdateLists();
             ListNameToAdd = string.Empty;

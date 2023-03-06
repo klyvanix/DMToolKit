@@ -96,22 +96,29 @@ namespace DMToolKit.ViewModels
             ShowHelp = false;
             Task t = Task.Factory.StartNew(() => {
                 if (GenerationNumber == 1)
-                    NameList.Add(new Name(GetPrefix(), GetSuffix()));
+                {
+                    AddNames();
+                }
                 else
                 {
                     if (GenerationNumber > 5)
                         NameList.Clear();
-                    List<Name> list = new List<Name>();
-                    for (int i = 0; i < GenerationNumber; i++)
-                        list.Add(new Name(GetPrefix(), GetSuffix()));
-
-                    list.Sort();
-
-                    for (int i = 0; i < list.Count; i++)
-                        NameList.Add(list[i]);
+                    AddNames();
                 }
             });
             await t;
+        }
+
+        void AddNames()
+        {
+            var list = new List<Name>();
+            for(int i = 0; i < GenerationNumber*3; i++)
+            {
+                list.Add(new Name(GetPrefix(), GetSuffix()));
+            }
+            list.Sort();
+            for (int i = 0; i < list.Count; i++)
+                NameList.Add(list[i]);
         }
 
         private string GetPrefix()
