@@ -5,7 +5,37 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NameGeneratorOptionsViewModel"
              Title="Options">
-    <Grid RowDefinitions="*,50,50,50">
+    <Grid RowDefinitions="*,50,50">
+        <ScrollView>
+            <Grid RowDefinitions="50,50,Auto">
+                <Grid Grid.Row="0">
+                    <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
+                            Background="{Binding LetterBrush}"
+                            Stroke="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource DarkPrimary}}"
+                            StrokeThickness="3" StrokeShape="RoundRectangle 15">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LetterLockerCommand}"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Label Text="Lock Letter"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
+                            Background="{Binding PrefixBrush}"
+                            Stroke="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource DarkPrimary}}"
+                            StrokeThickness="3" StrokeShape="RoundRectangle 20">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PrefixLockerCommand}"/>
+                        </Border.GestureRecognizers>
+                    </Border>
+                    <Label Text="Lock Prefix"/>
+                </Grid>
+            </Grid>
+        </ScrollView>
+        <Button Text="Save" Margin="1" Command="{Binding SaveOptionsCommand}" Grid.Row="1"/>
+        <Button Text="Back" Margin="0,1,0,2" Command="{Binding LetterLockerCommand}" Grid.Row="2"/>
+    </Grid>
+    <!--<Grid RowDefinitions="*,50,50,50">
         <Grid ColumnDefinitions="*,2*" Grid.Row="0" IsVisible="{Binding LetterLock}" >
             <Label Text="Letter To Lock"  Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Padding="10"/>
             <Border HorizontalOptions="Fill" VerticalOptions="Center" StrokeShape="RoundRectangle 5"
@@ -67,5 +97,5 @@
             <Button Text="Clear Locks" Margin="1" Command="{Binding ClearLocksCommand}" Grid.Column="1"/>
         </Grid>
         <Button Text="Back" Margin="0,1,0,2" Command="{Binding GoBackCommand}" Grid.Row="3"/>
-    </Grid>
+    </Grid>-->
 </ContentPage>

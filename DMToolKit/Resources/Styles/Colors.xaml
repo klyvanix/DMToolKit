@@ -59,4 +59,31 @@
     <Color x:Key="Prefix">#236418</Color>
     <Color x:Key="Suffix">#963646</Color>
 
+    <Color x:Key="First">#133c7f</Color>
+    <Color x:Key="Second">#c4e7ff</Color>
+    <Color x:Key="Stroke1">#d2b974</Color>
+    <Color x:Key="Stroke2">#ac892c</Color>
+
+
+    <RadialGradientBrush x:Key="RadioUnckecked">
+        <GradientStop Color="{StaticResource Primary}"
+                          Offset="0.5" />
+        <GradientStop Color="{StaticResource Second}"
+                          Offset=".55" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="RadioStroke">
+        <GradientStop Color="{StaticResource Stroke2}"
+                          Offset="0.8" />
+        <GradientStop Color="{StaticResource Stroke1}"
+                          Offset=".9" />
+    </RadialGradientBrush>
+
+    <LinearGradientBrush x:Key="RadioBorder">
+        <GradientStop Color="{StaticResource Stroke1}"
+                          Offset="0.1" />
+        <GradientStop Color="{StaticResource Stroke2}"
+                          Offset=".9" />
+    </LinearGradientBrush>
+
 </ResourceDictionary>

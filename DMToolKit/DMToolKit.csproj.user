@@ -56,5 +56,8 @@
     <MauiXaml Update="Resources\Styles\NameGeneratorDictionary.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Resources\Styles\NameGenOptionsResources.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
 </Project>

@@ -22,9 +22,6 @@ namespace DMToolKit.ViewModels
         bool prefixLock;
 
         [ObservableProperty]
-        bool nameSeedsShown;
-
-        [ObservableProperty]
         string lockedPrefix;
 
         [ObservableProperty]
@@ -42,6 +39,15 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string suffixCount;
 
+        RadialGradientBrush uncheckedGradient;
+        RadialGradientBrush checkedGradient;
+
+        [ObservableProperty]
+        RadialGradientBrush prefixBrush;
+        [ObservableProperty]
+        RadialGradientBrush letterBrush;
+
+
         DataController DataController;
 
         public NameGeneratorOptionsViewModel() 
@@ -50,7 +56,6 @@ namespace DMToolKit.ViewModels
             SelectedIndex = 0;
             LetterLock = false;
             PrefixLock = false;
-            NameSeedsShown = true;
             PrefixList = new ObservableCollection<string>();
             PrefixToAdd = string.Empty;
             SuffixToAdd = string.Empty;
@@ -72,6 +77,20 @@ namespace DMToolKit.ViewModels
             PrefixList.Clear();
             foreach (var item in DataController.NameSeedData.PrefixList)
                 PrefixList.Add(item);
+
+            uncheckedGradient = new RadialGradientBrush(new GradientStopCollection()
+            {
+                new GradientStop(Color.FromArgb("00000000"), 0.4f),
+                new GradientStop(Color.FromArgb("00000000"), .65f)
+            });
+            checkedGradient = new RadialGradientBrush(new GradientStopCollection()
+            {
+                new GradientStop(Color.FromArgb("226A9C"), 0.4f),
+                new GradientStop(Color.FromArgb("00000000"), .45f)
+            });
+
+            LetterBrush = uncheckedGradient;
+            PrefixBrush = uncheckedGradient;
         }
 
         [RelayCommand]
@@ -163,6 +182,24 @@ namespace DMToolKit.ViewModels
                         {"LetterLock", false },
                         {"PrefixLock", false }
                         });
+        }
+
+        [RelayCommand]
+        void LetterLocker()
+        {
+            PrefixBrush = uncheckedGradient;
+            LetterBrush = checkedGradient;
+            LetterLock = true;
+            PrefixLock = false;
+        }
+
+        [RelayCommand]
+        void PrefixLocker()
+        {
+            LetterBrush = uncheckedGradient;
+            PrefixBrush = checkedGradient;
+            LetterLock = false;
+            PrefixLock = true;
         }
     }
 }
