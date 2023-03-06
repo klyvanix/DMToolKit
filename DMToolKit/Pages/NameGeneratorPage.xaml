@@ -22,11 +22,29 @@
                                    SelectedIndicatorColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Tertiary}}" />
                 </HorizontalStackLayout>
             </Grid>
-            <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" Grid.Row="1" VerticalOptions="End"
+            <Grid Grid.Row="1">
+                <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="Start"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
-                        Stroke="Transparent">
-                <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleOptionsCommand}"/>
-            </Border>
+                        Stroke="Transparent" IsVisible="{Binding PrefixLock}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UnlockCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="Prefix Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+                <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                            Stroke="Transparent">
+                    <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleOptionsCommand}"/>
+                </Border>
+                <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="End"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                        Stroke="Transparent" IsVisible="{Binding LetterLock}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UnlockCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="Letter Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+            </Grid>
         </Grid>
         <Grid RowDefinitions="Auto,50" Grid.Row="2" BackgroundColor="{StaticResource Dark}">
             <Grid ColumnDefinitions="*,2*,*" HeightRequest="50" IsVisible="{Binding OptionsExpanded}">
@@ -37,7 +55,8 @@
                         StrokeShape="RoundRectangle 5 0 5 0">
                         <ImageButton Source="subtract.png" Margin="10" Command="{Binding DecreaseCounterCommand}"/>
                     </Border>
-                    <Border Grid.Column="1" BackgroundColor="Transparent" Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
+                    <Border Grid.Column="1" BackgroundColor="Transparent" 
+                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
                         <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Margin="0,3,0,0"
                            HorizontalOptions="Fill" Keyboard="Numeric"
                            HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
@@ -45,7 +64,7 @@
                     <Border Grid.Column="2" 
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
                             Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
-                        StrokeShape="RoundRectangle 0 5 0 5">
+                            StrokeShape="RoundRectangle 0 5 0 5">
                         <ImageButton Source="add.png" Margin="10" Command="{Binding IncreaseCounterCommand}"/>
                     </Border>
                 </Grid>

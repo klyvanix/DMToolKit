@@ -162,6 +162,12 @@ namespace DMToolKit.ViewModels
         {
             NameList.Clear();
         }
+        [RelayCommand]
+        void Unlock()
+        {
+            LetterLock = false;
+            PrefixLock = false;
+        }
 
         [RelayCommand]
         async Task GoToAddPage(Name input)

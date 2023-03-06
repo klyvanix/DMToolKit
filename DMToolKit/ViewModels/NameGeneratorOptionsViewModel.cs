@@ -171,17 +171,12 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
-        async Task ClearLocks()
+        void ClearLocks()
         {
             LetterLock = false;
             PrefixLock = false;
-
-            await Shell.Current.GoToAsync($"..", true,
-                        new Dictionary<string, object>
-                        {
-                        {"LetterLock", false },
-                        {"PrefixLock", false }
-                        });
+            PrefixBrush = uncheckedGradient;
+            LetterBrush = uncheckedGradient;
         }
 
         [RelayCommand]

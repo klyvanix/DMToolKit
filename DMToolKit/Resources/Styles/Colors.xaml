@@ -86,4 +86,17 @@
                           Offset=".9" />
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="OptionsHeader" EndPoint="0,1">
+        <GradientStop Color="{StaticResource Secondary}"
+                          Offset="0.1" />
+        <GradientStop Color="{StaticResource Stroke1}"
+                          Offset=".9" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="OptionsHeaderDark" EndPoint="0,1">
+        <GradientStop Color="{StaticResource TextBackgroundDark}"
+                          Offset="0.1" />
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset=".9" />
+    </LinearGradientBrush>
+
 </ResourceDictionary>
