@@ -9,7 +9,7 @@
         <ScrollView>
             <Grid RowDefinitions="30,50,30,50,30,Auto">
                 <!--HEADER LETTER LOCK-->
-                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeader}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="0">
+                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeaderGradient}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="0">
                     <Label Text="Letter Lock" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16"
                            VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Grid>
@@ -34,7 +34,7 @@
                     </Border>
                 </Grid>
                 <!--HEADER PREFIX LOCK-->
-                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeader}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="2">
+                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeaderGradient}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="2">
                     <Label Text="Prefix Lock" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"
                            FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Grid>
@@ -59,7 +59,7 @@
                     </Border>
                 </Grid>
                 <!--HEADER SEED DETAILS-->
-                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeader}, Dark={StaticResource OptionsHeaderDark}}" 
+                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeaderGradient}, Dark={StaticResource OptionsHeaderDark}}" 
                       Grid.Row="4">
                     <Label Text="Seed Details" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"
                            FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>

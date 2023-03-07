@@ -35,19 +35,6 @@
     <Color x:Key="TextBackground">#bcd0e3</Color>
     <Color x:Key="TextBackgroundDark">#081c30</Color>
     <Color x:Key="DarkPrimary">#09325b</Color>
-    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
-    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
-    <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
-    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
-    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}"/>
-    <SolidColorBrush x:Key="Gray100Brush" Color="{StaticResource Gray100}"/>
-    <SolidColorBrush x:Key="Gray200Brush" Color="{StaticResource Gray200}"/>
-    <SolidColorBrush x:Key="Gray300Brush" Color="{StaticResource Gray300}"/>
-    <SolidColorBrush x:Key="Gray400Brush" Color="{StaticResource Gray400}"/>
-    <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray500}"/>
-    <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
-    <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
-    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
 
     <Color x:Key="LetterLockA">#005D86</Color>
     <Color x:Key="Clear">#008A9A</Color>
@@ -61,16 +48,36 @@
 
     <Color x:Key="First">#133c7f</Color>
     <Color x:Key="Second">#c4e7ff</Color>
-    <Color x:Key="Stroke1">#d2b974</Color>
     <Color x:Key="Stroke2">#ac892c</Color>
     <Color x:Key="GridBorder">#133c7f</Color>
 
-    <RadialGradientBrush x:Key="RadioStroke">
-        <GradientStop Color="{StaticResource Stroke2}"
-                          Offset="0.8" />
-        <GradientStop Color="{StaticResource Stroke1}"
-                          Offset=".9" />
-    </RadialGradientBrush>
+
+    <Color x:Key="Gold">#d2b974</Color>
+
+    <Color x:Key="CP">#a77756</Color>
+    <Color x:Key="SP">#c0c0c0</Color>
+    <Color x:Key="EP">#aac0de</Color>
+    <Color x:Key="GP">#ceb334</Color>
+    <Color x:Key="PP">#eef5fe</Color>
+    <Color x:Key="Jewel">#89c0e2</Color>
+    <Color x:Key="Gem">#be6efc</Color>
+    <Color x:Key="Emerald">#20e652</Color>
+    <Color x:Key="Ruby">#fa3e5d</Color>
+    <Color x:Key="Diamond">#eef5fe</Color>
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+    <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}"/>
+    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}"/>
+    <SolidColorBrush x:Key="Gray100Brush" Color="{StaticResource Gray100}"/>
+    <SolidColorBrush x:Key="Gray200Brush" Color="{StaticResource Gray200}"/>
+    <SolidColorBrush x:Key="Gray300Brush" Color="{StaticResource Gray300}"/>
+    <SolidColorBrush x:Key="Gray400Brush" Color="{StaticResource Gray400}"/>
+    <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray500}"/>
+    <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
+    <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
+    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
 
     <LinearGradientBrush x:Key="OptionsHeaderDark" EndPoint="0,1">
         <GradientStop Color="{StaticResource TextBackgroundDark}"
@@ -92,7 +99,7 @@
                           Offset="1" />
     </LinearGradientBrush>
 
-    <LinearGradientBrush x:Key="OptionsHeader" EndPoint="0,1">
+    <LinearGradientBrush x:Key="OptionsHeaderGradient" EndPoint="0,1">
         <GradientStop Color="#f4a907"
                           Offset="0" />
         <GradientStop Color="#ffd800"
@@ -105,5 +112,50 @@
                           Offset=".7" />
         <GradientStop Color="#bf8943"
                           Offset=".9" /> 
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="CoinPouchEntryGradient" EndPoint="0,1">
+        <GradientStop Color="{StaticResource Tertiary}"
+                          Offset="0" />
+        <GradientStop Color="{StaticResource Tertiary}"
+                          Offset="0.47" />
+        <GradientStop Color="#000000"
+                          Offset="0.5" />
+        <GradientStop Color="#ffd800"
+                          Offset="0.53" />
+        <GradientStop Color="#FFFFFF"
+                          Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="CounPouchEntryNoLine" EndPoint="0,1">
+        <GradientStop Color="#FFFFFF"
+                          Offset="0" />
+        <GradientStop Color="#ffd800"
+                          Offset="0.47" />
+        <GradientStop Color="#ffd800"
+                          Offset="0.53" />
+        <GradientStop Color="#FFFFFF"
+                          Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DarkCoinPouchEntryGradient" EndPoint="0,1">
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="0" />
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="0.47" />
+        <GradientStop Color="{StaticResource Gray600}"
+                          Offset="0.5" />
+        <GradientStop Color="{StaticResource TextBackgroundDark}"
+                          Offset="0.53" />
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DarkCoinPouchEntryNoLine" EndPoint="0,1">
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="0" />
+        <GradientStop Color="{StaticResource TextBackgroundDark}"
+                          Offset="0.47" />
+        <GradientStop Color="{StaticResource TextBackgroundDark}"
+                          Offset="0.53" />
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="1" />
     </LinearGradientBrush>
 </ResourceDictionary>

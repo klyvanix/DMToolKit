@@ -49,7 +49,7 @@
                 </Border>
             </Grid>
         </Grid>
-        <Grid RowDefinitions="Auto,50" Grid.Row="2" BackgroundColor="{StaticResource Dark}" Margin="1">
+        <Grid RowDefinitions="Auto,50" Grid.Row="2" BackgroundColor="{StaticResource Dark}" Margin="0">
             <Grid ColumnDefinitions="*,2*,*" HeightRequest="50" IsVisible="{Binding OptionsExpanded}">
                 <Button Text="Clear" Command="{Binding ClearCommand}" Margin="1,1,1,2"/>
                 <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,0,1,1">

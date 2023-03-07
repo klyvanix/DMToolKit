@@ -6,8 +6,70 @@
              xmlns:Data="clr-namespace:DMToolKit.Data"
              x:Class="DMToolKit.Pages.CoinPouchGeneratorPage"
              Title="CoinPouchGenerator">
-    <Grid RowDefinitions="Auto,*,50,50">
-        <Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" RowDefinitions="50,Auto">
+    <Grid RowDefinitions="*,Auto">
+        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" SelectionMode="Single" 
+                        ItemsSource="{Binding CoinPouchList}" ItemTemplate="{StaticResource CoinPouchSelector}">
+        </CollectionView>
+        
+        <Grid Grid.Row="1" RowDefinitions="20,Auto, 50">
+            <Grid Grid.Row="0">
+                <!--EXPANDER-->
+                <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                            Stroke="Transparent">
+                    <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleOptionsCommand}"/>
+                </Border>
+            </Grid>
+            <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50" IsVisible="{Binding OptionsShown}">
+                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="1,2">
+                    <Border Grid.Column="0" Margin="0,1"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            StrokeThickness="0"
+                            VerticalOptions="Fill"
+                            HorizontalOptions="Fill"
+                            StrokeShape="RoundRectangle 5 0 5 0">
+                        <!--SUBTRACT COUNTER BUTTON-->
+                        <ImageButton Source="{AppThemeBinding Light='subtract.png',Dark='subtractdark.png'}" 
+                                     HorizontalOptions="Fill" VerticalOptions="Fill" 
+                                     Command="{Binding DecreaseCounterCommand}"/>
+                    </Border>
+                    <Border Grid.Column="1" BackgroundColor="Transparent" StrokeThickness="1" Margin="0"
+                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
+                        <!--ENTRY FOR COUNTER BUTTON-->
+                        <Entry Text="{Binding OutputTarget}"  Placeholder="# of Names" Margin="0,3,0,0"
+                           HorizontalOptions="Fill" Keyboard="Numeric" VerticalOptions="Fill"
+                           HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
+                    </Border>
+                    <Border Grid.Column="2" Margin="0,1"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            StrokeThickness="0"
+                            VerticalOptions="Fill"
+                            HorizontalOptions="Fill"
+                            StrokeShape="RoundRectangle 0 5 0 5">
+                        <!--ADD COUNTER BUTTON-->
+                        <ImageButton Source="{AppThemeBinding Light='add.png',Dark='adddark.png'}" 
+                                     HorizontalOptions="Fill" VerticalOptions="Fill" 
+                                     Command="{Binding IncreaseCounterCommand}"/>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" ColumnDefinitions="*,3*,*" Margin="1,0,1,2">
+                <Border Grid.Column="0" StrokeShape="RoundRectangle 5"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        StrokeThickness="0" HorizontalOptions="Fill" VerticalOptions="Fill">
+
+                </Border>
+                <Button Grid.Column="0" Text="Clear" Command="{Binding ClearCommand}" 
+                        HorizontalOptions="Fill" VerticalOptions="Fill" Margin="1,0"/>
+                <Button Grid.Column="1" Text="Generate" Command="{Binding AddCommand}" Margin="1,0"/>
+                <Border Grid.Column="3" StrokeShape="RoundRectangle 5"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        StrokeThickness="0" HorizontalOptions="Fill" VerticalOptions="Fill">
+
+                </Border>
+            </Grid>
+        </Grid>
+        <!--<Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" RowDefinitions="50,Auto">
             <Grid Grid.Row="0" BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" >
                 <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2" HorizontalOptions="Start"
                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
@@ -25,11 +87,8 @@
                          Value="{Binding OutputTarget}"/>
                 </Grid>
             </Grid>
-        </Grid>
-        <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" SelectionMode="Single" 
-                        ItemsSource="{Binding CoinPouchList}" ItemTemplate="{StaticResource CoinPouchSelector}">
-        </CollectionView>
-        <Button Grid.Row="2" Margin="0,1,0,1" Text="Generate"
+        </Grid>-->
+        <!--<Button Grid.Row="2" Margin="0,1,0,1" Text="Generate"
                 Command="{Binding AddCommand}" />
         <Grid Grid.Row="3" Grid.ColumnSpan="2" ColumnDefinitions="*,*" Margin="0,1,0,2">
             <Button Text="Clear" VerticalOptions="Fill"
@@ -40,6 +99,6 @@
                 <Stepper Minimum="1" Maximum="1000000" Increment="1" Grid.Column="1" 
                          Value="{Binding GenerationNumber}"/>
             </Grid>
-        </Grid>
+        </Grid>-->
     </Grid>
 </ContentPage>
