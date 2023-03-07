@@ -77,6 +77,11 @@ namespace DMToolKit.ViewModels
             PrefixList.Clear();
             foreach (var item in DataController.NameSeedData.PrefixList)
                 PrefixList.Add(item);
+            string color = string.Empty;
+            if (Application.Current.RequestedTheme == AppTheme.Light)
+                color = "E29E21";
+            else
+                color = "226A9C";
 
             uncheckedGradient = new RadialGradientBrush(new GradientStopCollection()
             {
@@ -85,7 +90,7 @@ namespace DMToolKit.ViewModels
             });
             checkedGradient = new RadialGradientBrush(new GradientStopCollection()
             {
-                new GradientStop(Color.FromArgb("226A9C"), 0.4f),
+                new GradientStop(Color.FromArgb(color), 0.4f),
                 new GradientStop(Color.FromArgb("00000000"), .45f)
             });
 

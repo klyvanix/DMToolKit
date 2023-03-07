@@ -8,21 +8,23 @@
     <Grid RowDefinitions="*,50,50">
         <ScrollView>
             <Grid RowDefinitions="30,50,30,50,30,Auto">
+                <!--HEADER LETTER LOCK-->
                 <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeader}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="0">
                     <Label Text="Letter Lock" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16"
                            VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Grid>
+                <!--LETTER LOCK SECTION-->
                 <Grid Grid.Row="1" ColumnDefinitions="30,150,*" Padding="30,0,0,0">
                     <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
                             Background="{Binding LetterBrush}"
-                            Stroke="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource Primary}}"
+                            Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
                             StrokeThickness="3" StrokeShape="RoundRectangle 15">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LetterLockerCommand}"/>
                         </Border.GestureRecognizers>
                     </Border>
                     <Label Text="Lock Letter" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"
-                           TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                           TextColor="{StaticResource White}"/>
                     <Border HorizontalOptions="Fill" VerticalOptions="Center" StrokeShape="RoundRectangle 5" 
                             Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource DarkPrimary}}" Grid.Column="2">
@@ -31,20 +33,22 @@
                                 TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
                     </Border>
                 </Grid>
+                <!--HEADER PREFIX LOCK-->
                 <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeader}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="2">
                     <Label Text="Prefix Lock" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"
                            FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Grid>
+                <!--PREFIX LOCK SECTION-->
                 <Grid Grid.Row="3" ColumnDefinitions="30,150,*" Padding="30,0,0,0">
                     <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
                             Background="{Binding PrefixBrush}"
-                            Stroke="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource Primary}}"
+                            Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
                             StrokeThickness="3" StrokeShape="RoundRectangle 20">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding PrefixLockerCommand}"/>
                         </Border.GestureRecognizers>
                     </Border>
-                    <Label Text="Lock Prefix" Grid.Column="1" VerticalOptions="Center" 
+                    <Label Text="Lock Prefix" Grid.Column="1" VerticalOptions="Center" TextColor="{StaticResource White}" 
                            FontSize="16" HorizontalOptions="Center" />
                     <Border Grid.Column="2" HeightRequest="50" StrokeShape="RoundRectangle 5" 
                             BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource DarkPrimary}}"
@@ -54,39 +58,42 @@
                                TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
                     </Border>
                 </Grid>
+                <!--HEADER SEED DETAILS-->
                 <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeader}, Dark={StaticResource OptionsHeaderDark}}" 
                       Grid.Row="4">
                     <Label Text="Seed Details" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"
                            FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Grid>
+                <!--SEED SECTION-->
                 <StackLayout Grid.Row="5" VerticalOptions="Center">
                     <Label Text="{Binding PrefixCount, StringFormat='Prefix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
-                    <Grid ColumnDefinitions="Auto,*">
+                    <Grid ColumnDefinitions="Auto,*" Margin="0,2">
                         <Border  Style="{StaticResource BorderButton}">
-                            <ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>
+                            <!--<ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>-->
+                            <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddPrefixCommand}"/>
                         </Border>
-                        <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50"
-                        Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource DarkPrimary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
-                            <Entry Placeholder="Prefix" PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
-                           TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
-                           Text="{Binding PrefixToAdd}" Keyboard="Text"
-                           HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50" StrokeThickness="0"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                            <Entry Placeholder="Prefix" 
+                                   PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
+                                   TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
+                                   Text="{Binding PrefixToAdd}" Keyboard="Text"
+                                   HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Button Text="Add Prefix" Command="{Binding AddToPrefixListCommand}"/>
                     <Label Text="{Binding SuffixCount, StringFormat='Suffix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
-                    <Grid ColumnDefinitions="Auto,*">
+                    <Grid ColumnDefinitions="Auto,*" Margin="0,2">
                         <Border  Style="{StaticResource BorderButton}">
-                            <ImageButton Source="listdark.png" Command="{Binding AddSuffixCommand}"/>
+                            <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddSuffixCommand}"/>
                         </Border>
-                        <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50"
-                        Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource DarkPrimary}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
-                            <Entry Placeholder="Suffix" PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
-                       TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
-                       Text="{Binding SuffixToAdd}"
-                       HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50" StrokeThickness="0"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                            <Entry Placeholder="Suffix" 
+                                   PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
+                                   TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
+                                   Text="{Binding SuffixToAdd}"
+                                   HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                         </Border>
                     </Grid>
                     <Button Text="Add Suffix" Command="{Binding AddToSuffixListCommand}"/>

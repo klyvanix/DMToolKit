@@ -30,7 +30,7 @@
                                 </Border.GestureRecognizers>
                                 <Grid>
                                     <Label Text="{Binding ., StringFormat='{0} Names'}" FontSize="16"
-                                            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"
+                                            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
                                             HorizontalOptions="Center" VerticalOptions="Center"/>
                                 </Grid>
                             </Border>
@@ -39,14 +39,16 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" Margin="50,0">
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" Margin="50,0,50,2">
             <Border Style="{StaticResource BorderButton}">
-                <ImageButton Source="add.png" Padding="0" Command="{Binding AddListCommand}" HeightRequest="20"/>
+                <ImageButton Source="{AppThemeBinding Light='add.png',Dark='adddark.png'}" 
+                             Command="{Binding AddListCommand}" />
             </Border>
-            <Border StrokeShape="RoundRectangle 5" Grid.Column="1"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
-                <Entry Text="{Binding ListNameToAdd}" Placeholder="Collection Name" VerticalOptions="Center" Margin="0,1,0,0"
+            <Border StrokeShape="RoundRectangle 5" Grid.Column="1" HeightRequest="50"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}"
+                    StrokeThickness="0">
+                <Entry Text="{Binding ListNameToAdd}" Placeholder="Collection Name" PlaceholderColor="{StaticResource Gray200}"
+                       VerticalOptions="Center" Margin="0,1,0,0"
                        HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
             </Border>
         </Grid>

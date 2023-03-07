@@ -6,7 +6,7 @@
 
     <Color x:Key="Primary">#226A9C</Color>
     <Color x:Key="Secondary">#E29E21</Color>
-    <Color x:Key="Tertiary">#EDFBFF</Color>
+    <Color x:Key="Tertiary">#ddf6fd</Color>
     <Color x:Key="Grad1">#ccbfa8</Color>
     <Color x:Key="Grad2">#f5efe4</Color>
     <Color x:Key="Grad3">#b3904f</Color>
@@ -63,14 +63,7 @@
     <Color x:Key="Second">#c4e7ff</Color>
     <Color x:Key="Stroke1">#d2b974</Color>
     <Color x:Key="Stroke2">#ac892c</Color>
-
-
-    <RadialGradientBrush x:Key="RadioUnckecked">
-        <GradientStop Color="{StaticResource Primary}"
-                          Offset="0.5" />
-        <GradientStop Color="{StaticResource Second}"
-                          Offset=".55" />
-    </RadialGradientBrush>
+    <Color x:Key="GridBorder">#133c7f</Color>
 
     <RadialGradientBrush x:Key="RadioStroke">
         <GradientStop Color="{StaticResource Stroke2}"
@@ -79,24 +72,38 @@
                           Offset=".9" />
     </RadialGradientBrush>
 
-    <LinearGradientBrush x:Key="RadioBorder">
-        <GradientStop Color="{StaticResource Stroke1}"
-                          Offset="0.1" />
-        <GradientStop Color="{StaticResource Stroke2}"
-                          Offset=".9" />
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="OptionsHeader" EndPoint="0,1">
-        <GradientStop Color="{StaticResource Secondary}"
-                          Offset="0.1" />
-        <GradientStop Color="{StaticResource Stroke1}"
-                          Offset=".9" />
-    </LinearGradientBrush>
     <LinearGradientBrush x:Key="OptionsHeaderDark" EndPoint="0,1">
         <GradientStop Color="{StaticResource TextBackgroundDark}"
                           Offset="0.1" />
         <GradientStop Color="{StaticResource DarkPrimary}"
                           Offset=".9" />
     </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="GridBackground" EndPoint="0,1">
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="0" />
+        <GradientStop Color="{StaticResource Tertiary}"
+                          Offset=".2" />
+        <GradientStop Color="{StaticResource White}"
+                          Offset=".5" />
+        <GradientStop Color="{StaticResource Second}"
+                          Offset=".6" />
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="1" />
+    </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="OptionsHeader" EndPoint="0,1">
+        <GradientStop Color="#f4a907"
+                          Offset="0" />
+        <GradientStop Color="#ffd800"
+                          Offset=".2" />
+        <GradientStop Color="#fff4ac"
+                          Offset=".4" />
+        <GradientStop Color="{StaticResource White}"
+                          Offset=".55" />
+        <GradientStop Color="#ffd800"
+                          Offset=".7" />
+        <GradientStop Color="#bf8943"
+                          Offset=".9" /> 
+    </LinearGradientBrush>
 </ResourceDictionary>

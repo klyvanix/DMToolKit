@@ -379,23 +379,9 @@
                                    Page7="{StaticResource Page7}"/>
 
     <DataTemplate x:Key="NameDisplay" x:DataType="data:Name">
-        <Border Padding="3" StrokeThickness="1" Margin="0">
-            <Border.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{AppThemeBinding Light={StaticResource Grad1}, Dark={StaticResource DarkPrimary}}"
-                          Offset="0.1" />
-                    <GradientStop Color="{AppThemeBinding Light={StaticResource Grad2}, Dark={StaticResource TextBackgroundDark}}"
-                          Offset="1.0" />
-                </LinearGradientBrush>
-            </Border.Background>
-            <Border.Stroke>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{AppThemeBinding Light={StaticResource Grad2}, Dark={StaticResource TextBackgroundDark}}"
-                          Offset="0.1" />
-                    <GradientStop Color="{AppThemeBinding Light={StaticResource Grad3}, Dark={StaticResource DarkPrimary}}"
-                          Offset="1.0" />
-                </LinearGradientBrush>
-            </Border.Stroke>
+        <Border Padding="3" StrokeThickness="1" Margin="0" 
+                Background="{AppThemeBinding Light={StaticResource GridBackground},Dark={StaticResource OptionsHeaderDark}}"
+                Stroke="{StaticResource GridBorder}">
             <Border.GestureRecognizers>
                 <TapGestureRecognizer CommandParameter="{Binding .}"
                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameGeneratorViewModel}},Path=GoToAddPageCommand}"/>
