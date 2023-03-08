@@ -6,11 +6,148 @@
                     xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
                     x:DataType="selector:CoinPouchDataSelector"
                     xmlns:selector="clr-namespace:DMToolKit.Services">
-    <DataTemplate x:Key="CoinPouchCoin" x:DataType="data:CoinPouch">
-        <Border Padding="1" StrokeShape="RoundRectangle 5"  HeightRequest="40"
-                StrokeThickness="0"
-                BackgroundColor="Transparent">
+    <DataTemplate x:Key="Single" x:DataType="data:CoinPouch">
+        <Border Padding="1" StrokeShape="RoundRectangle 5" 
+                StrokeThickness="1"
+                BackgroundColor="{StaticResource Primary}"
+                Stroke="{StaticResource Secondary}">
             <Border.GestureRecognizers>
+                <TapGestureRecognizer 
+                    CommandParameter="{Binding .}"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
+            </Border.GestureRecognizers>
+            <Grid>
+                <Image Source="coinpouch.png"/>
+                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="55"
+                        StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-8,0,-3">
+                        <Label Text="{Binding TotalValueRounded}" FontSize="30" HorizontalOptions="Center"/>
+                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="Double" x:DataType="data:CoinPouch">
+        <Border Padding="1" StrokeShape="RoundRectangle 5" 
+                StrokeThickness="1"
+                BackgroundColor="{StaticResource Primary}"
+                Stroke="{StaticResource Secondary}">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer 
+                    CommandParameter="{Binding .}"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
+            </Border.GestureRecognizers>
+            <Grid>
+                <Image Source="coinpouch.png"/>
+                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="55"
+                        StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-8,0,-3">
+                        <Label Text="{Binding TotalValueRounded}" FontSize="30" HorizontalOptions="Center"/>
+                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="Triple" x:DataType="data:CoinPouch">
+        <Border Padding="1" StrokeShape="RoundRectangle 5" 
+                StrokeThickness="1"
+                BackgroundColor="{StaticResource Primary}"
+                Stroke="{StaticResource Secondary}">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer 
+                    CommandParameter="{Binding .}"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
+            </Border.GestureRecognizers>
+            <Grid>
+                <Image Source="coinpouch.png"/>
+                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="55"
+                        StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding TotalValueRounded}" FontSize="22" HorizontalOptions="Center"/>
+                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="Quad" x:DataType="data:CoinPouch">
+        <Border Padding="1" StrokeShape="RoundRectangle 5" 
+                StrokeThickness="1"
+                BackgroundColor="{StaticResource Primary}"
+                Stroke="{StaticResource Secondary}">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer 
+                    CommandParameter="{Binding .}"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
+            </Border.GestureRecognizers>
+            <Grid>
+                <Image Source="coinpouch.png"/>
+                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="55"
+                        StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding TotalValueRounded}" FontSize="22" HorizontalOptions="Center"/>
+                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="Penta" x:DataType="data:CoinPouch">
+        <Border Padding="1" StrokeShape="RoundRectangle 5" 
+                StrokeThickness="1"
+                BackgroundColor="{StaticResource Primary}"
+                Stroke="{StaticResource Secondary}">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer 
+                    CommandParameter="{Binding .}"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
+            </Border.GestureRecognizers>
+            <Grid>
+                <Image Source="coinpouch.png"/>
+                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="55"
+                        StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding TotalValueRounded}" FontSize="20" HorizontalOptions="Center"/>
+                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="Hexa" x:DataType="data:CoinPouch">
+        <Border Padding="1" StrokeShape="RoundRectangle 5" 
+                StrokeThickness="1"
+                BackgroundColor="{StaticResource Primary}"
+                Stroke="{StaticResource Secondary}">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer 
+                    CommandParameter="{Binding .}"
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
+            </Border.GestureRecognizers>
+            <Grid>
+                <Image Source="coinpouch.png"/>
+                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="55"
+                        StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding TotalValueRounded}" FontSize="17" HorizontalOptions="Center"/>
+                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </Border>
+    </DataTemplate>
+    <selector:CoinPouchDataSelector x:Key="CoinPouchSelector" 
+                                   SingleDigit="{StaticResource Single}" 
+                                   DoubleDigit="{StaticResource Double}" 
+                                   TripleDigit="{StaticResource Triple}" 
+                                   QuadDigit="{StaticResource Quad}" 
+                                   PentaDigit="{StaticResource Penta}" 
+                                   HexaDigit="{StaticResource Hexa}"/>
+</ResourceDictionary>
+
+<!--<Border.GestureRecognizers>
                 <TapGestureRecognizer 
                     CommandParameter="{Binding .}"
                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
@@ -29,7 +166,7 @@
                                    Text="Value" VerticalOptions="End" Grid.Column="1"/>
                             <Label TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gold}}" 
                                    HorizontalOptions="Fill" HorizontalTextAlignment="Center" FontAttributes="Bold"
-                                   Text="{Binding Target}" VerticalOptions="Start" Grid.Column="1" Grid.Row="1"/>
+                                   Text="{Binding TotalValueRounded}" VerticalOptions="Start" Grid.Column="1" Grid.Row="1"/>
                         </Grid>
 
                     </Grid>
@@ -41,19 +178,19 @@
                 <Border Grid.Column="2" Background="{AppThemeBinding Light={StaticResource CoinPouchEntryGradient},Dark={StaticResource DarkCoinPouchEntryGradient}}" StrokeThickness="0">
                     <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto,Auto" VerticalOptions="Center">
                         <Image Source="coinpp.png" HeightRequest="15" Grid.Column="4" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding PPCoinCount}" Grid.Column="4" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
+                        <Label Text="{Binding PP}" Grid.Column="4" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource PP}}" />
                         <Image Source="coingp.png" HeightRequest="15" Grid.Column="3" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding GPCoinCount}" Grid.Column="3" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
+                        <Label Text="{Binding GP}" Grid.Column="3" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource GP}}" />
                         <Image Source="coinep.png" HeightRequest="15" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding EPCoinCount}" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
+                        <Label Text="{Binding EP}" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource EP}}" />
                         <Image Source="coinsp.png" HeightRequest="15" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding SPCoinCount}" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
+                        <Label Text="{Binding SP}" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource SP}}" />
                         <Image Source="coincp.png" HeightRequest="15" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding CPCoinCount}" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"
+                        <Label Text="{Binding CP}" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"
                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource CP}}" />
                     </Grid>
                 </Border>
@@ -61,91 +198,8 @@
                     <Grid RowDefinitions="*,*">
                         <Label Text="Total" HorizontalOptions="Center" VerticalOptions="End" 
                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-                        <Label Text="{Binding TotalItems}" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" FontAttributes="Bold"
+                        <Label Text="{Binding TotalContents}" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" FontAttributes="Bold"
                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                     </Grid>
                 </Border>
-            </Grid>
-        </Border>
-    </DataTemplate>
-    <DataTemplate x:Key="CoinPouchMixed" x:DataType="data:CoinPouch">
-        <Border Padding="1" StrokeShape="RoundRectangle 5"  HeightRequest="40"
-                StrokeThickness="0"
-                BackgroundColor="Transparent">
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer 
-                    CommandParameter="{Binding .}"
-                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoinPouchGeneratorViewModel}},Path=GoToDetailsCommand}"/>
-            </Border.GestureRecognizers>
-            <Grid ColumnDefinitions="80,60,*,60">
-                <Border Background="{AppThemeBinding Light={StaticResource CoinPouchEntryGradient},Dark={StaticResource DarkCoinPouchEntryGradient}}" StrokeThickness="0" StrokeShape="RoundRectangle 10">
-                    <Grid ColumnDefinitions="25,60">
-                        <Border Grid.Column="0" Background="{AppThemeBinding Light={StaticResource CounPouchEntryNoLine}, Dark={StaticResource DarkPrimary}}" 
-                                StrokeShape="RoundRectangle 0 15 0 15" StrokeThickness="0"
-                                Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Fill">
-                            <Image Source="{AppThemeBinding Light='coinpouch.png',Dark='coinpouchdark.png'}" Margin="2"/>
-                        </Border>
-                        <Grid RowDefinitions="*,*" Grid.Column="1">
-                            <Label TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" 
-                                   HorizontalOptions="Fill" HorizontalTextAlignment="Center"
-                                   Text="Value" VerticalOptions="End" Grid.Column="1"/>
-                            <Label TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gold}}" 
-                                   HorizontalOptions="Fill" HorizontalTextAlignment="Center" FontAttributes="Bold"
-                                   Text="{Binding Target}" VerticalOptions="Start" Grid.Column="1" Grid.Row="1"/>
-                        </Grid>
-
-                    </Grid>
-                </Border>
-                <Border Grid.Column="1" Background="{AppThemeBinding Light={StaticResource CounPouchEntryNoLine},Dark={StaticResource DarkCoinPouchEntryNoLine}}" StrokeThickness="0" StrokeShape="RoundRectangle 10 0 10 0">
-                    <Label Text="Contents" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-                           HorizontalOptions="Center" VerticalOptions="Center"/>
-                </Border>
-                <Border Grid.Column="2" Background="{AppThemeBinding Light={StaticResource CoinPouchEntryGradient},Dark={StaticResource DarkCoinPouchEntryGradient}}" StrokeThickness="0">
-                    <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" RowDefinitions="Auto,Auto" VerticalOptions="Center">
-                        <Image Source="coinpp.png" HeightRequest="15" Grid.Column="4" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding PPCoinCount}" Grid.Column="4" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource PP}}" />
-                        <Image Source="coingp.png" HeightRequest="15" Grid.Column="3" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding GPCoinCount}" Grid.Column="3" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource GP}}" />
-                        <Image Source="coinep.png" HeightRequest="15" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding EPCoinCount}" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource EP}}" />
-                        <Image Source="coinsp.png" HeightRequest="15" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding SPCoinCount}" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource SP}}" />
-                        <Image Source="coincp.png" HeightRequest="15" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding CPCoinCount}" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource CP}}" />
-                        <Image Source="diamond.png" HeightRequest="15" Grid.Column="9" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding Diamonds}" Grid.Column="9" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" 
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Diamond}}" />
-                        <Image Source="ruby.png" HeightRequest="15" Grid.Column="8" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding Rubys}" 
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Ruby}}" Grid.Column="8" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"/>
-                        <Image Source="emerald.png" HeightRequest="15" Grid.Column="7" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding Emeralds}" Grid.Column="7" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Emerald}}" />
-                        <Image Source="gem.png" HeightRequest="15" Grid.Column="6" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding Gems}" Grid.Column="6" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gem}}" />
-                        <Image Source="jewel.png" HeightRequest="15" Grid.Column="5" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="{Binding Jewels}" Grid.Column="5" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Jewel}}" />
-                    </Grid>
-                </Border>
-                <Border Grid.Column="3" Background="{AppThemeBinding Light={StaticResource CoinPouchEntryGradient},Dark={StaticResource DarkCoinPouchEntryGradient}}" StrokeThickness="0" StrokeShape="RoundRectangle 0 10 0 10">
-                    <Grid RowDefinitions="*,*">
-                        <Label Text="Total" HorizontalOptions="Center" VerticalOptions="End" 
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-                        <Label Text="{Binding TotalItems}" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" FontAttributes="Bold"
-                               TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-                    </Grid>
-                </Border>
-            </Grid>
-        </Border>
-    </DataTemplate>
-    <selector:CoinPouchDataSelector x:Key="CoinPouchSelector" 
-                                   Coin="{StaticResource CoinPouchCoin}" 
-                                   Mixed="{StaticResource CoinPouchMixed}"/>
-</ResourceDictionary>
+            </Grid>-->

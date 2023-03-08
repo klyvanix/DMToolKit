@@ -64,6 +64,7 @@
     <Color x:Key="Emerald">#20e652</Color>
     <Color x:Key="Ruby">#fa3e5d</Color>
     <Color x:Key="Diamond">#eef5fe</Color>
+    <Color x:Key="Bright">#fff570</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
@@ -93,8 +94,10 @@
                           Offset=".2" />
         <GradientStop Color="{StaticResource White}"
                           Offset=".5" />
-        <GradientStop Color="{StaticResource Second}"
-                          Offset=".6" />
+        <GradientStop Color="{StaticResource Tertiary}"
+                          Offset=".7" />
+        <GradientStop Color="{StaticResource Tertiary}"
+                          Offset=".8" />
         <GradientStop Color="{StaticResource DarkPrimary}"
                           Offset="1" />
     </LinearGradientBrush>
@@ -158,4 +161,9 @@
         <GradientStop Color="{StaticResource DarkPrimary}"
                           Offset="1" />
     </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="PouchFill">
+        <GradientStop Color="{StaticResource Primary}" Offset=".3"/>
+        <GradientStop Color="Black" Offset="1"/>
+    </RadialGradientBrush>
 </ResourceDictionary>

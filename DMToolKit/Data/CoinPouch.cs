@@ -8,54 +8,50 @@ namespace DMToolKit.Data
 {
     public class CoinPouch
     {
-        public int PPCoinCount { get; set; }
-        public int GPCoinCount { get; set; }
-        public int EPCoinCount { get; set; }
-        public int SPCoinCount { get; set; }
-        public int CPCoinCount { get; set; }
-
         public int Diamonds { get; set; }
         public int Rubys { get; set; }
         public int Emeralds { get; set; }
         public int Gems { get; set; }
         public int Jewels { get; set; }
+        public int PP { get; set; }
+        public int GP { get; set; }
+        public int EP { get; set; }
+        public int SP { get; set; }
+        public int CP { get; set; }
 
-        public int TotalNumberOfCoins => PPCoinCount + GPCoinCount + EPCoinCount + SPCoinCount + CPCoinCount;
-        public int TotalNumberOfGems => Diamonds + Rubys + Emeralds + Gems + Jewels;
-        public int TotalItems => TotalNumberOfCoins + TotalNumberOfGems;
+        public float DiamondValue => Diamonds * CurrencyValues.DiamondValue;
+        public float RubyValue => Rubys * CurrencyValues.RubyValue;
+        public float EmeraldValue => Emeralds * CurrencyValues.EmeraldValue;
+        public float GemValue => Gems * CurrencyValues.GemValue;
+        public float JewelValue => Jewels * CurrencyValues.JewelValue;
+        public float PPValue => PP * CurrencyValues.ppValue;
+        public float GPValue => GP * CurrencyValues.gpValue;
+        public float EPValue => EP * CurrencyValues.epValue;
+        public float SPValue => SP * CurrencyValues.spValue;
+        public float CPValue => CP * CurrencyValues.cpValue;
 
-        public float CoinValue =>
-            (PPCoinCount * CurrencyValues.ppValue) +
-            (GPCoinCount * CurrencyValues.gpValue) +
-            (EPCoinCount * CurrencyValues.epValue) +
-            (SPCoinCount * CurrencyValues.spValue) +
-            (CPCoinCount * CurrencyValues.cpValue);
+        public int TotalCoins => PP + GP + EP + SP + CP;
+        public int TotalTreasures => Diamonds + Rubys + Emeralds + Gems + Jewels;
+        public int TotalContents => TotalCoins + TotalTreasures;
 
-        public float GemValue =>
-            (Diamonds * CurrencyValues.DiamondValue) +
-            (Rubys * CurrencyValues.RubyValue) +
-            (Emeralds * CurrencyValues.EmeraldValue) +
-            (Gems * CurrencyValues.GemValue) +
-            (Jewels * CurrencyValues.JewelValue);
-
-        public float TotalValue => CoinValue + GemValue;
+        public float CoinValue => PPValue + GPValue + EPValue + SPValue + CPValue;
+        public float TreasureValue => DiamondValue + RubyValue + EmeraldValue + GemValue + JewelValue;
+        public float TotalValue => CoinValue + TreasureValue;
         public int TotalValueRounded => (int)TotalValue;
 
-        public float Target { get; set; }
-        public float TargetValueDifference { get { return Target - TotalValue; } }
+        public float ValueDifference => target - TotalValue;
 
-        public string Value => $"{TotalValueRounded} GP";
-
+        private float target;
         Random random = new Random();
 
         public CoinPouch()
         {
-            Target = GenerateRandomTarget();
-            PPCoinCount = 0;
-            GPCoinCount = 0;
-            EPCoinCount = 0;
-            SPCoinCount = 0;
-            CPCoinCount = 0;
+            target = GenerateRandomTarget();
+            PP = 0;
+            GP = 0;
+            EP = 0;
+            SP = 0;
+            CP = 0;
             Diamonds = 0;
             Rubys = 0;
             Emeralds = 0;
@@ -83,12 +79,12 @@ namespace DMToolKit.Data
 
         public CoinPouch(int targetValue)
         {
-            Target = targetValue;
-            PPCoinCount = 0;
-            GPCoinCount = 0;
-            EPCoinCount = 0;
-            SPCoinCount = 0;
-            CPCoinCount = 0;
+            target = targetValue;
+            PP = 0;
+            GP = 0;
+            EP = 0;
+            SP = 0;
+            CP = 0;
             Diamonds = 0;
             Rubys = 0;
             Emeralds = 0;
@@ -99,16 +95,16 @@ namespace DMToolKit.Data
 
         private void PopulatePouch()
         {
-            while (TargetValueDifference > 0)
+            while (ValueDifference > 0)
             {
-                GenerateCoin();
+                GenerateTreasure();
             }
         }
 
-        private void GenerateCoin()
+        private void GenerateTreasure()
         {
             var index = random.Next(0, 100);
-            if (TargetValueDifference > 5000)
+            if (ValueDifference > 5000)
             {
                 if (index < 70)
                     Diamonds += 1;
@@ -118,7 +114,7 @@ namespace DMToolKit.Data
                     Emeralds += 1;
                 return;
             }
-            else if (TargetValueDifference > 1500)
+            else if (ValueDifference > 1500)
             {
                 if (index < 70)
                     Rubys += 1;
@@ -130,7 +126,7 @@ namespace DMToolKit.Data
                     Jewels += 1;
                 return;
             }
-            else if (TargetValueDifference > 1000)
+            else if (ValueDifference > 1000)
             {
                 if (index < 70)
                     Emeralds += 1;
@@ -140,110 +136,110 @@ namespace DMToolKit.Data
                     Jewels += 1;
                 return;
             }
-            else if (TargetValueDifference > 500)
+            else if (ValueDifference > 500)
             {
                 if (index < 60)
                     Gems += 1;
                 else if (index < 90)
                     Jewels += 1;
                 else
-                    PPCoinCount += 1;
+                    PP += 1;
                 return;
             }
-            else if (TargetValueDifference > 200)
+            else if (ValueDifference > 200)
             {
                 if (index < 60)
                     Gems += 1;
                 else if (index < 95)
                     Jewels += 1;
                 else
-                    PPCoinCount += 1;
+                    PP += 1;
                 return;
             }
-            else if (TargetValueDifference > 100)
+            else if (ValueDifference > 100)
             {
                 if (index < 60)
                     Jewels += 1;
                 else if (index < 80)
-                    PPCoinCount += 1;
+                    PP += 1;
                 else
-                    GPCoinCount += 1;
+                    GP += 1;
                 return;
             }
-            else if (TargetValueDifference > 65)
+            else if (ValueDifference > 65)
             {
                 if (index < 10)
                     Jewels += 1;
                 else if (index < 90)
-                    PPCoinCount += 1;
+                    PP += 1;
                 else
-                    GPCoinCount += 1;
+                    GP += 1;
                 return;
             }
-            else if (TargetValueDifference > 50)
+            else if (ValueDifference > 50)
             {
                 if (index < 85)
-                    PPCoinCount += 1;
+                    PP += 1;
                 else if (index < 95)
-                    GPCoinCount += 1;
+                    GP += 1;
                 else
-                    EPCoinCount += 1;
+                    EP += 1;
                 return;
             }
-            else if( TargetValueDifference > 20)
+            else if( ValueDifference > 20)
             {
                 if (index < 80)
-                    PPCoinCount += 1;
+                    PP += 1;
                 else if (index < 97)
-                    GPCoinCount += 1;
+                    GP += 1;
                 else
-                    EPCoinCount += 1;
+                    EP += 1;
                 return;
             }
-            else if (TargetValueDifference > 10)
+            else if (ValueDifference > 10)
             {
                 if (index < 40)
-                    PPCoinCount += 1;
+                    PP += 1;
                 else if (index < 80)
-                    GPCoinCount += 1;
+                    GP += 1;
                 else if (index < 95)
-                    EPCoinCount += 1;
+                    EP += 1;
                 else
-                    SPCoinCount += 1;
+                    SP += 1;
                 return;
             }
-            else if (TargetValueDifference > 5)
+            else if (ValueDifference > 5)
             {
                 if (index < 70)
-                    GPCoinCount += 1;
+                    GP += 1;
                 else if (index < 80)
-                    EPCoinCount += 1;
+                    EP += 1;
                 else if (index < 95)
-                    SPCoinCount += 1;
+                    SP += 1;
                 else
-                    CPCoinCount += 1;
+                    CP += 1;
                 return;
             }
-            else if (TargetValueDifference > 1)
+            else if (ValueDifference > 1)
             {
                 if (index < 10)
-                    GPCoinCount += 1;
+                    GP += 1;
                 else if (index < 70)
-                    EPCoinCount += 1;
+                    EP += 1;
                 else if (index < 90)
-                    SPCoinCount += 1;
+                    SP += 1;
                 else
-                    CPCoinCount += 1;
+                    CP += 1;
                 return;
             }
             else
             {
                 if (index < 30)
-                    EPCoinCount += 1;
+                    EP += 1;
                 else if (index < 90)
-                    SPCoinCount += 1;
+                    SP += 1;
                 else
-                    CPCoinCount += 1;
+                    CP += 1;
             }
         }
     }

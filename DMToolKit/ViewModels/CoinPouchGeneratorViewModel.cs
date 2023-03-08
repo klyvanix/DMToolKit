@@ -38,9 +38,6 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         public void Add()
         {
-            if (GenerationNumber != 1 || OutputTarget != 0)
-                CoinPouchList.Clear();
-
             for (int i = 0; i < GenerationNumber; i++)
             {
                 if (OutputTarget != 0)

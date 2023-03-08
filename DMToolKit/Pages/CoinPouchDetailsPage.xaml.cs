@@ -9,4 +9,10 @@ public partial class CoinPouchDetailsPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		var vm = BindingContext as CoinPouchDetailsViewModel;
+		vm.UpdateData();
+    }
 }

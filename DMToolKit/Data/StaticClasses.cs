@@ -34,9 +34,9 @@ namespace DMToolKit.Data
         public static float JewelValue = 50f;
         public static float ppValue = 10f;
         public static float gpValue = 1f;
-        public static float epValue = 1f / 2f;
-        public static float spValue = 1f / 10f;
-        public static float cpValue = 1f / 100f;
+        public static float epValue = .5f;
+        public static float spValue = .1f;
+        public static float cpValue = .01f;
     }
 
     //Extension class for additional functionalities.

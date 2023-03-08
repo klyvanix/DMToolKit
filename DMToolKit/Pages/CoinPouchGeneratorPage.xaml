@@ -7,7 +7,7 @@
              x:Class="DMToolKit.Pages.CoinPouchGeneratorPage"
              Title="CoinPouchGenerator">
     <Grid RowDefinitions="*,Auto">
-        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" SelectionMode="Single" 
+        <CollectionView Grid.Row="0" ItemsLayout="VerticalGrid, 4" HorizontalOptions="Center" VerticalOptions="Start" SelectionMode="Single" 
                         ItemsSource="{Binding CoinPouchList}" ItemTemplate="{StaticResource CoinPouchSelector}">
         </CollectionView>
         
@@ -62,11 +62,8 @@
                 <Button Grid.Column="0" Text="Clear" Command="{Binding ClearCommand}" 
                         HorizontalOptions="Fill" VerticalOptions="Fill" Margin="1,0"/>
                 <Button Grid.Column="1" Text="Generate" Command="{Binding AddCommand}" Margin="1,0"/>
-                <Border Grid.Column="3" StrokeShape="RoundRectangle 5"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
-                        StrokeThickness="0" HorizontalOptions="Fill" VerticalOptions="Fill">
 
-                </Border>
+                <Button Text="Tools" Grid.Column="2" Margin="1,0"/>
             </Grid>
         </Grid>
         <!--<Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" RowDefinitions="50,Auto">

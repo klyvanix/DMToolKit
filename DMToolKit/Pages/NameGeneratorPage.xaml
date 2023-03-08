@@ -6,24 +6,25 @@
              x:DataType="viewmodel:NameGeneratorViewModel"
              Title="Name Generator">
     <Grid RowDefinitions="Auto,*,Auto">
-        <Grid RowDefinitions="*,20" Grid.Row="1">
-            <!--Name List Display Window-->
-            <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2" ItemsLayout="VerticalGrid, 3"
-                            SelectionMode="None" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}" Margin="0,0,0,20">
-            </CollectionView>
-            <!--Help Screen Display Window-->
-            <Grid RowDefinitions="*,20" Grid.Row="0" IsVisible="{Binding ShowHelp}" VerticalOptions="Fill">
-                <CarouselView Loop="False" Grid.Row="0" IndicatorView="helpIndicator" VerticalOptions="Fill"
+        <!--Name List Display Window-->
+        <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2" ItemsLayout="VerticalGrid, 3"
+                        SelectionMode="None" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}" Margin="0,0,0,20">
+        </CollectionView>
+        
+        <!--Help Screen Display Window-->
+        <Grid RowDefinitions="*,20" Grid.Row="0" IsVisible="{Binding ShowHelp}" VerticalOptions="Fill">
+            <CarouselView Loop="False" Grid.Row="0" IndicatorView="helpIndicator" VerticalOptions="Fill"
                               ItemsSource="{Binding HelpScreenCollection}" ItemTemplate="{StaticResource Key=NamePageSelector}">
-                </CarouselView>
-                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1"> 
-                    <IndicatorView x:Name="helpIndicator" 
+            </CarouselView>
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1">
+                <IndicatorView x:Name="helpIndicator" 
                                    IndicatorColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" 
                                    SelectedIndicatorColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Tertiary}}" />
-                </HorizontalStackLayout>
-            </Grid>
-            <Grid Grid.Row="1">
-                <!--PREFIX LOCK-->
+            </HorizontalStackLayout>
+        </Grid>
+
+        <Grid Grid.Row="2" RowDefinitions="20,Auto, 50">
+            <Grid Grid.Row="0" >
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="Start"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
                         Stroke="Transparent" IsVisible="{Binding PrefixLock}">
@@ -32,7 +33,6 @@
                     </Border.GestureRecognizers>
                     <Label Text="Prefix Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Border>
-                <!--EXPANDER-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
                             Stroke="Transparent">
@@ -48,12 +48,20 @@
                     <Label Text="Letter Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Border>
             </Grid>
-        </Grid>
-        <Grid RowDefinitions="Auto,50" Grid.Row="2" BackgroundColor="{StaticResource Dark}" Margin="0">
-            <Grid ColumnDefinitions="*,2*,*" HeightRequest="50" IsVisible="{Binding OptionsExpanded}">
-                <Button Text="Clear" Command="{Binding ClearCommand}" Margin="1,1,1,2"/>
-                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,0,1,1">
-                    <Border Grid.Column="0"
+            <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50" IsVisible="{Binding OptionsExpanded}">
+                <Border Grid.Column="0"  Margin="1,3,1,2"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        StrokeThickness="0"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        StrokeShape="RoundRectangle 5" >
+                    <!--HELP BUTTON-->
+                    <ImageButton 
+                        Source="{AppThemeBinding Light='help.png',Dark='helpdark.png'}" Padding="0"
+                        Command="{Binding ToggleHelpCommand}"/>
+                </Border>
+                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="1,2">
+                    <Border Grid.Column="0" Margin="0,1"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                             StrokeThickness="0"
                             VerticalOptions="Fill"
@@ -64,14 +72,14 @@
                                      HorizontalOptions="Fill" VerticalOptions="Fill" 
                                      Command="{Binding DecreaseCounterCommand}"/>
                     </Border>
-                    <Border Grid.Column="1" BackgroundColor="Transparent" StrokeThickness="2" 
+                    <Border Grid.Column="1" BackgroundColor="Transparent" StrokeThickness="1" Margin="0"
                             Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
                         <!--ENTRY FOR COUNTER BUTTON-->
                         <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Margin="0,3,0,0"
-                           HorizontalOptions="Fill" Keyboard="Numeric"
+                           HorizontalOptions="Fill" Keyboard="Numeric" VerticalOptions="Fill"
                            HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
                     </Border>
-                    <Border Grid.Column="2" 
+                    <Border Grid.Column="2" Margin="0,1"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                             StrokeThickness="0"
                             VerticalOptions="Fill"
@@ -83,23 +91,7 @@
                                      Command="{Binding IncreaseCounterCommand}"/>
                     </Border>
                 </Grid>
-                <Button Text="Tools" Grid.Column="2" Command="{Binding GoToOptionsPageCommand}" Margin="1,1,1,2"/>
-            </Grid>
-            <Grid ColumnDefinitions="50,*,50" Grid.Row="1" Margin="0">
-                <Border Grid.Column="0" 
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
-                        StrokeThickness="0"
-                        VerticalOptions="Fill"
-                        HorizontalOptions="Fill"
-                        StrokeShape="RoundRectangle 5" >
-                    <!--HELP BUTTON-->
-                    <ImageButton 
-                        Source="{AppThemeBinding Light='help.png',Dark='helpdark.png'}" Padding="0"
-                                 Command="{Binding ToggleHelpCommand}"/>
-                </Border>
-                <!--GENERATE BUTTON-->
-                <Button Text="Generate" Grid.Column="1" Command="{Binding GenerateNameCommand}" Margin="1"/>
-                <Border Grid.Column="2" 
+                <Border Grid.Column="2"  Margin="1,3,1,2"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                         StrokeThickness="0"
                         VerticalOptions="Fill"
@@ -108,9 +100,109 @@
                     <!--HELP BUTTON-->
                     <ImageButton 
                         Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Padding="0"
+                        Command="{Binding GoToListPageCommand}"/>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="2" ColumnDefinitions="*,3*,*" Margin="1,0,1,2">
+                <Border Grid.Column="0" StrokeShape="RoundRectangle 5"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        StrokeThickness="0" HorizontalOptions="Fill" VerticalOptions="Fill">
+
+                </Border>
+                <Button Grid.Column="0" Text="Clear" Command="{Binding ClearCommand}" 
+                        HorizontalOptions="Fill" VerticalOptions="Fill" Margin="1,0"/>
+                <Button Grid.Column="1" Text="Generate" Command="{Binding GenerateNameCommand}" Margin="1,0"/>
+                <Button Text="Tools" Grid.Column="2" Command="{Binding GoToOptionsPageCommand}" Margin="1,0"/>
+            </Grid>
+        </Grid>
+        <!--<Grid RowDefinitions="20,Auto,50" Grid.Row="2" BackgroundColor="{StaticResource Dark}" Margin="0">
+            <Grid Grid.Row="0">
+                --><!--PREFIX LOCK--><!--
+                <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="Start"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                        Stroke="Transparent" IsVisible="{Binding PrefixLock}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UnlockCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="Prefix Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                </Border>
+                --><!--EXPANDER--><!--
+                <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                            Stroke="Transparent">
+                    <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleOptionsCommand}"/>
+                </Border>
+                --><!--LETTER LOCK--><!--
+                <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="End"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                        Stroke="Transparent" IsVisible="{Binding LetterLock}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UnlockCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Label Text="Letter Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                </Border>
+            </Grid>
+            <Grid ColumnDefinitions="*,2*,*" HeightRequest="50" IsVisible="{Binding OptionsExpanded}" Grid.Row="1">
+                <Button Text="Clear" Command="{Binding ClearCommand}" Margin="1,1,1,2"/>
+                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,0,1,1">
+                    <Border Grid.Column="0"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            StrokeThickness="0"
+                            VerticalOptions="Fill"
+                            HorizontalOptions="Fill"
+                            StrokeShape="RoundRectangle 5 0 5 0">
+                        --><!--SUBTRACT COUNTER BUTTON--><!--
+                        <ImageButton Source="{AppThemeBinding Light='subtract.png',Dark='subtractdark.png'}" 
+                                     HorizontalOptions="Fill" VerticalOptions="Fill" 
+                                     Command="{Binding DecreaseCounterCommand}"/>
+                    </Border>
+                    <Border Grid.Column="1" BackgroundColor="Transparent" StrokeThickness="2" 
+                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
+                        --><!--ENTRY FOR COUNTER BUTTON--><!--
+                        <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Margin="0,3,0,0"
+                           HorizontalOptions="Fill" Keyboard="Numeric"
+                           HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
+                    </Border>
+                    <Border Grid.Column="2" 
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            StrokeThickness="0"
+                            VerticalOptions="Fill"
+                            HorizontalOptions="Fill"
+                            StrokeShape="RoundRectangle 0 5 0 5">
+                        --><!--ADD COUNTER BUTTON--><!--
+                        <ImageButton Source="{AppThemeBinding Light='add.png',Dark='adddark.png'}" 
+                                     HorizontalOptions="Fill" VerticalOptions="Fill" 
+                                     Command="{Binding IncreaseCounterCommand}"/>
+                    </Border>
+                </Grid>
+                <Button Text="Tools" Grid.Column="2" Command="{Binding GoToOptionsPageCommand}" Margin="1,1,1,2"/>
+            </Grid>
+            <Grid ColumnDefinitions="50,*,50" Grid.Row="2" Margin="0">
+                <Border Grid.Column="0" 
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        StrokeThickness="0"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        StrokeShape="RoundRectangle 5" >
+                    --><!--HELP BUTTON--><!--
+                    <ImageButton 
+                        Source="{AppThemeBinding Light='help.png',Dark='helpdark.png'}" Padding="0"
+                                 Command="{Binding ToggleHelpCommand}"/>
+                </Border>
+                --><!--GENERATE BUTTON--><!--
+                <Button Text="Generate" Grid.Column="1" Command="{Binding GenerateNameCommand}" Margin="1"/>
+                <Border Grid.Column="2" 
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        StrokeThickness="0"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        StrokeShape="RoundRectangle 5" >
+                    --><!--HELP BUTTON--><!--
+                    <ImageButton 
+                        Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Padding="0"
                                  Command="{Binding GoToListPageCommand}"/>
                 </Border>
             </Grid>
-        </Grid>
+        </Grid>-->
     </Grid>
 </ContentPage>
