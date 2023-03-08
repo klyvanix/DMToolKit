@@ -36,7 +36,7 @@ namespace DMToolKit.Data
 
         public float CoinValue => PPValue + GPValue + EPValue + SPValue + CPValue;
         public float TreasureValue => DiamondValue + RubyValue + EmeraldValue + GemValue + JewelValue;
-        public float TotalValue => CoinValue + TreasureValue;
+        public float TotalValue => (float)Math.Round(CoinValue + TreasureValue, 2);
         public int TotalValueRounded => (int)TotalValue;
 
         public float ValueDifference => target - TotalValue;
@@ -47,6 +47,22 @@ namespace DMToolKit.Data
         public CoinPouch()
         {
             target = GenerateRandomTarget();
+            PP = 0;
+            GP = 0;
+            EP = 0;
+            SP = 0;
+            CP = 0;
+            Diamonds = 0;
+            Rubys = 0;
+            Emeralds = 0;
+            Gems = 0;
+            Jewels = 0;
+            PopulatePouch();
+        }
+
+        public CoinPouch( int first, int second, int third, int fourth, int fifth)
+        {
+            target = GenerateRandomTarget(first, second, third, fourth, fifth);
             PP = 0;
             GP = 0;
             EP = 0;
@@ -75,6 +91,22 @@ namespace DMToolKit.Data
                 return random.Next(10, 500);
             else
                 return random.Next(10, 10000);
+        }
+
+        private float GenerateRandomTarget( int first, int second, int third, int fourth, int fifth)
+        {
+            var total = first + second + third + fourth + fifth;
+            var index = random.Next(0, total);
+            if (index < first)
+                return random.Next(1, 10);
+            if (index < first + second)
+                return random.Next(10, 50);
+            if (index < first + second + third)
+                return random.Next(50, 100);
+            if (index < first + second + third + fourth)
+                return random.Next(100, 1000);
+            else
+                return random.Next(1000, 10000);
         }
 
         public CoinPouch(int targetValue)

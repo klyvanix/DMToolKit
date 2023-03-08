@@ -10,7 +10,7 @@
         <CollectionView Grid.Row="0" ItemsLayout="VerticalGrid, 4" HorizontalOptions="Center" VerticalOptions="Start" SelectionMode="Single" 
                         ItemsSource="{Binding CoinPouchList}" ItemTemplate="{StaticResource CoinPouchSelector}">
         </CollectionView>
-        
+
         <Grid Grid.Row="1" RowDefinitions="20,Auto, 50">
             <Grid Grid.Row="0">
                 <!--EXPANDER-->
@@ -63,39 +63,8 @@
                         HorizontalOptions="Fill" VerticalOptions="Fill" Margin="1,0"/>
                 <Button Grid.Column="1" Text="Generate" Command="{Binding AddCommand}" Margin="1,0"/>
 
-                <Button Text="Tools" Grid.Column="2" Margin="1,0"/>
+                <Button Text="Tools" Grid.Column="2" Margin="1,0" Command="{Binding GoToOptionsCommand}"/>
             </Grid>
         </Grid>
-        <!--<Grid Padding="0,0" HorizontalOptions="Fill" Grid.Row="0" RowDefinitions="50,Auto">
-            <Grid Grid.Row="0" BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" >
-                <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2" HorizontalOptions="Start"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}">
-                    <ImageButton HeightRequest="35" WidthRequest="35" Source="gear.png" Command="{Binding ToggleOptionsCommand}"/>
-                </Border>
-                <Label Text="Options" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18"/>
-            </Grid>
-            <Grid Grid.Row="1" IsVisible="{Binding OptionsShown}" Margin="20,2" ColumnDefinitions="*,*" >
-                <Button Text="Clear Counter" Command="{Binding ClearCounterCommand}"/>
-                <Grid ColumnDefinitions="*,*" Grid.Row="1" Grid.Column="1">
-                    <Entry Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Keyboard="Numeric"
-                       Text="{Binding OutputTarget}" Placeholder="GP" TextColor="{StaticResource White}"/>
-                    <Stepper Minimum="0" Maximum="1000000" Increment="1" Grid.Column="1" 
-                         Value="{Binding OutputTarget}"/>
-                </Grid>
-            </Grid>
-        </Grid>-->
-        <!--<Button Grid.Row="2" Margin="0,1,0,1" Text="Generate"
-                Command="{Binding AddCommand}" />
-        <Grid Grid.Row="3" Grid.ColumnSpan="2" ColumnDefinitions="*,*" Margin="0,1,0,2">
-            <Button Text="Clear" VerticalOptions="Fill"
-                    Command="{Binding ClearCommand}" />
-            <Grid ColumnDefinitions="*,*" Grid.Row="1" Grid.Column="1">
-                <Entry Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Keyboard="Numeric"
-                       Text="{Binding GenerationNumber}" Placeholder="GP" TextColor="{StaticResource White}"/>
-                <Stepper Minimum="1" Maximum="1000000" Increment="1" Grid.Column="1" 
-                         Value="{Binding GenerationNumber}"/>
-            </Grid>
-        </Grid>-->
     </Grid>
 </ContentPage>

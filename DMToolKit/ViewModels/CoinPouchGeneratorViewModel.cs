@@ -6,6 +6,11 @@ using System.Collections.ObjectModel;
 
 namespace DMToolKit.ViewModels
 {
+    [QueryProperty("FirstIndex", "FirstIndex"),
+        QueryProperty("SecondIndex", "SecondIndex"),
+        QueryProperty("ThirdIndex", "ThirdIndex"),
+        QueryProperty("FourthIndex", "FourthIndex"),
+        QueryProperty("FifthIndex", "FifthIndex")]
     public partial class CoinPouchGeneratorViewModel : ObservableObject
     {
         [ObservableProperty]
@@ -23,8 +28,28 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string expandImage;
 
+        [ObservableProperty]
+        int firstIndex;
+
+        [ObservableProperty]
+        int secondIndex;
+
+        [ObservableProperty]
+        int thirdIndex;
+
+        [ObservableProperty]
+        int fourthIndex;
+
+        [ObservableProperty]
+        int fifthIndex;
+
         public CoinPouchGeneratorViewModel() 
         {
+            FirstIndex = -1;
+            SecondIndex = -1;
+            ThirdIndex = -1;
+            FourthIndex = -1;
+            FifthIndex = -1;
             CoinPouchList = new ObservableCollection<CoinPouch>();
             OptionsShown = false;
             OutputTarget = 0;
@@ -46,7 +71,12 @@ namespace DMToolKit.ViewModels
                     OutputTarget = 0;
                 }
                 else
-                    CoinPouchList.Add(new CoinPouch());
+                {
+                    if(FirstIndex == -1)
+                        CoinPouchList.Add(new CoinPouch());
+                    else
+                        CoinPouchList.Add(new CoinPouch(FirstIndex, SecondIndex, ThirdIndex, FourthIndex, FifthIndex));
+                }
             }
             OutputTarget = 0;
         }
@@ -96,6 +126,25 @@ namespace DMToolKit.ViewModels
                 {
                     {"CoinPouch", coinPouch }
                 });
+        }
+
+        [RelayCommand]
+        async Task GoToOptions()
+        {
+            if(FirstIndex == -1)
+                await Shell.Current.GoToAsync($"{nameof(CoinPouchOptionsPage)}");
+            else
+            { 
+                await Shell.Current.GoToAsync($"{nameof(CoinPouchOptionsPage)}", true,
+                    new Dictionary<string, object>
+                    {
+                        {"FirstIndex", (double)FirstIndex },
+                        {"SecondIndex", (double)SecondIndex},
+                        {"ThirdIndex", (double)ThirdIndex },
+                        {"FourthIndex", (double)FourthIndex },
+                        {"FifthIndex", (double)FifthIndex }
+                    });
+            }
         }
 
         [RelayCommand]
