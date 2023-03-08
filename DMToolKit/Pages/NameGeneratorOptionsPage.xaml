@@ -67,36 +67,38 @@
                 <!--SEED SECTION-->
                 <StackLayout Grid.Row="5" VerticalOptions="Center">
                     <Label Text="{Binding PrefixCount, StringFormat='Prefix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
-                    <Grid ColumnDefinitions="Auto,*" Margin="0,2">
-                        <Border  Style="{StaticResource BorderButton}">
-                            <!--<ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>-->
-                            <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddPrefixCommand}"/>
-                        </Border>
-                        <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50" StrokeThickness="0"
+                    <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50" StrokeThickness="0"
                                 BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
-                            <Entry Placeholder="Prefix" 
+                        <Entry Placeholder="Prefix" 
                                    PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
                                    TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
                                    Text="{Binding PrefixToAdd}" Keyboard="Text"
                                    HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Border>
+                    <Grid ColumnDefinitions="Auto,*" Margin="0,2" Grid.Row="1">
+                        <Border  Style="{StaticResource BorderButton}" Margin="1,0">
+                            <!--<ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>-->
+                            <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddPrefixCommand}"/>
                         </Border>
+                        <Button Text="Add Prefix" Command="{Binding AddToPrefixListCommand}" Grid.Column="1" Margin="0,1"/>
                     </Grid>
-                    <Button Text="Add Prefix" Command="{Binding AddToPrefixListCommand}"/>
                     <Label Text="{Binding SuffixCount, StringFormat='Suffix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
-                    <Grid ColumnDefinitions="Auto,*" Margin="0,2">
-                        <Border  Style="{StaticResource BorderButton}">
-                            <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddSuffixCommand}"/>
-                        </Border>
-                        <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50" StrokeThickness="0"
+
+                    <Border Grid.Column="1" Padding="3" StrokeShape="RoundRectangle 5" HeightRequest="50" StrokeThickness="0"
                                 BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
-                            <Entry Placeholder="Suffix" 
+                        <Entry Placeholder="Suffix" 
                                    PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
                                    TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
                                    Text="{Binding SuffixToAdd}"
                                    HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Border>
+                    <Grid ColumnDefinitions="Auto,*" Margin="0,2" Grid.Row="1">
+                        <Border  Style="{StaticResource BorderButton}" Margin="1,0">
+                            <!--<ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>-->
+                            <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding AddPrefixCommand}"/>
                         </Border>
+                        <Button Text="Add Suffix" Command="{Binding AddToSuffixListCommand}" Grid.Column="1" Margin="0,0"/>
                     </Grid>
-                    <Button Text="Add Suffix" Command="{Binding AddToSuffixListCommand}"/>
                 </StackLayout>
             </Grid>
         </ScrollView>
