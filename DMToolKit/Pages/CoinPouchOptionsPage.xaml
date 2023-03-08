@@ -10,39 +10,38 @@
             <Grid HorizontalOptions="Fill" RowDefinitions="Auto, Auto">
                 <Label Text="1-10 GP Value %" HorizontalOptions="Center"/>
                 <Grid ColumnDefinitions="*,60" Grid.Row="1">
-                    <Slider Value="{Binding FirstSliderValue}" Minimum="200" Maximum="600" />
+                    <Slider Value="{Binding FirstSliderValue}" Minimum="50" Maximum="1000" />
                     <Label Text="{Binding FirstPercentage, StringFormat='{0}%'}" TextColor="White" Grid.Column="1"/>
                 </Grid>
             </Grid>
             <Grid HorizontalOptions="Fill" RowDefinitions="Auto, Auto">
                 <Label Text="10-50 GP Value %" HorizontalOptions="Center"/>
                 <Grid ColumnDefinitions="*,60" Grid.Row="1">
-                    <Slider Value="{Binding SecondSliderValue}" Minimum="100" Maximum="400" />
+                    <Slider Value="{Binding SecondSliderValue}" Minimum="10" Maximum="500" />
                     <Label Text="{Binding SecondPercentage, StringFormat='{0}%'}" TextColor="White" Grid.Column="1"/>
                 </Grid>
             </Grid>
             <Grid HorizontalOptions="Fill" RowDefinitions="Auto, Auto">
                 <Label Text="50-100 GP Value %" HorizontalOptions="Center"/>
                 <Grid ColumnDefinitions="*,60" Grid.Row="1">
-                    <Slider Value="{Binding ThirdSliderValue}" Minimum="40" Maximum="150" />
+                    <Slider Value="{Binding ThirdSliderValue}" Minimum="5" Maximum="200" />
                     <Label Text="{Binding ThirdPercentage, StringFormat='{0}%'}" TextColor="White" Grid.Column="1"/>
                 </Grid>
             </Grid>
             <Grid HorizontalOptions="Fill" RowDefinitions="Auto, Auto">
                 <Label Text="100-1000 GP Value %" HorizontalOptions="Center"/>
                 <Grid ColumnDefinitions="*,60" Grid.Row="1">
-                    <Slider Value="{Binding FourthSliderValue}" Minimum="20" Maximum="80" />
+                    <Slider Value="{Binding FourthSliderValue}" Minimum="5" Maximum="100" />
                     <Label Text="{Binding FourthPercentage, StringFormat='{0}%'}" TextColor="White" Grid.Column="1"/>
                 </Grid>
             </Grid>
             <Grid HorizontalOptions="Fill" RowDefinitions="Auto, Auto">
                 <Label Text="1000 GP+ Value %" HorizontalOptions="Center"/>
                 <Grid ColumnDefinitions="*,60" Grid.Row="1">
-                    <Slider Value="{Binding FifthSliderValue}" Minimum="10" Maximum="30" />
+                    <Slider Value="{Binding FifthSliderValue}" Minimum="4" Maximum="100" />
                     <Label Text="{Binding FifthPercentage, StringFormat='{0}%'}" TextColor="White" Grid.Column="1"/>
                 </Grid>
             </Grid>
-            <Label Text="{Binding FirstSliderValue}" />
         </VerticalStackLayout>
         <Grid Grid.Row="1" ColumnDefinitions="*,3*,*" Margin="1,0,1,3">
             <Button Text="Save" HorizontalOptions="Fill" Grid.Column="1"
