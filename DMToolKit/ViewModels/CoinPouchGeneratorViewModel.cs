@@ -43,8 +43,11 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         int fifthIndex;
 
+        private int generationCounter;
+
         public CoinPouchGeneratorViewModel() 
         {
+            generationCounter = 0;
             FirstIndex = -1;
             SecondIndex = -1;
             ThirdIndex = -1;
@@ -63,6 +66,9 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         public void Add()
         {
+            if (generationCounter % 24 == 0)
+                CoinPouchList.Clear();
+
             for (int i = 0; i < GenerationNumber; i++)
             {
                 if (OutputTarget != 0)
@@ -79,6 +85,7 @@ namespace DMToolKit.ViewModels
                 }
             }
             OutputTarget = 0;
+            generationCounter++;
         }
 
         [RelayCommand]
@@ -87,6 +94,7 @@ namespace DMToolKit.ViewModels
             CoinPouchList.Clear();
             GenerationNumber = 1;
             OutputTarget = 0;
+            generationCounter = 0;
         }
 
         [RelayCommand]
