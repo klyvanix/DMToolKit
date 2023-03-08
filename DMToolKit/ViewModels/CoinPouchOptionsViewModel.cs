@@ -3,11 +3,11 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace DMToolKit.ViewModels;
 
-[QueryProperty("FirstIndex", "FirstSliderValue"), 
-        QueryProperty("SecondIndex", "SecondSliderValue"),
-        QueryProperty("ThirdIndex", "ThirdSliderValue"),
-        QueryProperty("FourthIndex", "FourthSliderValue"),
-        QueryProperty("FifthIndex", "FifthSliderValue")]
+[QueryProperty("FirstSliderValue", "FirstIndex"), 
+        QueryProperty("SecondSliderValue", "SecondIndex"), 
+        QueryProperty("ThirdSliderValue", "ThirdIndex"), 
+        QueryProperty("FourthSliderValue", "FourthIndex"), 
+        QueryProperty("FifthSliderValue", "FifthIndex")] 
 public partial class CoinPouchOptionsViewModel : ObservableObject
 {
     [ObservableProperty]
