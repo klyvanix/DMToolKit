@@ -28,7 +28,7 @@
                                        TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}">
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span TextColor="{AppThemeBinding Light={StaticResource Blue100Accent}, Dark={StaticResource White}}" Text="{Binding Collection.Count}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
+                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Collection.Count}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
                                             <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" Characters" FontFamily="{StaticResource StrFontFamily}"/>
                                         </FormattedString>
                                     </Label.FormattedText>
