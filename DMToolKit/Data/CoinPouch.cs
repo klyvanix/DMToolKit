@@ -26,9 +26,9 @@ namespace DMToolKit.Data
         public float JewelValue => Jewels * CurrencyValues.JewelValue;
         public float PPValue => PP * CurrencyValues.ppValue;
         public float GPValue => GP * CurrencyValues.gpValue;
-        public float EPValue => EP * CurrencyValues.epValue;
-        public float SPValue => SP * CurrencyValues.spValue;
-        public float CPValue => CP * CurrencyValues.cpValue;
+        public float EPValue => (float)Math.Round(EP * CurrencyValues.epValue, 1);
+        public float SPValue => (float)Math.Round(SP * CurrencyValues.spValue, 2);
+        public float CPValue => (float)Math.Round(CP * CurrencyValues.cpValue, 2);
 
         public int TotalCoins => PP + GP + EP + SP + CP;
         public int TotalTreasures => Diamonds + Rubys + Emeralds + Gems + Jewels;
