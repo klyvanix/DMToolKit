@@ -15,13 +15,16 @@ namespace DMToolKit.ViewModels
         ObservableCollection<string> nameLists;
 
         [ObservableProperty]
-        int selectedListIndex;
-
-        [ObservableProperty]
         bool prefixEnabled;
 
         [ObservableProperty]
+        int prefixListCount;
+
+        [ObservableProperty]
         bool suffixEnabled;
+
+        [ObservableProperty]
+        int suffixListCount;
 
         DataController DataController;
 
@@ -31,6 +34,9 @@ namespace DMToolKit.ViewModels
             NameLists = new ObservableCollection<string>();
             PrefixEnabled = true;
             SuffixEnabled = true;
+
+            PrefixListCount = DataController.NameSeedData.PrefixList.Count;
+            SuffixListCount = DataController.NameSeedData.SuffixList.Count;
         }
 
         public void UpdateLists()
