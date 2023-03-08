@@ -10,7 +10,7 @@
             <VerticalStackLayout>
 
                 <Grid>
-                    <Image Source="{AppThemeBinding Light='coinpouch.png', Dark='coinpouchdark.png'}" Margin="10" HeightRequest="200">
+                    <Image Source="coinpouch.png" Margin="10" HeightRequest="200">
                         <Image.Shadow>
                             <Shadow Brush="White" Radius="30"/>
                         </Image.Shadow>

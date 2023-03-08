@@ -166,4 +166,21 @@
         <GradientStop Color="{StaticResource Primary}" Offset=".3"/>
         <GradientStop Color="Black" Offset="1"/>
     </RadialGradientBrush>
+
+    <LinearGradientBrush x:Key="CoinPouchCellEdge" EndPoint="1.4,.8">
+        <GradientStop Color="{StaticResource Second}"
+                          Offset="0" />
+        <GradientStop Color="{StaticResource DarkPrimary}"
+                          Offset="0.2" />
+        <GradientStop Color="{StaticResource Primary}"
+                          Offset="0.3" />
+        <GradientStop Color="{StaticResource TextBackgroundDark}"
+                          Offset="0.4" />
+        <GradientStop Color="{StaticResource Second}"
+                          Offset="0.5" />
+        <GradientStop Color="{StaticResource Primary}"
+                          Offset="0.6" />
+        <GradientStop Color="{StaticResource Second}"
+                          Offset=".8" />
+    </LinearGradientBrush>
 </ResourceDictionary>
