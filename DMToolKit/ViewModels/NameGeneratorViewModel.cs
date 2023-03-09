@@ -119,16 +119,20 @@ namespace DMToolKit.ViewModels
             IsBusy = false;
         }
 
-        void AddNames()
+        async Task AddNames()
         {
             var list = new List<Name>();
-            for(int i = 0; i < GenerationNumber*3; i++)
-            {
-                list.Add(new Name(GetPrefix(), GetSuffix()));
-            }
-            list.Sort();
-            for (int i = 0; i < list.Count; i++)
-                NameList.Add(list[i]);
+            Task t = Task.Factory.StartNew(() => {
+                for (int i = 0; i < GenerationNumber * 3; i++)
+                {
+                    list.Add(new Name(GetPrefix(), GetSuffix()));
+                }
+                list.Sort();
+                NameList = new ObservableCollection<Name>(list);
+                //for (int i = 0; i < list.Count; i++)
+                //    NameList.Add(list[i]);
+            });
+            await t;
         }
 
         private string GetPrefix()
