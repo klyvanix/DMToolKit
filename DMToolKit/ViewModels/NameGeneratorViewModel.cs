@@ -4,14 +4,14 @@ using DMToolKit.Data;
 using DMToolKit.Pages;
 using DMToolKit.Services;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace DMToolKit.ViewModels
 {
     [QueryProperty("LockedLetter", "LockedLetter"), QueryProperty("LetterLock", "LetterLock"), QueryProperty("PrefixLock", "PrefixLock"), QueryProperty("LockedPrefix", "LockedPrefix")]
     public partial class NameGeneratorViewModel : ObservableObject
     {
-        [ObservableProperty]
-        ObservableCollection<Name> nameList;
+        public ObservableCollection<Name> NameList { get; set; }
 
         [ObservableProperty]
         ObservableCollection<string> seedList;
@@ -37,7 +37,7 @@ namespace DMToolKit.ViewModels
         [NotifyPropertyChangedFor(nameof(ShowList))]
         bool showHelp;
 
-        public bool ShowList => !ShowHelp && IsNotBusy;
+        public bool ShowList => !ShowHelp;
 
         [ObservableProperty]
         int pickerIndex;
@@ -51,17 +51,15 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string expandImage;
 
-        [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        [NotifyPropertyChangedFor(nameof(ShowList))]
-        bool isBusy;
-
         int minIndex;
         int maxIndex;
 
-        public bool IsNotBusy => !IsBusy;
-
         DataController DataController;
+
+        Stopwatch stopWatch = new Stopwatch();
+        Stopwatch addWatch = new Stopwatch();
+        Stopwatch totalWatch = new Stopwatch();
+        Stopwatch GenWatch = new Stopwatch();
 
         public NameGeneratorViewModel()
         {
@@ -96,43 +94,40 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
-        async Task GenerateName()
+        void GenerateName()
         {
             if (DataController.NameSeedData.PrefixList.Count == 0 || DataController.NameSeedData.SuffixList.Count == 0)
                 return;
+            GenWatch.Reset();
+            GenWatch.Start();
 
             ShowHelp = false;
-            IsBusy = true;
-            Task t = Task.Factory.StartNew(() => {
-                if (GenerationNumber == 1)
-                {
-                    AddNames();
-                }
-                else
-                {
-                    if (GenerationNumber > 5)
-                        NameList.Clear();
-                    AddNames();
-                }
-            });
-            await t;
-            IsBusy = false;
+            if (GenerationNumber == 1)
+            {
+                AddNames();
+            }
+            else
+            {
+                if (GenerationNumber > 5)
+                    NameList.Clear();
+                AddNames();
+            }
+            OnPropertyChanged(nameof(NameList));
+            GenWatch.Stop();
+            TimeSpan tss = GenWatch.Elapsed;
+            Debug.WriteLine($"Total Time: {tss.TotalMilliseconds}ms");
         }
 
-        async Task AddNames()
+        void AddNames()
         {
             var list = new List<Name>();
-            Task t = Task.Factory.StartNew(() => {
-                for (int i = 0; i < GenerationNumber * 3; i++)
-                {
-                    list.Add(new Name(GetPrefix(), GetSuffix()));
-                }
-                list.Sort();
-                NameList = new ObservableCollection<Name>(list);
-                //for (int i = 0; i < list.Count; i++)
-                //    NameList.Add(list[i]);
-            });
-            await t;
+            for (int i = 0; i < GenerationNumber * 2; i++)
+            {
+                list.Add(new Name(GetPrefix(), GetSuffix()));
+            }
+            list.Sort();
+            for(int i = 0; i < list.Count; i++)
+                NameList.Add(list[i]);
         }
 
         private string GetPrefix()
@@ -162,7 +157,6 @@ namespace DMToolKit.ViewModels
             {
                 index = random.Next(0, DataController.NameSeedData.PrefixList.Count);
             }
-
             return DataController.NameSeedData.PrefixList[index];
         }
         private string GetSuffix()
