@@ -37,7 +37,7 @@ namespace DMToolKit.ViewModels
         [NotifyPropertyChangedFor(nameof(ShowList))]
         bool showHelp;
 
-        public bool ShowList => !ShowHelp;
+        public bool ShowList => !ShowHelp && IsNotBusy;
 
         [ObservableProperty]
         int pickerIndex;
@@ -51,8 +51,15 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         string expandImage;
 
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        [NotifyPropertyChangedFor(nameof(ShowList))]
+        bool isBusy;
+
         int minIndex;
         int maxIndex;
+
+        public bool IsNotBusy => !IsBusy;
 
         DataController DataController;
 
@@ -75,6 +82,7 @@ namespace DMToolKit.ViewModels
             GenerationNumber = 1;
             UpdateSeedList();
             OptionsExpanded = false;
+
             for (int i = 0; i < StaticStrings.NameTitle.Length; i++)
             {
                 HelpScreenCollection.Add(new HelpPageItem(StaticStrings.NameTitle[i], i + 1));
@@ -94,6 +102,7 @@ namespace DMToolKit.ViewModels
                 return;
 
             ShowHelp = false;
+            IsBusy = true;
             Task t = Task.Factory.StartNew(() => {
                 if (GenerationNumber == 1)
                 {
@@ -107,6 +116,7 @@ namespace DMToolKit.ViewModels
                 }
             });
             await t;
+            IsBusy = false;
         }
 
         void AddNames()

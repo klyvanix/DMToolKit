@@ -10,6 +10,9 @@
         <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2" ItemsLayout="VerticalGrid, 3"
                         SelectionMode="None" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}" Margin="0,0,0,20">
         </CollectionView>
+        <Grid Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsBusy}">
+            <Image Source="loading.png" VerticalOptions="Center" HorizontalOptions="Center" x:Name="LoadingImage" HeightRequest="200"/>
+        </Grid>
         
         <!--Help Screen Display Window-->
         <Grid RowDefinitions="*,20" Grid.Row="0" IsVisible="{Binding ShowHelp}" VerticalOptions="Fill">
