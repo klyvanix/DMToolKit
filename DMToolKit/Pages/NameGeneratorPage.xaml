@@ -8,7 +8,7 @@
     <Grid RowDefinitions="Auto,*,Auto">
         <!--Name List Display Window-->
         <CollectionView Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start" IsVisible="{Binding ShowList}" Grid.RowSpan="2" ItemsLayout="VerticalGrid, 2"
-                        SelectionMode="None" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}" Margin="0,0,0,20">
+                        SelectionMode="None" ItemsSource="{Binding NameList}" ItemTemplate="{StaticResource NameDisplay}" Margin="0,0,0,0">
         </CollectionView>
         
         <!--Help Screen Display Window-->
@@ -24,7 +24,8 @@
         </Grid>
 
         <Grid Grid.Row="2" RowDefinitions="20,Auto, 50">
-            <Grid Grid.Row="0" >
+            <Grid Grid.Row="0" HeightRequest="20">
+                <!--PREFIX LOCK-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="Start"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
                         Stroke="Transparent" IsVisible="{Binding PrefixLock}">
@@ -33,6 +34,7 @@
                     </Border.GestureRecognizers>
                     <Label Text="Prefix Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
                 </Border>
+                <!--Expander-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
                             Stroke="Transparent">
