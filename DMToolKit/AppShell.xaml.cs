@@ -15,6 +15,7 @@ public partial class AppShell : Shell
         //Routing.RegisterRoute(nameof(NameGeneratorPage), typeof(NameGeneratorPage));
         Routing.RegisterRoute(nameof(NameGeneratorOptionsPage), typeof(NameGeneratorOptionsPage));
         Routing.RegisterRoute(nameof(NameCollectionPage), typeof(NameCollectionPage));
+        Routing.RegisterRoute(nameof(NameCollectionEditPage), typeof(NameCollectionEditPage));
         Routing.RegisterRoute(nameof(NameAddPage), typeof(NameAddPage));
 
         Routing.RegisterRoute(nameof(ListManagerPage), typeof(ListManagerPage));

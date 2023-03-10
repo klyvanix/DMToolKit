@@ -21,11 +21,19 @@
                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}}, Path=DeleteListCommand}"/>
                                 </SwipeItems>
                             </SwipeView.RightItems>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Edit"
+                                               IconImageSource="gear.png"
+                                               CommandParameter="{Binding .}"
+                                               Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}}, Path=GoToEditCollectionCommand}"/>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
                             <Border StrokeShape="RoundRectangle 5" Margin="0" HeightRequest="50"
                                     Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}"
                                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
                                 <Border.GestureRecognizers>
-                                    <TapGestureRecognizer CommandParameter="{Binding .}"
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" 
                                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}},Path=GoToCollectionCommand}"/>
                                 </Border.GestureRecognizers>
                                 <Grid>

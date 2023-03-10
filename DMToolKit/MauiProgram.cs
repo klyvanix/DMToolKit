@@ -62,6 +62,9 @@ public static class MauiProgram
         builder.Services.AddTransient<NameCollectionPage>();
         builder.Services.AddTransient<NameCollectionViewModel>();
 
+        builder.Services.AddTransient<NameCollectionEditPage>();
+        builder.Services.AddTransient<NameCollectionEditViewModel>();
+
         builder.Services.AddTransient<NamePrefixManagerPage>();
         builder.Services.AddTransient<NamePrefixManagerViewModel>();
 

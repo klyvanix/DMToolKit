@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DMToolKit.Pages.NameCollectionEditPage"
+             xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
+             x:DataType="viewmodel:NameCollectionEditViewModel"
+             Title="NameCollectionEditPage">
+    <Grid RowDefinitions="*,50,50">
+        <ScrollView>
+            <VerticalStackLayout VerticalOptions="End">
+                <Border Margin="30,3" StrokeShape="RoundRectangle 5" StrokeThickness="0"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
+                    <Entry Text="{Binding ListName}" HorizontalOptions="Fill" HorizontalTextAlignment="Center" TextColor="Black" Margin="5"/>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+        <Grid Grid.Row="1" Margin="30,0,30,3">
+            <Button Text="Save" HorizontalOptions="Fill" Command="{Binding SaveCommand}"/>
+        </Grid>
+        <Grid Grid.Row="2" Margin="30,0,30,3">
+            <Button Text="Back" HorizontalOptions="Fill" Command="{Binding GoBackCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

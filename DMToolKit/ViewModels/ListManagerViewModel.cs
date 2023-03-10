@@ -62,6 +62,31 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
+        async Task GoToEditCollection(string listName)
+        {
+            if (listName == "Masculine" || listName == "Feminine" || listName == "Surname")
+                return;
+
+            int index = -1;
+            ObservableCollection<string> collection = new ObservableCollection<string>();
+
+            for (int i = 0; i < DataController.NameData.ThemedNameCollections.Count; i++)
+            {
+                if (listName == DataController.NameData.ThemedNameCollections[i].Name)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            await Shell.Current.GoToAsync($"{nameof(NameCollectionEditPage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"ListIndex", index },
+                    {"ListName", listName}
+                });
+        }
+
+        [RelayCommand]
         public void AddList() 
         {
             if (string.IsNullOrEmpty(ListNameToAdd) || DataController.NameData.ListNameExists(ListNameToAdd))

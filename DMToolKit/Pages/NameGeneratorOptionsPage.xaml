@@ -83,10 +83,10 @@
                 <Border Grid.Column="1" StrokeShape="RoundRectangle 5" HeightRequest="40" StrokeThickness="0"
                                 BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
                     <Entry Placeholder="Prefix" 
-                                   PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
-                                   TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
-                                   Text="{Binding PrefixToAdd}" Keyboard="Text"
-                                   HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                           PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
+                           Text="{Binding PrefixToAdd}" Keyboard="Text"
+                           HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                 </Border>
                 <Grid ColumnDefinitions="Auto,2*,*" Margin="0,2" Grid.Row="1">
                     <Border  Style="{StaticResource BorderButton}" Margin="1,0">

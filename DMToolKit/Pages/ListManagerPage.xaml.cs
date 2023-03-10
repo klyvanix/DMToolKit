@@ -9,4 +9,10 @@ public partial class ListManagerPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		var vm = BindingContext as ListManagerViewModel;
+		vm.UpdateLists();
+    }
 }
