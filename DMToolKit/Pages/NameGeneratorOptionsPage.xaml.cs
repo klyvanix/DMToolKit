@@ -9,4 +9,11 @@ public partial class NameGeneratorOptionsPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		var vm = BindingContext as NameGeneratorOptionsViewModel;
+		vm.UpdateData();
+    }
 }
