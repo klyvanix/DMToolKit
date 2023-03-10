@@ -81,7 +81,7 @@
                 <!--SEED SECTION-->
                 <Label Text="{Binding PrefixCount, StringFormat='Prefix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
                 <Border Grid.Column="1" StrokeShape="RoundRectangle 5" HeightRequest="40" StrokeThickness="0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
                     <Entry Placeholder="Prefix" 
                                    PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
                                    TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
@@ -98,7 +98,7 @@
                 </Grid>
                 <Label Text="{Binding SuffixCount, StringFormat='Suffix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
                 <Border Grid.Column="1" StrokeShape="RoundRectangle 5" HeightRequest="40" StrokeThickness="0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
                     <Entry Placeholder="Suffix" 
                                    PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
                                    TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
