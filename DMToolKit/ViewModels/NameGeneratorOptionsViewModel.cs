@@ -98,6 +98,12 @@ namespace DMToolKit.ViewModels
             PrefixBrush = uncheckedGradient;
         }
 
+        public void UpdateData()
+        {
+            PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
+            SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
+        }
+
         [RelayCommand]
         async Task SaveOptions()
         {
@@ -133,13 +139,13 @@ namespace DMToolKit.ViewModels
         }
 
         [RelayCommand]
-        async Task AddPrefix()
+        async Task GoToPrefix()
         {
             await Shell.Current.GoToAsync($"/{nameof(NamePrefixManagerPage)}");
         }
 
         [RelayCommand]
-        async Task AddSuffix()
+        async Task GoToSuffix()
         {
             await Shell.Current.GoToAsync($"/{nameof(NameSuffixManagerPage)}");
         }
@@ -150,14 +156,15 @@ namespace DMToolKit.ViewModels
             if (string.IsNullOrEmpty(PrefixToAdd))
                 return;
 
-            var item = char.ToUpper(PrefixToAdd[0]) + PrefixToAdd.Substring(1);
-            if (DataController.NameSeedData.PrefixList.Contains(item))
+            var prefix = char.ToUpper(PrefixToAdd[0]) + PrefixToAdd.Substring(1);
+            if (DataController.NameSeedData.PrefixList.Contains(prefix))
                 return;
 
-            DataController.NameSeedData.PrefixList.Add(item);
+            DataController.NameSeedData.PrefixList.Add(prefix);
             DataController.NameSeedData.PrefixList.Sort();
             DataController.SaveNameSeedData();
             PrefixToAdd = string.Empty;
+            PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
         }
 
         [RelayCommand]
@@ -166,13 +173,52 @@ namespace DMToolKit.ViewModels
             if (string.IsNullOrEmpty(SuffixToAdd))
                 return;
 
-            if (DataController.NameSeedData.SuffixList.Contains(SuffixToAdd))
+            var suffix = char.ToLower(SuffixToAdd[0]) + SuffixToAdd.Substring(1);
+            if (DataController.NameSeedData.SuffixList.Contains(suffix))
                 return;
 
-            DataController.NameSeedData.SuffixList.Add(SuffixToAdd);
+            DataController.NameSeedData.SuffixList.Add(suffix);
             DataController.NameSeedData.SuffixList.Sort();
             DataController.SaveNameSeedData();
             SuffixToAdd = string.Empty;
+            SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
+        }
+
+        [RelayCommand]
+        void AddBoth()
+        {
+            if (string.IsNullOrEmpty(PrefixToAdd) && string.IsNullOrEmpty(SuffixToAdd))
+                return;
+
+            if (!string.IsNullOrEmpty(PrefixToAdd))
+                SuffixToAdd = PrefixToAdd;
+
+            if (!string.IsNullOrEmpty(SuffixToAdd))
+                PrefixToAdd = SuffixToAdd;
+
+            if (!string.IsNullOrEmpty(PrefixToAdd) && !string.IsNullOrEmpty(SuffixToAdd))
+                SuffixToAdd = PrefixToAdd;
+
+            var prefix = char.ToUpper(PrefixToAdd[0]) + PrefixToAdd.Substring(1);
+            var suffix = char.ToLower(SuffixToAdd[0]) + SuffixToAdd.Substring(1);
+
+            if (!DataController.NameSeedData.PrefixList.Contains(prefix))
+            {
+                DataController.NameSeedData.PrefixList.Add(prefix);
+                DataController.NameSeedData.PrefixList.Sort();
+                DataController.SaveNameSeedData();
+                PrefixToAdd = string.Empty;
+                PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
+            }
+
+            if (!DataController.NameSeedData.SuffixList.Contains(suffix))
+            {
+                DataController.NameSeedData.SuffixList.Add(suffix);
+                DataController.NameSeedData.SuffixList.Sort();
+                DataController.SaveNameSeedData();
+                SuffixToAdd = string.Empty;
+                SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
+            }
         }
 
         [RelayCommand]
