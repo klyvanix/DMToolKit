@@ -102,6 +102,7 @@ namespace DMToolKit.ViewModels
             DataController.SaveNameSeedData();
 
             PrefixEnabled = false;
+            PrefixListCount++;
         }
 
         [RelayCommand]
@@ -116,6 +117,7 @@ namespace DMToolKit.ViewModels
             DataController.SaveNameSeedData();
 
             SuffixEnabled = false;
+            SuffixListCount++;
         }
 
 
