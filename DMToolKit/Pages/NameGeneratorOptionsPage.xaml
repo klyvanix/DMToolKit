@@ -32,7 +32,7 @@
                     </Border>
                     <Border HorizontalOptions="Fill" VerticalOptions="Center" StrokeShape="RoundRectangle 5" 
                             Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource DarkPrimary}}" Grid.Column="2">
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}" Grid.Column="2">
                         <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" HeightRequest="48" 
                                 ItemsSource="{Binding LockedLetterList}" SelectedIndex="{Binding SelectedIndex}" 
                                 TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
@@ -61,7 +61,7 @@
                                FontSize="16" HorizontalOptions="Center" />
                     </Border>
                     <Border Grid.Column="2" HeightRequest="50" StrokeShape="RoundRectangle 5" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource DarkPrimary}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}"
                             Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}" >
                         <Entry Text="{Binding LockedPrefix}" Placeholder="Prefix" HorizontalOptions="Fill" VerticalOptions="Center" HorizontalTextAlignment="Center" 
                                PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray500}}" Keyboard="Text"
