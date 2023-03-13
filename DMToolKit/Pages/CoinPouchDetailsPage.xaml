@@ -46,7 +46,7 @@
                 <!--CP-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding CPVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.CP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -65,7 +65,7 @@
                 <!--SP-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding SPVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.SP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -84,7 +84,7 @@
                 <!--EP-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding EPVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.EP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -103,7 +103,7 @@
                 <!--GP-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding GPVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.GP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -122,7 +122,7 @@
                 <!--PP-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding PPVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.PP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -141,7 +141,7 @@
                 <!--Jewels-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding JewelsVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.Jewels}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -160,7 +160,7 @@
                 <!--Gems-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding GemsVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.Gems}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -179,7 +179,7 @@
                 <!--Emeralds-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding EmeraldsVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.Emeralds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -198,7 +198,7 @@
                 <!--Rubys-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding RubysVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.Rubys}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
@@ -217,7 +217,7 @@
                 <!--Diamonds-->
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding DiamondsVisible}">
                     <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Center">
+                            StrokeThickness="0" HorizontalOptions="Fill">
                         <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
                             <Label Text="{Binding CoinPouch.Diamonds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
