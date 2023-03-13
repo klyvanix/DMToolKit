@@ -63,7 +63,7 @@
                         Source="{AppThemeBinding Light='help.png',Dark='helpdark.png'}" Padding="0"
                         Command="{Binding ToggleHelpCommand}"/>
                 </Border>
-                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="1,2">
+                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,2">
                     <Border Grid.Column="0" Margin="0,1"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                             StrokeThickness="0"

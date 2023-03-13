@@ -21,7 +21,7 @@
                 </Border>
             </Grid>
             <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50" IsVisible="{Binding OptionsShown}">
-                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="1,2">
+                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,2">
                     <Border Grid.Column="0" Margin="0,1"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                             StrokeThickness="0"
