@@ -12,7 +12,7 @@
         </CollectionView>
         
         <!--Help Screen Display Window-->
-        <Grid RowDefinitions="*,20" Grid.Row="0" IsVisible="{Binding ShowHelp}" VerticalOptions="Fill">
+        <Grid RowDefinitions="*,20" Grid.Row="0" Grid.RowSpan="2" IsVisible="{Binding ShowHelp}" VerticalOptions="Fill">
             <CarouselView Loop="False" Grid.Row="0" IndicatorView="helpIndicator" VerticalOptions="Fill"
                               ItemsSource="{Binding HelpScreenCollection}" ItemTemplate="{StaticResource Key=NamePageSelector}">
             </CarouselView>
@@ -60,7 +60,7 @@
                         StrokeShape="RoundRectangle 5" >
                     <!--HELP BUTTON-->
                     <ImageButton 
-                        Source="{AppThemeBinding Light='help.png',Dark='helpdark.png'}" Padding="0"
+                        Source="{AppThemeBinding Light='namegentitle.png',Dark='namegentitledark.png'}" Padding="0"
                         Command="{Binding ToggleHelpCommand}"/>
                 </Border>
                 <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,2">

@@ -57,7 +57,6 @@
                 <Border Grid.Column="0" StrokeShape="RoundRectangle 5"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                         StrokeThickness="0" HorizontalOptions="Fill" VerticalOptions="Fill">
-
                 </Border>
                 <Button Grid.Column="0" Text="Clear" Command="{Binding ClearCommand}" 
                         HorizontalOptions="Fill" VerticalOptions="Fill" Margin="1,0"/>
