@@ -193,7 +193,16 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToOptionsPage()
         {
-            await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
+            //await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
+
+            await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"LetterLock", LetterLock },
+                    {"LockedLetter", LockedLetter },
+                    {"PrefixLock", PrefixLock },
+                    {"LockedPrefix", LockedPrefix }
+                });
         }
 
         [RelayCommand]

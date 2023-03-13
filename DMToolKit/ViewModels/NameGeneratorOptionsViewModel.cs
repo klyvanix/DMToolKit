@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace DMToolKit.ViewModels
 {
+    [QueryProperty("LockedLetter", "LockedLetter"), QueryProperty("LetterLock", "LetterLock"), QueryProperty("PrefixLock", "PrefixLock"), QueryProperty("LockedPrefix", "LockedPrefix")]
     public partial class NameGeneratorOptionsViewModel : ObservableObject
     {
         [ObservableProperty]
@@ -122,20 +123,27 @@ namespace DMToolKit.ViewModels
             if (SelectedIndex >= 0 || string.IsNullOrEmpty(LockedPrefix))
             {
                 await Shell.Current.GoToAsync($"..", true,
-                        new Dictionary<string, object>
-                        {
+                    new Dictionary<string, object>
+                    {
                         {"LetterLock", LetterLock },
                         {"LockedLetter", LockedLetterList[SelectedIndex]},
                         {"PrefixLock", PrefixLock },
                         {"LockedPrefix", LockedPrefix }
-                        });
+                    });
             }
         }
 
         [RelayCommand]
         async Task GoBack()
         {
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync($"..", true,
+                new Dictionary<string, object>
+                {
+                    {"LetterLock", LetterLock },
+                    {"LockedLetter", LockedLetterList[SelectedIndex]},
+                    {"PrefixLock", PrefixLock },
+                    {"LockedPrefix", LockedPrefix }
+                });
         }
 
         [RelayCommand]
