@@ -6,7 +6,10 @@
 
     <Color x:Key="Primary">#226A9C</Color>
     <Color x:Key="Secondary">#E29E21</Color>
-    <Color x:Key="Tertiary">#ddf6fd</Color>
+    <Color x:Key="Tertiary">#f4fdff</Color>
+    <Color x:Key="TextBackground">#bcd0e3</Color>
+    <Color x:Key="TextBackgroundDark">#081c30</Color>
+    <Color x:Key="DarkPrimary">#09325b</Color>
     <Color x:Key="Grad1">#ccbfa8</Color>
     <Color x:Key="Grad2">#f5efe4</Color>
     <Color x:Key="Grad3">#b3904f</Color>
@@ -32,9 +35,6 @@
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color> 
     <Color x:Key="Transparent">Transparent</Color>
-    <Color x:Key="TextBackground">#bcd0e3</Color>
-    <Color x:Key="TextBackgroundDark">#081c30</Color>
-    <Color x:Key="DarkPrimary">#09325b</Color>
 
     <Color x:Key="LetterLockA">#005D86</Color>
     <Color x:Key="Clear">#008A9A</Color>

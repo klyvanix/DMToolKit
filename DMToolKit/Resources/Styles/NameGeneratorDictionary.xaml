@@ -380,16 +380,16 @@
 
     <DataTemplate x:Key="NameDisplay" x:DataType="data:Name">
         <Border Padding="3" StrokeThickness="1" Margin="0" 
-                Background="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource OptionsHeaderDark}}"
-                Stroke="{StaticResource GridBorder}">
+                Background="{StaticResource Transparent}"
+                Stroke="{StaticResource Secondary}">
             <Border.GestureRecognizers>
                 <TapGestureRecognizer CommandParameter="{Binding .}"
                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameGeneratorViewModel}},Path=GoToAddPageCommand}"/>
             </Border.GestureRecognizers>
             <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3" ColumnDefinitions="*">
                 <HorizontalStackLayout HorizontalOptions="Center">
-                    <Label Padding="3" FontSize="16"
-                           TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+                    <Label Padding="1" FontSize="16" FontFamily="Ebrima"
+                           TextColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource White}}"
                            Text="{Binding Output}"/>
                 </HorizontalStackLayout>
             </Grid>

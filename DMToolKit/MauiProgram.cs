@@ -15,9 +15,8 @@ public static class MauiProgram
             .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
 			{
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                fonts.AddFont("BKANT.TTF", "BookAntiqua");
+                fonts.AddFont("ebrima.ttf", "Ebrima");
+                fonts.AddFont("framd.ttf", "FranklinGothic");
             });
 
         builder.Services.AddSingleton<MainPage>();

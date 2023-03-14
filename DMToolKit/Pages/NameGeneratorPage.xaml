@@ -52,7 +52,7 @@
             </Grid>
             <!--UPPER BUTTON PANEL-->
             <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50" IsVisible="{Binding OptionsExpanded}">
-                <Border Grid.Column="0"  Margin="1,3,1,2"
+                <Border Grid.Column="0"  Margin="1,1,1,2"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                         StrokeThickness="0"
                         VerticalOptions="Fill"
@@ -63,7 +63,7 @@
                         Source="{AppThemeBinding Light='namegentitle.png',Dark='namegentitledark.png'}" Padding="0"
                         Command="{Binding ToggleHelpCommand}"/>
                 </Border>
-                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,2">
+                <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,0,0,2">
                     <Border Grid.Column="0" Margin="0,1"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                             StrokeThickness="0"
@@ -94,7 +94,7 @@
                                      Command="{Binding IncreaseCounterCommand}"/>
                     </Border>
                 </Grid>
-                <Border Grid.Column="2"  Margin="1,3,1,2"
+                <Border Grid.Column="2"  Margin="1,1,1,2"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                         StrokeThickness="0"
                         VerticalOptions="Fill"
