@@ -9,7 +9,7 @@
     <Grid RowDefinitions="30,*,50,50">
         <Label Text="{Binding PrefixList.Count, StringFormat='List Count: {0}'}" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
         <CollectionView Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" 
-                        SelectionMode="None" ItemsSource="{Binding PrefixList}">
+                        SelectionMode="None" ItemsSource="{Binding PrefixList}" Margin="50,0">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String}">
                     <SwipeView>
@@ -22,12 +22,13 @@
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NamePrefixManagerViewModel}}, Path=DeleteCommand}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Border Padding="3" StrokeShape="RoundRectangle 5" Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+                        <Border Padding="3" StrokeShape="RoundRectangle 5" 
+                                Stroke="{StaticResource OptionsHeaderGradient}"
+                                BackgroundColor="{StaticResource Background}">
                             <Grid Padding="1,0" HorizontalOptions="Fill" Margin="3"
                                   ColumnDefinitions="*">
                                 <HorizontalStackLayout HorizontalOptions="Center">
-                                    <Label TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" Padding="5,0"
+                                    <Label TextColor="{StaticResource Tertiary}" Padding="5,0"
                                        Text="{Binding .}"/>
                                 </HorizontalStackLayout>
                             </Grid>

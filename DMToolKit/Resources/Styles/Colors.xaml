@@ -4,28 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Color x:Key="Primary">#226A9C</Color>
+    <Color x:Key="Primary">#007acf</Color>
     <Color x:Key="Secondary">#E29E21</Color>
     <Color x:Key="Tertiary">#f4fdff</Color>
     <Color x:Key="TextBackground">#bcd0e3</Color>
     <Color x:Key="TextBackgroundDark">#081c30</Color>
     <Color x:Key="DarkPrimary">#09325b</Color>
-    <Color x:Key="Grad1">#ccbfa8</Color>
-    <Color x:Key="Grad2">#f5efe4</Color>
-    <Color x:Key="Grad3">#b3904f</Color>
     <Color x:Key="Dark">#090d15</Color>
     <Color x:Key="Background">#121720</Color>
+    
     <Color x:Key="Values">#216ca6</Color>
     <Color x:Key="ValuesDark">#4c9ede</Color>
     <Color x:Key="PositiveAttribute">#448344</Color>
     <Color x:Key="PositiveAttributeDark">#65d265</Color>
     <Color x:Key="NegativeAttribute">#a11d1d</Color>
     <Color x:Key="NegativeAttributeDark">#e22929</Color>
+    
     <Color x:Key="Name">#a05abd</Color>
     <Color x:Key="Role">#daa37d</Color>
     <Color x:Key="Delete">#d23434</Color>
+    
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
+    
     <Color x:Key="Gray100">#E1E1E1</Color>
     <Color x:Key="Gray200">#C8C8C8</Color>
     <Color x:Key="Gray300">#ACACAC</Color>
@@ -64,7 +65,7 @@
     <Color x:Key="Emerald">#20e652</Color>
     <Color x:Key="Ruby">#fa3e5d</Color>
     <Color x:Key="Diamond">#eef5fe</Color>
-    <Color x:Key="Bright">#fff570</Color>
+    <Color x:Key="Bright">#ffc55b</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
@@ -86,21 +87,6 @@
         <GradientStop Color="{StaticResource DarkPrimary}"
                           Offset=".9" />
     </LinearGradientBrush>
-    
-    <LinearGradientBrush x:Key="GridBackground" EndPoint="0,1">
-        <GradientStop Color="{StaticResource DarkPrimary}"
-                          Offset="0" />
-        <GradientStop Color="{StaticResource Tertiary}"
-                          Offset=".2" />
-        <GradientStop Color="{StaticResource White}"
-                          Offset=".5" />
-        <GradientStop Color="{StaticResource Tertiary}"
-                          Offset=".7" />
-        <GradientStop Color="{StaticResource Tertiary}"
-                          Offset=".8" />
-        <GradientStop Color="{StaticResource DarkPrimary}"
-                          Offset="1" />
-    </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="OptionsHeaderGradient" EndPoint="0,1">
         <GradientStop Color="#f4a907"
@@ -114,57 +100,12 @@
         <GradientStop Color="#ffd800"
                           Offset=".7" />
         <GradientStop Color="#bf8943"
-                          Offset=".9" /> 
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="CoinPouchEntryGradient" EndPoint="0,1">
-        <GradientStop Color="{StaticResource Tertiary}"
-                          Offset="0" />
-        <GradientStop Color="{StaticResource Tertiary}"
-                          Offset="0.47" />
-        <GradientStop Color="#000000"
-                          Offset="0.5" />
-        <GradientStop Color="#ffd800"
-                          Offset="0.53" />
-        <GradientStop Color="#FFFFFF"
-                          Offset="1" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CounPouchEntryNoLine" EndPoint="0,1">
-        <GradientStop Color="#FFFFFF"
-                          Offset="0" />
-        <GradientStop Color="#ffd800"
-                          Offset="0.47" />
-        <GradientStop Color="#ffd800"
-                          Offset="0.53" />
-        <GradientStop Color="#FFFFFF"
-                          Offset="1" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="DarkCoinPouchEntryGradient" EndPoint="0,1">
-        <GradientStop Color="{StaticResource DarkPrimary}"
-                          Offset="0" />
-        <GradientStop Color="{StaticResource DarkPrimary}"
-                          Offset="0.47" />
-        <GradientStop Color="{StaticResource Gray600}"
-                          Offset="0.5" />
-        <GradientStop Color="{StaticResource TextBackgroundDark}"
-                          Offset="0.53" />
-        <GradientStop Color="{StaticResource DarkPrimary}"
-                          Offset="1" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="DarkCoinPouchEntryNoLine" EndPoint="0,1">
-        <GradientStop Color="{StaticResource DarkPrimary}"
-                          Offset="0" />
-        <GradientStop Color="{StaticResource TextBackgroundDark}"
-                          Offset="0.47" />
-        <GradientStop Color="{StaticResource TextBackgroundDark}"
-                          Offset="0.53" />
-        <GradientStop Color="{StaticResource DarkPrimary}"
-                          Offset="1" />
+                          Offset=".9" />
     </LinearGradientBrush>
 
     <RadialGradientBrush x:Key="PouchFill">
-        <GradientStop Color="{StaticResource Primary}" Offset=".3"/>
-        <GradientStop Color="Black" Offset="1"/>
+        <GradientStop Color="{StaticResource Secondary}" Offset=".2"/>
+        <GradientStop Color="{StaticResource Background}" Offset=".8"/>
     </RadialGradientBrush>
 
     <LinearGradientBrush x:Key="CoinPouchCellEdge" EndPoint="1.4,.8">

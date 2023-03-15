@@ -175,6 +175,8 @@ namespace DMToolKit.ViewModels
         {
             LetterLock = false;
             PrefixLock = false;
+            LockedPrefix = string.Empty;
+            LockedLetter = "A";
         }
 
         [RelayCommand]
@@ -193,8 +195,6 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToOptionsPage()
         {
-            //await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
-
             await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}", true,
                 new Dictionary<string, object>
                 {

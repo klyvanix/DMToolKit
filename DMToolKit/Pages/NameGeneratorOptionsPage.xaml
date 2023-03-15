@@ -5,117 +5,145 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NameGeneratorOptionsViewModel"
              Title="Options">
-    <Grid RowDefinitions="*,Auto,50">
-        <ScrollView>
-            <Grid RowDefinitions="30,50,30,50,30,Auto">
-                <!--HEADER LETTER LOCK-->
-                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeaderGradient}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="0">
-                    <Label Text="Letter Lock" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16"
-                           VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+    <Grid RowDefinitions="*,50">
+        <Grid RowDefinitions="Auto,Auto,Auto">
+            <Border Grid.Row="0" BackgroundColor="{StaticResource Background}" 
+                    Stroke="{StaticResource OptionsHeaderGradient}" StrokeShape="RoundRectangle 10">
+                <Grid Margin="15,0,15,5">
+                    <!--Letter Lock Header-->
+                    <VerticalStackLayout Grid.Row="0">
+                        <Label Text="LETTER LOCK" TextColor="{StaticResource Tertiary}" FontAttributes="Bold" FontSize="18" 
+                           Padding="15,5" HorizontalTextAlignment="Center"/>
+                        <Border HeightRequest="1" StrokeThickness="1" Margin="0,2,0,5" Stroke="{StaticResource Secondary}"
+                        BackgroundColor="{StaticResource Secondary}"/>
+                        <!--LETTER LOCK SECTION-->
+                        <Grid Grid.Row="1" ColumnDefinitions="30,100,*" Padding="30,0">
+                            <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
+                                Background="{Binding LetterBrush}"
+                                Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
+                                StrokeThickness="3" StrokeShape="RoundRectangle 15">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LetterLockerCommand}"/>
+                                </Border.GestureRecognizers>
+                            </Border>
+                            <Border Grid.Column="1" StrokeThickness="0" BackgroundColor="Transparent">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LetterLockerCommand}"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="Lock Letter" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"
+                               TextColor="{StaticResource White}"/>
+                            </Border>
+                            <Border HorizontalOptions="Fill" VerticalOptions="Center" StrokeShape="RoundRectangle 5" 
+                                    Stroke="{StaticResource OptionsHeaderGradient}"
+                                    BackgroundColor="{StaticResource Background}" Grid.Column="2">
+                                <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" HeightRequest="40" 
+                                        ItemsSource="{Binding LockedLetterList}" SelectedIndex="{Binding SelectedIndex}" 
+                                        TextColor="{StaticResource Tertiary}"/>
+                            </Border>
+                        </Grid>
+                    </VerticalStackLayout>
                 </Grid>
-                <!--LETTER LOCK SECTION-->
-                <Grid Grid.Row="1" ColumnDefinitions="30,150,*" Padding="30,0,0,0">
-                    <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
-                            Background="{Binding LetterBrush}"
-                            Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
-                            StrokeThickness="3" StrokeShape="RoundRectangle 15">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding LetterLockerCommand}"/>
-                        </Border.GestureRecognizers>
-                    </Border>
-                    <Border Grid.Column="1" StrokeThickness="0" BackgroundColor="Transparent">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding LetterLockerCommand}"/>
-                        </Border.GestureRecognizers>
-                        <Label Text="Lock Letter" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"
-                           TextColor="{StaticResource White}"/>
-                    </Border>
-                    <Border HorizontalOptions="Fill" VerticalOptions="Center" StrokeShape="RoundRectangle 5" 
-                            Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}" Grid.Column="2">
-                        <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" HeightRequest="48" 
-                                ItemsSource="{Binding LockedLetterList}" SelectedIndex="{Binding SelectedIndex}" 
-                                TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
-                    </Border>
+            </Border>
+            <Border Grid.Row="1" BackgroundColor="{StaticResource Background}" 
+                    Stroke="{StaticResource OptionsHeaderGradient}" StrokeShape="RoundRectangle 10">
+                <Grid Margin="15,0,15,5">
+                    <!--Prefix Lock Header-->
+                    <VerticalStackLayout Grid.Row="2">
+                        <Label Text="PREFIX LOCK" TextColor="{StaticResource Tertiary}" FontAttributes="Bold" FontSize="18" 
+                                   Padding="15,5" HorizontalTextAlignment="Center"/>
+                        <Border HeightRequest="1" StrokeThickness="1" Margin="0,0,0,5" Stroke="{StaticResource Secondary}"
+                                BackgroundColor="{StaticResource Secondary}"/>
+                        <!--PREFIX LOCK SECTION-->
+                        <Grid Grid.Row="3" ColumnDefinitions="30,100,*" Padding="30,0">
+                            <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
+                                        Background="{Binding PrefixBrush}"
+                                        Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
+                                        StrokeThickness="3" StrokeShape="RoundRectangle 20">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding PrefixLockerCommand}"/>
+                                </Border.GestureRecognizers>
+                            </Border>
+                            <Border Grid.Column="1" StrokeThickness="0" BackgroundColor="Transparent">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding PrefixLockerCommand}"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="Lock Prefix" Grid.Column="1" VerticalOptions="Center" TextColor="{StaticResource White}" 
+                                       FontSize="16" HorizontalOptions="Center" />
+                            </Border>
+                            <Border Grid.Column="2" HeightRequest="40" StrokeShape="RoundRectangle 5" 
+                                    BackgroundColor="{StaticResource Background}"
+                                    Stroke="{StaticResource OptionsHeaderGradient}" >
+                                <Entry Text="{Binding LockedPrefix}" Placeholder="Prefix" HorizontalOptions="Fill" 
+                                       VerticalOptions="Center" HorizontalTextAlignment="Center" 
+                                       TextColor="{StaticResource Tertiary}"/>
+                            </Border>
+                        </Grid>
+                    </VerticalStackLayout>
                 </Grid>
-                <!--HEADER PREFIX LOCK-->
-                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeaderGradient}, Dark={StaticResource OptionsHeaderDark}}" Grid.Row="2">
-                    <Label Text="Prefix Lock" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"
-                           FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
-                </Grid>
-                <!--PREFIX LOCK SECTION-->
-                <Grid Grid.Row="3" ColumnDefinitions="30,150,*" Padding="30,0,0,0">
-                    <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
-                            Background="{Binding PrefixBrush}"
-                            Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
-                            StrokeThickness="3" StrokeShape="RoundRectangle 20">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding PrefixLockerCommand}"/>
-                        </Border.GestureRecognizers>
+            </Border>
+            <Border Grid.Row="3" BackgroundColor="{StaticResource Background}" 
+                    Stroke="{StaticResource OptionsHeaderGradient}" StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Margin="15,0,15,0">
+                    <!--Name Seeds Header-->
+                    <Label Text="NAME SEEDS" TextColor="{StaticResource Tertiary}" FontAttributes="Bold" FontSize="18" 
+                                   Padding="15,5" HorizontalTextAlignment="Center"/>
+                    <Border HeightRequest="1" StrokeThickness="1" Margin="0,0,0,5" Stroke="{StaticResource Secondary}" 
+                                    BackgroundColor="{StaticResource Secondary}"/>
+                    <Label Text="Add To:" TextColor="{StaticResource Tertiary}" HorizontalOptions="Center" FontSize="18"/>
+                    <Grid ColumnDefinitions="*,*,*" Grid.Row="1">
+                        <Button Text="Prefix" Grid.Column="0" Margin="1,0" Command="{Binding AddToPrefixListCommand}"/>
+                        <Button Text="Both" Grid.Column="1" Margin="1,0" Command="{Binding AddBothCommand}"/>
+                        <Button Text="Suffix" Grid.Column="2" Margin="1,0" Command="{Binding AddToSuffixListCommand}"/>
+                    </Grid>
+                    <Border BackgroundColor="{StaticResource Background}" StrokeShape="RoundRectangle 5" Grid.Row="2" 
+                                    Stroke="{StaticResource OptionsHeaderGradient}">
+                        <Entry Placeholder="Entry" Text="{Binding EntryToAdd}" 
+                                       PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}" 
+                                       TextColor="{StaticResource Tertiary}" 
+                                       HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     </Border>
-                    <Border Grid.Column="1" StrokeThickness="0" BackgroundColor="Transparent">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding PrefixLockerCommand}"/>
-                        </Border.GestureRecognizers>
-                        <Label Text="Lock Prefix" Grid.Column="1" VerticalOptions="Center" TextColor="{StaticResource White}" 
-                               FontSize="16" HorizontalOptions="Center" />
-                    </Border>
-                    <Border Grid.Column="2" HeightRequest="50" StrokeShape="RoundRectangle 5" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}"
-                            Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource TextBackgroundDark}}" >
-                        <Entry Text="{Binding LockedPrefix}" Placeholder="Prefix" HorizontalOptions="Fill" VerticalOptions="Center" HorizontalTextAlignment="Center" 
-                               PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray500}}" Keyboard="Text"
-                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
-                    </Border>
-                </Grid>
-            </Grid>
-        </ScrollView>
-        <Grid Grid.Row="1">
-            <StackLayout Grid.Row="5" VerticalOptions="Center">
-                <!--HEADER SEED DETAILS-->
-                <Grid Background="{AppThemeBinding Light={StaticResource OptionsHeaderGradient}, Dark={StaticResource OptionsHeaderDark}}" 
-                      Grid.Row="4">
-                    <Label Text="Seed Details" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"
-                           FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
-                </Grid>
-                <!--SEED SECTION-->
-                <Label Text="{Binding PrefixCount, StringFormat='Prefix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
-                <Border Grid.Column="1" StrokeShape="RoundRectangle 5" HeightRequest="40" StrokeThickness="0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
-                    <Entry Placeholder="Prefix" 
-                           PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
-                           TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
-                           Text="{Binding PrefixToAdd}" Keyboard="Text"
-                           HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                </Border>
-                <Grid ColumnDefinitions="Auto,2*,*" Margin="0,2" Grid.Row="1">
-                    <Border  Style="{StaticResource BorderButton}" Margin="1,0">
-                        <!--<ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>-->
-                        <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding GoToPrefixCommand}"/>
-                    </Border>
-                    <Button Text="Add Prefix" Command="{Binding AddToPrefixListCommand}" Grid.Column="1" Margin="0,1"/>
-                    <Button Text="Add Both" Command="{Binding AddBothCommand}" Grid.Column="2" Margin="2,1"/>
-                </Grid>
-                <Label Text="{Binding SuffixCount, StringFormat='Suffix Count: {0}'}" FontSize="16" HorizontalOptions="Center"/>
-                <Border Grid.Column="1" StrokeShape="RoundRectangle 5" HeightRequest="40" StrokeThickness="0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
-                    <Entry Placeholder="Suffix" 
-                                   PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}"
-                                   TextColor="{AppThemeBinding Light={StaticResource Gray950},Dark={StaticResource White}}"
-                                   Text="{Binding SuffixToAdd}"
-                                   HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                </Border>
-                <Grid ColumnDefinitions="Auto,2*,*" Margin="0,2,0,10" Grid.Row="1">
-                    <Border  Style="{StaticResource BorderButton}" Margin="1,0,1,-1">
-                        <!--<ImageButton Source="listdark.png" Command="{Binding AddPrefixCommand}"/>-->
-                        <ImageButton Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Command="{Binding GoToSuffixCommand}"/>
-                    </Border>
-                    <Button Text="Add Suffix" Command="{Binding AddToSuffixListCommand}" Grid.Column="1" Margin="0,0"/>
-                    <Button Text="Add Both" Command="{Binding AddBothCommand}" Grid.Column="2" Margin="2,0"/>
-                </Grid>
-            </StackLayout>
+                    <Grid ColumnDefinitions="*,*" HeightRequest="50" Margin="0,0,0,7">
+                        <Border Style="{StaticResource BorderButton}" Margin="1,0,0,0" Grid.Column="0" >
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToPrefixCommand}"/>
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                <Image Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" WidthRequest="40" />
+                                <Label Text="Prefix" HorizontalOptions="Start" VerticalOptions="Center" TextColor="{StaticResource Background}"/>
+                                <Label VerticalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span TextColor="{StaticResource Background}" Text=" (" />
+                                            <Span TextColor="{StaticResource Primary}" Text="{Binding PrefixCount}" FontAttributes="Bold"/>
+                                            <Span TextColor="{StaticResource Background}" Text=")" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </HorizontalStackLayout>
+                        </Border>
+                        <Border  Style="{StaticResource BorderButton}" Margin="0,0,1,0" Grid.Column="1" >
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToSuffixCommand}"/>
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                <Image Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" WidthRequest="40"/>
+                                <Label Text="Suffix" VerticalOptions="Center" TextColor="{StaticResource Background}"/>
+                                <Label VerticalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" (" />
+                                            <Span TextColor="{StaticResource Primary}" Text="{Binding SuffixCount}" FontAttributes="Bold"/>
+                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=")" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </HorizontalStackLayout>
+                        </Border>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
         </Grid>
-        <Grid Grid.Row="2" ColumnDefinitions="*,*">
+        <Grid Grid.Row="1" ColumnDefinitions="*,*">
             <Button Text="Save" Margin="1" Command="{Binding SaveOptionsCommand}" Grid.Column="0"/>
             <Button Text="Back" Margin="1" Command="{Binding GoBackCommand}" Grid.Column="1"/>
         </Grid>

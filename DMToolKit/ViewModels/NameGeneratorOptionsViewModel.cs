@@ -29,10 +29,7 @@ namespace DMToolKit.ViewModels
         ObservableCollection<string> prefixList;
 
         [ObservableProperty]
-        string prefixToAdd;
-
-        [ObservableProperty]
-        string suffixToAdd;
+        string entryToAdd;
 
         [ObservableProperty]
         string prefixCount;
@@ -58,8 +55,7 @@ namespace DMToolKit.ViewModels
             LetterLock = false;
             PrefixLock = false;
             PrefixList = new ObservableCollection<string>();
-            PrefixToAdd = string.Empty;
-            SuffixToAdd = string.Empty;
+            EntryToAdd = string.Empty;
             LockedPrefix = string.Empty;
             PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
             SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
@@ -116,7 +112,6 @@ namespace DMToolKit.ViewModels
                     DataController.NameSeedData.PrefixList.Add(item);
                     DataController.NameSeedData.PrefixList.Sort();
                     DataController.SaveNameSeedData();
-                    PrefixToAdd = string.Empty;
                 }
             }
             
@@ -161,61 +156,52 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void AddToPrefixList()
         {
-            if (string.IsNullOrEmpty(PrefixToAdd))
+            if (string.IsNullOrEmpty(EntryToAdd))
                 return;
 
-            var prefix = char.ToUpper(PrefixToAdd[0]) + PrefixToAdd.Substring(1);
+            var prefix = char.ToUpper(EntryToAdd[0]) + EntryToAdd.Substring(1);
             if (DataController.NameSeedData.PrefixList.Contains(prefix))
                 return;
 
             DataController.NameSeedData.PrefixList.Add(prefix);
             DataController.NameSeedData.PrefixList.Sort();
             DataController.SaveNameSeedData();
-            PrefixToAdd = string.Empty;
+            EntryToAdd = string.Empty;
             PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
         }
 
         [RelayCommand]
         void AddToSuffixList()
         {
-            if (string.IsNullOrEmpty(SuffixToAdd))
+            if (string.IsNullOrEmpty(EntryToAdd))
                 return;
 
-            var suffix = char.ToLower(SuffixToAdd[0]) + SuffixToAdd.Substring(1);
+            var suffix = char.ToLower(EntryToAdd[0]) + EntryToAdd.Substring(1);
             if (DataController.NameSeedData.SuffixList.Contains(suffix))
                 return;
 
             DataController.NameSeedData.SuffixList.Add(suffix);
             DataController.NameSeedData.SuffixList.Sort();
             DataController.SaveNameSeedData();
-            SuffixToAdd = string.Empty;
+            EntryToAdd = string.Empty;
             SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
         }
 
         [RelayCommand]
         void AddBoth()
         {
-            if (string.IsNullOrEmpty(PrefixToAdd) && string.IsNullOrEmpty(SuffixToAdd))
+            if (string.IsNullOrEmpty(EntryToAdd) && string.IsNullOrEmpty(EntryToAdd))
                 return;
 
-            if (!string.IsNullOrEmpty(PrefixToAdd))
-                SuffixToAdd = PrefixToAdd;
-
-            if (!string.IsNullOrEmpty(SuffixToAdd))
-                PrefixToAdd = SuffixToAdd;
-
-            if (!string.IsNullOrEmpty(PrefixToAdd) && !string.IsNullOrEmpty(SuffixToAdd))
-                SuffixToAdd = PrefixToAdd;
-
-            var prefix = char.ToUpper(PrefixToAdd[0]) + PrefixToAdd.Substring(1);
-            var suffix = char.ToLower(SuffixToAdd[0]) + SuffixToAdd.Substring(1);
+            var prefix = char.ToUpper(EntryToAdd[0]) + EntryToAdd.Substring(1);
+            var suffix = char.ToLower(EntryToAdd[0]) + EntryToAdd.Substring(1);
 
             if (!DataController.NameSeedData.PrefixList.Contains(prefix))
             {
                 DataController.NameSeedData.PrefixList.Add(prefix);
                 DataController.NameSeedData.PrefixList.Sort();
                 DataController.SaveNameSeedData();
-                PrefixToAdd = string.Empty;
+                EntryToAdd = string.Empty;
                 PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
             }
 
@@ -224,7 +210,7 @@ namespace DMToolKit.ViewModels
                 DataController.NameSeedData.SuffixList.Add(suffix);
                 DataController.NameSeedData.SuffixList.Sort();
                 DataController.SaveNameSeedData();
-                SuffixToAdd = string.Empty;
+                EntryToAdd = string.Empty;
                 SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
             }
         }

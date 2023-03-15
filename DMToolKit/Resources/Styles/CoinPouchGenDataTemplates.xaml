@@ -8,9 +8,9 @@
                     xmlns:selector="clr-namespace:DMToolKit.Services">
     <DataTemplate x:Key="Single" x:DataType="data:CoinPouch">
         <Border Padding="4" StrokeShape="RoundRectangle 5" 
-                StrokeThickness="4"
-                Background="{AppThemeBinding Light={StaticResource PouchFill},Dark={StaticResource PouchFill}}"
-                Stroke="{AppThemeBinding Light={StaticResource CoinPouchCellEdge},Dark={StaticResource CoinPouchCellEdge}}" >
+                StrokeThickness="1"
+                Background="{StaticResource PouchFill}"
+                Stroke="{StaticResource OptionsHeaderGradient}" >
             <Border.GestureRecognizers>
                 <TapGestureRecognizer 
                     CommandParameter="{Binding .}"
@@ -19,14 +19,14 @@
             <Grid>
                 <Image Source="coinpouch.png">
                     <Image.Shadow>
-                        <Shadow Brush="{StaticResource White}" Radius="20"/>
+                        <Shadow Brush="{StaticResource Secondary}" Radius="30"/>
                     </Image.Shadow>
                 </Image>
-                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="55"
+                <Border Background="{StaticResource Background}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="50"
                         StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
-                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-8,0,-3">
-                        <Label Text="{Binding TotalValueRounded}" FontSize="30" HorizontalOptions="Center" TextColor="{StaticResource Bright}"/>
-                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-15,0,-3">
+                        <Label Text="{Binding TotalValueRounded}" FontSize="38" HorizontalOptions="Center" TextColor="{StaticResource Tertiary}" />
+                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-10,0,-3"/>
                     </VerticalStackLayout>
                 </Border>
             </Grid>
@@ -34,9 +34,9 @@
     </DataTemplate>
     <DataTemplate x:Key="Double" x:DataType="data:CoinPouch">
         <Border Padding="4" StrokeShape="RoundRectangle 5" 
-                StrokeThickness="4"
-                Background="{AppThemeBinding Light={StaticResource PouchFill},Dark={StaticResource PouchFill}}"
-                Stroke="{AppThemeBinding Light={StaticResource CoinPouchCellEdge},Dark={StaticResource CoinPouchCellEdge}}" >
+                StrokeThickness="1"
+                Background="{StaticResource PouchFill}"
+                Stroke="{StaticResource OptionsHeaderGradient}" >
             <Border.GestureRecognizers>
                 <TapGestureRecognizer 
                     CommandParameter="{Binding .}"
@@ -45,14 +45,14 @@
             <Grid>
                 <Image Source="coinpouch.png">
                     <Image.Shadow>
-                        <Shadow Brush="{StaticResource White}" Radius="20"/>
+                        <Shadow Brush="{StaticResource Secondary}" Radius="30"/>
                     </Image.Shadow>
                 </Image>
-                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="55"
+                <Border Background="{StaticResource Background}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="50"
                         StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
                     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,-8,0,-3">
-                        <Label Text="{Binding TotalValueRounded}" FontSize="30" HorizontalOptions="Center" TextColor="{StaticResource Bright}"/>
-                        <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
+                        <Label Text="{Binding TotalValueRounded}" FontSize="30" HorizontalOptions="Center" TextColor="{StaticResource Tertiary}" />
+                        <Label Text="GP" HorizontalOptions="Center" Margin="0,-8,0,-3" TextColor="{StaticResource Tertiary}" />
                     </VerticalStackLayout>
                 </Border>
             </Grid>
@@ -60,9 +60,9 @@
     </DataTemplate>
     <DataTemplate x:Key="Triple" x:DataType="data:CoinPouch">
         <Border Padding="4" StrokeShape="RoundRectangle 5" 
-                StrokeThickness="4"
-                Background="{AppThemeBinding Light={StaticResource PouchFill},Dark={StaticResource PouchFill}}"
-                Stroke="{AppThemeBinding Light={StaticResource CoinPouchCellEdge},Dark={StaticResource CoinPouchCellEdge}}" >
+                StrokeThickness="1"
+                Background="{StaticResource PouchFill}"
+                Stroke="{StaticResource OptionsHeaderGradient}" >
             <Border.GestureRecognizers>
                 <TapGestureRecognizer 
                     CommandParameter="{Binding .}"
@@ -71,13 +71,13 @@
             <Grid>
                 <Image Source="coinpouch.png">
                     <Image.Shadow>
-                        <Shadow Brush="{StaticResource White}" Radius="20"/>
+                        <Shadow Brush="{StaticResource Secondary}" Radius="30"/>
                     </Image.Shadow>
                 </Image>
-                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="55"
+                <Border Background="{StaticResource Background}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="50"
                         StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
                     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                        <Label Text="{Binding TotalValueRounded}" FontSize="22" HorizontalOptions="Center" TextColor="{StaticResource Bright}"/>
+                        <Label Text="{Binding TotalValueRounded}" FontSize="22" HorizontalOptions="Center" TextColor="{StaticResource Tertiary}" />
                         <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
                     </VerticalStackLayout>
                 </Border>
@@ -86,9 +86,9 @@
     </DataTemplate>
     <DataTemplate x:Key="Quad" x:DataType="data:CoinPouch">
         <Border Padding="4" StrokeShape="RoundRectangle 5" 
-                StrokeThickness="4"
-                Background="{AppThemeBinding Light={StaticResource PouchFill},Dark={StaticResource PouchFill}}"
-                Stroke="{AppThemeBinding Light={StaticResource CoinPouchCellEdge},Dark={StaticResource CoinPouchCellEdge}}" >
+                StrokeThickness="1"
+                Background="{StaticResource PouchFill}"
+                Stroke="{StaticResource OptionsHeaderGradient}" >
             <Border.GestureRecognizers>
                 <TapGestureRecognizer 
                     CommandParameter="{Binding .}"
@@ -97,13 +97,13 @@
             <Grid>
                 <Image Source="coinpouch.png">
                     <Image.Shadow>
-                        <Shadow Brush="{StaticResource White}" Radius="20"/>
+                        <Shadow Brush="{StaticResource Secondary}" Radius="30"/>
                     </Image.Shadow>
                 </Image>
-                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="55"
+                <Border Background="{StaticResource Background}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="50"
                         StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
                     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                        <Label Text="{Binding TotalValueRounded}" FontSize="22" HorizontalOptions="Center" TextColor="{StaticResource Bright}"/>
+                        <Label Text="{Binding TotalValueRounded}" FontSize="22" HorizontalOptions="Center" TextColor="{StaticResource Tertiary}" />
                         <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
                     </VerticalStackLayout>
                 </Border>
@@ -112,9 +112,9 @@
     </DataTemplate>
     <DataTemplate x:Key="Penta" x:DataType="data:CoinPouch">
         <Border Padding="4" StrokeShape="RoundRectangle 5" 
-                StrokeThickness="4"
-                Background="{AppThemeBinding Light={StaticResource PouchFill},Dark={StaticResource PouchFill}}"
-                Stroke="{AppThemeBinding Light={StaticResource CoinPouchCellEdge},Dark={StaticResource CoinPouchCellEdge}}" >
+                StrokeThickness="1"
+                Background="{StaticResource PouchFill}"
+                Stroke="{StaticResource OptionsHeaderGradient}" >
             <Border.GestureRecognizers>
                 <TapGestureRecognizer 
                     CommandParameter="{Binding .}"
@@ -123,13 +123,13 @@
             <Grid>
                 <Image Source="coinpouch.png">
                     <Image.Shadow>
-                        <Shadow Brush="{StaticResource White}" Radius="20"/>
+                        <Shadow Brush="{StaticResource Secondary}" Radius="30"/>
                     </Image.Shadow>
                 </Image>
-                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="55"
+                <Border Background="{StaticResource Background}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="50"
                         StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
                     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                        <Label Text="{Binding TotalValueRounded}" FontSize="20" HorizontalOptions="Center" TextColor="{StaticResource Bright}"/>
+                        <Label Text="{Binding TotalValueRounded}" FontSize="17" HorizontalOptions="Center" TextColor="{StaticResource Tertiary}" />
                         <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
                     </VerticalStackLayout>
                 </Border>
@@ -138,9 +138,9 @@
     </DataTemplate>
     <DataTemplate x:Key="Hexa" x:DataType="data:CoinPouch">
         <Border Padding="4" StrokeShape="RoundRectangle 5" 
-                StrokeThickness="4"
-                Background="{AppThemeBinding Light={StaticResource PouchFill},Dark={StaticResource PouchFill}}"
-                Stroke="{AppThemeBinding Light={StaticResource CoinPouchCellEdge},Dark={StaticResource CoinPouchCellEdge}}" >
+                StrokeThickness="1"
+                Background="{StaticResource PouchFill}"
+                Stroke="{StaticResource OptionsHeaderGradient}" >
             <Border.GestureRecognizers>
                 <TapGestureRecognizer 
                     CommandParameter="{Binding .}"
@@ -149,13 +149,13 @@
             <Grid>
                 <Image Source="coinpouch.png">
                     <Image.Shadow>
-                        <Shadow Brush="{StaticResource White}" Radius="20"/>
+                        <Shadow Brush="{StaticResource Secondary}" Radius="30"/>
                     </Image.Shadow>
                 </Image>
-                <Border Background="{StaticResource PouchFill}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="55"
+                <Border Background="{StaticResource Background}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="50"
                         StrokeShape="RoundRectangle 30" Margin="0,35,0,0" StrokeThickness="0">
                     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                        <Label Text="{Binding TotalValueRounded}" FontSize="17" HorizontalOptions="Center" TextColor="{StaticResource Bright}"/>
+                        <Label Text="{Binding TotalValueRounded}" FontSize="15" HorizontalOptions="Center" TextColor="{StaticResource Tertiary}"/>
                         <Label Text="GP"  HorizontalOptions="Center" Margin="0,-8,0,-3"/>
                     </VerticalStackLayout>
                 </Border>

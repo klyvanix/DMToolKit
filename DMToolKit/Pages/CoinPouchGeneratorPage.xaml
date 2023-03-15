@@ -36,7 +36,7 @@
                     <Border Grid.Column="1" BackgroundColor="Transparent" StrokeThickness="1" Margin="0"
                             Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
                         <!--ENTRY FOR COUNTER BUTTON-->
-                        <Entry Text="{Binding OutputTarget}"  Placeholder="# of Names" Margin="0,3,0,0"
+                        <Entry Text="{Binding OutputTarget}"  Placeholder="Pouch Value" Margin="0,3,0,0"
                            HorizontalOptions="Fill" Keyboard="Numeric" VerticalOptions="Fill"
                            HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
                     </Border>

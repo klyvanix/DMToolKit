@@ -8,245 +8,137 @@
     <Grid RowDefinitions="*,50">
         <ScrollView>
             <VerticalStackLayout>
-
                 <Grid>
                     <Image Source="coinpouch.png" Margin="10" HeightRequest="200">
                         <Image.Shadow>
-                            <Shadow Brush="White" Radius="30"/>
+                            <Shadow Brush="{StaticResource Bright}" Radius="60"/>
                         </Image.Shadow>
                     </Image>
-                    <Border HeightRequest="100" WidthRequest="120" StrokeShape="RoundRectangle 75" Margin="0,80,0,0"
+                    <Border HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 75" Margin="0,70,0,0"
                             StrokeThickness="0"
-                            Background="{AppThemeBinding Light={StaticResource PouchFill}, Dark={StaticResource PouchFill}}">
+                            Background="{StaticResource PouchFill}">
                         <Grid>
                             <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="0,5,0,0">
-                                <Label Text="Approximate Value" Margin="0,0,0,-10"
+                                <Label Text="Approximate Value" FontSize="13" Margin="0,0,0,-10"
                                    HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
-                                <Label Text="{Binding CoinPouch.TotalValueRounded}" FontSize="30" TextColor="{StaticResource Bright}"
-                                   HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding CoinPouch.TotalValueRounded}" FontSize="30" TextColor="{StaticResource Tertiary}"
+                                   HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center">
+                                    <Label.Shadow>
+                                        <Shadow Brush="{StaticResource Background}" Radius="30" />
+                                    </Label.Shadow>
+                                </Label>
                                 <Label Text="GP" FontSize="20" Margin="0,-10,0,0"
                                    HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
                             </VerticalStackLayout>
                         </Grid>
                     </Border>
                 </Grid>
-                <!--Headings-->
-                <Grid ColumnDefinitions="*,*,*" >
-                    <Border Background="{StaticResource OptionsHeaderDark}" Stroke="{StaticResource DarkPrimary}">
-                        <Label Text="Contents" VerticalOptions="Center" Grid.Column="0" FontSize="16" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Background="{StaticResource OptionsHeaderDark}" Stroke="{StaticResource DarkPrimary}" Grid.Column="1">
-                        <Label Text="Unit Value" VerticalOptions="Center" Grid.Column="0" FontSize="16" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Background="{StaticResource OptionsHeaderDark}" Stroke="{StaticResource DarkPrimary}" Grid.Column="2" >
-                        <Label Text="Contents Value" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" 
-                               FontSize="16"/>
-                    </Border>
-                </Grid>
-                <!--CP-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding CPVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.CP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                <Grid ColumnDefinitions="*,*,*" Margin="20,0">
+                    <Border Grid.Column="0" BackgroundColor="{StaticResource Background}" Stroke="{StaticResource OptionsHeaderGradient}">
+                        <VerticalStackLayout>
+                            <!--CP-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding CPVisible}">
+                                <Label Text="{Binding CoinPouch.CP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="coincp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="1/100 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.CPValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--SP-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding SPVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.SP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="coincp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--SP-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding SPVisible}">
+                                <Label Text="{Binding CoinPouch.SP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="coinsp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="1/10 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.SPValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--EP-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding EPVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.EP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="coinsp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--EP-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding EPVisible}">
+                                <Label Text="{Binding CoinPouch.EP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="coinep.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="1/2 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.EPValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--GP-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding GPVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.GP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="coinep.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--GP-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding GPVisible}">
+                                <Label Text="{Binding CoinPouch.GP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="coingp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="1 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.GPValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--PP-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding PPVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.PP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="coingp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--PP-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding PPVisible}">
+                                <Label Text="{Binding CoinPouch.PP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="coinpp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="1 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.PPValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--Jewels-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding JewelsVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.Jewels}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="coinpp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--Jewels-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding JewelsVisible}">
+                                <Label Text="{Binding CoinPouch.Jewels}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="jewel.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="50 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.JewelValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--Gems-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding GemsVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.Gems}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="jewel.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--Gems-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding GemsVisible}">
+                                <Label Text="{Binding CoinPouch.Gems}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="gem.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="100 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.GemValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--Emeralds-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding EmeraldsVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.Emeralds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="gem.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--Emeralds-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding EmeraldsVisible}">
+                                <Label Text="{Binding CoinPouch.Emeralds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="emerald.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="500 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.EmeraldValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--Rubys-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding RubysVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.Rubys}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="emerald.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--Rubys-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding RubysVisible}">
+                                <Label Text="{Binding CoinPouch.Rubys}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="ruby.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="1000 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.RubyValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <!--Diamonds-->
-                <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding DiamondsVisible}">
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" HorizontalOptions="Fill">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" >
-                            <Label Text="{Binding CoinPouch.Diamonds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
+                                <Image Source="ruby.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <!--Diamonds-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding DiamondsVisible}">
+                                <Label Text="{Binding CoinPouch.Diamonds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                            <Image Source="diamond.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
-                        </Grid>
+                                <Image Source="diamond.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                            </Grid>
+                            <Border HeightRequest="1" StrokeThickness="1" Margin="10,0" Stroke="{StaticResource Secondary}" 
+                                    BackgroundColor="{StaticResource Secondary}"/>
+                            <!--Total-->
+                            <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" Padding="2">
+                                <Label Text="{Binding CoinPouch.TotalContents}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="End"/>
+                                <Image Source="coinpouch.png" HeightRequest="20" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Bright}" Radius="15"/>
+                                    </Image.Shadow>
+                                </Image>
+                            </Grid>
+                        </VerticalStackLayout>
                     </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                        <Label Text="5000 GP" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center"/>
+                    <Border Grid.Column="1" BackgroundColor="{StaticResource Background}" Stroke="{StaticResource OptionsHeaderGradient}">
+                        <VerticalStackLayout>
+                            <Label Text="1/100 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding CPVisible}"/>
+                            <Label Text="1/10 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding SPVisible}"/>
+                            <Label Text="1/2 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding EPVisible}"/>
+                            <Label Text="1 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding GPVisible}"/>
+                            <Label Text="10 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding PPVisible}"/>
+                            <Label Text="50 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding JewelsVisible}"/>
+                            <Label Text="100 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding GemsVisible}"/>
+                            <Label Text="500 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding EmeraldsVisible}"/>
+                            <Label Text="1000 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding RubysVisible}"/>
+                            <Label Text="5000 GP" VerticalTextAlignment="Center" Grid.Column="0" FontSize="18" HorizontalOptions="Center" HeightRequest="30" IsVisible="{Binding DiamondsVisible}"/>
+                        </VerticalStackLayout>
                     </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.DiamondValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
-                    </Border>
-                </Grid>
-                <Grid ColumnDefinitions="*,*,*" >
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0">
-                        <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" Padding="2">
-                            <Label Text="{Binding CoinPouch.TotalContents}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalOptions="End"/>
-                            <Image Source="coinpouch.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start" />
-                        </Grid>
-                    </Border>
-                    <Border BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}"
-                            StrokeThickness="0" Grid.Column="1">
-                    </Border>
-                    <Border Grid.Column="2" StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource DarkPrimary}}" >
-                        <Label Text="{Binding CoinPouch.TotalValue,StringFormat='{0} GP'}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18"/>
+                    <Border Grid.Column="2" BackgroundColor="{StaticResource Background}" Stroke="{StaticResource OptionsHeaderGradient}">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding CoinPouch.CPValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding CPVisible}"/>
+                            <Label Text="{Binding CoinPouch.SPValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding SPVisible}"/>
+                            <Label Text="{Binding CoinPouch.EPValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding EPVisible}"/>
+                            <Label Text="{Binding CoinPouch.GPValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding GPVisible}"/>
+                            <Label Text="{Binding CoinPouch.PPValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding PPVisible}"/>
+                            <Label Text="{Binding CoinPouch.JewelValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding JewelsVisible}"/>
+                            <Label Text="{Binding CoinPouch.GemValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding GemsVisible}"/>
+                            <Label Text="{Binding CoinPouch.EmeraldValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding EmeraldsVisible}"/>
+                            <Label Text="{Binding CoinPouch.RubyValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding RubysVisible}"/>
+                            <Label Text="{Binding CoinPouch.DiamondValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" IsVisible="{Binding DiamondsVisible}"/>
+                            <Border HeightRequest="1" StrokeThickness="1" Margin="10,0" Stroke="{StaticResource Secondary}" 
+                                    BackgroundColor="{StaticResource Secondary}"/>
+                            <Label Text="{Binding CoinPouch.TotalValue,StringFormat='{0} GP'}" VerticalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" HeightRequest="30" />
+                        </VerticalStackLayout>
                     </Border>
                 </Grid>
             </VerticalStackLayout>
