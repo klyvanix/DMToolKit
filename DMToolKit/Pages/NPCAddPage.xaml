@@ -11,24 +11,24 @@
             <Label HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="Values:" />
-                        <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding InputNPC.ValuePrime, StringFormat=' {0},'}" FontAttributes="Bold"/>
-                        <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding InputNPC.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                        <Span TextColor="{StaticResource Tertiary}" Text="Values:" />
+                        <Span TextColor="{StaticResource ValuesDark}" Text="{Binding InputNPC.ValuePrime, StringFormat=' {0},'}" FontAttributes="Bold"/>
+                        <Span TextColor="{StaticResource ValuesDark}" Text="{Binding InputNPC.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
             <Border Margin="20,0" Padding="5"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" >
+                    BackgroundColor="{StaticResource Background}" 
+                    Stroke="{StaticResource ValuesDark}" >
                 <Label>
                     <Label.FormattedText>
                         <FormattedString>
                             <Span TextColor="{StaticResource Name}" Text="{Binding InputNPC.FirstName}" FontAttributes="Bold"/>
-                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" values" />
-                            <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding InputNPC.ValuePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding InputNPC.ValuePrimeDescription, StringFormat=', {0}, and'}" />
-                            <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding InputNPC.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding InputNPC.ValueMinorDescription, StringFormat=', {0}.'}" />
+                            <Span TextColor="{StaticResource Tertiary}" Text=" values" />
+                            <Span TextColor="{StaticResource ValuesDark}" Text="{Binding InputNPC.ValuePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource Tertiary}" Text="{Binding InputNPC.ValuePrimeDescription, StringFormat=', {0}, and'}" />
+                            <Span TextColor="{StaticResource ValuesDark}" Text="{Binding InputNPC.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource Tertiary}" Text="{Binding InputNPC.ValueMinorDescription, StringFormat=', {0}.'}" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
@@ -36,47 +36,45 @@
             <Label HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="Positive Attributes:" />
-                        <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding InputNPC.PositivePrime, StringFormat=' {0},'}" FontAttributes="Bold"/>
-                        <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding InputNPC.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                        <Span TextColor="{StaticResource Tertiary}" Text="Positive Attributes:" />
+                        <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding InputNPC.PositivePrime, StringFormat=' {0},'}" FontAttributes="Bold"/>
+                        <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding InputNPC.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
             <Label HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="Neutral Attributes:" />
-                        <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding InputNPC.NegativePrime, StringFormat=' {0},'}" FontAttributes="Bold"/>
-                        <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding InputNPC.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                        <Span TextColor="{StaticResource Tertiary}" Text="Neutral Attributes:" />
+                        <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding InputNPC.NegativePrime, StringFormat=' {0},'}" FontAttributes="Bold"/>
+                        <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding InputNPC.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Border Margin="20,0" Padding="5"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" >
+            <Border Margin="20,0" Padding="5" BackgroundColor="{StaticResource Background}" Stroke="{StaticResource NPCAttributes}" >
                 <VerticalStackLayout>
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span TextColor="{StaticResource Name}" Text="{Binding InputNPC.FirstName}" FontAttributes="Bold" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" is known for being" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding InputNPC.PositivePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding InputNPC.PositivePrimeDescription, StringFormat=', {0}, and'}" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding InputNPC.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding InputNPC.PositiveMinorDescription, StringFormat=', {0}.'}" />
+                                <Span TextColor="{StaticResource Tertiary}" Text=" is known for being" />
+                                <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding InputNPC.PositivePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                <Span TextColor="{StaticResource Tertiary}" Text="{Binding InputNPC.PositivePrimeDescription, StringFormat=', {0}, and'}" />
+                                <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding InputNPC.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                <Span TextColor="{StaticResource Tertiary}" Text="{Binding InputNPC.PositiveMinorDescription, StringFormat=', {0}.'}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                     <Label Padding="0,5">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="However, " />
+                                <Span TextColor="{StaticResource Tertiary}" Text="However, " />
                                 <Span TextColor="{StaticResource Name}" Text="{Binding InputNPC.FirstName}" FontAttributes="Bold" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" can also be" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding InputNPC.NegativePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding InputNPC.NegativePrimeDescription, StringFormat=', {0}, and'}" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding InputNPC.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding InputNPC.NegativeMinorDescription, StringFormat=', {0}.'}" />
+                                <Span TextColor="{StaticResource Tertiary}" Text=" can also be" />
+                                <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding InputNPC.NegativePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                <Span TextColor="{StaticResource Tertiary}" Text="{Binding InputNPC.NegativePrimeDescription, StringFormat=', {0}, and'}" />
+                                <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding InputNPC.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                <Span TextColor="{StaticResource Tertiary}" Text="{Binding InputNPC.NegativeMinorDescription, StringFormat=', {0}.'}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -84,16 +82,14 @@
             </Border>
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Row="1" Margin="20,5">
-            <Border StrokeShape="RoundRectangle 5" Grid.Column="1" Margin="0,0,0,5"
-                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}">
+            <Border StrokeShape="RoundRectangle 5" Margin="0,0,0,5"
+                BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Role}">
                 <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}" />
             </Border>
-            <Border BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
-                    StrokeShape="RoundRectangle 5" HeightRequest="200" HorizontalOptions="Center" Padding="10">
+            <Border BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Role}" StrokeShape="RoundRectangle 5" 
+                    HeightRequest="200" HorizontalOptions="Fill" Padding="5,0">
                 <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" 
-                        TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" Keyboard="Text"
-                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" MinimumWidthRequest="350" MaximumWidthRequest="400" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                        TextColor="{StaticResource Tertiary}" Keyboard="Text" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
             </Border>
         </VerticalStackLayout>
         <Button Text="Save" HorizontalOptions="Fill" VerticalOptions="Fill"  Margin="0,1,0,1" Grid.Row="2" Command="{Binding SaveDataCommand}"/>

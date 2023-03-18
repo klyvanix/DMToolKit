@@ -71,10 +71,7 @@ namespace DMToolKit.ViewModels
             HelpScreenCollection = new ObservableCollection<HelpPageItem>();
             NameList = new ObservableCollection<Name>();
             SeedList = new ObservableCollection<string>();
-            if (Application.Current.RequestedTheme == AppTheme.Light)
-                ExpandImage = "expand";
-            else
-                ExpandImage = "expanddark";
+            ExpandImage = "expand.png";
             LockedLetter = "A";
             LetterLock = false;
             GenerationNumber = 1;
@@ -223,17 +220,11 @@ namespace DMToolKit.ViewModels
             OptionsExpanded = !OptionsExpanded;
             if (OptionsExpanded)
             {
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    ExpandImage = "retract";
-                else
-                    ExpandImage = "retractdark";
+                ExpandImage = "retract.png";
             }
             else
             {
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    ExpandImage = "expand";
-                else
-                    ExpandImage = "expanddark";
+                ExpandImage = "expand.png";
             }
         }
 

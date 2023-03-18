@@ -28,6 +28,9 @@ namespace DMToolKit.ViewModels
         string listGroupToAdd;
 
         [ObservableProperty]
+        string expandImage;
+
+        [ObservableProperty]
         ObservableCollection<string> characterClassifications;
 
         DataController DataController;
@@ -44,6 +47,7 @@ namespace DMToolKit.ViewModels
             ListGroupToAdd = string.Empty;
             AddVisible = false;
             CharacterClassifications = new ObservableCollection<string>();
+            ExpandImage = "retract";
             UpdateClassifications();
         }
 
@@ -101,6 +105,14 @@ namespace DMToolKit.ViewModels
         public void ToggleAddMenu()
         {
             AddVisible = !AddVisible;
+            if (AddVisible)
+            {
+                ExpandImage = "expand";
+            }
+            else
+            {
+                ExpandImage = "retract";
+            }
         }
     }
 }

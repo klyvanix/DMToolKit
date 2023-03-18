@@ -6,30 +6,39 @@
              x:DataType="viewmodel:NameAddViewModel"
              Title="NameAddPage">
     <Grid RowDefinitions="*,20,50">
-        <Grid RowDefinitions="Auto,*">
-            <Border WidthRequest="300" HeightRequest="100" 
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
-                    StrokeThickness="0" StrokeShape="RoundRectangle 0 0 50 50">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,*">
+            <Border WidthRequest="300" HeightRequest="100" Stroke="{StaticResource Secondary}" 
+                    BackgroundColor="{StaticResource Background}" 
+                    StrokeThickness="1" StrokeShape="RoundRectangle 0 0 50 50">
                 <Label Text="{Binding InputName}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30"
-                       TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
+                       TextColor="{StaticResource Tertiary}" />
             </Border>
-            <VerticalStackLayout Grid.Row="1">
-                <Label Grid.Row="1" Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
-                <Button Text="Add Prefix" HeightRequest="45" Margin="5,2" Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding PrefixEnabled}" />
-                <Button Text="Add Suffix" HeightRequest="45" Margin="5,1" Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding SuffixEnabled}"/>
-                <ScrollView Grid.Row="1">
-                    <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NameLists}" Margin="0,5">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="x:String">
-                                <Button Text="{Binding ., StringFormat='Add {0}'}" HeightRequest="45" Margin="30,2" CornerRadius="25"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
-                                    CommandParameter="{Binding .}"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameAddViewModel}},Path=AddToNameListCommand}"/>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </ScrollView>
-            </VerticalStackLayout>
+            <Label Grid.Row="1" Text="Add To List" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" Padding="5" />
+            <Button Text="Add Prefix" HeightRequest="45" Margin="5,2" Grid.Row="2"
+                    Command="{Binding AddToPrefixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding PrefixEnabled}" />
+            <Button Text="Add Suffix" HeightRequest="45" Margin="5,1" Grid.Row="3"
+                    Command="{Binding AddToSuffixCommand}" CommandParameter="{Binding InputName}" IsEnabled="{Binding SuffixEnabled}"/>
+            <ScrollView Grid.Row="5" BackgroundColor="{StaticResource Background}">
+                <CollectionView HorizontalOptions="Center" VerticalOptions="Start" ItemsSource="{Binding NameLists}" Margin="30,5" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <Border BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}" StrokeShape="RoundRectangle 5">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                            NumberOfTapsRequired="2" CommandParameter="{Binding .}"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameAddViewModel}},Path=AddToNameListCommand}"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="{Binding ., StringFormat='Add {0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="10"/>
+                            </Border>
+                            <!--<Button Text="{Binding ., StringFormat='Add {0}'}" HeightRequest="45" Margin="30,2" CornerRadius="25"
+                                        TextColor="{StaticResource}"
+                                        BackgroundColor="{StaticResource Background}"
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameAddViewModel}},Path=AddToNameListCommand}"/>-->
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
         </Grid>
         <Grid Grid.Row="1" ColumnDefinitions="*,*" Margin="0,0,0,2">
             <Border StrokeThickness="0" StrokeShape="RoundRectangle 10" Grid.Column="0"

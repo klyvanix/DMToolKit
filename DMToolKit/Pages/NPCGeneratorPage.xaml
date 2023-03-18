@@ -162,11 +162,11 @@
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
                             Stroke="Transparent">
-                    <ImageButton Source="expand.png" HeightRequest="20" />
+                    <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleOptionsCommand}"/>
                 </Border>
             </Grid>
             <!--UPPER BUTTON PANEL-->
-            <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50">
+            <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50" IsVisible="{Binding OptionsExpanded}">
                 <Border Grid.Column="0"  Margin="1,1,1,2"
                         BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
                         StrokeThickness="0"
@@ -194,11 +194,7 @@
             <Grid Grid.Row="2" ColumnDefinitions="*,3*,*" Margin="1,0,1,2">
                 <Button Grid.Column="0" Text="Save Character" Command="{Binding GoToAddPageCommand}" CommandParameter="{Binding Character}"/>
                 <Button Grid.Column="1" Text="Generate" Command="{Binding GenerateNPCCommand}" Margin="1,0"/>
-                <Border StrokeShape="RoundRectangle 5"  Grid.Column="2" VerticalOptions="Fill" HorizontalOptions="Fill" 
-                        StrokeThickness="0"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource TextBackgroundDark}}" >
-                    <ImageButton Source="unlock.png" Command="{Binding UnlockAllCommand}" HorizontalOptions="Fill"/>
-                </Border>
+                <Button Grid.Column="2" Text="Unlock" Command="{Binding UnlockAllCommand}" />
             </Grid>
         </Grid>
     </Grid>

@@ -90,6 +90,12 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         bool historyForwardShown;
 
+        [ObservableProperty]
+        bool optionsExpanded;
+
+        [ObservableProperty]
+        string expandImage;
+
         bool startup;
 
         private Random random = new Random();
@@ -125,6 +131,8 @@ namespace DMToolKit.ViewModels
             SurnameListIndex = 2;
             HistoryForwardShown = false;
             HistoryBackwardShown = false;
+            ExpandImage = "expand";
+            OptionsExpanded = false;
         }
 
         [RelayCommand]
@@ -326,6 +334,20 @@ namespace DMToolKit.ViewModels
                 return;
             NotGenerated = false;
             Generated = true;
+        }
+
+        [RelayCommand]
+        void ToggleOptions()
+        {
+            OptionsExpanded = !OptionsExpanded;
+            if (OptionsExpanded)
+            {
+                ExpandImage = "retract";
+            }
+            else
+            {
+                ExpandImage = "expand";
+            }
         }
 
         [RelayCommand]
