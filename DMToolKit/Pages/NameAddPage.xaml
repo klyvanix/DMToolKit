@@ -30,11 +30,6 @@
                                 </Border.GestureRecognizers>
                                 <Label Text="{Binding ., StringFormat='Add {0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="10"/>
                             </Border>
-                            <!--<Button Text="{Binding ., StringFormat='Add {0}'}" HeightRequest="45" Margin="30,2" CornerRadius="25"
-                                        TextColor="{StaticResource}"
-                                        BackgroundColor="{StaticResource Background}"
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameAddViewModel}},Path=AddToNameListCommand}"/>-->
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
