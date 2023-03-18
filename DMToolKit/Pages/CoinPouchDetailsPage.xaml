@@ -40,61 +40,101 @@
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding CPVisible}">
                                 <Label Text="{Binding CoinPouch.CP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="coincp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="coincp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--SP-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding SPVisible}">
                                 <Label Text="{Binding CoinPouch.SP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="coinsp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="coinsp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--EP-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding EPVisible}">
                                 <Label Text="{Binding CoinPouch.EP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="coinep.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="coinep.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--GP-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding GPVisible}">
                                 <Label Text="{Binding CoinPouch.GP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="coingp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="coingp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--PP-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding PPVisible}">
                                 <Label Text="{Binding CoinPouch.PP}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="coinpp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="coinpp.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--Jewels-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding JewelsVisible}">
                                 <Label Text="{Binding CoinPouch.Jewels}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="jewel.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="jewel.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--Gems-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding GemsVisible}">
                                 <Label Text="{Binding CoinPouch.Gems}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="gem.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="gem.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--Emeralds-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding EmeraldsVisible}">
                                 <Label Text="{Binding CoinPouch.Emeralds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="emerald.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="emerald.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--Rubys-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding RubysVisible}">
                                 <Label Text="{Binding CoinPouch.Rubys}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="ruby.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="ruby.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <!--Diamonds-->
                             <Grid HorizontalOptions="Fill" Grid.Column="0" ColumnDefinitions="*,*" HeightRequest="30" IsVisible="{Binding DiamondsVisible}">
                                 <Label Text="{Binding CoinPouch.Diamonds}" VerticalOptions="Center" Grid.Column="0" FontSize="18" HorizontalTextAlignment="End"
                                    HorizontalOptions="Fill" Margin="0,0,2,0"/>
-                                <Image Source="diamond.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Image Source="diamond.png" HeightRequest="30" Grid.Column="1" HorizontalOptions="Start">
+                                    <Image.Shadow>
+                                        <Shadow Brush="{StaticResource Secondary}" Radius="10"/>
+                                    </Image.Shadow>
+                                </Image>
                             </Grid>
                             <Border HeightRequest="1" StrokeThickness="1" Margin="10,0" Stroke="{StaticResource Secondary}" 
                                     BackgroundColor="{StaticResource Secondary}"/>
