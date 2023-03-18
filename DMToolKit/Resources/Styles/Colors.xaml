@@ -19,8 +19,8 @@
     <Color x:Key="PositiveAttributeDark">#65d265</Color>
     <Color x:Key="NegativeAttribute">#a11d1d</Color>
     <Color x:Key="NegativeAttributeDark">#e22929</Color>
-    
-    <Color x:Key="Name">#a05abd</Color>
+
+    <Color x:Key="Name">#ffc555</Color>
     <Color x:Key="Role">#daa37d</Color>
     <Color x:Key="Delete">#d23434</Color>
     
@@ -86,6 +86,13 @@
                           Offset="0.1" />
         <GradientStop Color="{StaticResource DarkPrimary}"
                           Offset=".9" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="NPCAttributes" EndPoint="0,1">
+        <GradientStop Color="{StaticResource PositiveAttributeDark}"
+                          Offset="0.4" />
+        <GradientStop Color="{StaticResource NegativeAttributeDark}"
+                          Offset=".6" />
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="OptionsHeaderGradient" EndPoint="0,1">

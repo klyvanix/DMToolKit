@@ -147,20 +147,14 @@ namespace DMToolKit.ViewModels
                     //firstName = DataController.NameData.MasculineNameList.Collection[firstNameIndex];
                     firstName = DataController.NameData.ThemedNameCollections[MasculineListIndex].Collection[firstNameIndex];
                     gender = 1;
-                    if (Application.Current.RequestedTheme == AppTheme.Light)
-                        GenderImage = "masculine.png";
-                    if (Application.Current.RequestedTheme == AppTheme.Dark)
-                        GenderImage = "masculinedark.png";
+                    GenderImage = "masculinedark.png";
                 }
                 else
                 {
                     //firstName = DataController.NameData.FeminineNameList.Collection[firstNameIndex];
                     firstName = DataController.NameData.ThemedNameCollections[FeminineListIndex].Collection[firstNameIndex];
                     gender = 2;
-                    if (Application.Current.RequestedTheme == AppTheme.Light)
-                        GenderImage = "feminine.png";
-                    if (Application.Current.RequestedTheme == AppTheme.Dark)
-                        GenderImage = "femininedark.png";
+                    GenderImage = "femininedark.png";
                 }
                 Character = new NPC(firstName,
                     DataController.NameData.ThemedNameCollections[SurnameListIndex].Collection[lastNameIndex],
@@ -282,18 +276,12 @@ namespace DMToolKit.ViewModels
             if (Character.GenderCode == 1)
             {
                 masculineName = true;
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    GenderImage = "masculine.png";
-                if (Application.Current.RequestedTheme == AppTheme.Dark)
-                    GenderImage = "masculinedark.png";
+                GenderImage = "masculinedark.png";
             }
             else
             {
                 masculineName = false;
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    GenderImage = "feminine.png";
-                if (Application.Current.RequestedTheme == AppTheme.Dark)
-                    GenderImage = "femininedark.png";
+                GenderImage = "femininedark.png";
             }
         }
 

@@ -7,81 +7,153 @@
              Title="NPCGeneratorPage">
     <Grid RowDefinitions="Auto,*,Auto">
         <ScrollView Grid.Row="1">
-            <Grid RowDefinitions="70,50,Auto,80,Auto,*">
-                <Grid Grid.Row="0" ColumnDefinitions="*,35,35,*" RowDefinitions="10,*,10">
+            <VerticalStackLayout>
+                <Grid ColumnDefinitions="*,35,35,*" RowDefinitions="10,*,10">
                     <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 50 5 5 5"
                             BackgroundColor="{AppThemeBinding Light={StaticResource TextBackgroundDark},Dark={StaticResource Dark}}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockFirstNameCommand}"/>
+                        </Border.GestureRecognizers>
                         <Grid RowDefinitions="*,2*" >
-                            <Label Text="First Name" Grid.Row="0" HorizontalOptions="Center"/>
+                            <Label Text="First Name" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding FirstNameColor}"/>
                             <Label Text="{Binding Character.FirstName}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" 
-                                   FontAttributes="Bold" FontSize="20"/>
+                                   FontAttributes="Bold" FontSize="20" TextColor="{StaticResource Name}"/>
                         </Grid>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 5 50 5 5"
                             BackgroundColor="{AppThemeBinding Light={StaticResource TextBackgroundDark},Dark={StaticResource Dark}}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockLastNameCommand}"/>
+                        </Border.GestureRecognizers>
                         <Grid RowDefinitions="*,2*" >
-                            <Label Text="Last Name" Grid.Row="0" HorizontalOptions="Center"/>
+                            <Label Text="Last Name" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding LastNameColor}"/>
                             <Label Text="{Binding Character.LastName}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" 
-                                   FontAttributes="Bold" FontSize="20"/>
+                                   FontAttributes="Bold" FontSize="20" TextColor="{StaticResource Name}"/>
                         </Grid>
                     </Border>
                     <Border Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" StrokeShape="RoundRectangle 35"
                             BackgroundColor="{AppThemeBinding Light={StaticResource TextBackgroundDark},Dark={StaticResource Dark}}">
-                        
+                        <Image Source="{Binding GenderImage}" HeightRequest="40" WidthRequest="40"/>
                     </Border>
                 </Grid>
-                <Grid Grid.Row="1" RowDefinitions="*,2*" ColumnDefinitions="*,*" Margin="40,0">
-                    <Label Text="Primary" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center"/>
-                    <Label Text="{Binding Character.ValuePrime}" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" FontSize="18"
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" Margin="40,0">
+                    <Border BackgroundColor="Transparent" Grid.Column="0" VerticalOptions="FillAndExpand" StrokeShape="RoundRectangle 20 0 0 0"
+                            Stroke="{StaticResource ValuesDark}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockPrimeValueCommand}"/>
+                        </Border.GestureRecognizers>
+                        <Grid RowDefinitions="Auto,Auto" Margin="0,2,0,3">
+                            <Label Text="Primary" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding ValuePrimeColor}"/>
+                            <Label Text="{Binding Character.ValuePrime}" Grid.Row="1" HorizontalOptions="Center" FontSize="18"
                            TextColor="{StaticResource ValuesDark}"/>
-                    <Label Text="Secondary" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center"/>
-                    <Label Text="{Binding Character.ValueMinor}" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" FontSize="18"
+                        </Grid>
+                    </Border>
+                    <Border BackgroundColor="Transparent" Grid.Column="1" VerticalOptions="FillAndExpand" StrokeShape="RoundRectangle 0 20 0 0"
+                            Stroke="{StaticResource ValuesDark}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockMinorValueCommand}"/>
+                        </Border.GestureRecognizers>
+                        <Grid RowDefinitions="Auto,Auto" Margin="0,2,0,3">
+                            <Label Text="Secondary" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding ValueMinorColor}"/>
+                            <Label Text="{Binding Character.ValueMinor}" Grid.Row="1" HorizontalOptions="Center" FontSize="18" 
                            TextColor="{StaticResource ValuesDark}"/>
+                        </Grid>
+                    </Border>
                 </Grid>
-                <Border Grid.Row="2" Margin="10,0">
-                    <Label Margin="5">
+                <Border Grid.Row="2" Margin="40,0" Padding="5" BackgroundColor="{StaticResource TextBackgroundDark}" Stroke="{StaticResource ValuesDark}">
+                    <Label>
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold"/>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" values" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding Character.ValuePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.ValuePrimeDescription, StringFormat=', {0}, and'}" />
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding Character.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.ValueMinorDescription, StringFormat=', {0}.'}" />
+                                <Span TextColor="{StaticResource White}" Text=" values" />
+                                <Span TextColor="{StaticResource ValuesDark}" Text="{Binding Character.ValuePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                <Span TextColor="{StaticResource White}" Text="{Binding Character.ValuePrimeDescription, StringFormat=', {0}, and'}" />
+                                <Span TextColor="{StaticResource ValuesDark}" Text="{Binding Character.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                <Span TextColor="{StaticResource White}" Text="{Binding Character.ValueMinorDescription, StringFormat=', {0}.'}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                 </Border>
-                <Border Grid.Row="4" Margin="10,0">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" Margin="40,0">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Border BackgroundColor="Transparent" Grid.Column="0" VerticalOptions="FillAndExpand"
+                                Stroke="{StaticResource PositiveAttributeDark}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockPositivePrimeCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid RowDefinitions="Auto,Auto" Margin="0,2,0,3">
+                                <Label Text="Primary" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding PositivePrimeColor}"/>
+                                <Label Text="{Binding Character.PositivePrime}" Grid.Row="1" HorizontalOptions="Center" FontSize="18"
+                               TextColor="{StaticResource PositiveAttributeDark}"/>
+                            </Grid>
+                        </Border>
+                        <Border BackgroundColor="Transparent" Grid.Column="0" VerticalOptions="FillAndExpand"
+                                Stroke="{StaticResource PositiveAttributeDark}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockPositiveMinorCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid RowDefinitions="Auto,Auto" Margin="0,2,0,3">
+                                <Label Text="Secondary" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding PositiveMinorColor}"/>
+                                <Label Text="{Binding Character.PositiveMinor}" Grid.Row="1" HorizontalOptions="Center" FontSize="18"
+                               TextColor="{StaticResource PositiveAttributeDark}"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Border BackgroundColor="Transparent" Grid.Column="0" VerticalOptions="FillAndExpand"
+                                Stroke="{StaticResource NegativeAttributeDark}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockNegativePrimeCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid RowDefinitions="Auto,Auto" Margin="0,2,0,3">
+                                <Label Text="Primary" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding NegativePrimeColor}"/>
+                                <Label Text="{Binding Character.NegativePrime}" Grid.Row="1" HorizontalOptions="Center" FontSize="18"
+                               TextColor="{StaticResource NegativeAttributeDark}"/>
+                            </Grid>
+                        </Border>
+                        <Border BackgroundColor="Transparent" Grid.Column="0" VerticalOptions="FillAndExpand"
+                                Stroke="{StaticResource NegativeAttributeDark}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockNegativeMinorCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid RowDefinitions="Auto,Auto" Margin="0,2,0,3">
+                                <Label Text="Secondary" Grid.Row="0" HorizontalOptions="Center" TextColor="{Binding NegativeMinorColor}"/>
+                                <Label Text="{Binding Character.NegativeMinor}" Grid.Row="1" HorizontalOptions="Center" FontSize="18"
+                               TextColor="{StaticResource NegativeAttributeDark}"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+                </Grid>
+                <Border  Margin="40,0" Padding="5" Grid.Row="3" BackgroundColor="{StaticResource Background}" Stroke="{StaticResource NPCAttributes}">
                     <VerticalStackLayout>
                         <Label>
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" is known for being" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding Character.PositivePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.PositivePrimeDescription, StringFormat=', {0}, and'}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding Character.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.PositiveMinorDescription, StringFormat=', {0}.'}" />
+                                    <Span TextColor="{StaticResource White}" Text=" is known for being" />
+                                    <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding Character.PositivePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource White}" Text="{Binding Character.PositivePrimeDescription, StringFormat=', {0}, and'}" />
+                                    <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding Character.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource White}" Text="{Binding Character.PositiveMinorDescription, StringFormat=', {0}.'}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                         <Label Margin="0,5,0,0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="However, " />
+                                    <Span TextColor="{StaticResource White}" Text="However, " />
                                     <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" can also be" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding Character.NegativePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.NegativePrimeDescription, StringFormat=', {0}, and'}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding Character.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.NegativeMinorDescription, StringFormat=', {0}.'}" />
+                                    <Span TextColor="{StaticResource White}" Text=" can also be" />
+                                    <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding Character.NegativePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource White}" Text="{Binding Character.NegativePrimeDescription, StringFormat=', {0}, and'}" />
+                                    <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding Character.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource White}" Text="{Binding Character.NegativeMinorDescription, StringFormat=', {0}.'}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                     </VerticalStackLayout>
                 </Border>
-            </Grid>
+            </VerticalStackLayout>
         </ScrollView>
         <Grid Grid.Row="2" RowDefinitions="20,Auto, 50">
             <!--Short Row-->
@@ -130,292 +202,4 @@
             </Grid>
         </Grid>
     </Grid>
-    <!--<Grid RowDefinitions="*,50,50,50">
-        <ScrollView Grid.Row="0" IsVisible="{Binding Generated}">
-            <VerticalStackLayout>
-                <Grid ColumnDefinitions="*,40,40,*">
-                    <Border Grid.ColumnSpan="2" StrokeShape="RoundRectangle 40 10 10 40" Margin="5" HeightRequest="50"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Gray600}}">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockFirstNameCommand}"/>
-                        </Border.GestureRecognizers>
-                        <Grid RowDefinitions="*,2*">
-                            <Label Text="First Name" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{Binding FirstNameColor}"/>
-                            <Label Text="{Binding Character.FirstName}" Grid.Column="1"
-                               Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="23" TextColor="{Binding FirstNameColor}"/>
-                        </Grid>
-                    </Border>
-                    <Border Grid.Column="2" Grid.ColumnSpan="2" StrokeShape="RoundRectangle 10 40 40 10" Margin="5" HeightRequest="50" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Gray600}}">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockLastNameCommand}"/>
-                        </Border.GestureRecognizers>
-                        <Grid RowDefinitions="*,2*">
-                            <Label Text="Last Name" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{Binding LastNameColor}"/>
-                            <Label Text="{Binding Character.LastName}" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="23" TextColor="{Binding LastNameColor}"/>
-                        </Grid>
-                    </Border>
-                    <Border Grid.Column="1" Grid.ColumnSpan="2" Margin="50,0" WidthRequest="70" HeightRequest="70"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource TextBackground}, Dark={StaticResource TextBackgroundDark}}"
-                        StrokeShape="RoundRectangle 35" Stroke="{AppThemeBinding Light={StaticResource Gray600},Dark={StaticResource Gray600}}">
-                        <Image Source="{Binding GenderImage}" HeightRequest="60" WidthRequest="60"/>
-                    </Border>
-                </Grid>
-                <Grid ColumnDefinitions="*,*" Margin="50,0">
-                    <Border Grid.Column="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                            Stroke="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockPrimeValueCommand}"/>
-                        </Border.GestureRecognizers>
-                        <VerticalStackLayout>
-                            <Label Text="Primary" HorizontalOptions="Center" TextColor="{Binding ValuePrimeColor}"/>
-                            <Label Text="{Binding Character.ValuePrime}" HorizontalOptions="Center" FontSize="18" 
-                                   TextColor="{AppThemeBinding Light={StaticResource ValuesDark}, Dark={StaticResource ValuesDark}}"/>
-                        </VerticalStackLayout>
-                    </Border>
-                    <Border Grid.Column="1"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                            Stroke="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockMinorValueCommand}"/>
-                        </Border.GestureRecognizers>
-                        <VerticalStackLayout Grid.Column="1">
-                            <Label Text="Secondary" HorizontalOptions="Center" TextColor="{Binding ValueMinorColor}"/>
-                            <Label Text="{Binding Character.ValueMinor}" HorizontalOptions="Center" FontSize="18" 
-                               TextColor="{AppThemeBinding Light={StaticResource ValuesDark}, Dark={StaticResource ValuesDark}}"/>
-                        </VerticalStackLayout>
-                    </Border>
-                </Grid>
-                <Border Margin="20,2" 
-                        Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource TextBackground}, Dark={StaticResource TextBackgroundDark}}">
-                    <VerticalStackLayout Padding="7">
-                        <Label Grid.Row="6">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" values" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding Character.ValuePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.ValuePrimeDescription, StringFormat=', {0}, and'}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}" Text="{Binding Character.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.ValueMinorDescription, StringFormat=', {0}.'}" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                    </VerticalStackLayout>
-                </Border>
-                <Grid ColumnDefinitions="*,*" Margin="50,0">
-                    <Border StrokeShape="RoundRectangle 10" StrokeThickness="3" Padding="3"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                            Stroke="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}">
-                        <VerticalStackLayout>
-                            <Border Grid.Column="0"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                            Stroke="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}">
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockPositivePrimeCommand}"/>
-                                </Border.GestureRecognizers>
-                                <VerticalStackLayout>
-                                    <Label Text="Primary" HorizontalOptions="Center" TextColor="{Binding PositivePrimeColor}"/>
-                                    <Label Text="{Binding Character.PositivePrime}" HorizontalOptions="Center" FontSize="18" 
-                                   TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}"/>
-                                </VerticalStackLayout>
-                            </Border>
-                            <Border Grid.Column="0"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                                    Stroke="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}">
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockPositiveMinorCommand}"/>
-                                </Border.GestureRecognizers>
-                                <VerticalStackLayout Grid.Column="1">
-                                    <Label Text="Secondary" HorizontalOptions="Center" TextColor="{Binding PositiveMinorColor}"/>
-                                    <Label Text="{Binding Character.PositiveMinor}" HorizontalOptions="Center" FontSize="18" 
-                                               TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}"/>
-                                </VerticalStackLayout>
-                            </Border>
-                        </VerticalStackLayout>
-                    </Border>
-                    <Border StrokeShape="RoundRectangle 10" StrokeThickness="3" Padding="4" Grid.Column="1"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                            Stroke="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}">
-                        <VerticalStackLayout>
-                            <Border Grid.Column="1"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}">
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockNegativePrimeCommand}"/>
-                                </Border.GestureRecognizers>
-                                <VerticalStackLayout>
-                                    <Label Text="Primary" HorizontalOptions="Center" TextColor="{Binding NegativePrimeColor}"/>
-                                    <Label Text="{Binding Character.NegativePrime}" HorizontalOptions="Center" FontSize="18" 
-                                       TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}"/>
-                                </VerticalStackLayout>
-                            </Border>
-                            <Border Grid.Column="1"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Background},Dark={StaticResource Dark}}">
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LockNegativeMinorCommand}"/>
-                                </Border.GestureRecognizers>
-                                <VerticalStackLayout Grid.Column="1">
-                                    <Label Text="Secondary" HorizontalOptions="Center" TextColor="{Binding NegativeMinorColor}"/>
-                                    <Label Text="{Binding Character.NegativeMinor}" HorizontalOptions="Center" FontSize="18" 
-                                   TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}"/>
-                                </VerticalStackLayout>
-                            </Border>
-                        </VerticalStackLayout>
-                    </Border>
-                </Grid>
-                <Border Margin="20,2" 
-                        Stroke="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource TextBackground}, Dark={StaticResource TextBackgroundDark}}">
-                    <VerticalStackLayout Padding="7">
-                        <Label>
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" is known for being" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding Character.PositivePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.PositivePrimeDescription, StringFormat=', {0}, and'}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}" Text="{Binding Character.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.PositiveMinorDescription, StringFormat=', {0}.'}" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label Margin="0,5,0,0">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="However, " />
-                                    <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" can also be" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding Character.NegativePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.NegativePrimeDescription, StringFormat=', {0}, and'}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}" Text="{Binding Character.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.NegativeMinorDescription, StringFormat=', {0}.'}" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                    </VerticalStackLayout>
-                </Border>
-            </VerticalStackLayout>
-        </ScrollView>
-        <ScrollView Grid.Row="0" IsVisible="{Binding NotGenerated}">
-            <VerticalStackLayout>
-                <Border HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 75" StrokeThickness="2"
-                        Stroke="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource Secondary}}" 
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}" >
-                    <Image Source="npcgentitle.png" Margin="10"/>
-                </Border>
-                <Border HorizontalOptions="Center" Margin="2" Padding="5,0" StrokeShape="RoundRectangle 15 15 5 5" StrokeThickness="2"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
-                    <Label Text="Getting Started" FontSize="22" Padding="30,10" FontAttributes="Bold"
-                           TextColor="{StaticResource White}"/>
-                </Border>
-                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
-                    <VerticalStackLayout>
-                        <Label Text="{Binding DescriptionOne}" Padding="5"
-                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
-                        <Button Text="Name Generator" Command="{Binding GoToNameGenPageCommand}" 
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
-                                HorizontalOptions="Center" Padding="40, 10"/>
-                        <Label Text="{Binding DescriptionTwo}" Padding="5"
-                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Border HorizontalOptions="End" Margin="1" StrokeShape="RoundRectangle 40 5" StrokeThickness="2"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
-                    <Label Text="Locking Fields" FontSize="16" Padding="30,10" FontAttributes="Bold"
-                           TextColor="{StaticResource White}"/>
-                </Border>
-                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
-                    <Label Text="{Binding DescriptionThree}" Padding="5"
-                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
-                </Border>
-                <Border HorizontalOptions="Start" Margin="1" StrokeShape="RoundRectangle 5 40" StrokeThickness="2"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
-                    <Label Text="Saving Characters" FontSize="16" Padding="30,10" FontAttributes="Bold"
-                           TextColor="{StaticResource White}"/>
-                </Border>
-                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
-                    <VerticalStackLayout>
-                        <Label Text="{Binding DescriptionFour}" Padding="5"
-                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
-                    </VerticalStackLayout>
-                </Border>
-                <Border HorizontalOptions="End" Margin="5" StrokeShape="RoundRectangle 40 5" StrokeThickness="2"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Secondary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}">
-                    <Label Text="Viewing Saved Characters" FontSize="16" Padding="30,10" FontAttributes="Bold"
-                           TextColor="{StaticResource White}"/>
-                </Border>
-                <Border HorizontalOptions="Start" Margin="10,1" StrokeShape="RoundRectangle 3"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}">
-                    <VerticalStackLayout>
-                        <Label Text="{Binding DescriptionFive}" Padding="5"
-                               TextColor="{AppThemeBinding Light={StaticResource Black},Dark={StaticResource White}}"/>
-                    </VerticalStackLayout>
-                </Border>
-            </VerticalStackLayout>
-        </ScrollView>
-        <Grid ColumnDefinitions="50,50,*,50,50" Grid.Row="1">
-            <Border StrokeShape="RoundRectangle 10"  Grid.Column="0"
-                     Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
-                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryBackwardShown}">
-                <ImageButton Source="historybegin.png" Margin="5" Command="{Binding HistoryEndCommand}" HorizontalOptions="Fill"/>
-            </Border>
-            <Border StrokeShape="RoundRectangle 10"  Grid.Column="1"
-                     Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
-                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryBackwardShown}">
-                <ImageButton Source="historybackward.png" Margin="5" Command="{Binding HistoryBackwardCommand}" HorizontalOptions="Fill"/>
-            </Border>
-            <Label Text="History" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"/>
-            <Border StrokeShape="RoundRectangle 10"  Grid.Column="3"
-                     Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
-                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryForwardShown}">
-                <ImageButton Source="historyforward.png" Margin="5" Command="{Binding HistoryForwardCommand}" HorizontalOptions="Fill"/>
-            </Border>
-            <Border StrokeShape="RoundRectangle 10"  Grid.Column="4"
-                     Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" 
-                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}" IsVisible="{Binding HistoryForwardShown}">
-                <ImageButton Source="historyend.png" Margin="5" Command="{Binding HistoryBeginCommand}" HorizontalOptions="Fill"/>
-            </Border>
-        </Grid>
-        <Grid ColumnDefinitions="*,100,50" Grid.Row="2" Margin="0,1,0,1" >
-            <Button Text="Generate" Grid.Column="0" Margin="1,0,1,0" Command="{Binding GenerateNPCCommand}"/>
-            <Button Text="Options" Grid.Column="1" Margin="1,0,1,0" Command="{Binding GoToOptionsCommand}"/>
-            <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                <ImageButton HeightRequest="40" WidthRequest="40" Source="help.png"
-                             Command="{Binding DisplayHelpCommand}"/>
-            </Border>
-        </Grid>
-        <Grid ColumnDefinitions="*,100,50" Grid.Row="3" Margin="0,1,0,2">
-            <Button Grid.Column="0" Text="Save Character" Command="{Binding GoToAddPageCommand}" CommandParameter="{Binding Character}"/>
-            <Border StrokeShape="RoundRectangle 15"  Grid.Column="1" HeightRequest="50"
-                     Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource TextBackgroundDark}}" 
-                     BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource TextBackgroundDark}}" >
-                <ImageButton Source="unlock.png" Command="{Binding UnlockAllCommand}" HorizontalOptions="Fill"/>
-            </Border>
-            <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="2"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
-                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                <ImageButton HeightRequest="40" WidthRequest="40" Source="listdark.png"
-                             Command="{Binding GoToListPageCommand}"/>
-            </Border>
-        </Grid>
-    </Grid>-->
 </ContentPage>
