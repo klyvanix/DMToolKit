@@ -146,8 +146,7 @@
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center" FontAttributes="Bold"
-                               BackgroundColor="{StaticResource DarkPrimary}"/>
+                               HorizontalTextAlignment="Center" BackgroundColor="{StaticResource DarkPrimary}"/>
                 <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,10,10,0" Padding="20,5"
                         BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}">
                     <VerticalStackLayout>
