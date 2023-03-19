@@ -8,7 +8,6 @@ using System.Diagnostics;
 
 namespace DMToolKit.ViewModels
 {
-    [QueryProperty("LockedLetter", "LockedLetter"), QueryProperty("LetterLock", "LetterLock"), QueryProperty("PrefixLock", "PrefixLock"), QueryProperty("LockedPrefix", "LockedPrefix")]
     public partial class NameGeneratorViewModel : ObservableObject
     {
         public ObservableCollection<Name> NameList { get; set; }
@@ -48,9 +47,6 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         ObservableCollection<HelpPageItem> helpScreenCollection;
 
-        [ObservableProperty]
-        string expandImage;
-
         int minIndex;
         int maxIndex;
 
@@ -71,7 +67,6 @@ namespace DMToolKit.ViewModels
             HelpScreenCollection = new ObservableCollection<HelpPageItem>();
             NameList = new ObservableCollection<Name>();
             SeedList = new ObservableCollection<string>();
-            ExpandImage = "expand.png";
             LockedLetter = "A";
             LetterLock = false;
             GenerationNumber = 1;
@@ -224,14 +219,6 @@ namespace DMToolKit.ViewModels
         void ToggleOptions()
         {
             OptionsExpanded = !OptionsExpanded;
-            if (OptionsExpanded)
-            {
-                ExpandImage = "retract.png";
-            }
-            else
-            {
-                ExpandImage = "expand.png";
-            }
         }
 
         [RelayCommand]

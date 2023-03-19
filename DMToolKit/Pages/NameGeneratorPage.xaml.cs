@@ -17,4 +17,12 @@ public partial class NameGeneratorPage : ContentPage
         base.OnAppearing();
 		viewModel.UpdateSettings();
     }
+
+    private void ExpandButton_Clicked(object sender, EventArgs e)
+    {
+        if (viewModel.OptionsExpanded)
+            ExpandButton.Source = "retract.png";
+        else
+            ExpandButton.Source = "expand.png";
+    }
 }

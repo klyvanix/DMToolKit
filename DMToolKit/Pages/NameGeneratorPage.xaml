@@ -38,7 +38,7 @@
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
                             Stroke="Transparent">
-                    <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleOptionsCommand}"/>
+                    <ImageButton x:Name="ExpandButton" Source="expand.png" HeightRequest="20" Command="{Binding ToggleOptionsCommand}" Clicked="ExpandButton_Clicked"/>
                 </Border>
                 <!--LETTER LOCK-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="End"
