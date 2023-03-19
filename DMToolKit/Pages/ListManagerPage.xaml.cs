@@ -4,15 +4,16 @@ namespace DMToolKit.Pages;
 
 public partial class ListManagerPage : ContentPage
 {
-	public ListManagerPage( ListManagerViewModel vm)
-	{
-		InitializeComponent();
-		BindingContext = vm;
-	}
+    ListManagerViewModel viewModel;
+    public ListManagerPage( ListManagerViewModel vm)
+    {
+        InitializeComponent();
+        BindingContext = vm;
+        viewModel = vm;
+    }
     protected override void OnAppearing()
     {
         base.OnAppearing();
-		var vm = BindingContext as ListManagerViewModel;
-		vm.UpdateLists();
+        viewModel.UpdateLists();
     }
 }

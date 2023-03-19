@@ -4,15 +4,16 @@ namespace DMToolKit.Pages;
 
 public partial class NPCEditPage : ContentPage
 {
-	public NPCEditPage(NPCEditViewModel vm)
-	{
-		InitializeComponent();
-		BindingContext = vm;
-	}
+    NPCEditViewModel viewModel;
+    public NPCEditPage(NPCEditViewModel vm)
+    {
+        InitializeComponent();
+        BindingContext = vm;
+        viewModel = vm;
+    }
     protected override void OnAppearing()
     {
         base.OnAppearing();
-		var vm = BindingContext as NPCEditViewModel;
-		vm.UpdateData();
+        viewModel.UpdateData();
     }
 }
