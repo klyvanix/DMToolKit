@@ -16,13 +16,12 @@ namespace DMToolKit.Data
 
         public static string[] NameTitle = new string[]
         {
-            "Getting Started",
-            "Options Page",
-            "Name Seed Options",
-            "Lock Prefix",
-            "Lock Letter",
-            "Generating Names",
-            "Saving Names"
+            "GETTING STARTED",
+            "THE INTERFACE",
+            "TOOLS",
+            "PREFIX LOCK",
+            "NAME SEEDS",
+            "NAME LIST MANAGER"
         };
     }
     public static class CurrencyValues

@@ -6,7 +6,7 @@
 
     <Color x:Key="Primary">#007acf</Color>
     <Color x:Key="Secondary">#E29E21</Color>
-    <Color x:Key="Tertiary">#f4fdff</Color>
+    <Color x:Key="Tertiary">#f1f1f2</Color>
     <Color x:Key="TextBackground">#bcd0e3</Color>
     <Color x:Key="TextBackgroundDark">#081c30</Color>
     <Color x:Key="DarkPrimary">#09325b</Color>
@@ -19,11 +19,18 @@
     <Color x:Key="PositiveAttributeDark">#65d265</Color>
     <Color x:Key="NegativeAttribute">#a11d1d</Color>
     <Color x:Key="NegativeAttributeDark">#e22929</Color>
-
     <Color x:Key="Name">#ffc555</Color>
     <Color x:Key="Role">#daa37d</Color>
     <Color x:Key="Delete">#d23434</Color>
-    
+
+    <Color x:Key="Accent1">#bee6ad</Color>
+    <Color x:Key="Accent2">#e7979d</Color>
+    <Color x:Key="Accent3">#9fbdf3</Color>
+    <Color x:Key="Accent4">#bcfffa</Color>
+    <Color x:Key="Accent5">#ffecb2</Color>
+    <Color x:Key="Accent6">#f2ad8a</Color>
+    <Color x:Key="Accent7">#deabf2</Color>
+
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
     

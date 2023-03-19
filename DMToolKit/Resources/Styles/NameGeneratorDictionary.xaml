@@ -9,42 +9,40 @@
     <DataTemplate x:Key="Page1" x:DataType="data:HelpPageItem">
         <Grid>
             <Grid RowDefinitions="50,*">
-                <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center" FontAttributes="Bold"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"/>
-                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
+                <Label Grid.Row="0" Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" BackgroundColor="{StaticResource DarkPrimary}"/>
+                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,10,10,0" VerticalOptions="Fill"
+                                BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}" Padding="20,5">
                     <VerticalStackLayout>
-                        <Label FontSize="18" Padding="20,10,20,0" Text="How To Proceed" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                        <Label Padding="20,0" Text="This name generator operates under the philosophy that you can take two cool sounding affixations and smash them together to create new sounding names."/>
-                        <Label Padding="20,0" Text="A lot of the names generated with this tool won’t work, but you will be provided tools to catalogue and save those names that strike you as unique and cool." Margin="0,5"/>
-                        <Label FontSize="18" Padding="20,0" Text="What to Do" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                        <Label FontSize="14" Padding="20,0">
+                        <Label Text="This name generator operates under the philosophy that you can take two cool sounding affixations and smash them together to create a name."/>
+                        <Label Text="Depending on the affixation it could sound fairly cool, or might not make sense." Margin="0,5" />
+                        <Label Text="A lot of the names generated with this tool won’t work, but you will be provided tools to catalogue and save the names that strike you as unique and cool to reference later." Margin="0"/>
+                        <Label FontSize="18" Text="HOW IT WORKS" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label FontSize="14">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="Generating names means taking a " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=", IE the start of a word such as " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Name}, Dark={StaticResource Name}}" Text="Cal" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" and smashing it together with a " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=", IE the end of a word such as " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Name}, Dark={StaticResource Name}}" Text="dan" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=". The generated name being " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Name}, Dark={StaticResource Name}}" Text="Caldan" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="." />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="Generating names means taking a " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", IE the start of a word such as " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Secondary}" Text="Cal" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" and smashing it together with a " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" Text="suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", IE the end of a word such as " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Secondary}" Text="dan" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=". The generated name being " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Secondary}" Text="Caldan" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text="." />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,5,20,0">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="If you like the name you will be able to tap on the name and save it for use later, or if the word sounds like it could be appropriate to function as a " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="Prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" or " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="Suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" you can add them to the list of affixations or name seeds." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="If you like the name you can tap on the name and save it in a custom list for use later, or if the word sounds like it could function as a " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" or " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" Text="suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" you can add them to the list of affixations or name seeds." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -57,68 +55,85 @@
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center" FontAttributes="Bold"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"/>
-                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                    <VerticalStackLayout>
-                        <Label FontSize="18" Padding="20,10,20,0" Text="Where To Begin" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"/>
-                        <Label FontSize="14" Padding="20,0" Margin="0,0,0,5">
+                               HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" BackgroundColor="{StaticResource DarkPrimary}"/>
+                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,10,10,0" Padding="20,5" 
+                                BackgroundColor="{StaticResource Background}"
+                                Stroke="{StaticResource Secondary}">
+                    <VerticalStackLayout >
+                        <Label Text="As you come into the Name Generator you will notice the buttons on the bottom of the screen."/>
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="To Generate a name, you must first ensure that the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" and " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" lists have been ‘seeded’." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="To Generate a name, you must first ensure that the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" and " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" lists have been ‘seeded’." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,0" Margin="0,0,0,5">
+                        <Label FontSize="14" Margin="0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="A basic list of " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefixes" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" and " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="suffixes" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" are provided standard the first time you open the tool, which will allow you to generate words or word parts immediately." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="Pressing " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" Text="Generate" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" will generate a single row of 2 names." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,0,20,0" Margin="0,10,0,0">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="However, you have the ability to manually add seeds in the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Options}, Dark={StaticResource Options}}" Text="Options Page" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="Pressing " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" Text="Clear" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" clears the current list of names from the screen." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,0,20,0" Margin="0,10,0,0">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="In the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Options}, Dark={StaticResource Options}}" Text="Options Page" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" you will be able to manage prefixes " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefixes" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" and " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="suffixes" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=", lock the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" of generated names, or lock the starting letter of generated names." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text="The " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" Text="Tools" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" button will open the tools page to customize the names that you tweak and manage the list of prefixes and suffixes. " FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="18" Padding="20,0,20,0" Text="Navigating The Options" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"/>
-                        <Label FontSize="14" Padding="20,0" Margin="0,0,0,5">
+                        <Label FontSize="14" Margin="0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="By default, you will start in the Name seed options view, but can navigate to locking the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=", or starting letter of the name via the radio buttons at the bottom of the screen." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="Tap the "/>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">up arrow</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" to expand other options." FontFamily="{StaticResource StrFontFamily}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontSize="14" Margin="0,5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="Tapping the "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Generator Icon</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" will bring up the help rules." FontFamily="{StaticResource StrFontFamily}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontSize="14" Margin="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="Tapping the "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">List Icon</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" opens the list of names management screen." FontFamily="{StaticResource StrFontFamily}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontSize="14" Margin="0,5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="Tap the "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">+ (Plus)</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" to increase the number of names generated when you tap the generate button. Tap the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">(Minus) -</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" to decrease the number. Alternatively you can enter the number directly in the field of the number of rows to generate." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -132,37 +147,53 @@
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
                                HorizontalTextAlignment="Center" FontAttributes="Bold"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"/>
-                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
+                               BackgroundColor="{StaticResource DarkPrimary}"/>
+                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,10,10,0" Padding="20,5"
+                        BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}">
                     <VerticalStackLayout>
-                        <Label FontSize="18" Padding="20,10,20,0" Text="Manage Name Seeds" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"/>
-                        <Label FontSize="14" Padding="20,0,20,0" Margin="0,10,0,0">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="The " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NameSeed}, Dark={StaticResource NameSeed}}" Text="Name Seed" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" Options page is the default view you see as you come into the options page. Here there are sections for name seed management." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="At the top is the "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Letter Lock</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" in the middle is the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Prefix Lock</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" and at the bottom are the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Name Seed</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" management options." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,0" Margin="0,5">
+                        <Label FontSize="18" Text="LETTER LOCK" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="To see a list of " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefixes" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" or " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="suffixes" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" you can tap on the list icon to the left of the text box in each section.There you can delete seeds if you don’t like them, or add them directly to the list, similar to the previous screen." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="If you want to generate a name that only starts with a select letter you must press the "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Radio Button</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" in the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Letter Lock</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" section and select a letter from the drop down." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="18" Padding="20,0" Text="Adding Seeds" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"/>
-                        <Label Padding="20,0" Text="If you wish to rapidly add seeds you can do so from the default view when you can enter the seed you wish to add directly into the text box. When you try to add it to the list, if it does not disappear it means it is already in the list."
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}"/>
+                        <Label FontSize="14" Margin="0,5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="To commit those options you must select "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Save</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" to generate names, and a tab appears showing that you have the letter lock active." FontFamily="{StaticResource StrFontFamily}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontSize="14" Margin="0,5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="To "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Disable</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" the lock you simply click the tab and it will disappear noting that you have cleared the letter lock." FontFamily="{StaticResource StrFontFamily}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </VerticalStackLayout>
                 </Border>
             </Grid>
@@ -172,58 +203,45 @@
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center" FontAttributes="Bold"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"/>
-                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
+                               HorizontalTextAlignment="Center" BackgroundColor="{StaticResource DarkPrimary}"/>
+                <Border Grid.Row="1" StrokeShape="RoundRectangle 10"   Margin="10,10,10,0" Padding="20,5"
+                        BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}">
                     <VerticalStackLayout>
-                        <Label FontSize="18" Padding="20,10,20,0" Text="Refining Your Names" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                        <Label FontSize="14" Padding="20,0" Margin="0,7">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="To Lock the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="Prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" you must ensure that the lock radio button at the bottom of the screen is selected and you can manually type the desired " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="Prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" in the Entry box." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="If you want to generate names that start with a specific prefix you tap the "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Radio Button</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" in the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Prefix Lock</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" section and input a prefix you wish to generate names with. " FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,0" Margin="0,7">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="When you are satisfied you can press the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Save}, Dark={StaticResource Save}}" Text="Save Button" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" at the bottom of the screen where you will return to the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NameGenerator}, Dark={StaticResource NameGenerator}}" Text="Name Generator Page" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" with the settings saved for generation." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="To commit those options you must select "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Save</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" to generate names, and a tab appears showing that you have the prefix lock active." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,0" Margin="0,7">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="If that " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" wasn’t in the list already it will be automatically added to the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" list for use later." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="To "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Disable</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" the lock you simply tap the tab and it will disappear noting that you have cleared the prefix lock." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="14" Padding="20,0" Margin="0,7">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="To " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Clear}, Dark={StaticResource Clear}}" Text="Clear" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" all locks in the Generator you simple return to the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Options}, Dark={StaticResource Options}}" Text="Options Page" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" and press the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Clear}, Dark={StaticResource Clear}}" Text="Clear Button" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" at the bottom of the screen where you will return to the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NameGenerator}, Dark={StaticResource NameGenerator}}" Text="Name Generator Page" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" with the settings cleared." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="Please "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Note</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" that any prefix will automatically be added to the Prefix list if it is not already in the list when you Save the selection." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -236,30 +254,49 @@
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center" FontAttributes="Bold"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"/>
-                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
+                               HorizontalTextAlignment="Center" BackgroundColor="{StaticResource DarkPrimary}"/>
+                <Border Grid.Row="1" StrokeShape="RoundRectangle 10"   Margin="10,10,10,0" Padding="20,5"
+                        BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}">
                     <VerticalStackLayout>
-                        <Label FontSize="18" Padding="20,10,20,0" Text="Generate With Same Starting Letter" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                        <Label Padding="20,0" Text="In the Lock Letter view you will be able to select the letter you wish to generate names for by selecting the from the dropdown menu in the center of the page."/>
-                        <Label FontSize="14" Padding="20,0" Margin="0,7">
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="Selecting " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource LetterLockA}, Dark={StaticResource LetterLockA}}" Text="A" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" will generate names that only start with the letter " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource LetterLockA}, Dark={StaticResource LetterLockA}}" Text="A" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=". Likewise if you select " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource LetterLockK}, Dark={StaticResource LetterLockK}}" Text="K" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" you will generate names that only start with the letter " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource LetterLockK}, Dark={StaticResource LetterLockK}}" Text="K" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=". If no prefix exists with that letter in the list the name will randomly generate a name ignoring the lock." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="The "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Name Seeds</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" section is where you can easily add entries into the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">prefix list</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">suffix list</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", or " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">both</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" lists." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label Padding="20,0" Text="If you wish to generate a name with the selected letter, ensure that there are prefixes that begin with that letter in the list of prefixes."/>
+                        <Label FontSize="14">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="To do so you enter the name seed you wish to add in the Entry box and press either the "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Prefix</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Suffix</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", or " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Both</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" buttons above the entry and the entry should clear." FontFamily="{StaticResource StrFontFamily}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Text="If the seed entry does not clear it means that the seed already exists." Margin="0,5"/>
+                        <Label FontSize="14">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="To "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Delete</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" name seeds tap on the associated prefix or suffix list button at the bottom of the Name Seeds section to open up the list management screens. " FontFamily="{StaticResource StrFontFamily}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Text="Here you can add seeds or delete them by swiping from right to left on the entry you wish to delete, then tap the delete button to delete the seed from the list." Margin="0,5"/>
                     </VerticalStackLayout>
                 </Border>
             </Grid>
@@ -269,42 +306,46 @@
         <Grid>
             <Grid RowDefinitions="50,*">
                 <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" FontAttributes="Bold"/>
-                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
+                               HorizontalTextAlignment="Center" BackgroundColor="{StaticResource DarkPrimary}"/>
+                <Border Grid.Row="1" StrokeShape="RoundRectangle 10"   Margin="10,10,10,0" Padding="20,5"
+                        BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}">
                     <VerticalStackLayout>
-                        <Label FontSize="14" Padding="20,0,20,0" Margin="0,10,0,0">
+                        <Label Text="To manage your list of names from the Main Generation page expand the Additional options and tap on the list icon on the right hand side." Margin="0,5"/>
+                        <Label Text="Here you can see all your name lists." Margin="0,5"/>
+                        <Label FontSize="14" Margin="0,5">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="When you’re happy with the selection of naming seeds, you can generate a single name by pressing the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NameGenerator}, Dark={StaticResource NameGenerator}}" Text="Generate" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" button in the bottom right of the page." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="By default you start with "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Masculine</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Feminine</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=", and " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Surname</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" name lists which cannot be deleted." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label FontSize="18" Padding="20,0" Text="Number of Names" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                        <Label FontSize="14" Padding="20,0" Margin="0,0,0,5">
+                        <Label FontSize="14">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="By default you will generate 1 name, but you can tap the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource LetterLockK}, Dark={StaticResource LetterLockK}}" Text="+" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" and " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource LetterLockA}, Dark={StaticResource LetterLockA}}" Text="-" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" to increase or decrease the number of names generated." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="To "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Add</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" a new list enter a name at the entry area at the bottom of the screen and tap the " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">add(+)</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" icon to the left to add the name to the list." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label Padding="20,0" Text="Alternatively you can tap on the number and enter the desired number of names you wish to generate."/>
-                        <Label Padding="20,0" Text="Any number equal to or below 5 will add to the list of names on the screen, where anything over will clear the list of names on screen." Margin="0,5,0,0"/>
-                        <Label FontSize="18" Padding="20,0" Text="Clearing Name List" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
-                        <Label FontSize="14" Padding="20,0">
+                        <Label Text="Tap on the lists to access the details and collection of lists." Margin="0,5"/>
+                        <Label Text="Here you will see your list of names and can add a name manually without having to generate here. " Margin="0,5"/>
+                        <Label FontSize="14">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="If your list of names gets too long you can to manually clear the list using the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Clear}, Dark={StaticResource Clear}}" Text="Clear" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" button in the bottom left of the page." FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Tertiary}" FontFamily="{StaticResource StrFontFamily}" Text="If you have a large list of names and want to randomly select a name you can "/>
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">expand</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" the options tab at the top of the screen then tap " FontFamily="{StaticResource StrFontFamily}" />
+                                    <Span TextColor="{StaticResource Primary}" FontFamily="{StaticResource StrFontFamily}" FontAttributes="Bold">Roll</Span>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" to randomly select a name and display it in the entry area to the right." FontFamily="{StaticResource StrFontFamily}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -313,70 +354,14 @@
             </Grid>
         </Grid>
     </DataTemplate>
-    <DataTemplate x:Key="Page7" x:DataType="data:HelpPageItem">
-        <Grid>
-            <Grid RowDefinitions="50,*">
-                <Label Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center" Grid.Row="0"
-                               HorizontalTextAlignment="Center"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" FontAttributes="Bold"/>
-                <Border Grid.Row="1" StrokeShape="RoundRectangle 10" Margin="10,0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource Dark}}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                    <VerticalStackLayout>
-                        <Label FontSize="14" Padding="20,0,20,0" Margin="0,10,0,0">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="When you see a name you like, you may " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource ValuesDark}, Dark={StaticResource ValuesDark}}" Text="Tap" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" on the name in the list, and it will take you to a new name add page." FontFamily="{StaticResource StrFontFamily}" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label Padding="20,5" Text="At the top are two buttons to add the name to either the prefix list, or suffix list."/>
-                        <Label FontSize="14" Padding="20,0" Margin="0,0,0,5">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="At the top are two buttons to add the name to either the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=", or " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" list." FontFamily="{StaticResource StrFontFamily}" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label Padding="20,0" Text="Below that will be your list of custom names you can modify in the List Management screen which can be accessed in the bottom right of the screen or the button below."/>
-                        <Border HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 10" Grid.Column="3"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}" 
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}">
-                            <ImageButton HeightRequest="40" WidthRequest="40" Source="listdark.png"
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameGeneratorViewModel}},Path=GoToListPageCommand}"/>
-                        </Border>
-                        <Label Padding="20,0" Text="Tapping on those custom name lists will add it to the selected list and will disappear from the list preventing you from adding it again." Margin="0,5,0,0"/>
-                        <Label FontSize="14" Padding="20,0" Margin="0,5,0,0">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text="If the name is already in the " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource PositiveAttributeDark}, Dark={StaticResource PositiveAttributeDark}}" Text="prefix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=", or " FontFamily="{StaticResource StrFontFamily}" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource NegativeAttributeDark}, Dark={StaticResource NegativeAttributeDark}}" Text="suffix" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" Text=" lists the list button for that corresponding list will be disabled. If the name is already in your custom lists the list will not appear." FontFamily="{StaticResource StrFontFamily}" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                    </VerticalStackLayout>
-                </Border>
-            </Grid>
-        </Grid>
-    </DataTemplate>
-    
+
     <selector:NameHelpPageSelector x:Key="NamePageSelector" 
                                    Page1="{StaticResource Page1}" 
                                    Page2="{StaticResource Page2}" 
                                    Page3="{StaticResource Page3}" 
                                    Page4="{StaticResource Page4}" 
                                    Page5="{StaticResource Page5}" 
-                                   Page6="{StaticResource Page6}" 
-                                   Page7="{StaticResource Page7}"/>
+                                   Page6="{StaticResource Page6}"/>
 
     <DataTemplate x:Key="NameDisplay" x:DataType="data:Name">
         <Border Padding="3" StrokeThickness="1" Margin="0" 

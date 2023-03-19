@@ -74,7 +74,7 @@
                                     BackgroundColor="{StaticResource Background}"
                                     Stroke="{StaticResource OptionsHeaderGradient}" >
                                 <Entry Text="{Binding LockedPrefix}" Placeholder="Prefix" HorizontalOptions="Fill" 
-                                       VerticalOptions="Center" HorizontalTextAlignment="Center" 
+                                       VerticalOptions="Center" HorizontalTextAlignment="Center" Keyboard="Text"
                                        TextColor="{StaticResource Tertiary}"/>
                             </Border>
                         </Grid>
