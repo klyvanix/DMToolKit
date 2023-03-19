@@ -84,6 +84,14 @@ namespace DMToolKit.ViewModels
             }
         }
 
+        public void UpdateSettings()
+        {
+            PrefixLock = DataController.AppSettings.PrefixLock;
+            LockedPrefix = DataController.AppSettings.Prefix;
+            LetterLock = DataController.AppSettings.LetterLock;
+            LockedLetter = DataController.AppSettings.Letter;
+        }
+
         public void UpdateSeedList()
         {
             foreach (var item in DataController.NameSeedData.SeedCollections)
@@ -174,6 +182,11 @@ namespace DMToolKit.ViewModels
             PrefixLock = false;
             LockedPrefix = string.Empty;
             LockedLetter = "A";
+
+            DataController.AppSettings.PrefixLock = PrefixLock;
+            DataController.AppSettings.LetterLock = LetterLock;
+            DataController.AppSettings.Prefix = LockedPrefix;
+            DataController.AppSettings.Letter = LockedLetter;
         }
 
         [RelayCommand]
@@ -192,14 +205,7 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToOptionsPage()
         {
-            await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}", true,
-                new Dictionary<string, object>
-                {
-                    {"LetterLock", LetterLock },
-                    {"LockedLetter", LockedLetter },
-                    {"PrefixLock", PrefixLock },
-                    {"LockedPrefix", LockedPrefix }
-                });
+            await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
         }
 
         [RelayCommand]
