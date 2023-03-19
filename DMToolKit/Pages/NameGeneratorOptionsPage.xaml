@@ -103,7 +103,7 @@
                                        HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     </Border>
                     <Grid ColumnDefinitions="*,*" HeightRequest="50" Margin="0,0,0,7">
-                        <Border Style="{StaticResource BorderButton}" Margin="1,0,0,0" Grid.Column="0" >
+                        <Border BackgroundColor="{StaticResource Secondary}" StrokeShape="RoundRectangle 5" StrokeThickness="0" Margin="1,0" Grid.Column="0" >
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding GoToPrefixCommand}"/>
                             </Border.GestureRecognizers>
@@ -121,7 +121,7 @@
                                 </Label>
                             </HorizontalStackLayout>
                         </Border>
-                        <Border  Style="{StaticResource BorderButton}" Margin="0,0,1,0" Grid.Column="1" >
+                        <Border BackgroundColor="{StaticResource Secondary}" StrokeShape="RoundRectangle 5" StrokeThickness="0" Margin="1,0" Grid.Column="1" >
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding GoToSuffixCommand}"/>
                             </Border.GestureRecognizers>

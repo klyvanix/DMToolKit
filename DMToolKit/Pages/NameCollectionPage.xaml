@@ -5,14 +5,14 @@
              xmlns:viewmodel="clr-namespace:DMToolKit.ViewModels"
              x:DataType="viewmodel:NameCollectionViewModel"
              Title="{Binding ListName}">
-    <Grid RowDefinitions="50,Auto,*,45,50,50">
+    <Grid RowDefinitions="50,Auto,*,45,50">
         <Grid RowDefinitions="50,40" Margin="40,0">
             <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="0" 
                             HorizontalOptions="Start" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
+                            BackgroundColor="{StaticResource Background}" 
+                            Stroke="{StaticResource Secondary}">
                 <!--<ImageButton HeightRequest="30" WidthRequest="30" Source="gear.png" Command="{Binding ToggleOptionsCommand}"/>-->
-                <ImageButton HeightRequest="30" WidthRequest="30" Source="{AppThemeBinding Light='gear.png',Dark='geardark.png'}" Command="{Binding ToggleOptionsCommand}"/>
+                <ImageButton x:Name="ExpandButton" HeightRequest="30" WidthRequest="30" Source="retractdark.png" Command="{Binding ToggleOptionsCommand}" Clicked="ExpandClicked"/>
             </Border>
             <Label Text="{Binding ListOfNames.Count, StringFormat='{0} Names'}" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
@@ -36,15 +36,15 @@
                             </SwipeItems>
                         </SwipeView.RightItems>
                         <Border Padding="6" StrokeShape="RoundRectangle 5" 
-                            Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
+                            Stroke="{StaticResource Secondary}"
+                            BackgroundColor="{StaticResource Background}">
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer CommandParameter="{Binding .}"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NameCollectionViewModel}},Path=GoToAddPageCommand}"/>
                             </Border.GestureRecognizers>
                             <Grid>
                                 <Label Text="{Binding .}" FontSize="16"
-                                    TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+                                    TextColor="{StaticResource Tertiary}"
                                     HorizontalOptions="Center" VerticalOptions="Center"/>
                             </Grid>
                         </Border>
@@ -52,13 +52,14 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Border Grid.Row="3" StrokeShape="RoundRectangle 10" Margin="30,1,30,2"
-                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Dark}}"
-                StrokeThickness="0">
-            <Entry Placeholder="Name To Add" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Center"
-                   TextColor="White" Keyboard="Text" Text="{Binding NameToAdd}" ReturnCommand="{Binding AddCommand}" ReturnCommandParameter="{Binding NameToAdd}"/>
-        </Border>
-        <Button Grid.Row="4" Text="Add" Margin="0,1,0,2" Command="{Binding AddCommand}" CommandParameter="{Binding NameToAdd}"/>
-        <Button Grid.Row="5" Text="Back" Margin="0,1,0,2" Command="{Binding GoBackCommand}"/>
+        <Grid Grid.Row="3" ColumnDefinitions="100,*" Margin="30,1,30,1">
+            <Button Text="Add" Margin="0,1,0,2" Command="{Binding AddCommand}" CommandParameter="{Binding NameToAdd}"/>
+            <Border Grid.Column="1" StrokeShape="RoundRectangle 10" 
+                    BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Secondary}">
+                <Entry Placeholder="Name To Add" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Center"
+                       TextColor="White" Keyboard="Text" Text="{Binding NameToAdd}" ReturnCommand="{Binding AddCommand}" ReturnCommandParameter="{Binding NameToAdd}"/>
+            </Border>
+        </Grid>
+        <Button Grid.Row="4" Text="Back" Margin="0,0,0,2" Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>
