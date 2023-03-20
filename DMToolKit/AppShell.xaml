@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DMToolKit.Pages"
     Shell.FlyoutBehavior="Disabled"
-    FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Background}}">
+    FlyoutBackgroundColor="{StaticResource Background}">
 
-    <FlyoutItem FlyoutIcon="{AppThemeBinding Light='LightTheme/generators.png', Dark='generatorsdark.png'}" Title=" Generators">
+    <FlyoutItem FlyoutIcon="generatorsdark.png" Title=" Generators">
         <ShellContent Icon="namegenerator.png" Title="Name" ContentTemplate="{DataTemplate local:NameGeneratorPage}"
                 Route="NameGeneratorPage" />
         <ShellContent Icon="npc.png" Title="Character" ContentTemplate="{DataTemplate local:NPCGeneratorPage}"
@@ -15,7 +15,7 @@
         <ShellContent Icon="pouchgen.png" Title="Coin Pouch" ContentTemplate="{DataTemplate local:CoinPouchGeneratorPage}"
             Route="CoinPouchGeneratorPage" />
     </FlyoutItem>
-    <!--<FlyoutItem FlyoutIcon="{AppThemeBinding Light='appicon.png', Dark='appicondark.png'}" Title="Home">
+    <!--<FlyoutItem FlyoutIcon="appicondark.png" Title="Home">
         <ShellContent Icon="appicon.png" Title="Home" ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
     </FlyoutItem>-->

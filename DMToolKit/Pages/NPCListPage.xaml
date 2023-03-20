@@ -12,8 +12,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="data:NPCClassificationList">
                     <Border Padding="6" StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}"
-                            Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
+                            BackgroundColor="{StaticResource Background}"
+                            Stroke="{StaticResource Secondary}">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=ToggleListVisibilityCommand}" 
                                                   CommandParameter="{Binding .}" />
@@ -22,14 +22,14 @@
                             <Grid ColumnDefinitions="30,Auto,*,Auto">
                                 <Label Text="{Binding ListName}" Grid.Column="1" FontAttributes="Bold"
                                        HorizontalOptions="Center" VerticalOptions="Center" 
-                                       TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"/>
+                                       TextColor="{StaticResource Tertiary}"/>
                                 <Label FontSize="14" Padding="20,0" Grid.Column="3"
                                        HorizontalOptions="Center" VerticalOptions="Center" 
-                                       TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}">
+                                       TextColor="{StaticResource Tertiary}">
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Collection.Count}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
-                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" Characters" FontFamily="{StaticResource StrFontFamily}"/>
+                                            <Span TextColor="{StaticResource Tertiary}" Text="{Binding Collection.Count}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
+                                            <Span TextColor="{StaticResource Tertiary}" Text=" Characters" FontFamily="{StaticResource StrFontFamily}"/>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
@@ -46,28 +46,26 @@
                                                 </SwipeItems>
                                             </SwipeView.RightItems>
                                             <Border Padding="6" StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" VerticalOptions="Center"
-                                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource TextBackgroundDark}}"
-                                                Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
+                                                BackgroundColor="{StaticResource Background}"
+                                                Stroke="{StaticResource Secondary}">
                                             <Border.GestureRecognizers>
                                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NPCListViewModel}}, Path=GoToDetailsCommand}" 
                                                                         CommandParameter="{Binding .}" />
                                             </Border.GestureRecognizers>
-                                            <Grid>
-                                                <!--<Label Text="{Binding FullName}" HorizontalOptions="Center"/>-->
-                                                <Label FontSize="14" Padding="20,0" Grid.Column="3"
-                                                       HorizontalOptions="Center" VerticalOptions="Center"
-                                                       TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}">
-                                                    <Label.FormattedText>
-                                                        <FormattedString>
-                                                            <Span TextColor="{AppThemeBinding Light={StaticResource ValuesDark}, Dark={StaticResource ValuesDark}}" 
-                                                                  Text="{Binding FullName}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
-                                                            <Span TextColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" 
-                                                                  Text="{Binding Classification, StringFormat=' ({0}) '}" FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
-                                                        </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
-                                            </Grid>
-                                        </Border>
+                                                <Grid>
+                                                    <Label FontSize="14" Padding="20,0" Grid.Column="3"
+                                                           HorizontalOptions="Center" VerticalOptions="Center">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span TextColor="{StaticResource Name}" Text="{Binding FullName}" 
+                                                                        FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
+                                                                <Span TextColor="{StaticResource Role}" Text="{Binding Classification, StringFormat=' ({0}) '}" 
+                                                                        FontAttributes="Bold" FontFamily="{StaticResource StrFontFamily}" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </Grid>
+                                            </Border>
                                         </SwipeView>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>

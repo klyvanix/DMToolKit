@@ -8,9 +8,9 @@
     <Grid RowDefinitions="*,50,50">
         <ScrollView>
             <VerticalStackLayout VerticalOptions="End">
-                <Border Margin="30,3" StrokeShape="RoundRectangle 5" StrokeThickness="0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource TextBackgroundDark}}">
-                    <Entry Text="{Binding ListName}" HorizontalOptions="Fill" HorizontalTextAlignment="Center" TextColor="Black" Margin="5"/>
+                <Border Margin="30,3" StrokeShape="RoundRectangle 5" Stroke="{StaticResource Secondary}"
+                                BackgroundColor="{StaticResource Background}">
+                    <Entry Text="{Binding ListName}" HorizontalOptions="Fill" HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" Margin="5"/>
                 </Border>
             </VerticalStackLayout>
         </ScrollView>

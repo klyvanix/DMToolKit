@@ -15,39 +15,39 @@
             <Grid Grid.Row="0">
                 <!--EXPANDER-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                            BackgroundColor="{StaticResource Secondary}" 
                             Stroke="Transparent">
-                    <ImageButton Source="{Binding ExpandImage}" HeightRequest="20" Command="{Binding ToggleOptionsCommand}"/>
+                    <ImageButton x:Name="ExpandButton" Source="expand.png" HeightRequest="20" Command="{Binding ToggleOptionsCommand}" Clicked="ExpandButton_Clicked"/>
                 </Border>
             </Grid>
             <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50" IsVisible="{Binding OptionsShown}">
                 <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,0,0,2">
                     <Border Grid.Column="0" Margin="0,1"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            BackgroundColor="{StaticResource Secondary}"
                             StrokeThickness="0"
                             VerticalOptions="Fill"
                             HorizontalOptions="Fill"
                             StrokeShape="RoundRectangle 5 0 5 0">
                         <!--SUBTRACT COUNTER BUTTON-->
-                        <ImageButton Source="{AppThemeBinding Light='subtract.png',Dark='subtractdark.png'}" 
+                        <ImageButton Source="subtract.png" 
                                      HorizontalOptions="Fill" VerticalOptions="Fill" 
                                      Command="{Binding DecreaseCounterCommand}"/>
                     </Border>
                     <Border Grid.Column="1" BackgroundColor="Transparent" StrokeThickness="1" Margin="0"
-                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
+                            Stroke="{StaticResource Secondary}" >
                         <!--ENTRY FOR COUNTER BUTTON-->
                         <Entry Text="{Binding OutputTarget}"  Placeholder="Pouch Value" Margin="0,3,0,0"
                            HorizontalOptions="Fill" Keyboard="Numeric" VerticalOptions="Fill"
                            HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
                     </Border>
                     <Border Grid.Column="2" Margin="0,1"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            BackgroundColor="{StaticResource Secondary}"
                             StrokeThickness="0"
                             VerticalOptions="Fill"
                             HorizontalOptions="Fill"
                             StrokeShape="RoundRectangle 0 5 0 5">
                         <!--ADD COUNTER BUTTON-->
-                        <ImageButton Source="{AppThemeBinding Light='add.png',Dark='adddark.png'}" 
+                        <ImageButton Source="add.png" 
                                      HorizontalOptions="Fill" VerticalOptions="Fill" 
                                      Command="{Binding IncreaseCounterCommand}"/>
                     </Border>
@@ -55,7 +55,7 @@
             </Grid>
             <Grid Grid.Row="2" ColumnDefinitions="*,3*,*" Margin="1,0,1,2">
                 <Border Grid.Column="0" StrokeShape="RoundRectangle 5"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        BackgroundColor="{StaticResource Secondary}"
                         StrokeThickness="0" HorizontalOptions="Fill" VerticalOptions="Fill">
                 </Border>
                 <Button Grid.Column="0" Text="Clear" Command="{Binding ClearCommand}" 

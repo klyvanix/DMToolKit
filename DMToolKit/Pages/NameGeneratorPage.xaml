@@ -18,8 +18,8 @@
             </CarouselView>
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1">
                 <IndicatorView x:Name="helpIndicator" 
-                                   IndicatorColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" 
-                                   SelectedIndicatorColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Tertiary}}" />
+                                   IndicatorColor="{StaticResource Tertiary}" 
+                                   SelectedIndicatorColor="{StaticResource Primary}" />
             </HorizontalStackLayout>
         </Grid>
 
@@ -27,89 +27,89 @@
             <Grid Grid.Row="0" HeightRequest="20">
                 <!--PREFIX LOCK-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="Start"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                        BackgroundColor="{StaticResource Secondary}" 
                         Stroke="Transparent" IsVisible="{Binding PrefixLock}">
                     <Border.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding UnlockCommand}"/>
                     </Border.GestureRecognizers>
-                    <Label Text="Prefix Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                    <Label Text="{Binding LockedPrefix, StringFormat='Prefix Lock {0}'}" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Background}"/>
                 </Border>
                 <!--Expander-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                            BackgroundColor="{StaticResource Secondary}" 
                             Stroke="Transparent">
                     <ImageButton x:Name="ExpandButton" Source="expand.png" HeightRequest="20" Command="{Binding ToggleOptionsCommand}" Clicked="ExpandButton_Clicked"/>
                 </Border>
                 <!--LETTER LOCK-->
                 <Border HeightRequest="20" WidthRequest="100" StrokeShape="RoundRectangle 10" VerticalOptions="Center" HorizontalOptions="End"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" 
+                        BackgroundColor="{StaticResource Secondary}" 
                         Stroke="Transparent" IsVisible="{Binding LetterLock}">
                     <Border.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding UnlockCommand}"/>
                     </Border.GestureRecognizers>
-                    <Label Text="Letter Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                    <Label Text="Letter Lock" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource Background}"/>
                 </Border>
             </Grid>
             <!--UPPER BUTTON PANEL-->
             <Grid ColumnDefinitions="100,*,100" Grid.Row="1" MaximumHeightRequest="50" IsVisible="{Binding OptionsExpanded}">
                 <Border Grid.Column="0"  Margin="1,1,1,2"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        BackgroundColor="{StaticResource Secondary}"
                         StrokeThickness="0"
                         VerticalOptions="Fill"
                         HorizontalOptions="Fill"
                         StrokeShape="RoundRectangle 5" >
                     <!--HELP BUTTON-->
                     <ImageButton 
-                        Source="{AppThemeBinding Light='namegentitle.png',Dark='namegentitledark.png'}" Padding="0"
+                        Source="namegentitle.png" Padding="0"
                         Command="{Binding ToggleHelpCommand}"/>
                 </Border>
                 <Grid Grid.Column="1" ColumnDefinitions="50,*,50"  Margin="0,0,0,2">
                     <Border Grid.Column="0" Margin="0,1"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            BackgroundColor="{StaticResource Secondary}"
                             StrokeThickness="0"
                             VerticalOptions="Fill"
                             HorizontalOptions="Fill"
                             StrokeShape="RoundRectangle 5 0 5 0">
                         <!--SUBTRACT COUNTER BUTTON-->
-                        <ImageButton Source="{AppThemeBinding Light='subtract.png',Dark='subtractdark.png'}" 
+                        <ImageButton Source="subtract.png" 
                                      HorizontalOptions="Fill" VerticalOptions="Fill" 
                                      Command="{Binding DecreaseCounterCommand}"/>
                     </Border>
                     <Border Grid.Column="1" BackgroundColor="Transparent" StrokeThickness="1" Margin="0"
-                            Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}" >
+                            Stroke="{StaticResource Secondary}" >
                         <!--ENTRY FOR COUNTER BUTTON-->
                         <Entry Text="{Binding GenerationNumber}"  Placeholder="# of Names" Margin="0,3,0,0"
                            HorizontalOptions="Fill" Keyboard="Numeric" VerticalOptions="Fill"
                            HorizontalTextAlignment="Center" TextColor="{StaticResource White}"/>
                     </Border>
                     <Border Grid.Column="2" Margin="0,1"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                            BackgroundColor="{StaticResource Secondary}"
                             StrokeThickness="0"
                             VerticalOptions="Fill"
                             HorizontalOptions="Fill"
                             StrokeShape="RoundRectangle 0 5 0 5">
                         <!--ADD COUNTER BUTTON-->
-                        <ImageButton Source="{AppThemeBinding Light='add.png',Dark='adddark.png'}" 
+                        <ImageButton Source="add.png" 
                                      HorizontalOptions="Fill" VerticalOptions="Fill" 
                                      Command="{Binding IncreaseCounterCommand}"/>
                     </Border>
                 </Grid>
                 <Border Grid.Column="2"  Margin="1,1,1,2"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        BackgroundColor="{StaticResource Secondary}"
                         StrokeThickness="0"
                         VerticalOptions="Fill"
                         HorizontalOptions="Fill"
                         StrokeShape="RoundRectangle 5" >
                     <!--HELP BUTTON-->
                     <ImageButton 
-                        Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" Padding="0"
+                        Source="list.png" Padding="0"
                         Command="{Binding GoToListPageCommand}"/>
                 </Border>
             </Grid>
             <!--LOWER BUTTON PANEL-->
             <Grid Grid.Row="2" ColumnDefinitions="*,3*,*" Margin="1,0,1,2">
                 <Border Grid.Column="0" StrokeShape="RoundRectangle 5"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}"
+                        BackgroundColor="{StaticResource Secondary}"
                         StrokeThickness="0" HorizontalOptions="Fill" VerticalOptions="Fill">
 
                 </Border>

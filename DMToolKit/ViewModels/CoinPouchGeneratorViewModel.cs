@@ -26,9 +26,6 @@ namespace DMToolKit.ViewModels
         int generationNumber;
 
         [ObservableProperty]
-        string expandImage;
-
-        [ObservableProperty]
         int firstIndex;
 
         [ObservableProperty]
@@ -57,10 +54,6 @@ namespace DMToolKit.ViewModels
             OptionsShown = false;
             OutputTarget = 0;
             GenerationNumber = 1;
-            if (Application.Current.RequestedTheme == AppTheme.Light)
-                ExpandImage = "expand";
-            else
-                ExpandImage = "expanddark";
         }
 
         [RelayCommand]
@@ -101,20 +94,6 @@ namespace DMToolKit.ViewModels
         public void ToggleOptions()
         {
             OptionsShown = !OptionsShown;
-            if (OptionsShown)
-            {
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    ExpandImage = "retract";
-                else
-                    ExpandImage = "retractdark";
-            }
-            else
-            {
-                if (Application.Current.RequestedTheme == AppTheme.Light)
-                    ExpandImage = "expand";
-                else
-                    ExpandImage = "expanddark";
-            }
         }
 
         [RelayCommand]

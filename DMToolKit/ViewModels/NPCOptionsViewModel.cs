@@ -82,7 +82,6 @@ namespace DMToolKit.ViewModels
             CharacterClassifications.Add(groupName);
             DataController.SaveNPCData();
             ListGroupToAdd = string.Empty;
-            AddVisible = false;
         }
 
         [RelayCommand]
