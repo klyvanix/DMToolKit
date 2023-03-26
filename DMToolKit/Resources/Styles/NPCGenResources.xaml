@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:selector="clr-namespace:DMToolKit.Services"
+                    xmlns:data="clr-namespace:DMToolKit.Data"
+                    x:DataType="selector:NPCHelpPageSelector">
+    <DataTemplate x:Key="NPC1" x:DataType="data:HelpPageItem">
+        <Grid RowDefinitions="50,*">
+            <Label Grid.Row="0" Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" BackgroundColor="{StaticResource DarkPrimary}"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="NPC2" x:DataType="data:HelpPageItem">
+        <Grid RowDefinitions="50,*">
+            <Label Grid.Row="0" Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" BackgroundColor="{StaticResource DarkPrimary}"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="NPC3" x:DataType="data:HelpPageItem">
+        <Grid RowDefinitions="50,*">
+            <Label Grid.Row="0" Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" BackgroundColor="{StaticResource DarkPrimary}"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="NPC4" x:DataType="data:HelpPageItem">
+        <Grid RowDefinitions="50,*">
+            <Label Grid.Row="0" Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" BackgroundColor="{StaticResource DarkPrimary}"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="NPC5" x:DataType="data:HelpPageItem">
+        <Grid RowDefinitions="50,*">
+            <Label Grid.Row="0" Text="{Binding Title}" FontSize="20" HorizontalOptions="Fill" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" TextColor="{StaticResource Tertiary}" BackgroundColor="{StaticResource DarkPrimary}"/>
+        </Grid>
+    </DataTemplate>
+    <selector:NPCHelpPageSelector x:Key="NPCPageSelector" 
+                                   Page1="{StaticResource NPC1}" 
+                                   Page2="{StaticResource NPC2}" 
+                                   Page3="{StaticResource NPC3}" 
+                                   Page4="{StaticResource NPC4}" 
+                                   Page5="{StaticResource NPC5}"/>
+</ResourceDictionary>
