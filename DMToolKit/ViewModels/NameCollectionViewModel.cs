@@ -90,6 +90,8 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         void SelectRandomName()
         {
+            if (ListOfNames.Count < 1)
+                return;
             RandomName = ListOfNames[new Random().Next(0, ListOfNames.Count)];
         }
 

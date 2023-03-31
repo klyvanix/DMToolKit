@@ -21,23 +21,20 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         int surnameListIndex;
 
-        List<NPC> HistoryList;
-
-        bool firstNameLock;
-        bool lastNameLock;
-        bool valuePrimeLock;
-        bool valueMinorLock;
-        bool positivePrimeLock;
-        bool positiveMinorLock;
-        bool negativePrimeLock;
-        bool negativeMinorLock;
+        public bool FirstNameLock { get; set; }
+        public bool LastNameLock { get; set; }
+        public bool ValuePrimeLock { get; set; }
+        public bool ValueMinorLock { get; set; }
+        public bool PositivePrimeLock { get; set; }
+        public bool PositiveMinorLock { get; set; }
+        public bool NegativePrimeLock { get; set; }
+        public bool NegativeMinorLock { get; set; }
 
         bool masculineName;
 
         int firstNameIndex = -1;
         int lastNameIndex = -1;
-        int gender = -1;
-
+        int genderIndex = -1;
         int primeValueIndex = -1;
         int minorValueIndex = -1;
         int positivePrimeIndex = -1;
@@ -47,62 +44,24 @@ namespace DMToolKit.ViewModels
 
         int historyIndex = 1;
 
-        [ObservableProperty]
-        Color firstNameColor = Colors.White;
-        [ObservableProperty]
-        Color lastNameColor = Colors.White;
-        [ObservableProperty]
-        Color valuePrimeColor = Colors.White;
-        [ObservableProperty]
-        Color valueMinorColor = Colors.White;
-        [ObservableProperty]
-        Color positivePrimeColor = Colors.White;
-        [ObservableProperty]
-        Color positiveMinorColor = Colors.White;
-        [ObservableProperty]
-        Color negativePrimeColor = Colors.White;
-        [ObservableProperty]
-        Color negativeMinorColor = Colors.White;
+        List<NPC> HistoryList;
 
-        [ObservableProperty]
-        string descriptionOne;
-        [ObservableProperty]
-        string descriptionTwo;
-        [ObservableProperty]
-        string descriptionThree;
-        [ObservableProperty]
-        string descriptionFour;
-        [ObservableProperty]
-        string descriptionFive;
-        [ObservableProperty]
-        string descriptionSix;
-
-        [ObservableProperty]
-        string genderImage;
+        bool startup;
 
         [ObservableProperty]
         bool notGenerated;
         [ObservableProperty]
         bool generated;
-
         [ObservableProperty]
         bool historyBackwardShown;
         [ObservableProperty]
         bool historyForwardShown;
-
         [ObservableProperty]
         bool optionsExpanded;
-
-        [ObservableProperty]
-        string expandImage;
-
-        bool startup;
 
         private Random random = new Random();
 
         DataController DataController;
-
-        Color locked = Color.FromArgb("747a7f");
 
         public NPCGeneratorViewModel()
         {
@@ -111,27 +70,20 @@ namespace DMToolKit.ViewModels
             startup = true;
             NotGenerated = true;
             Generated = false;
-            GenderImage = "npc.png";
             Character = new NPC();
-            firstNameLock = false;
-            lastNameLock = false;
-            valuePrimeLock = false;
-            valueMinorLock = false;
-            positivePrimeLock = false;
-            positiveMinorLock = false;
-            negativePrimeLock = false;
-            negativeMinorLock = false;
-            DescriptionOne = StaticStrings.NPCDescription[0];
-            DescriptionTwo = StaticStrings.NPCDescription[1];
-            DescriptionThree = StaticStrings.NPCDescription[2];
-            DescriptionFour = StaticStrings.NPCDescription[3];
-            DescriptionFive = StaticStrings.NPCDescription[4];
+            FirstNameLock = false;
+            LastNameLock = false;
+            ValuePrimeLock = false;
+            ValueMinorLock = false;
+            PositivePrimeLock = false;
+            PositiveMinorLock = false;
+            NegativePrimeLock = false;
+            NegativeMinorLock = false;
             MasculineListIndex = 0;
             FeminineListIndex = 1;
             SurnameListIndex = 2;
             HistoryForwardShown = false;
             HistoryBackwardShown = false;
-            ExpandImage = "expand";
             OptionsExpanded = false;
         }
 
@@ -152,21 +104,17 @@ namespace DMToolKit.ViewModels
                 var firstName = string.Empty;
                 if (masculineName)
                 {
-                    //firstName = DataController.NameData.MasculineNameList.Collection[firstNameIndex];
                     firstName = DataController.NameData.ThemedNameCollections[MasculineListIndex].Collection[firstNameIndex];
-                    gender = 1;
-                    GenderImage = "masculinedark.png";
+                    genderIndex = 1;
                 }
                 else
                 {
-                    //firstName = DataController.NameData.FeminineNameList.Collection[firstNameIndex];
                     firstName = DataController.NameData.ThemedNameCollections[FeminineListIndex].Collection[firstNameIndex];
-                    gender = 2;
-                    GenderImage = "femininedark.png";
+                    genderIndex = 2;
                 }
                 Character = new NPC(firstName,
                     DataController.NameData.ThemedNameCollections[SurnameListIndex].Collection[lastNameIndex],
-                    gender,
+                    genderIndex,
                     primeValueIndex, 
                     minorValueIndex, 
                     positivePrimeIndex, 
@@ -282,15 +230,9 @@ namespace DMToolKit.ViewModels
             negativeMinorIndex = Character.NegativeMinorValue;
 
             if (Character.GenderCode == 1)
-            {
                 masculineName = true;
-                GenderImage = "masculinedark.png";
-            }
             else
-            {
                 masculineName = false;
-                GenderImage = "femininedark.png";
-            }
         }
 
         [RelayCommand]
@@ -340,35 +282,19 @@ namespace DMToolKit.ViewModels
         void ToggleOptions()
         {
             OptionsExpanded = !OptionsExpanded;
-            if (OptionsExpanded)
-            {
-                ExpandImage = "retract";
-            }
-            else
-            {
-                ExpandImage = "expand";
-            }
         }
 
         [RelayCommand]
         void UnlockAll()
         {
-            firstNameLock = false;
-            lastNameLock = false;
-            valuePrimeLock = false;
-            valueMinorLock = false;
-            positivePrimeLock = false;
-            positiveMinorLock = false;
-            negativePrimeLock = false;
-            negativeMinorLock = false;
-            FirstNameColor = Colors.White;
-            LastNameColor = Colors.White;
-            ValuePrimeColor = Colors.White;
-            ValueMinorColor = Colors.White;
-            PositivePrimeColor = Colors.White;
-            PositiveMinorColor = Colors.White;
-            NegativePrimeColor = Colors.White;
-            NegativeMinorColor = Colors.White;
+            FirstNameLock = false;
+            LastNameLock = false;
+            ValuePrimeLock = false;
+            ValueMinorLock = false;
+            PositivePrimeLock = false;
+            PositiveMinorLock = false;
+            NegativePrimeLock = false;
+            NegativeMinorLock = false;
         }
 
         [RelayCommand]
@@ -376,93 +302,61 @@ namespace DMToolKit.ViewModels
         {
             if (string.IsNullOrEmpty(Character.FirstName))
                 return;
-            firstNameLock = !firstNameLock;
-            if (firstNameLock)
-                FirstNameColor = locked;
-            else
-                FirstNameColor = Colors.White;
+            FirstNameLock = !FirstNameLock;
         }
         [RelayCommand]
         void LockLastName()
         {
             if (string.IsNullOrEmpty(Character.LastName))
                 return;
-            lastNameLock = !lastNameLock;
-            if (lastNameLock)
-                LastNameColor = locked;
-            else
-                LastNameColor = Colors.White;
+            LastNameLock = !LastNameLock;
         }
         [RelayCommand]
         void LockPrimeValue()
         {
             if(string.IsNullOrEmpty(Character.ValuePrime)) 
                 return;
-            valuePrimeLock = !valuePrimeLock;
-            if (valuePrimeLock)
-                ValuePrimeColor = locked;
-            else
-                ValuePrimeColor = Colors.White;
+            ValuePrimeLock = !ValuePrimeLock;
         }
         [RelayCommand]
         void LockMinorValue()
         {
             if (string.IsNullOrEmpty(Character.ValueMinor))
                 return;
-            valueMinorLock = !valueMinorLock;
-            if (valueMinorLock)
-                ValueMinorColor = locked;
-            else
-                ValueMinorColor = Colors.White;
+            ValueMinorLock = !ValueMinorLock;
         }
         [RelayCommand]
         void LockPositivePrime()
         {
             if (string.IsNullOrEmpty(Character.PositivePrime))
                 return;
-            positivePrimeLock = !positivePrimeLock;
-            if (positivePrimeLock)
-                PositivePrimeColor = locked;
-            else
-                PositivePrimeColor = Colors.White;
+            PositivePrimeLock = !PositivePrimeLock;
         }
         [RelayCommand]
         void LockPositiveMinor()
         {
             if (string.IsNullOrEmpty(Character.PositiveMinor))
                 return;
-            positiveMinorLock = !positiveMinorLock;
-            if (positiveMinorLock)
-                PositiveMinorColor = locked;
-            else
-                PositiveMinorColor = Colors.White;
+            PositiveMinorLock = !PositiveMinorLock;
         }
         [RelayCommand]
         void LockNegativePrime()
         {
             if (string.IsNullOrEmpty(Character.NegativePrime))
                 return;
-            negativePrimeLock = !negativePrimeLock;
-            if (negativePrimeLock)
-                NegativePrimeColor = locked;
-            else
-                NegativePrimeColor = Colors.White;
+            NegativePrimeLock = !NegativePrimeLock;
         }
         [RelayCommand]
         void LockNegativeMinor()
         {
             if (string.IsNullOrEmpty(Character.NegativeMinor))
                 return;
-            negativeMinorLock = !negativeMinorLock;
-            if (negativeMinorLock)
-                NegativeMinorColor = locked;
-            else
-                NegativeMinorColor = Colors.White;
+            NegativeMinorLock = !NegativeMinorLock;
         }
 
         private void SelectPrimeValueIndex()
         {
-            if (valuePrimeLock)
+            if (ValuePrimeLock)
                 return;
 
             primeValueIndex = random.Next(0, CharacterAttributes.NPCValueCount);
@@ -473,7 +367,7 @@ namespace DMToolKit.ViewModels
         }
         private void SelectMinorValueIndex()
         {
-            if (valueMinorLock)
+            if (ValueMinorLock)
                 return;
 
             minorValueIndex = random.Next(0, CharacterAttributes.NPCValueCount);
@@ -485,7 +379,7 @@ namespace DMToolKit.ViewModels
 
         private void SelectPositivePrimeIndex()
         {
-            if (positivePrimeLock)
+            if (PositivePrimeLock)
                 return;
 
             positivePrimeIndex = random.Next(0, CharacterAttributes.PositiveAttributeCount);
@@ -496,7 +390,7 @@ namespace DMToolKit.ViewModels
         }
         private void SelectPositiveMinorIndex()
         {
-            if (positiveMinorLock)
+            if (PositiveMinorLock)
                 return;
 
             positiveMinorIndex = random.Next(0, CharacterAttributes.PositiveAttributeCount);
@@ -508,7 +402,7 @@ namespace DMToolKit.ViewModels
 
         private void SelectNegativePrimeIndex()
         {
-            if (negativePrimeLock)
+            if (NegativePrimeLock)
                 return;
 
             negativePrimeIndex = random.Next(0, CharacterAttributes.NegativeAttributeCount);
@@ -519,7 +413,7 @@ namespace DMToolKit.ViewModels
         }
         private void SelectNegativeMinorIndex()
         {
-            if (negativeMinorLock)
+            if (NegativeMinorLock)
                 return;
 
             negativeMinorIndex = random.Next(0, CharacterAttributes.NegativeAttributeCount);
@@ -531,7 +425,7 @@ namespace DMToolKit.ViewModels
 
         private int GetLastNameIndex()
         {
-            if (lastNameLock)
+            if (LastNameLock)
                 return lastNameIndex;
 
             return random.Next(0,DataController.NameData.ThemedNameCollections[SurnameListIndex].Collection.Count);
@@ -539,7 +433,7 @@ namespace DMToolKit.ViewModels
 
         private int GetFirstNameIndex()
         {
-            if (firstNameLock)
+            if (FirstNameLock)
                 return firstNameIndex;
 
             int returnIndex = -1;

@@ -4,15 +4,17 @@ namespace DMToolKit.Pages;
 
 public partial class CoinPouchDetailsPage : ContentPage
 {
-	public CoinPouchDetailsPage(CoinPouchDetailsViewModel vm)
+    CoinPouchDetailsViewModel viewModel;
+    public CoinPouchDetailsPage(CoinPouchDetailsViewModel vm)
 	{
-		InitializeComponent();
-		BindingContext = vm;
-	}
+        InitializeComponent();
+        BindingContext = vm;
+        viewModel = vm;
+
+    }
     protected override void OnAppearing()
     {
         base.OnAppearing();
-		var vm = BindingContext as CoinPouchDetailsViewModel;
-		vm.UpdateData();
+        viewModel.UpdateData();
     }
 }

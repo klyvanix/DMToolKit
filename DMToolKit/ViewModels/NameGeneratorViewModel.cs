@@ -8,7 +8,6 @@ using System.Diagnostics;
 
 namespace DMToolKit.ViewModels
 {
-    [QueryProperty("LockedLetter", "LockedLetter"), QueryProperty("LetterLock", "LetterLock"), QueryProperty("PrefixLock", "PrefixLock"), QueryProperty("LockedPrefix", "LockedPrefix")]
     public partial class NameGeneratorViewModel : ObservableObject
     {
         public ObservableCollection<Name> NameList { get; set; }
@@ -48,9 +47,6 @@ namespace DMToolKit.ViewModels
         [ObservableProperty]
         ObservableCollection<HelpPageItem> helpScreenCollection;
 
-        [ObservableProperty]
-        string expandImage;
-
         int minIndex;
         int maxIndex;
 
@@ -71,7 +67,6 @@ namespace DMToolKit.ViewModels
             HelpScreenCollection = new ObservableCollection<HelpPageItem>();
             NameList = new ObservableCollection<Name>();
             SeedList = new ObservableCollection<string>();
-            ExpandImage = "expand.png";
             LockedLetter = "A";
             LetterLock = false;
             GenerationNumber = 1;
@@ -82,6 +77,14 @@ namespace DMToolKit.ViewModels
             {
                 HelpScreenCollection.Add(new HelpPageItem(StaticStrings.NameTitle[i], i + 1));
             }
+        }
+
+        public void UpdateSettings()
+        {
+            PrefixLock = DataController.AppSettings.PrefixLock;
+            LockedPrefix = DataController.AppSettings.Prefix;
+            LetterLock = DataController.AppSettings.LetterLock;
+            LockedLetter = DataController.AppSettings.Letter;
         }
 
         public void UpdateSeedList()
@@ -174,6 +177,11 @@ namespace DMToolKit.ViewModels
             PrefixLock = false;
             LockedPrefix = string.Empty;
             LockedLetter = "A";
+
+            DataController.AppSettings.PrefixLock = PrefixLock;
+            DataController.AppSettings.LetterLock = LetterLock;
+            DataController.AppSettings.Prefix = LockedPrefix;
+            DataController.AppSettings.Letter = LockedLetter;
         }
 
         [RelayCommand]
@@ -192,14 +200,7 @@ namespace DMToolKit.ViewModels
         [RelayCommand]
         async Task GoToOptionsPage()
         {
-            await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}", true,
-                new Dictionary<string, object>
-                {
-                    {"LetterLock", LetterLock },
-                    {"LockedLetter", LockedLetter },
-                    {"PrefixLock", PrefixLock },
-                    {"LockedPrefix", LockedPrefix }
-                });
+            await Shell.Current.GoToAsync($"{nameof(NameGeneratorOptionsPage)}");
         }
 
         [RelayCommand]
@@ -218,14 +219,6 @@ namespace DMToolKit.ViewModels
         void ToggleOptions()
         {
             OptionsExpanded = !OptionsExpanded;
-            if (OptionsExpanded)
-            {
-                ExpandImage = "retract.png";
-            }
-            else
-            {
-                ExpandImage = "expand.png";
-            }
         }
 
         [RelayCommand]

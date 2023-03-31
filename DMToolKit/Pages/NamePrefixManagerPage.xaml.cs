@@ -4,16 +4,18 @@ namespace DMToolKit.Pages;
 
 public partial class NamePrefixManagerPage : ContentPage
 {
+	NamePrefixManagerViewModel viewModel;
 	public NamePrefixManagerPage(NamePrefixManagerViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;
-	}
+		viewModel = vm;
+
+    }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
-		var vm = BindingContext as NamePrefixManagerViewModel;
-		vm.UpdateData();
+		viewModel.UpdateData();
     }
 }

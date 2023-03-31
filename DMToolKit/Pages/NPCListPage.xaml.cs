@@ -4,16 +4,17 @@ namespace DMToolKit.Pages;
 
 public partial class NPCListPage : ContentPage
 {
-	public NPCListPage(NPCListViewModel vm)
-	{
-		InitializeComponent();
-		BindingContext = vm;
-	}
+    NPCListViewModel viewModel;
+    public NPCListPage(NPCListViewModel vm)
+    {
+        InitializeComponent();
+        BindingContext = vm;
+        viewModel = vm;
+    }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
-		var vm = BindingContext as NPCListViewModel;
-		vm.UpdateNPCList();
+        viewModel.UpdateNPCList();
     }
 }

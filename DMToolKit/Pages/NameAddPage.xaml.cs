@@ -4,18 +4,19 @@ namespace DMToolKit.Pages;
 
 public partial class NameAddPage : ContentPage
 {
-	public NameAddPage(NameAddViewModel vm)
+    NameAddViewModel viewModel;
+    public NameAddPage(NameAddViewModel vm)
     {
         InitializeComponent();
         BindingContext = vm;
+        viewModel = vm;
     }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        var vm = (NameAddViewModel)BindingContext;
-        vm.CheckIfPrefixExists();
-        vm.CheckIfSuffixExists();
-        vm.UpdateLists();
+        viewModel.CheckIfPrefixExists();
+        viewModel.CheckIfSuffixExists();
+        viewModel.UpdateLists();
     }
 }

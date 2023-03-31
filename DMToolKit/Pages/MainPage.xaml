@@ -7,9 +7,9 @@
              Title="Home Page">
     <StackLayout>
         <Border HorizontalOptions="Center" StrokeShape="RoundRectangle 200" Padding="15"
-                BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}"
-                Stroke="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Primary}}">
-            <Image Source="{AppThemeBinding Light='appicon.png',Dark='appicondark.png'}" HeightRequest="200" WidthRequest="200"/>
+                BackgroundColor="{StaticResource Background}"
+                Stroke="{StaticResource Secondary}">
+            <Image Source="appicondark.png" HeightRequest="200" WidthRequest="200"/>
         </Border>
         
         <Button Text="Name Generator" Command="{Binding GoToNameGeneratorCommand}" Margin="0,1,0,2"/>

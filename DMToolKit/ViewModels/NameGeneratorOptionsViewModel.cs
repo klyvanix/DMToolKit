@@ -7,7 +7,6 @@ using System.Linq;
 
 namespace DMToolKit.ViewModels
 {
-    [QueryProperty("LockedLetter", "LockedLetter"), QueryProperty("LetterLock", "LetterLock"), QueryProperty("PrefixLock", "PrefixLock"), QueryProperty("LockedPrefix", "LockedPrefix")]
     public partial class NameGeneratorOptionsViewModel : ObservableObject
     {
         [ObservableProperty]
@@ -99,6 +98,9 @@ namespace DMToolKit.ViewModels
         {
             PrefixCount = $"{DataController.NameSeedData.PrefixList.Count}";
             SuffixCount = $"{DataController.NameSeedData.SuffixList.Count}";
+            PrefixLock = DataController.AppSettings.PrefixLock;
+            LetterLock = DataController.AppSettings.LetterLock;
+            LockedPrefix = DataController.AppSettings.Prefix;
         }
 
         [RelayCommand]
@@ -114,31 +116,21 @@ namespace DMToolKit.ViewModels
                     DataController.SaveNameSeedData();
                 }
             }
+            DataController.AppSettings.PrefixLock = PrefixLock;
+            DataController.AppSettings.Prefix = LockedPrefix;
+            DataController.AppSettings.LetterLock = LetterLock;
+            DataController.AppSettings.Letter = LockedLetterList[SelectedIndex];
             
             if (SelectedIndex >= 0 || string.IsNullOrEmpty(LockedPrefix))
             {
-                await Shell.Current.GoToAsync($"..", true,
-                    new Dictionary<string, object>
-                    {
-                        {"LetterLock", LetterLock },
-                        {"LockedLetter", LockedLetterList[SelectedIndex]},
-                        {"PrefixLock", PrefixLock },
-                        {"LockedPrefix", LockedPrefix }
-                    });
+                await Shell.Current.GoToAsync($"..");
             }
         }
 
         [RelayCommand]
         async Task GoBack()
         {
-            await Shell.Current.GoToAsync($"..", true,
-                new Dictionary<string, object>
-                {
-                    {"LetterLock", LetterLock },
-                    {"LockedLetter", LockedLetterList[SelectedIndex]},
-                    {"PrefixLock", PrefixLock },
-                    {"LockedPrefix", LockedPrefix }
-                });
+            await Shell.Current.GoToAsync($"..");
         }
 
         [RelayCommand]

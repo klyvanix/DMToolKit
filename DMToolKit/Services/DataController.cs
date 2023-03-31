@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMToolKit.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace DMToolKit.Services
         public NPCData NPCData { get; set; }
         public NameSeedData NameSeedData { get; set; }
         public NameData NameData { get; set; }
+        public AppSettings AppSettings { get; set; } = new AppSettings();
 
         private static string npcDataName = $"{FileSystem.AppDataDirectory}/NPCData.xml";
         private static string nameDataName = $"{FileSystem.AppDataDirectory}/NameData.xml";

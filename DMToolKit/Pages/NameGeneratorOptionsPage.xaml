@@ -20,7 +20,7 @@
                         <Grid Grid.Row="1" ColumnDefinitions="30,100,*" Padding="30,0">
                             <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
                                 Background="{Binding LetterBrush}"
-                                Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
+                                Stroke="{StaticResource Secondary}"
                                 StrokeThickness="3" StrokeShape="RoundRectangle 15">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding LetterLockerCommand}"/>
@@ -57,7 +57,7 @@
                         <Grid Grid.Row="3" ColumnDefinitions="30,100,*" Padding="30,0">
                             <Border HeightRequest="30" WidthRequest="30" VerticalOptions="Center" 
                                         Background="{Binding PrefixBrush}"
-                                        Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource Primary}}"
+                                        Stroke="{StaticResource Secondary}"
                                         StrokeThickness="3" StrokeShape="RoundRectangle 20">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding PrefixLockerCommand}"/>
@@ -98,17 +98,17 @@
                     <Border BackgroundColor="{StaticResource Background}" StrokeShape="RoundRectangle 5" Grid.Row="2" 
                                     Stroke="{StaticResource OptionsHeaderGradient}">
                         <Entry Placeholder="Entry" Text="{Binding EntryToAdd}" 
-                                       PlaceholderColor="{AppThemeBinding Light={StaticResource Gray500},Dark={StaticResource Gray300}}" 
+                                       PlaceholderColor="{StaticResource Gray500}" 
                                        TextColor="{StaticResource Tertiary}" 
                                        HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     </Border>
                     <Grid ColumnDefinitions="*,*" HeightRequest="50" Margin="0,0,0,7">
-                        <Border Style="{StaticResource BorderButton}" Margin="1,0,0,0" Grid.Column="0" >
+                        <Border BackgroundColor="{StaticResource Secondary}" StrokeShape="RoundRectangle 5" StrokeThickness="0" Margin="1,0" Grid.Column="0" >
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding GoToPrefixCommand}"/>
                             </Border.GestureRecognizers>
                             <HorizontalStackLayout HorizontalOptions="Center">
-                                <Image Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" WidthRequest="40" />
+                                <Image Source="list.png" WidthRequest="40" />
                                 <Label Text="Prefix" HorizontalOptions="Start" VerticalOptions="Center" TextColor="{StaticResource Background}"/>
                                 <Label VerticalOptions="Center">
                                     <Label.FormattedText>
@@ -121,19 +121,19 @@
                                 </Label>
                             </HorizontalStackLayout>
                         </Border>
-                        <Border  Style="{StaticResource BorderButton}" Margin="0,0,1,0" Grid.Column="1" >
+                        <Border BackgroundColor="{StaticResource Secondary}" StrokeShape="RoundRectangle 5" StrokeThickness="0" Margin="1,0" Grid.Column="1" >
                             <Border.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding GoToSuffixCommand}"/>
                             </Border.GestureRecognizers>
                             <HorizontalStackLayout HorizontalOptions="Center">
-                                <Image Source="{AppThemeBinding Light='list.png',Dark='listdark.png'}" WidthRequest="40"/>
+                                <Image Source="list.png" WidthRequest="40"/>
                                 <Label Text="Suffix" VerticalOptions="Center" TextColor="{StaticResource Background}"/>
                                 <Label VerticalOptions="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" (" />
+                                            <Span TextColor="{StaticResource Background}" Text=" (" />
                                             <Span TextColor="{StaticResource Primary}" Text="{Binding SuffixCount}" FontAttributes="Bold"/>
-                                            <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=")" />
+                                            <Span TextColor="{StaticResource Background}" Text=")" />
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
