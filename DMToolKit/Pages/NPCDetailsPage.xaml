@@ -19,13 +19,13 @@
                     </HorizontalStackLayout>
                 </Border>
                 <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="3"  HeightRequest="120" WidthRequest="120" StrokeShape="RoundRectangle 60"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}"
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}">
+                        BackgroundColor="{StaticResource Background}"
+                        Stroke="{StaticResource Secondary}">
                 </Border>
                 <Border Grid.Row="1" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"
                         HeightRequest="45" WidthRequest="45" StrokeShape="RoundRectangle 25"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}" 
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}">
+                        BackgroundColor="{StaticResource Background}" 
+                        Stroke="{StaticResource Secondary}">
                     <Image Source="{Binding Character.GenderImage}" HeightRequest="25" WidthRequest="25" />
                 </Border>
             </Grid>
@@ -36,77 +36,78 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span TextColor="White" Text="Values:" FontSize="16"/>
-                            <Span TextColor="{StaticResource Values}" Text="{Binding Character.ValuePrime, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource ValuesDark}" Text="{Binding Character.ValuePrime, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
                             <Span TextColor="White" Text="," FontSize="16"/>
-                            <Span TextColor="{StaticResource Values}" Text="{Binding Character.ValueMinor, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource ValuesDark}" Text="{Binding Character.ValueMinor, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Border Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}"
+                <Border Stroke="{StaticResource ValuesDark}"
+                        BackgroundColor="{StaticResource Background}"
                         StrokeShape="RoundRectangle 5" Grid.Row="0" Padding="10,2,10,5">
                     <VerticalStackLayout>
                         <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold"/>
-                                        <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" values" />
-                                        <Span TextColor="{StaticResource Values}" Text="{Binding Character.ValuePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                        <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.ValuePrimeDescription, StringFormat=', {0}, and'}" />
-                                        <Span TextColor="{StaticResource Values}" Text="{Binding Character.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                        <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.ValueMinorDescription, StringFormat=', {0}.'}" />
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" values" />
+                                    <Span TextColor="{StaticResource ValuesDark}" Text="{Binding Character.ValuePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text="{Binding Character.ValuePrimeDescription, StringFormat=', {0}, and'}" />
+                                    <Span TextColor="{StaticResource ValuesDark}" Text="{Binding Character.ValueMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text="{Binding Character.ValueMinorDescription, StringFormat=', {0}.'}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </VerticalStackLayout>
                 </Border>
                 <Label HorizontalTextAlignment="Center">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span TextColor="White" Text="Positive Traits:" FontSize="16"/>
-                            <Span TextColor="{StaticResource PositiveAttribute}" Text="{Binding Character.PositivePrime, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
-                            <Span TextColor="White" Text="," FontSize="16"/>
-                            <Span TextColor="{StaticResource PositiveAttribute}" Text="{Binding Character.PositiveMinor, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource Tertiary}" Text="Positive Traits:" FontSize="16"/>
+                            <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding Character.PositivePrime, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource Tertiary}" Text="," FontSize="16"/>
+                            <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding Character.PositiveMinor, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
                 <Label HorizontalTextAlignment="Center">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span TextColor="White" Text="Negative Traits:" FontSize="16"/>
-                            <Span TextColor="{StaticResource NegativeAttribute}" Text="{Binding Character.NegativePrime, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
-                            <Span TextColor="White" Text="," FontSize="16"/>
-                            <Span TextColor="{StaticResource NegativeAttribute}" Text="{Binding Character.NegativeMinor, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource Tertiary}" Text="Negative Traits:" FontSize="16"/>
+                            <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding Character.NegativePrime, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
+                            <Span TextColor="{StaticResource Tertiary}" Text="," FontSize="16"/>
+                            <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding Character.NegativeMinor, StringFormat=' {0}'}"  FontSize="16" FontAttributes="Bold"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Border Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}"
+                <Border Stroke="{StaticResource NPCAttributes}"
+                        BackgroundColor="{StaticResource Background}"
                         StrokeShape="RoundRectangle 5" Grid.Row="1" Padding="10,2,10,5">
                     <VerticalStackLayout>
                         <Label>
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span TextColor="{StaticResource Name}" Text="{Binding Character.FirstName}" FontAttributes="Bold" />
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text=" is mainly known for being" />
-                                    <Span TextColor="{StaticResource PositiveAttribute}" Text="{Binding Character.PositivePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.PositivePrimeDescription, StringFormat=', {0}, and can also be'}" />
-                                    <Span TextColor="{StaticResource PositiveAttribute}" Text="{Binding Character.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.PositiveMinorDescription, StringFormat=', {0}. However, they can also be'}" />
-                                    <Span TextColor="{StaticResource NegativeAttribute}" Text="{Binding Character.NegativePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.NegativePrimeDescription, StringFormat=', {0}, and can be'}" />
-                                    <Span TextColor="{StaticResource NegativeAttribute}" Text="{Binding Character.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
-                                    <Span TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="{Binding Character.NegativeMinorDescription, StringFormat=', {0}.'}" />
+                                    <Span TextColor="{StaticResource Tertiary}" Text=" is mainly known for being" />
+                                    <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding Character.PositivePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text="{Binding Character.PositivePrimeDescription, StringFormat=', {0}, and can also be'}" />
+                                    <Span TextColor="{StaticResource PositiveAttributeDark}" Text="{Binding Character.PositiveMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text="{Binding Character.PositiveMinorDescription, StringFormat=', {0}. However, they can also be'}" />
+                                    <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding Character.NegativePrime, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text="{Binding Character.NegativePrimeDescription, StringFormat=', {0}, and can be'}" />
+                                    <Span TextColor="{StaticResource NegativeAttributeDark}" Text="{Binding Character.NegativeMinor, StringFormat=' {0}'}" FontAttributes="Bold"/>
+                                    <Span TextColor="{StaticResource Tertiary}" Text="{Binding Character.NegativeMinorDescription, StringFormat=', {0}.'}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                     </VerticalStackLayout>
                 </Border>
                 <Label Text="Notes" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0" Grid.Row="2" TextColor="{StaticResource Tertiary}"/>
-                <Border Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Dark}}"
+                <Border Stroke="{StaticResource Secondary}"
+                            BackgroundColor="{StaticResource Background}"
                             StrokeShape="RoundRectangle 5" Grid.Row="5" Padding="5">
-                    <Label Text="{Binding Character.Notes}" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,0"  TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" FontAttributes="Bold"/>
+                    <Label Text="{Binding Character.Notes}" VerticalOptions="Center" HorizontalOptions="Center" Margin="10,0" 
+                           TextColor="{StaticResource Tertiary}" FontAttributes="Bold"/>
                 </Border>
             </VerticalStackLayout>
         </Border>

@@ -30,15 +30,15 @@
                                 </SwipeItems>
                             </SwipeView.LeftItems>
                             <Border StrokeShape="RoundRectangle 5" Margin="0" HeightRequest="50"
-                                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource DarkPrimary}}">
+                                    Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource DarkPrimary}}"
+                                    BackgroundColor="{StaticResource Background}">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer CommandParameter="{Binding .}" 
                                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListManagerViewModel}},Path=GoToCollectionCommand}"/>
                                 </Border.GestureRecognizers>
                                 <Grid>
                                     <Label Text="{Binding ., StringFormat='{0} Names'}" FontSize="16"
-                                            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                            TextColor="{StaticResource Tertiary}"
                                             HorizontalOptions="Center" VerticalOptions="Center"/>
                                 </Grid>
                             </Border>
@@ -49,12 +49,11 @@
         </ScrollView>
         <Grid Grid.Row="2" ColumnDefinitions="Auto,*" Margin="50,0,50,2">
             <Border Style="{StaticResource BorderButton}">
-                <ImageButton Source="{AppThemeBinding Light='add.png',Dark='adddark.png'}" 
+                <ImageButton Source="{AppThemeBinding Light='add.png',Dark='adddark.png'}" HeightRequest="50" WidthRequest="50"
                              Command="{Binding AddListCommand}" />
             </Border>
             <Border StrokeShape="RoundRectangle 5" Grid.Column="1" HeightRequest="50"
-                    BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Dark}}"
-                    StrokeThickness="0">
+                    BackgroundColor="{StaticResource Background}" Stroke="{AppThemeBinding Light={StaticResource Secondary},Dark={StaticResource DarkPrimary}}">
                 <Entry Text="{Binding ListNameToAdd}" Placeholder="Collection Name" PlaceholderColor="{StaticResource Gray200}"
                        VerticalOptions="Center" Margin="0,1,0,0"
                        HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>

@@ -52,16 +52,10 @@ namespace DMToolKit.Data
             {
                 if(GenderCode == 1)
                 {
-                    if (Application.Current.RequestedTheme == AppTheme.Light)
-                        return "masculine.png";
-                    else
                         return "masculinedark.png";
                 }
                 else
                 {
-                    if (Application.Current.RequestedTheme == AppTheme.Light)
-                        return "feminine.png";
-                    else
                         return "femininedark.png";
                 }
             }

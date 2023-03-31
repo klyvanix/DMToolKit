@@ -10,28 +10,27 @@
             <VerticalStackLayout>
                 <Grid ColumnDefinitions="*,*" Margin="20,0">
                     <Border Grid.Column="0" StrokeShape="RoundRectangle 30 5 30 5" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Name},Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Name}, Dark={StaticResource Primary}}" >
+                            BackgroundColor="{StaticResource Background}" 
+                            Stroke="{StaticResource Name}" >
                         <Grid HorizontalOptions="Fill" Padding="5">
-                            <Label Text="{Binding Character.FirstName}" TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Name}}"
+                            <Label Text="{Binding Character.FirstName}" TextColor="{StaticResource Name}"
                                    HorizontalOptions="End" VerticalOptions="Center" FontSize="23" Padding="10"/>
                             <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 15 5 15 5" Grid.Column="3" HorizontalOptions="Start"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Name}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Name}}">
-                                <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollFirstNameCommand}"/>
+                                    BackgroundColor="{StaticResource Background}" Stroke="{StaticResource Name}">
+                                <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollFirstNameCommand}"/>
                             </Border>
                         </Grid>
                     </Border>
                     <Border Grid.Column="1" StrokeShape="RoundRectangle 5 30 5 30" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Name},Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Name}, Dark={StaticResource Primary}}" >
+                            BackgroundColor="{StaticResource Background}" 
+                            Stroke="{StaticResource Name}" >
                         <Grid HorizontalOptions="Fill" Padding="5">
-                            <Label Text="{Binding Character.LastName}" TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Name}}"
+                            <Label Text="{Binding Character.LastName}" TextColor="{StaticResource Name}"
                                    HorizontalOptions="Start" VerticalOptions="Center" FontSize="23" Padding="10"/>
                             <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 5 15 5 15" Grid.Column="3" HorizontalOptions="End"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Name}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Name}}">
-                                <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollLastNameCommand}"/>
+                                    BackgroundColor="{StaticResource Background}" 
+                                    Stroke="{StaticResource Name}">
+                                <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollLastNameCommand}"/>
                             </Border>
                         </Grid>
                     </Border>
@@ -39,100 +38,98 @@
                 <Grid ColumnDefinitions="50,*" Margin="20,0" HeightRequest="60">
                     <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="0" 
                             HorizontalOptions="Center" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}">
-                        <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollPrimeValueCommand}"/>
+                            BackgroundColor="{StaticResource Background}" 
+                            Stroke="{StaticResource ValuesDark}">
+                        <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollPrimeValueCommand}"/>
                     </Border>
                     <Border StrokeShape="RoundRectangle 10" Grid.Column="1" HorizontalOptions="Fill"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource ValuesDark}}">
+                                    BackgroundColor="{StaticResource Background}" 
+                                    Stroke="{StaticResource ValuesDark}">
                         <Label Text="{Binding Character.ValuePrime}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Values}}"/>
+                               TextColor="{StaticResource ValuesDark}"/>
                     </Border>
                 </Grid>
                 <Grid ColumnDefinitions="50,*" Margin="20,0" HeightRequest="50">
                     <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="0" 
                             HorizontalOptions="Center" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource ValuesDark}}">
-                        <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollMinorValueCommand}"/>
+                            BackgroundColor="{StaticResource Background}" Stroke="{StaticResource ValuesDark}">
+                        <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollMinorValueCommand}"/>
                     </Border>
                     <Border StrokeShape="RoundRectangle 10" Grid.Column="1" HorizontalOptions="Fill"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Values}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource ValuesDark}}">
+                                    BackgroundColor="{StaticResource Background}" 
+                                    Stroke="{StaticResource ValuesDark}">
                         <Label Text="{Binding Character.ValueMinor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Values}}"/>
+                               TextColor="{StaticResource ValuesDark}"/>
                     </Border>
                 </Grid>
                 <Grid ColumnDefinitions="50,*" Margin="20,0" HeightRequest="60">
                     <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="0" 
                             HorizontalOptions="Center" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}">
-                        <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollPositivePrimeCommand}"/>
+                            BackgroundColor="{StaticResource Background}" Stroke="{StaticResource PositiveAttributeDark}">
+                        <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollPositivePrimeCommand}"/>
                     </Border>
                     <Border StrokeShape="RoundRectangle 10" Grid.Column="1" HorizontalOptions="Fill"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}">
+                                    BackgroundColor="{StaticResource Background}" Stroke="{StaticResource PositiveAttributeDark}">
                         <Label Text="{Binding Character.PositivePrime}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PositiveAttribute}}"/>
+                               TextColor="{StaticResource PositiveAttributeDark}"/>
                     </Border>
                 </Grid>
                 <Grid ColumnDefinitions="50,*" Margin="20,0" HeightRequest="50">
                     <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="0" 
                             HorizontalOptions="Center" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}">
-                        <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollPositiveMinorCommand}"/>
+                            BackgroundColor="{StaticResource Background}" Stroke="{StaticResource PositiveAttributeDark}">
+                        <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollPositiveMinorCommand}"/>
                     </Border>
                     <Border StrokeShape="RoundRectangle 10" Grid.Column="1" HorizontalOptions="Fill"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource PositiveAttribute}, Dark={StaticResource PositiveAttributeDark}}">
+                                    BackgroundColor="{StaticResource Background}" 
+                                    Stroke="{StaticResource PositiveAttributeDark}">
                         <Label Text="{Binding Character.PositiveMinor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PositiveAttribute}}"/>
+                               TextColor="{StaticResource PositiveAttributeDark}"/>
                     </Border>
                 </Grid>
                 <Grid ColumnDefinitions="50,*" Margin="20,0" HeightRequest="60">
                     <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="0" 
                             HorizontalOptions="Center" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}">
-                        <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollNegativePrimeCommand}"/>
+                            BackgroundColor="{StaticResource Background}" 
+                            Stroke="{StaticResource NegativeAttributeDark}">
+                        <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollNegativePrimeCommand}"/>
                     </Border>
                     <Border StrokeShape="RoundRectangle 10" Grid.Column="1" HorizontalOptions="Fill"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}">
+                                    BackgroundColor="{StaticResource Background}" 
+                                    Stroke="{StaticResource NegativeAttributeDark}">
                         <Label Text="{Binding Character.NegativePrime}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource NegativeAttribute}}"/>
+                               TextColor="{StaticResource NegativeAttributeDark}"/>
                     </Border>
                 </Grid>
                 <Grid ColumnDefinitions="50,*" Margin="20,0" HeightRequest="50">
                     <Border HeightRequest="40" WidthRequest="40" StrokeShape="RoundRectangle 10" Grid.Column="0" 
                             HorizontalOptions="Center" VerticalOptions="Center" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}">
-                        <ImageButton HeightRequest="30" WidthRequest="30" Source="rerolldark.png" Command="{Binding RerollNegativeMinorCommand}"/>
+                            BackgroundColor="{StaticResource Background}" 
+                            Stroke="{StaticResource NegativeAttributeDark}">
+                        <ImageButton HeightRequest="30" WidthRequest="30" Source="reroll.png" Command="{Binding RerollNegativeMinorCommand}"/>
                     </Border>
                     <Border StrokeShape="RoundRectangle 10" Grid.Column="1" HorizontalOptions="Fill"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource Dark}}" 
-                                    Stroke="{AppThemeBinding Light={StaticResource NegativeAttribute}, Dark={StaticResource NegativeAttributeDark}}">
+                                    BackgroundColor="{StaticResource Background}" 
+                                    Stroke="{StaticResource NegativeAttributeDark}">
                         <Label Text="{Binding Character.NegativeMinor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"
-                               TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource NegativeAttribute}}"/>
+                               TextColor="{StaticResource NegativeAttributeDark}"/>
                     </Border>
                 </Grid>
                 <Grid ColumnDefinitions="Auto,*" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0">
                     <Label Text="NPC Role:" VerticalTextAlignment="Center" Padding="5" BackgroundColor="Transparent"/>
                     <Border StrokeShape="RoundRectangle 15" Grid.Column="1" 
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}" 
-                            Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}" >
-                        <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}" />
+                            BackgroundColor="{StaticResource Background}" 
+                            Stroke="{StaticResource Role}" >
+                        <Picker HorizontalOptions="Fill" HorizontalTextAlignment="Center" ItemsSource="{Binding ClassificationList}" SelectedIndex="{Binding PickerIndex}"
+                                TextColor="{StaticResource Role}"/>
                     </Border>
                 </Grid>
                 <Border StrokeShape="RoundRectangle 5" HorizontalOptions="Fill" Padding="20,5" Margin="20,0" HeightRequest="200"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource Tertiary},Dark={StaticResource Dark}}" 
-                        Stroke="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Primary}}" >
+                        BackgroundColor="{StaticResource Background}" 
+                        Stroke="{StaticResource Secondary}" >
                     <Editor Placeholder="Personal Notes" PlaceholderColor="{StaticResource Gray500}" Text="{Binding Notes}" Keyboard="Text"
-                                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"
+                            TextColor="{StaticResource Tertiary}"/>
                 </Border>
             </VerticalStackLayout>
         </ScrollView>
